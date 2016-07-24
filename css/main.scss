@@ -5,7 +5,7 @@
 
 
 
-// Our variables
+// Default variables
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -22,8 +22,18 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+// Palette
+$brown: #5E412F;
+$beige: #FCEBB6;
+$blue:  #78C0A8;
+$orange: #F07818;
+$gold: #F0A830;
+
 // Width of the content area
-$content-width:    800px;
+$content-width:    900px;
+$header-height: 180px;
+$half-header-height: 90px;
+$subheader-height: 130px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -38,16 +48,159 @@ $on-laptop:        800px;
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+@media screen and (max-width: $device) {
+@content;
+}
 }
 
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
+"base",
+"layout",
+"syntax-highlighting"
 ;
+
+
+
+.page-content {
+top: $header-height;
+padding-top: 15px;
+overflow:scroll;
+}
+
+// HEADER
+header {
+top: -5px;
+margin-top: 0;
+background-color: $brown;
+height: $header-height;
+margin: 0;
+padding: 0;
+}
+
+header a.site-title, a.site-title:visited {
+color: $brown;
+font-variant: small-caps;
+text-align: center;
+font-size: 23px;
+line-height: 15px;
+text-decoration:none;
+}
+
+header a.site-title:hover {
+color: $orange;
+}
+
+header #main {
+position: fixed;
+text-align: center;
+top: 0;
+margin: 0;
+padding: 0;
+z-index: 10;
+width: 100%;
+height: $header-height;
+background-color: $brown;
+overflow:hidden;
+border-bottom: 8px solid $blue;
+}
+
+.round {
+display: inline-block;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.round img {
+height: 100%;
+width: 100%;
+}
+
+.subheader {
+background-color: $beige;
+overflow: scroll;
+height: $subheader-height;
+}
+.subheader .main {
+width:80%;
+}
+
+.subheader-contact {
+width:20%;
+margin-left:80%;
+}
+
+.subheader-description {
+float:left;
+width:55%;
+margin-left: 20%; 
+margin-right: 15px;
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: $half-header-height solid transparent;
+  border-bottom: $half-header-height solid transparent;
+  border-left: $half-header-height solid $blue;
+overflow: hidden;
+
+}
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: $half-header-height solid transparent;
+  border-bottom: $half-header-height solid transparent;
+  border-right: $half-header-height solid $blue;
+  margin-left: 26.5%;
+overflow: hidden;
+}
+
+header #logo{
+top: 0;
+width: 33%;
+height: 100%;
+background-color: $blue;
+text-color: $brown;
+overflow: hidden;
+padding-top: 15px;
+}
+
+header .fa {
+color: $orange
+}
+
+
+.post-sum {
+background-color: $gold;
+padding: 10px;
+overflow:hidden;
+width: 100%;
+}
+
+.post-main {
+width: 47%;
+display: inline-block;
+}
+
+.even {
+float:right;
+}
+
+
+.thumb {
+width: 150px;
+height: 150px;
+float: left;
+}
+
+.post-sum.odd {
+background-color:$beige;
+}
+.post-list {
+
+  overflow:hidden;
+}
