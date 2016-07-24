@@ -8,19 +8,22 @@ layout: default
 
   {% for post in site.posts %}
   {% capture pos %}{% cycle 'odd', 'even' %}{% endcapture %}
+  {% capture col %}{% cycle '#fff3c4', '#ffd2aa', '#ffddd6' %}{% endcapture %}
 
   <div class = "post-main {{ pos }}" >
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-    <div class="post-sum {{ pos }}">
+    <div class="post-sum {{ pos }}" style="background-color: {{ col }}">
       <div class="thumb">
 	<img src ="{{ post.thumb }}">
       </div>
-
-      <h2>
+      <div class="text">
 	<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
-      {{ pos }}
+
+    <span class="post-meta">[ {{ post.date | date: "%b %-d, %Y" }} ]</span>
+    <p style="text-align: left; padding-left: 20px;">
+    {{ post.content | truncatewords:25 | strip_html }} ...
+    </p>
+      </div>
     </div>
 
   </div>

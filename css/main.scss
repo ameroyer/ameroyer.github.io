@@ -30,9 +30,9 @@ $orange: #F07818;
 $gold: #F0A830;
 
 // Width of the content area
-$content-width:    900px;
-$header-height: 180px;
-$half-header-height: 90px;
+$content-width:    90%;
+$header-height: 170px;
+$half-header-height: 85px;
 $subheader-height: 130px;
 
 $on-palm:          600px;
@@ -140,22 +140,22 @@ margin-right: 15px;
 }
 
 .arrow-right {
-  width: 0; 
-  height: 0; 
-  border-top: $half-header-height solid transparent;
-  border-bottom: $half-header-height solid transparent;
-  border-left: $half-header-height solid $blue;
+width: 0; 
+height: 0; 
+border-top: $half-header-height solid transparent;
+border-bottom: $half-header-height solid transparent;
+border-left: $half-header-height solid $blue;
 overflow: hidden;
 
 }
 
 .arrow-left {
-  width: 0; 
-  height: 0; 
-  border-top: $half-header-height solid transparent;
-  border-bottom: $half-header-height solid transparent;
-  border-right: $half-header-height solid $blue;
-  margin-left: 26.5%;
+width: 0; 
+height: 0; 
+border-top: $half-header-height solid transparent;
+border-bottom: $half-header-height solid transparent;
+border-right: $half-header-height solid $blue;
+margin-left: 26.5%;
 overflow: hidden;
 }
 
@@ -166,7 +166,7 @@ height: 100%;
 background-color: $blue;
 text-color: $brown;
 overflow: hidden;
-padding-top: 15px;
+padding-top: 8px;
 }
 
 header .fa {
@@ -176,14 +176,20 @@ color: $orange
 
 .post-sum {
 background-color: $gold;
-padding: 10px;
+padding: 0;
 overflow:hidden;
 width: 100%;
+opacity: 0.87;
+}
+
+.post-sum:hover {
 }
 
 .post-main {
-width: 47%;
+height: 180px;
+width: 49.8%;
 display: inline-block;
+margin-bottom: 0;
 }
 
 .even {
@@ -192,9 +198,17 @@ float:right;
 
 
 .thumb {
-width: 150px;
-height: 150px;
+width: 180px;
+height: 180px;
 float: left;
+}
+
+.text {
+height: 166px;
+margin-left: 160px;
+padding: 7px;
+text-align: right;
+overflow:auto;
 }
 
 .post-sum.odd {
@@ -202,5 +216,16 @@ background-color:$beige;
 }
 .post-list {
 
-  overflow:hidden;
+overflow:hidden;
+}
+
+a.post-link {
+color:$brown;
+font-variant: small-caps;
+font-weight: bold;
+}
+
+.post-meta {
+color:$brown;
+font-weight: bold;
 }

@@ -1,0 +1,200 @@
+---
+layout: post
+title:  "Grabplot"
+date:   2016-06-01 10:00:00 +0200
+categories: python snippet
+thumb: /images/thumbs/grabplot.png
+---
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+Jekyll also offers powerful support for code snippets:
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+
+
+
+```python
+%matplotlib
+import os, sys
+from matplotlib import pyplot as plt
+pt_color = "#f1595f"
+line_color = "#599ad3"
+```
+
+    Using matplotlib backend: Qt4Agg
+
+
+
+```python
+class LineTracker:
+    def __init__(self, fig):
+        """
+        Initializes the LineTracker object taking care of saving the coordinates 
+        and displaying the selected points.
+
+        Args:
+         * ``fig``: matplotlib figure object.
+         """
+        self.lines = []                   # Matplotlib lines objects
+        self.coords = [[[], [], False]]   # (x, y, hole)
+        self.accept_thresh = 0.5          # How far a click can be from a point of the grid
+        self.fig = fig
+        self.cid = self.fig.canvas.mpl_connect('button_press_event', self)
+        self.cid2 = self.fig.canvas.mpl_connect('key_press_event', self.press_handler)
+
+    def accept_point(self, x, y):
+        """"
+        Verify the click event belongs to the plotting grid and round it to the nearest point.
+
+        Args:
+         * ``x`` (*int*): x-coordinate.
+         * ``y`` (*int*): y-coordinate.
+
+        Returns:
+         * ``accept`` (*bool*): True iff (x, y) lies close enough to one of the points on the grid.
+        """
+        return (abs(x - round(x)) < self.accept_thresh) and (abs(y - round(y)) < self.accept_thresh)
+
+    def __call__(self, event):
+        """
+        Mouse click event routine.
+        """
+        ## Add a point to the graph
+        if not(len(self.coords)):
+            print >> sys.stderr, "No contours initialized. Press 'n' or 'h' to create a new one."
+            return
+        x, y = event.xdata, event.ydata
+        if (not event.inaxes in self.fig.axes) or (not self.accept_point(x, y)):
+            return
+        x, y = round(x), round(y)
+        self.coords[-1][0].append(x)
+        self.coords[-1][1].append(y)
+        ## If starting point of the current line
+        if len(self.coords[-1][0]) == 1:
+            self.lines.append(plt.plot([x], [y], color=line_color, mfc=pt_color, marker='o', 
+                                       linewidth=2, linestyle='--' if self.coords[-1][2] else '-')[0])
+        # Otherwise
+        else:
+            self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
+        self.fig.canvas.draw()
+
+    def press_handler(self, event):
+        """
+        Press key event routine
+        """
+        ## Remove a point from the graph
+        if event.key == 'x':
+            if not len(self.coords):
+                print >> sys.stderr, "No contours initialized. Press 'n' or 'h' to create a new one."
+                return
+            if len(self.coords[-1][0]) > 0:
+                self.coords[-1][0] = self.coords[-1][0][:-1]
+                self.coords[-1][1] = self.coords[-1][1][:-1]
+                # Remove last line
+                if not len(self.coords[-1][0]):
+                    self.coords = self.coords[:-1]
+                    if len(self.lines):
+                        self.lines[-1].remove()
+                    self.lines = self.lines[:-1]
+                # Remove last point
+                else:
+                    self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
+                self.fig.canvas.draw()
+        ## Add a new line (hole or hull)
+        elif event.key == 'h' or event.key == 'n':
+            # Close previous line
+            if len(self.coords) and (self.coords[-1][0][-1], 
+                                     self.coords[-1][1][-1]) != (self.coords[-1][0][0], 
+                                                                 self.coords[-1][1][0]):
+                self.coords[-1][0].append(self.coords[-1][0][0])
+                self.coords[-1][1].append(self.coords[-1][1][0])
+                self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
+                self.fig.canvas.draw()
+            # Add new line
+            self.coords.append([[], [], True if event.key == 'h' else False])
+        elif event.key == 'enter':
+            plt.close()
+```
+
+
+```python
+def output_poly(graph, output_file):
+    """
+    Output a .poly file describing the shape parsed from the plot.
+    """
+    # Hull coordinates
+    point_indices = {}
+    title = sys.argv[2] if len(sys.argv) > 2 else "shape"
+    with open(output_file, "w") as f:
+        # Parse each line
+        pts, segs, holes = [], [], []
+        for xs, ys, hole in graph.coords:
+            if not len(xs):
+                continue
+            # Point coordinates
+            ind_start = len(point_indices)
+            for x, y in zip(xs, ys):
+                try:
+                    point_indices[(x, y)]
+                except KeyError:
+                    pts.append("%d %s %s" % (len(point_indices), x, y))
+                    point_indices[(x, y)] = True
+            # Segments
+            ind_end = len(point_indices)
+            segs.extend(["%d %d %d" % (p, p, p + 1 if p < ind_end - 1 else ind_start) 
+                         for p in xrange(ind_start, ind_end)])
+            # Holes
+            if hole:
+                holes.append("%d %s %s" % (len(holes) + 1, float(sum(xs)) / 
+                                           len(xs), float(sum(ys)) / len(ys)))
+        if len(point_indices) < 3:
+            print >> sys.stderr, "Error: vertices must be at least 3"
+            raise SystemExit
+        # Write
+        f.write("%d 2 0 0\n" % len(point_indices))
+        f.write("\n".join(pts))
+        f.write("\n%s 0\n" % len(segs))
+        f.write("\n".join(segs))
+        f.write("\n%d\n" % len(holes))
+        f.write("\n".join(holes))
+        print "saved in", output_file
+```
+
+
+```python
+# Hyperparameters
+title = "demo"
+window_size = 25
+background = "../images/avatar.png"
+# Create figure
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.set_title('Grabplot - %s' % title)
+# Set window size and grid
+ax.set_xticks(range(0, window_size, 1))
+ax.set_yticks(range(0, window_size, 1))
+plt.xlim([0, window_size])
+plt.ylim([0, window_size])
+if background is not None:    
+    from scipy.misc import imread
+    plt.imshow(imread(background), zorder=0, extent=[0., window_size, 0, window_size])
+plt.grid()
+# Start plotting
+graph = LineTracker(fig)
+plt.show()
+```
+
+
+```python
+# Save the output
+output_poly(graph, "%s.poly" % title)
+```
