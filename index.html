@@ -19,10 +19,10 @@ layout: default
       <div class="text">
 	<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 
-    <span class="post-meta">[ {{ post.date | date: "%b %-d, %Y" }} ]</span>
-    <p style="text-align: left; padding-left: 20px;">
-    {{ post.content | truncatewords:25 | strip_html }} ...
-    </p>
+	<span class="post-meta">[ {{ post.date | date: "%b %-d, %Y" }} ]</span>
+	<p style="text-align: left; padding-left: 20px;">
+	  {{ post.content | truncatewords:25 | strip_html }} ...
+	</p>
       </div>
     </div>
 

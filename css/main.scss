@@ -62,18 +62,16 @@ $on-laptop:        800px;
 "syntax-highlighting"
 ;
 
-
-
+// main area
 .page-content {
+position: absolute;
 top: $header-height;
 padding-top: 15px;
-overflow:scroll;
 }
 
-// HEADER
-header {
+// main header
+header .site-header {
 top: -5px;
-margin-top: 0;
 background-color: $brown;
 height: $header-height;
 margin: 0;
@@ -82,11 +80,11 @@ padding: 0;
 
 header a.site-title, a.site-title:visited {
 color: $brown;
-font-variant: small-caps;
-text-align: center;
 font-size: 23px;
 line-height: 15px;
-text-decoration:none;
+text-align: center;
+text-decoration: none;
+font-variant: small-caps;
 }
 
 header a.site-title:hover {
@@ -97,16 +95,15 @@ header #main {
 position: fixed;
 text-align: center;
 top: 0;
-margin: 0;
-padding: 0;
 z-index: 10;
 width: 100%;
+overflow:hidden;
 height: $header-height;
 background-color: $brown;
-overflow:hidden;
 border-bottom: 8px solid $blue;
 }
 
+// round header logo
 .round {
 display: inline-block;
 border-radius: 50%;
@@ -118,89 +115,65 @@ height: 100%;
 width: 100%;
 }
 
-.subheader {
-background-color: $beige;
-overflow: scroll;
-height: $subheader-height;
-}
-.subheader .main {
-width:80%;
-}
-
-.subheader-contact {
-width:20%;
-margin-left:80%;
-}
-
-.subheader-description {
-float:left;
-width:55%;
-margin-left: 20%; 
-margin-right: 15px;
-}
-
+// logo decoration
 .arrow-right {
-width: 0; 
-height: 0; 
+width: 0;
+height: 0;
+overflow: hidden;
 border-top: $half-header-height solid transparent;
 border-bottom: $half-header-height solid transparent;
 border-left: $half-header-height solid $blue;
-overflow: hidden;
-
 }
 
 .arrow-left {
-width: 0; 
-height: 0; 
+width: 0;
+height: 0;
+overflow: hidden;
 border-top: $half-header-height solid transparent;
 border-bottom: $half-header-height solid transparent;
 border-right: $half-header-height solid $blue;
 margin-left: 26.5%;
-overflow: hidden;
 }
 
 header #logo{
 top: 0;
 width: 33%;
 height: 100%;
-background-color: $blue;
-text-color: $brown;
-overflow: hidden;
 padding-top: 8px;
+background-color: $blue;
 }
 
 header .fa {
 color: $orange
 }
 
-
+// home page: post ummary
 .post-sum {
-background-color: $gold;
 padding: 0;
-overflow:hidden;
 width: 100%;
 opacity: 0.87;
-}
-
-.post-sum:hover {
-}
-
-.post-main {
-height: 180px;
-width: 49.8%;
-display: inline-block;
-margin-bottom: 0;
+overflow :hidden;
+background-color: $gold;
 }
 
 .even {
 float:right;
 }
+.post-sum:hover {
+opacity: 1;
+}
 
+.post-main {
+width: 49.8%;
+height: 180px;
+display: inline-block;
+}
 
+// main page: post describtion
 .thumb {
+float: left;
 width: 180px;
 height: 180px;
-float: left;
 }
 
 .text {
@@ -209,14 +182,6 @@ margin-left: 160px;
 padding: 7px;
 text-align: right;
 overflow:auto;
-}
-
-.post-sum.odd {
-background-color:$beige;
-}
-.post-list {
-
-overflow:hidden;
 }
 
 a.post-link {
