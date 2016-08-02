@@ -95,7 +95,6 @@ header #main {
     position: fixed;
     text-align: center;
     top: 0;
-    z-index: 10;
     width: 100%;
     overflow:hidden;
     height: $header-height;
@@ -117,33 +116,39 @@ header #main {
 
 // logo decoration
 header #submain {
-    width: 50%;
+    text-align:center;
+    width: 40%;
     height: 100%;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .arrow-right {
     width: 0;
     height: 0;
-    overflow: hidden;
     border-top: $triangle-side solid transparent;
     border-bottom: $triangle-side solid transparent;
     border-left: $triangle-equi solid $blue;
+    float:right;
+    top: 0;
 }
 
 .arrow-left {
     width: 0;
     height: 0;
-    overflow: hidden;
+    display: inline-block;
     border-top: $triangle-side solid transparent;
     border-bottom: $triangle-side solid transparent;
     border-right: $triangle-equi solid $blue;
+    float:left;
+    top: 0;
 }
 
 header #logo{
     top: 0;
-    margin:auto;
-    width: 50%;
+    margin:0;
+    width:auto;
+    overflow:hidden;
     height: 100%;
     padding-top: 8px;
     background-color: $blue;
