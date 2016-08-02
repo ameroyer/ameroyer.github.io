@@ -126,23 +126,24 @@ header #submain {
     width: 0;
     height: 0;
     overflow: hidden;
-    border-top: $half-header-height solid transparent;
-    border-bottom: $half-header-height solid transparent;
-    border-left: $half-header-height solid $blue;
+    border-top: $triangle-side solid transparent;
+    border-bottom: $triangle-side solid transparent;
+    border-left: $triangle-equi solid $blue;
 }
 
 .arrow-left {
     width: 0;
     height: 0;
     overflow: hidden;
-    border-top: $half-header-height solid transparent;
-    border-bottom: $half-header-height solid transparent;
-    border-right: $half-header-height solid $blue;
+    border-top: $triangle-side solid transparent;
+    border-bottom: $triangle-side solid transparent;
+    border-right: $triangle-equi solid $blue;
 }
 
 header #logo{
     top: 0;
-    width: 75%;
+    margin:auto;
+    width: 50%;
     height: 100%;
     padding-top: 8px;
     background-color: $blue;
