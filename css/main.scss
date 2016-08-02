@@ -32,8 +32,8 @@ $gold: #F0A830;
 // Width of the content area
 $content-width:    90%;
 $header-height: 170px;
-$half-header-height: 85px;
-$subheader-height: 130px;
+$triangle-side: 85px;
+$triangle-equi: 148px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -42,15 +42,15 @@ $on-laptop:        800px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
+    //     .wrapper {
+	//         padding-right: $spacing-unit / 2;
+	//         padding-left: $spacing-unit / 2;
+	//     }
+    // }
 @mixin media-query($device) {
-@media screen and (max-width: $device) {
-@content;
-}
+    @media screen and (max-width: $device) {
+	@content;
+    }
 }
 
 
@@ -64,133 +64,138 @@ $on-laptop:        800px;
 
 // main area
 .page-content {
-position: absolute;
-top: $header-height;
-padding-top: 15px;
+    position: absolute;
+    top: $header-height;
+    padding-top: 15px;
 }
 
 // main header
 header .site-header {
-top: -5px;
-background-color: $brown;
-height: $header-height;
-margin: 0;
-padding: 0;
+    top: -5px;
+    background-color: $brown;
+    height: $header-height;
+    margin: 0;
+    padding: 0;
 }
 
 header a.site-title, a.site-title:visited {
-color: $brown;
-font-size: 23px;
-line-height: 15px;
-text-align: center;
-text-decoration: none;
-font-variant: small-caps;
-}
+			 color: $brown;
+			 font-size: 23px;
+			 line-height: 15px;
+			 text-align: center;
+			 text-decoration: none;
+			 font-variant: small-caps;
+		     }
 
 header a.site-title:hover {
-color: $orange;
+    color: $orange;
 }
 
 header #main {
-position: fixed;
-text-align: center;
-top: 0;
-z-index: 10;
-width: 100%;
-overflow:hidden;
-height: $header-height;
-background-color: $brown;
-border-bottom: 8px solid $blue;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    overflow:hidden;
+    height: $header-height;
+    background-color: $brown;
+    border-bottom: 8px solid $blue;
 }
 
 // round header logo
 .round {
-display: inline-block;
-border-radius: 50%;
-overflow: hidden;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .round img {
-height: 100%;
-width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 // logo decoration
+header #submain {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+}
+
 .arrow-right {
-width: 0;
-height: 0;
-overflow: hidden;
-border-top: $half-header-height solid transparent;
-border-bottom: $half-header-height solid transparent;
-border-left: $half-header-height solid $blue;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-top: $half-header-height solid transparent;
+    border-bottom: $half-header-height solid transparent;
+    border-left: $half-header-height solid $blue;
 }
 
 .arrow-left {
-width: 0;
-height: 0;
-overflow: hidden;
-border-top: $half-header-height solid transparent;
-border-bottom: $half-header-height solid transparent;
-border-right: $half-header-height solid $blue;
-margin-left: 26.5%;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-top: $half-header-height solid transparent;
+    border-bottom: $half-header-height solid transparent;
+    border-right: $half-header-height solid $blue;
 }
 
 header #logo{
-top: 0;
-width: 33%;
-height: 100%;
-padding-top: 8px;
-background-color: $blue;
+    top: 0;
+    width: 75%;
+    height: 100%;
+    padding-top: 8px;
+    background-color: $blue;
 }
 
 header .fa {
-color: $orange
+    color: $orange
 }
 
-// home page: post ummary
+// home page post summary
 .post-sum {
-padding: 0;
-width: 100%;
-opacity: 0.87;
-overflow :hidden;
-background-color: $gold;
+    padding: 0;
+    width: 100%;
+    opacity: 0.87;
+    overflow :hidden;
+    background-color: $gold;
 }
 
 .even {
-float:right;
+    float:right;
 }
 .post-sum:hover {
-opacity: 1;
+    opacity: 1;
 }
 
 .post-main {
-width: 49.8%;
-height: 180px;
-display: inline-block;
+    width: 49.8%;
+    height: 180px;
+    display: inline-block;
 }
 
 // main page: post describtion
-.thumb {
-float: left;
-width: 180px;
-height: 180px;
+		   .thumb {
+    float: left;
+    width: 180px;
+    height: 180px;
 }
 
 .text {
-height: 166px;
-margin-left: 160px;
-padding: 7px;
-text-align: right;
-overflow:auto;
+    height: 166px;
+    margin-left: 160px;
+    padding: 7px;
+    text-align: right;
+    overflow:auto;
 }
 
 a.post-link {
-color:$brown;
-font-variant: small-caps;
-font-weight: bold;
+    color:$brown;
+    font-variant: small-caps;
+    font-weight: bold;
 }
 
 .post-meta {
-color:$brown;
-font-weight: bold;
+    color:$brown;
+    font-weight: bold;
 }
