@@ -67,6 +67,7 @@ $on-laptop:        800px;
     position: absolute;
     top: $header-height;
     padding-top: 15px;
+    width: 100%;
 }
 
 // main header
@@ -93,6 +94,7 @@ header a.site-title:hover {
 
 header #main {
     position: fixed;
+    z-index: 1;
     text-align: center;
     top: 0;
     width: 100%;
@@ -116,7 +118,7 @@ header #main {
 
 // logo decoration
 header #submain {
-    text-align:center;
+    text-align: center;
     width: 40%;
     height: 100%;
     margin: 0 auto;
@@ -129,7 +131,7 @@ header #submain {
     border-top: $triangle-side solid transparent;
     border-bottom: $triangle-side solid transparent;
     border-left: $triangle-equi solid $blue;
-    float:right;
+    float: right;
     top: 0;
 }
 
@@ -140,15 +142,15 @@ header #submain {
     border-top: $triangle-side solid transparent;
     border-bottom: $triangle-side solid transparent;
     border-right: $triangle-equi solid $blue;
-    float:left;
+    float: left;
     top: 0;
 }
 
 header #logo{
     top: 0;
-    margin:0;
-    width:auto;
-    overflow:hidden;
+    margin: 0;
+    width: auto;
+    overflow: hidden;
     height: 100%;
     padding-top: 8px;
     background-color: $blue;
