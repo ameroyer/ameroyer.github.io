@@ -20,3 +20,6 @@ home_url: https://ist.ac.at/~aroyer
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

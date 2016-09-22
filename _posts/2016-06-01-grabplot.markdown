@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Grabplot"
+title:  "grabplot: interactive plotting with matplotlib"
 date:   2016-06-01 10:00:00 +0200
-categories: python snippet
+categories: python, snippet
 thumb: /images/thumbs/grabplot.png
 ---
 
@@ -14,9 +14,6 @@ pt_color = "#f1595f"
 line_color = "#599ad3"
 ```
 
-    Using matplotlib backend: Qt4Agg
-
-
 
 ```python
 class LineTracker:
@@ -27,7 +24,7 @@ class LineTracker:
 
         Args:
          * ``fig``: matplotlib figure object.
-         """
+        """
         self.lines = []                   # Matplotlib lines objects
         self.coords = [[[], [], False]]   # (x, y, hole)
         self.accept_thresh = 0.5          # How far a click can be from a point of the grid
@@ -36,7 +33,7 @@ class LineTracker:
         self.cid2 = self.fig.canvas.mpl_connect('key_press_event', self.press_handler)
 
     def accept_point(self, x, y):
-        """"
+        """
         Verify the click event belongs to the plotting grid and round it to the nearest point.
 
         Args:
