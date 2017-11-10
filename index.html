@@ -10,12 +10,9 @@ layout: default
   <div class = "post-main" >
 
     <div class="post-sum">
-      <div class="thumb">
 	<img src ="{{ post.thumb }}">
-      </div>
       <div class="text">
 	<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-
 	<span class="post-meta"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%b %-d, %Y" }} - <i class="fa fa-sitemap" aria-hidden="true"></i> {{ post.categories }}</span>
 	<p style="text-align: left; padding-left: 20px; padding-top: 5px;">
 	  {{ post.content | truncatewords:55 | strip_html }} ...

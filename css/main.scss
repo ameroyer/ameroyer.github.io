@@ -192,11 +192,15 @@ header.site-header .fa {
 
 
 // home page post summary
+.post-main {
+    width: 32%;
+    height: 180px;
+    display: inline-block;
+}
 .post-sum {
     padding: 0;
     width: 100%;
     opacity: 0.87;
-    overflow :hidden;
     background-color: #efeff5;
 }
 
@@ -204,27 +208,23 @@ header.site-header .fa {
     opacity: 1;
 }
 
-.post-main {
-    width: 100%;
-    height: 180px;
-    display: inline-block;
-}
-
 // main page: post describtion
-.thumb {
-    float: left;
-    width: 350px;
-    height: 180px;
-    padding: 10px;
+.post-sum .thumb {
+    width: 100%;
+    height: 100%;
 }
 
-.text {
-    height: 166px;
-    margin-left: 160px;
-    padding: 7px;
+.post-sum .text {
+    position: relative;
+    top: 10px;
+    left: 10px;
     text-align: center;
-    overflow:auto;
+    visibility: hidden;
 }
+
+.post-sum:hover .text {
+      visibility:visible;
+  }
 
 a.post-link {
     color:$brown;
