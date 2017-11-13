@@ -193,47 +193,57 @@ header.site-header .fa {
 
 // home page post summary
 .post-main {
+    text-align: center;
     width: 32%;
-    height: 180px;
+    height: 350px;
+    overflow: hidden;
     display: inline-block;
 }
-.post-sum {
-    padding: 0;
-    width: 100%;
-    opacity: 0.87;
-    background-color: #efeff5;
+.post-main img {
+   width: 100%;
+   height: 100%;
 }
 
-.post-sum:hover {
-    opacity: 1;
-}
+.post-main a:hover{
+text-decoration: none; }
 
 // main page: post describtion
-.post-sum .thumb {
-    width: 100%;
-    height: 100%;
-}
-
-.post-sum .text {
-    position: relative;
-    top: 10px;
-    left: 10px;
-    text-align: center;
+.post-main .textbox {
+    background-color: rgba(255, 255, 255, 0.5);
     visibility: hidden;
 }
 
-.post-sum:hover .text {
+.post-main .text {
+    position: relative;
+    padding:30px;
+    height: 200px;
+    bottom: 300px;
+    left: 10px;
+    visibility: hidden;
+    transform: translateY(0);
+    transition: 0s;
+}
+
+.post-main:hover .text {
       visibility:visible;
+      opacity: 1;
+      transform: translateY(-15px);
+      transition: 1.2s;
   }
 
-a.post-link {
+.post-main:hover img {
+ opacity: 0.35
+}
+
+.post-link {
+line-height:19px;
     color:$brown;
-    font-size:32px;
+    font-size:36px;
     font-variant: small-caps;
     font-weight: bold;
 }
 
-.post-meta {
+.post-meta, .post-main a{
     color:$brown;
-    font-weight: bold;
+    font-weight: bold; 
 }

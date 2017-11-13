@@ -9,17 +9,17 @@ layout: default
 
   <div class = "post-main" >
 
-    <div class="post-sum">
-	<img src ="{{ post.thumb }}">
-      <div class="text">
-	<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-	<span class="post-meta"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%b %-d, %Y" }} - <i class="fa fa-sitemap" aria-hidden="true"></i> {{ post.categories }}</span>
-	<p style="text-align: left; padding-left: 20px; padding-top: 5px;">
-	  {{ post.content | truncatewords:55 | strip_html }} ...
-	</p>
-      </div>
-    </div>
-
+    <img src ="{{ post.thumb }}">   
+    <a href="{{ post.url | prepend: site.baseurl }}">  
+      <div class="textbox">
+	<div class="text">
+	  <span class="post-link">{{ post.title }}</span>
+	  <span class="post-meta"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%b %-d, %Y" }} - <i class="fa fa-sitemap" aria-hidden="true"></i> {{ post.categories }}</span>
+	  <p style="text-align: left; padding-left: 20px; padding-top: 5px; font-style:italic">
+	    {{ post.content | truncatewords:55 | strip_html }} ...
+	  </p>
+	</div>
+    </div></a>
   </div>
 
   {% endfor %}
