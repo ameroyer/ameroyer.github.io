@@ -200,15 +200,15 @@ header.site-header .fa {
     display: inline-block;
 }
 .post-main img {
-   width: 100%;
-   height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .post-main a:hover{
-text-decoration: none; }
+    text-decoration: none; }
 
 // main page: post describtion
-.post-main .textbox {
+		   .post-main .textbox {
     background-color: rgba(255, 255, 255, 0.5);
     visibility: hidden;
 }
@@ -225,18 +225,18 @@ text-decoration: none; }
 }
 
 .post-main:hover .text {
-      visibility:visible;
-      opacity: 1;
-      transform: translateY(-15px);
-      transition: 1.2s;
-  }
+    visibility:visible;
+    opacity: 1;
+    transform: translateY(-15px);
+    transition: 1.2s;
+}
 
 .post-main:hover img {
- opacity: 0.35
+    opacity: 0.35
 }
 
 .post-link {
-line-height:19px;
+    line-height:0.7em;
     color:$brown;
     font-size:36px;
     font-variant: small-caps;
