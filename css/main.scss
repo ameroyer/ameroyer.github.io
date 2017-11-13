@@ -42,15 +42,15 @@ $on-laptop:        800px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
-    //     .wrapper {
-	//         padding-right: $spacing-unit / 2;
-	//         padding-left: $spacing-unit / 2;
-	//     }
-    // }
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-	@content;
-    }
+@media screen and (max-width: $device) {
+@content;
+}
 }
 
 
@@ -63,187 +63,196 @@ $on-laptop:        800px;
 ;
 
 body{
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    overflow-y: scroll;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+overflow-y: scroll;
 }
 
 // main area
 .page-content {
-    position: absolute;
-    top: $header-height;
-    padding-top: 35px;
-    width: 100%;
+position: absolute;
+top: $header-height;
+padding-top: 35px;
+width: 100%;
 }
 
 // main header
 header .site-header {
-    top: -5px;
-    background-color: $brown;
-    height: $header-height;
-    margin: 0;
-    padding: 0;
+top: -5px;
+background-color: $brown;
+height: $header-height;
+margin: 0;
+padding: 0;
 }
 
 header a.site-title, a.site-title:visited {
-			 display: block;
-			 padding: 0 15px;
-			 color: $brown;
-			 font-size: 28px;
-			 line-height: 30px;
-			 text-align: center;
-			 text-decoration: none;
-			 font-variant: small-caps;
-			 letter-spacing: 3px;
-			 -o-transition:.5s;
-			 -ms-transition:.5s;
-			 -moz-transition:.5s;
-			 -webkit-transition:.5s;
-			 transition:.5s;
-		     }
+display: block;
+padding: 0 15px;
+color: $brown;
+font-size: 28px;
+line-height: 30px;
+text-align: center;
+text-decoration: none;
+font-variant: small-caps;
+letter-spacing: 3px;
+-o-transition:.5s;
+-ms-transition:.5s;
+-moz-transition:.5s;
+-webkit-transition:.5s;
+transition:.5s;
+}
 
 header a.site-title:hover {
-    color: $beige;
-    text-decoration: underline;
+color: $beige;
+text-decoration: underline;
 }
 
 header ul#nav li{
-    float: left;
+float: left;
 }
 ul#nav {
-    padding:0;
-    margin:0;
-    list-style-type:none;
+padding:0;
+margin:0;
+list-style-type:none;
 }
 
 header #main {
-    position: fixed;
-    z-index: 1;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    overflow:hidden;
-    height: $header-height;
-    background-color: $brown;
-    border-bottom: 4px solid $blue;
+position: fixed;
+z-index: 1;
+text-align: center;
+top: 0;
+width: 100%;
+overflow:hidden;
+height: $header-height;
+background-color: $brown;
+border-bottom: 4px solid $blue;
 }
 
 // round header logo
 .round {
-    display: inline-block;
-    border-radius: 50%;
-    overflow: hidden;
+display: inline-block;
+border-radius: 50%;
+overflow: hidden;
 }
 
 .round img {
-    height: 100%;
-    width: 100%;
+height: 100%;
+width: 100%;
 }
 
 // logo decoration
 header #submain {
-    text-align: center;
-    width: 40%;
-    height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
+text-align: center;
+width: 40%;
+height: 100%;
+margin: 0 auto;
+overflow: hidden;
 }
 
 .arrow-right {
-    width: 0;
-    height: 0;
-    border-top: $triangle-side solid transparent;
-    border-bottom: $triangle-side solid transparent;
-    border-left: $triangle-equi solid $blue;
-    float: right;
-    top: 0;
+width: 0;
+height: 0;
+border-top: $triangle-side solid transparent;
+border-bottom: $triangle-side solid transparent;
+border-left: $triangle-equi solid $blue;
+float: right;
+top: 0;
 }
 
 .arrow-left {
-    width: 0;
-    height: 0;
-    display: inline-block;
-    border-top: $triangle-side solid transparent;
-    border-bottom: $triangle-side solid transparent;
-    border-right: $triangle-equi solid $blue;
-    float: left;
-    top: 0;
+width: 0;
+height: 0;
+display: inline-block;
+border-top: $triangle-side solid transparent;
+border-bottom: $triangle-side solid transparent;
+border-right: $triangle-equi solid $blue;
+float: left;
+top: 0;
 }
 
 header #logo{
-    top: 0;
-    margin: 0;
-    width: auto;
-    overflow: hidden;
-    height: 100%;
-    padding-top: 8px;
-    background-color: $blue;
+top: 0;
+margin: 0;
+width: auto;
+overflow: hidden;
+height: 100%;
+padding-top: 8px;
+background-color: $blue;
 }
 
 header .fa {
-    color: #f47d36;
+color: #f47d36;
 }
 
 
 header.site-header .fa {
-    color: #f47d36;
-    font-size: 28px;
-    line-height: 30px;
+color: #f47d36;
+font-size: 28px;
+line-height: 30px;
 }
 
 
 // home page post summary
 .post-main {
-    text-align: center;
-    width: 32%;
-    height: 350px;
-    overflow: hidden;
-    display: inline-block;
+text-align: center;
+overflow: hidden;
+width: 32%;
+height: 350px;
+display: inline-block;
 }
+
 .post-main img {
-    width: 100%;
-    height: 100%;
+max-width: 100%;
+height: 100%;
 }
 
 .post-main a:hover{
-    text-decoration: none; }
+text-decoration: none; }
 
 // main page: post describtion
-		   .post-main .textbox {
-    background-color: rgba(255, 255, 255, 0.5);
-    visibility: hidden;
+.post-main .textbox {
+height: 150px;
+width:100%;
+background-color: rgba(255, 255, 255, 0.8);
+position:relative;
+top:-200px;
+visibility: hidden
+}
+
+.post-main .title {
+position: relative;
+background-color: rgba(255, 255, 255, 0.8);
+bottom:200px;
+
 }
 
 .post-main .text {
-    position: relative;
-    padding:30px;
-    height: 200px;
-    bottom: 300px;
-    left: 10px;
-    visibility: hidden;
-    transform: translateY(0);
-    transition: 0s;
+padding:20px;
+visibility: hidden;
+transform: translateY(0);
+transition: 0s;
 }
 
 .post-main:hover .text {
-    visibility:visible;
-    opacity: 1;
-    transform: translateY(-15px);
-    transition: 1.2s;
+visibility:visible;
+opacity: 1;
+transform: translateY(-15px);
+transition: 1.2s;
 }
 
-.post-main:hover img {
-    opacity: 0.35
+.post-main:hover .textbox {
+visibility:visible;
+opacity: 1;
 }
 
 .post-link {
-    line-height:0.7em;
-    color:$brown;
-    font-size:36px;
-    font-variant: small-caps;
-    font-weight: bold;
+line-height:0.7em;
+color:$brown;
+font-size:36px;
+font-variant: small-caps;
+font-weight: bold;
 }
 
 .post-meta, .post-main a{
-    color:$brown;
-    font-weight: bold; 
+color:$brown;
+font-weight: bold; 
 }
