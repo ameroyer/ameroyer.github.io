@@ -7,7 +7,7 @@ thumb: /images/thumbs/grabplot.png
 ---
 
 
-`Grabplot` is a small utilitary tool for plotting simple shapes on the integer lattices using a Matplotlib backend. The resulting figure can be saved as a `.poly` file and fed to Triangulation softwares such as [Triangle](https://www.cs.cmu.edu/~quake/triangle.html).
+`Grabplot` is an utilitary tool for plotting simple shapes on the integer lattices using a Matplotlib backend. The resulting figure can be saved as a `.poly` file and fed to Triangulation softwares such as [Triangle](https://www.cs.cmu.edu/~quake/triangle.html).
 
 
 <table border="1" cellpadding="6" align="right">
