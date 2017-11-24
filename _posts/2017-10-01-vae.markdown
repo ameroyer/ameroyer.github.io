@@ -20,10 +20,10 @@ The sampling process consists in sampling a latent code  ![latex_z](/notebooks/2
 </tr>
 </table>
 </div>
-<div style="width:80%; text-align:center">
-<img src='/notebooks/2017_10_1_VAE/autoencoder.png' style="width:25%px">
-<img src='/notebooks/2017_10_1_VAE/sampled_grid_60001.jpg' style="width:35%px">
-<img src='/notebooks/2017_10_1_VAE/interpolated_grid_660001.jpg' style="width:35%px">
+<div style="width:80%; text-align:center; margin-bottom:25px">
+<img src='/notebooks/2017_10_1_VAE/autoencoder.png' style="width:25%">
+<img src='/notebooks/2017_10_1_VAE/sampled_grid_60001.jpg' style="width:35%">
+<img src='/notebooks/2017_10_1_VAE/interpolated_grid_660001.jpg' style="width:35%">
 </div>
 The posterior  ![latex_pzx](/notebooks/2017_10_1_VAE/latex_equations/pzx.gif)  is typically intractable too and is instead approximated by  ![latex_qzx](/notebooks/2017_10_1_VAE/latex_equations/qzx.gif) , the *decoder* network, easier to compute. This leads to the following *variational upper  blound* on the negative data log-likelihood:
 
