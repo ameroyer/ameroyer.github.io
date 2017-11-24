@@ -211,7 +211,7 @@ def get_glo_loss(images, reconstructions, weight=1.0):
 ```
 
 We're now ready for training. We first define hyperparameters for the model.
-During training, the latent codes are directly optimized and are stored as trainable `Tensorflow` variables that can be retrieved by slicing with the corresponding index. Due to the large size of the dataset ($\sim$ 200k samples in CelebA), the model requires a few epochs starting to learn correct codes.
+During training, the latent codes are directly optimized and are stored as trainable `Tensorflow` variables that can be retrieved by slicing with the corresponding index. Due to the large size of the dataset (~ 200k samples in CelebA), the model requires a few epochs starting to learn correct codes.
 
 ```python
 with tf.Graph().as_default():  
