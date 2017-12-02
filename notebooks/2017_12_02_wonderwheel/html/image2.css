@@ -1,0 +1,2903 @@
+
+    .frame {
+        position: absolute;
+        top: 0;
+        margin:0;
+        }
+
+    .bar {
+        position: relative;
+        width: 20px;
+        margin:0;
+        float: left;
+        }
+           
+        @-webkit-keyframes
+        bar0_black_anim {
+            0% {height: 0px;}
+5% {height: 20px;}
+12% {height: 20px;}
+20% {height: 20px;}
+28% {height: 8px;}
+36% {height: 15px;}
+43% {height: 19px;}
+51% {height: 18px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 0px;}
+100% {height: 0px;}
+
+        }
+        
+    #bar0_black {
+        left: 212px;
+        top: 328px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar0_black_anim 3s ease-out infinite ; 
+        animation: bar0_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari */
+        transform: rotate(0deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+           
+        @-webkit-keyframes
+        bar0_white_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 13px;}
+100% {height: 13px;}
+
+        }
+        
+    #bar0_white {
+        left: 192px;
+        top: 351px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar0_white_anim 3s ease-out infinite ; 
+        animation: bar0_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari */
+        transform: rotate(0deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid #aaa;
+        }
+           
+        @-webkit-keyframes
+        bar0_color_anim {
+            0% {height: 0px; background:rgb(74, 73, 73)}
+5% {height: 65px; background:rgb(74, 73, 73)}
+12% {height: 65px; background:rgb(74, 73, 73)}
+20% {height: 65px; background:rgb(74, 73, 73)}
+28% {height: 65px; background:rgb(74, 73, 73)}
+36% {height: 65px; background:rgb(74, 73, 73)}
+43% {height: 65px; background:rgb(74, 73, 73)}
+51% {height: 65px; background:rgb(74, 73, 73)}
+59% {height: 65px; background:rgb(74, 73, 73)}
+67% {height: 65px; background:rgb(74, 73, 73)}
+75% {height: 45px; background:rgb(74, 73, 73)}
+100% {height: 45px; background:rgb(74, 73, 73)}
+
+        }
+        
+    #bar0_color {
+        left: 172px;
+        top: 379px;
+        background-color: rgb(74, 73, 73);
+        -webkit-animation: bar0_color_anim 3s ease-out infinite ; 
+        animation: bar0_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari */
+        transform: rotate(0deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(74, 73, 73);
+        }
+    
+    #bar1_black {
+        left: 196px;
+        top: 326px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar1_black_anim 3s ease-out infinite ; 
+        animation: bar1_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(9deg); /* IE 9 */
+        -webkit-transform: rotate(9deg); /* Safari */
+        transform: rotate(9deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar1_white_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 15px;}
+100% {height: 15px;}
+
+        }
+        
+    #bar1_white {
+        left: 172px;
+        top: 349px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar1_white_anim 3s ease-out infinite ; 
+        animation: bar1_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(9deg); /* IE 9 */
+        -webkit-transform: rotate(9deg); /* Safari */
+        transform: rotate(9deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid #aaa;
+        }
+           
+        @-webkit-keyframes
+        bar1_color_anim {
+            0% {height: 0px; background:rgb(255, 57, 0)}
+5% {height: 0px; background:rgb(255, 57, 0)}
+12% {height: 0px; background:rgb(255, 57, 0)}
+20% {height: 0px; background:rgb(255, 57, 0)}
+28% {height: 0px; background:rgb(255, 57, 0)}
+36% {height: 0px; background:rgb(255, 57, 0)}
+43% {height: 0px; background:rgb(255, 57, 0)}
+51% {height: 0px; background:rgb(255, 57, 0)}
+59% {height: 0px; background:rgb(255, 57, 0)}
+67% {height: 0px; background:rgb(255, 57, 0)}
+75% {height: 26px; background:rgb(255, 57, 0)}
+100% {height: 26px; background:rgb(255, 57, 0)}
+
+        }
+        
+    #bar1_color {
+        left: 148px;
+        top: 377px;
+        background-color: rgb(255, 57, 0);
+        -webkit-animation: bar1_color_anim 3s ease-out infinite ; 
+        animation: bar1_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(9deg); /* IE 9 */
+        -webkit-transform: rotate(9deg); /* Safari */
+        transform: rotate(9deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 57, 0);
+        }
+    
+    #bar2_black {
+        left: 180px;
+        top: 322px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar2_black_anim 3s ease-out infinite ; 
+        animation: bar2_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(18deg); /* IE 9 */
+        -webkit-transform: rotate(18deg); /* Safari */
+        transform: rotate(18deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar2_white_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 25px;}
+100% {height: 25px;}
+
+        }
+        
+    #bar2_white {
+        left: 153px;
+        top: 344px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar2_white_anim 3s ease-out infinite ; 
+        animation: bar2_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(18deg); /* IE 9 */
+        -webkit-transform: rotate(18deg); /* Safari */
+        transform: rotate(18deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid #aaa;
+        }
+           
+        @-webkit-keyframes
+        bar2_color_anim {
+            0% {height: 0px; background:rgb(255, 95, 0)}
+5% {height: 0px; background:rgb(255, 95, 0)}
+12% {height: 0px; background:rgb(255, 95, 0)}
+20% {height: 0px; background:rgb(255, 95, 0)}
+28% {height: 0px; background:rgb(255, 95, 0)}
+36% {height: 0px; background:rgb(255, 95, 0)}
+43% {height: 0px; background:rgb(255, 95, 0)}
+51% {height: 0px; background:rgb(255, 95, 0)}
+59% {height: 0px; background:rgb(255, 95, 0)}
+67% {height: 0px; background:rgb(255, 95, 0)}
+75% {height: 15px; background:rgb(255, 95, 0)}
+100% {height: 15px; background:rgb(255, 95, 0)}
+
+        }
+        
+    #bar2_color {
+        left: 124px;
+        top: 371px;
+        background-color: rgb(255, 95, 0);
+        -webkit-animation: bar2_color_anim 3s ease-out infinite ; 
+        animation: bar2_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(18deg); /* IE 9 */
+        -webkit-transform: rotate(18deg); /* Safari */
+        transform: rotate(18deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 95, 0);
+        }
+    
+    #bar3_black {
+        left: 164px;
+        top: 316px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar3_black_anim 3s ease-out infinite ; 
+        animation: bar3_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(27deg); /* IE 9 */
+        -webkit-transform: rotate(27deg); /* Safari */
+        transform: rotate(27deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar3_white_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 13px;}
+100% {height: 13px;}
+
+        }
+        
+    #bar3_white {
+        left: 134px;
+        top: 336px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar3_white_anim 3s ease-out infinite ; 
+        animation: bar3_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(27deg); /* IE 9 */
+        -webkit-transform: rotate(27deg); /* Safari */
+        transform: rotate(27deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid #aaa;
+        }
+           
+        @-webkit-keyframes
+        bar3_color_anim {
+            0% {height: 0px; background:rgb(255, 133, 0)}
+5% {height: 0px; background:rgb(255, 133, 0)}
+12% {height: 0px; background:rgb(255, 133, 0)}
+20% {height: 0px; background:rgb(255, 133, 0)}
+28% {height: 0px; background:rgb(255, 133, 0)}
+36% {height: 0px; background:rgb(255, 133, 0)}
+43% {height: 0px; background:rgb(255, 133, 0)}
+51% {height: 0px; background:rgb(255, 133, 0)}
+59% {height: 0px; background:rgb(255, 133, 0)}
+67% {height: 0px; background:rgb(255, 133, 0)}
+75% {height: 6px; background:rgb(255, 133, 0)}
+100% {height: 6px; background:rgb(255, 133, 0)}
+
+        }
+        
+    #bar3_color {
+        left: 101px;
+        top: 361px;
+        background-color: rgb(255, 133, 0);
+        -webkit-animation: bar3_color_anim 3s ease-out infinite ; 
+        animation: bar3_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(27deg); /* IE 9 */
+        -webkit-transform: rotate(27deg); /* Safari */
+        transform: rotate(27deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 133, 0);
+        }
+    
+    #bar4_black {
+        left: 150px;
+        top: 307px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar4_black_anim 3s ease-out infinite ; 
+        animation: bar4_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(36deg); /* IE 9 */
+        -webkit-transform: rotate(36deg); /* Safari */
+        transform: rotate(36deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar4_white_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 3px;}
+100% {height: 3px;}
+
+        }
+        
+    #bar4_white {
+        left: 117px;
+        top: 326px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar4_white_anim 3s ease-out infinite ; 
+        animation: bar4_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(36deg); /* IE 9 */
+        -webkit-transform: rotate(36deg); /* Safari */
+        transform: rotate(36deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid #aaa;
+        }
+           
+        @-webkit-keyframes
+        bar4_color_anim {
+            0% {height: 0px; background:rgb(255, 172, 0)}
+5% {height: 0px; background:rgb(255, 172, 0)}
+12% {height: 0px; background:rgb(255, 172, 0)}
+20% {height: 0px; background:rgb(255, 172, 0)}
+28% {height: 0px; background:rgb(255, 172, 0)}
+36% {height: 0px; background:rgb(255, 172, 0)}
+43% {height: 0px; background:rgb(255, 172, 0)}
+51% {height: 0px; background:rgb(255, 172, 0)}
+59% {height: 0px; background:rgb(255, 172, 0)}
+67% {height: 0px; background:rgb(255, 172, 0)}
+75% {height: 1px; background:rgb(255, 172, 0)}
+100% {height: 1px; background:rgb(255, 172, 0)}
+
+        }
+        
+    #bar4_color {
+        left: 80px;
+        top: 349px;
+        background-color: rgb(255, 172, 0);
+        -webkit-animation: bar4_color_anim 3s ease-out infinite ; 
+        animation: bar4_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(36deg); /* IE 9 */
+        -webkit-transform: rotate(36deg); /* Safari */
+        transform: rotate(36deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 172, 0);
+        }
+    
+    #bar5_black {
+        left: 138px;
+        top: 296px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar5_black_anim 3s ease-out infinite ; 
+        animation: bar5_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(45deg); /* IE 9 */
+        -webkit-transform: rotate(45deg); /* Safari */
+        transform: rotate(45deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar5_white {
+        left: 101px;
+        top: 313px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar5_white_anim 3s ease-out infinite ; 
+        animation: bar5_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(45deg); /* IE 9 */
+        -webkit-transform: rotate(45deg); /* Safari */
+        transform: rotate(45deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar5_color_anim {
+            0% {height: 0px; background:rgb(255, 210, 0)}
+5% {height: 0px; background:rgb(255, 210, 0)}
+12% {height: 0px; background:rgb(255, 210, 0)}
+20% {height: 0px; background:rgb(255, 210, 0)}
+28% {height: 0px; background:rgb(255, 210, 0)}
+36% {height: 0px; background:rgb(255, 210, 0)}
+43% {height: 0px; background:rgb(255, 210, 0)}
+51% {height: 0px; background:rgb(255, 210, 0)}
+59% {height: 0px; background:rgb(255, 210, 0)}
+67% {height: 0px; background:rgb(255, 210, 0)}
+75% {height: 0px; background:rgb(255, 210, 0)}
+100% {height: 0px; background:rgb(255, 210, 0)}
+
+        }
+        
+    #bar5_color {
+        left: 61px;
+        top: 333px;
+        background-color: rgb(255, 210, 0);
+        -webkit-animation: bar5_color_anim 3s ease-out infinite ; 
+        animation: bar5_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(45deg); /* IE 9 */
+        -webkit-transform: rotate(45deg); /* Safari */
+        transform: rotate(45deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 210, 0);
+        }
+           
+        @-webkit-keyframes
+        bar6_black_anim {
+            0% {height: 0px;}
+5% {height: 8px;}
+12% {height: 7px;}
+20% {height: 7px;}
+28% {height: 20px;}
+36% {height: 20px;}
+43% {height: 20px;}
+51% {height: 20px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 0px;}
+100% {height: 0px;}
+
+        }
+        
+    #bar6_black {
+        left: 127px;
+        top: 284px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar6_black_anim 3s ease-out infinite ; 
+        animation: bar6_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(54deg); /* IE 9 */
+        -webkit-transform: rotate(54deg); /* Safari */
+        transform: rotate(54deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+    
+    #bar6_white {
+        left: 88px;
+        top: 297px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar6_white_anim 3s ease-out infinite ; 
+        animation: bar6_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(54deg); /* IE 9 */
+        -webkit-transform: rotate(54deg); /* Safari */
+        transform: rotate(54deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar6_color_anim {
+            0% {height: 0px; background:rgb(255, 248, 0)}
+5% {height: 0px; background:rgb(255, 248, 0)}
+12% {height: 0px; background:rgb(255, 248, 0)}
+20% {height: 0px; background:rgb(255, 248, 0)}
+28% {height: 1px; background:rgb(255, 248, 0)}
+36% {height: 1px; background:rgb(255, 248, 0)}
+43% {height: 1px; background:rgb(255, 248, 0)}
+51% {height: 1px; background:rgb(255, 248, 0)}
+59% {height: 1px; background:rgb(255, 248, 0)}
+67% {height: 1px; background:rgb(255, 248, 0)}
+75% {height: 0px; background:rgb(255, 248, 0)}
+100% {height: 0px; background:rgb(255, 248, 0)}
+
+        }
+        
+    #bar6_color {
+        left: 45px;
+        top: 314px;
+        background-color: rgb(255, 248, 0);
+        -webkit-animation: bar6_color_anim 3s ease-out infinite ; 
+        animation: bar6_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(54deg); /* IE 9 */
+        -webkit-transform: rotate(54deg); /* Safari */
+        transform: rotate(54deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 248, 0);
+        }
+    
+    #bar7_black {
+        left: 119px;
+        top: 271px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar7_black_anim 3s ease-out infinite ; 
+        animation: bar7_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(62deg); /* IE 9 */
+        -webkit-transform: rotate(62deg); /* Safari */
+        transform: rotate(62deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar7_white {
+        left: 79px;
+        top: 282px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar7_white_anim 3s ease-out infinite ; 
+        animation: bar7_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(62deg); /* IE 9 */
+        -webkit-transform: rotate(62deg); /* Safari */
+        transform: rotate(62deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar7_color_anim {
+            0% {height: 0px; background:rgb(223, 255, 0)}
+5% {height: 0px; background:rgb(223, 255, 0)}
+12% {height: 0px; background:rgb(223, 255, 0)}
+20% {height: 0px; background:rgb(223, 255, 0)}
+28% {height: 0px; background:rgb(223, 255, 0)}
+36% {height: 0px; background:rgb(223, 255, 0)}
+43% {height: 0px; background:rgb(223, 255, 0)}
+51% {height: 0px; background:rgb(223, 255, 0)}
+59% {height: 0px; background:rgb(223, 255, 0)}
+67% {height: 0px; background:rgb(223, 255, 0)}
+75% {height: 0px; background:rgb(223, 255, 0)}
+100% {height: 0px; background:rgb(223, 255, 0)}
+
+        }
+        
+    #bar7_color {
+        left: 34px;
+        top: 295px;
+        background-color: rgb(223, 255, 0);
+        -webkit-animation: bar7_color_anim 3s ease-out infinite ; 
+        animation: bar7_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(62deg); /* IE 9 */
+        -webkit-transform: rotate(62deg); /* Safari */
+        transform: rotate(62deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(223, 255, 0);
+        }
+    
+    #bar8_black {
+        left: 112px;
+        top: 254px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar8_black_anim 3s ease-out infinite ; 
+        animation: bar8_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(72deg); /* IE 9 */
+        -webkit-transform: rotate(72deg); /* Safari */
+        transform: rotate(72deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar8_white {
+        left: 70px;
+        top: 261px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar8_white_anim 3s ease-out infinite ; 
+        animation: bar8_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(72deg); /* IE 9 */
+        -webkit-transform: rotate(72deg); /* Safari */
+        transform: rotate(72deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar8_color_anim {
+            0% {height: 0px; background:rgb(184, 255, 0)}
+5% {height: 0px; background:rgb(184, 255, 0)}
+12% {height: 0px; background:rgb(184, 255, 0)}
+20% {height: 0px; background:rgb(184, 255, 0)}
+28% {height: 0px; background:rgb(184, 255, 0)}
+36% {height: 0px; background:rgb(184, 255, 0)}
+43% {height: 0px; background:rgb(184, 255, 0)}
+51% {height: 0px; background:rgb(184, 255, 0)}
+59% {height: 0px; background:rgb(184, 255, 0)}
+67% {height: 0px; background:rgb(184, 255, 0)}
+75% {height: 0px; background:rgb(184, 255, 0)}
+100% {height: 0px; background:rgb(184, 255, 0)}
+
+        }
+        
+    #bar8_color {
+        left: 23px;
+        top: 270px;
+        background-color: rgb(184, 255, 0);
+        -webkit-animation: bar8_color_anim 3s ease-out infinite ; 
+        animation: bar8_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(72deg); /* IE 9 */
+        -webkit-transform: rotate(72deg); /* Safari */
+        transform: rotate(72deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(184, 255, 0);
+        }
+    
+    #bar9_black {
+        left: 108px;
+        top: 240px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar9_black_anim 3s ease-out infinite ; 
+        animation: bar9_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(80deg); /* IE 9 */
+        -webkit-transform: rotate(80deg); /* Safari */
+        transform: rotate(80deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar9_white {
+        left: 65px;
+        top: 244px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar9_white_anim 3s ease-out infinite ; 
+        animation: bar9_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(80deg); /* IE 9 */
+        -webkit-transform: rotate(80deg); /* Safari */
+        transform: rotate(80deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar9_color_anim {
+            0% {height: 0px; background:rgb(146, 255, 0)}
+5% {height: 0px; background:rgb(146, 255, 0)}
+12% {height: 0px; background:rgb(146, 255, 0)}
+20% {height: 0px; background:rgb(146, 255, 0)}
+28% {height: 0px; background:rgb(146, 255, 0)}
+36% {height: 0px; background:rgb(146, 255, 0)}
+43% {height: 0px; background:rgb(146, 255, 0)}
+51% {height: 0px; background:rgb(146, 255, 0)}
+59% {height: 0px; background:rgb(146, 255, 0)}
+67% {height: 0px; background:rgb(146, 255, 0)}
+75% {height: 0px; background:rgb(146, 255, 0)}
+100% {height: 0px; background:rgb(146, 255, 0)}
+
+        }
+        
+    #bar9_color {
+        left: 18px;
+        top: 249px;
+        background-color: rgb(146, 255, 0);
+        -webkit-animation: bar9_color_anim 3s ease-out infinite ; 
+        animation: bar9_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(80deg); /* IE 9 */
+        -webkit-transform: rotate(80deg); /* Safari */
+        transform: rotate(80deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(146, 255, 0);
+        }
+    
+    #bar10_black {
+        left: 106px;
+        top: 222px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar10_black_anim 3s ease-out infinite ; 
+        animation: bar10_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Safari */
+        transform: rotate(90deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar10_white {
+        left: 63px;
+        top: 222px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar10_white_anim 3s ease-out infinite ; 
+        animation: bar10_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Safari */
+        transform: rotate(90deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar10_color_anim {
+            0% {height: 0px; background:rgb(108, 255, 0)}
+5% {height: 0px; background:rgb(108, 255, 0)}
+12% {height: 0px; background:rgb(108, 255, 0)}
+20% {height: 0px; background:rgb(108, 255, 0)}
+28% {height: 0px; background:rgb(108, 255, 0)}
+36% {height: 0px; background:rgb(108, 255, 0)}
+43% {height: 0px; background:rgb(108, 255, 0)}
+51% {height: 0px; background:rgb(108, 255, 0)}
+59% {height: 0px; background:rgb(108, 255, 0)}
+67% {height: 0px; background:rgb(108, 255, 0)}
+75% {height: 0px; background:rgb(108, 255, 0)}
+100% {height: 0px; background:rgb(108, 255, 0)}
+
+        }
+        
+    #bar10_color {
+        left: 15px;
+        top: 222px;
+        background-color: rgb(108, 255, 0);
+        -webkit-animation: bar10_color_anim 3s ease-out infinite ; 
+        animation: bar10_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Safari */
+        transform: rotate(90deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(108, 255, 0);
+        }
+    
+    #bar11_black {
+        left: 108px;
+        top: 206px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar11_black_anim 3s ease-out infinite ; 
+        animation: bar11_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(99deg); /* IE 9 */
+        -webkit-transform: rotate(99deg); /* Safari */
+        transform: rotate(99deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar11_white {
+        left: 65px;
+        top: 202px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar11_white_anim 3s ease-out infinite ; 
+        animation: bar11_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(99deg); /* IE 9 */
+        -webkit-transform: rotate(99deg); /* Safari */
+        transform: rotate(99deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar11_color_anim {
+            0% {height: 0px; background:rgb(70, 255, 0)}
+5% {height: 0px; background:rgb(70, 255, 0)}
+12% {height: 0px; background:rgb(70, 255, 0)}
+20% {height: 0px; background:rgb(70, 255, 0)}
+28% {height: 0px; background:rgb(70, 255, 0)}
+36% {height: 0px; background:rgb(70, 255, 0)}
+43% {height: 0px; background:rgb(70, 255, 0)}
+51% {height: 0px; background:rgb(70, 255, 0)}
+59% {height: 0px; background:rgb(70, 255, 0)}
+67% {height: 0px; background:rgb(70, 255, 0)}
+75% {height: 0px; background:rgb(70, 255, 0)}
+100% {height: 0px; background:rgb(70, 255, 0)}
+
+        }
+        
+    #bar11_color {
+        left: 17px;
+        top: 198px;
+        background-color: rgb(70, 255, 0);
+        -webkit-animation: bar11_color_anim 3s ease-out infinite ; 
+        animation: bar11_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(99deg); /* IE 9 */
+        -webkit-transform: rotate(99deg); /* Safari */
+        transform: rotate(99deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(70, 255, 0);
+        }
+    
+    #bar12_black {
+        left: 112px;
+        top: 190px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar12_black_anim 3s ease-out infinite ; 
+        animation: bar12_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(108deg); /* IE 9 */
+        -webkit-transform: rotate(108deg); /* Safari */
+        transform: rotate(108deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar12_white {
+        left: 70px;
+        top: 183px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar12_white_anim 3s ease-out infinite ; 
+        animation: bar12_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(108deg); /* IE 9 */
+        -webkit-transform: rotate(108deg); /* Safari */
+        transform: rotate(108deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar12_color_anim {
+            0% {height: 0px; background:rgb(31, 255, 0)}
+5% {height: 0px; background:rgb(31, 255, 0)}
+12% {height: 0px; background:rgb(31, 255, 0)}
+20% {height: 0px; background:rgb(31, 255, 0)}
+28% {height: 0px; background:rgb(31, 255, 0)}
+36% {height: 0px; background:rgb(31, 255, 0)}
+43% {height: 0px; background:rgb(31, 255, 0)}
+51% {height: 0px; background:rgb(31, 255, 0)}
+59% {height: 0px; background:rgb(31, 255, 0)}
+67% {height: 0px; background:rgb(31, 255, 0)}
+75% {height: 0px; background:rgb(31, 255, 0)}
+100% {height: 0px; background:rgb(31, 255, 0)}
+
+        }
+        
+    #bar12_color {
+        left: 23px;
+        top: 174px;
+        background-color: rgb(31, 255, 0);
+        -webkit-animation: bar12_color_anim 3s ease-out infinite ; 
+        animation: bar12_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(108deg); /* IE 9 */
+        -webkit-transform: rotate(108deg); /* Safari */
+        transform: rotate(108deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(31, 255, 0);
+        }
+           
+        @-webkit-keyframes
+        bar13_black_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 1px;}
+43% {height: 1px;}
+51% {height: 1px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 0px;}
+100% {height: 0px;}
+
+        }
+        
+    #bar13_black {
+        left: 118px;
+        top: 174px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar13_black_anim 3s ease-out infinite ; 
+        animation: bar13_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(117deg); /* IE 9 */
+        -webkit-transform: rotate(117deg); /* Safari */
+        transform: rotate(117deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+    
+    #bar13_white {
+        left: 78px;
+        top: 164px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar13_white_anim 3s ease-out infinite ; 
+        animation: bar13_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(117deg); /* IE 9 */
+        -webkit-transform: rotate(117deg); /* Safari */
+        transform: rotate(117deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar13_color_anim {
+            0% {height: 0px; background:rgb(0, 255, 6)}
+5% {height: 0px; background:rgb(0, 255, 6)}
+12% {height: 0px; background:rgb(0, 255, 6)}
+20% {height: 0px; background:rgb(0, 255, 6)}
+28% {height: 4px; background:rgb(0, 255, 6)}
+36% {height: 3px; background:rgb(0, 255, 6)}
+43% {height: 3px; background:rgb(0, 255, 6)}
+51% {height: 2px; background:rgb(0, 255, 6)}
+59% {height: 0px; background:rgb(0, 255, 6)}
+67% {height: 0px; background:rgb(0, 255, 6)}
+75% {height: 0px; background:rgb(0, 255, 6)}
+100% {height: 0px; background:rgb(0, 255, 6)}
+
+        }
+        
+    #bar13_color {
+        left: 33px;
+        top: 151px;
+        background-color: rgb(0, 255, 6);
+        -webkit-animation: bar13_color_anim 3s ease-out infinite ; 
+        animation: bar13_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(117deg); /* IE 9 */
+        -webkit-transform: rotate(117deg); /* Safari */
+        transform: rotate(117deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 255, 6);
+        }
+    
+    #bar14_black {
+        left: 127px;
+        top: 160px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar14_black_anim 3s ease-out infinite ; 
+        animation: bar14_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(126deg); /* IE 9 */
+        -webkit-transform: rotate(126deg); /* Safari */
+        transform: rotate(126deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar14_white {
+        left: 88px;
+        top: 147px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar14_white_anim 3s ease-out infinite ; 
+        animation: bar14_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(126deg); /* IE 9 */
+        -webkit-transform: rotate(126deg); /* Safari */
+        transform: rotate(126deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar14_color_anim {
+            0% {height: 0px; background:rgb(0, 255, 44)}
+5% {height: 0px; background:rgb(0, 255, 44)}
+12% {height: 0px; background:rgb(0, 255, 44)}
+20% {height: 0px; background:rgb(0, 255, 44)}
+28% {height: 0px; background:rgb(0, 255, 44)}
+36% {height: 0px; background:rgb(0, 255, 44)}
+43% {height: 0px; background:rgb(0, 255, 44)}
+51% {height: 0px; background:rgb(0, 255, 44)}
+59% {height: 0px; background:rgb(0, 255, 44)}
+67% {height: 0px; background:rgb(0, 255, 44)}
+75% {height: 1px; background:rgb(0, 255, 44)}
+100% {height: 1px; background:rgb(0, 255, 44)}
+
+        }
+        
+    #bar14_color {
+        left: 45px;
+        top: 130px;
+        background-color: rgb(0, 255, 44);
+        -webkit-animation: bar14_color_anim 3s ease-out infinite ; 
+        animation: bar14_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(126deg); /* IE 9 */
+        -webkit-transform: rotate(126deg); /* Safari */
+        transform: rotate(126deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 255, 44);
+        }
+    
+    #bar15_black {
+        left: 138px;
+        top: 148px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar15_black_anim 3s ease-out infinite ; 
+        animation: bar15_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(135deg); /* IE 9 */
+        -webkit-transform: rotate(135deg); /* Safari */
+        transform: rotate(135deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar15_white {
+        left: 101px;
+        top: 131px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar15_white_anim 3s ease-out infinite ; 
+        animation: bar15_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(135deg); /* IE 9 */
+        -webkit-transform: rotate(135deg); /* Safari */
+        transform: rotate(135deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar15_color_anim {
+            0% {height: 0px; background:rgb(0, 255, 82)}
+5% {height: 0px; background:rgb(0, 255, 82)}
+12% {height: 0px; background:rgb(0, 255, 82)}
+20% {height: 0px; background:rgb(0, 255, 82)}
+28% {height: 0px; background:rgb(0, 255, 82)}
+36% {height: 0px; background:rgb(0, 255, 82)}
+43% {height: 0px; background:rgb(0, 255, 82)}
+51% {height: 0px; background:rgb(0, 255, 82)}
+59% {height: 0px; background:rgb(0, 255, 82)}
+67% {height: 0px; background:rgb(0, 255, 82)}
+75% {height: 2px; background:rgb(0, 255, 82)}
+100% {height: 2px; background:rgb(0, 255, 82)}
+
+        }
+        
+    #bar15_color {
+        left: 61px;
+        top: 111px;
+        background-color: rgb(0, 255, 82);
+        -webkit-animation: bar15_color_anim 3s ease-out infinite ; 
+        animation: bar15_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(135deg); /* IE 9 */
+        -webkit-transform: rotate(135deg); /* Safari */
+        transform: rotate(135deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 255, 82);
+        }
+    
+    #bar16_black {
+        left: 150px;
+        top: 137px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar16_black_anim 3s ease-out infinite ; 
+        animation: bar16_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(144deg); /* IE 9 */
+        -webkit-transform: rotate(144deg); /* Safari */
+        transform: rotate(144deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar16_white {
+        left: 117px;
+        top: 118px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar16_white_anim 3s ease-out infinite ; 
+        animation: bar16_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(144deg); /* IE 9 */
+        -webkit-transform: rotate(144deg); /* Safari */
+        transform: rotate(144deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar16_color_anim {
+            0% {height: 0px; background:rgb(0, 255, 121)}
+5% {height: 0px; background:rgb(0, 255, 121)}
+12% {height: 0px; background:rgb(0, 255, 121)}
+20% {height: 0px; background:rgb(0, 255, 121)}
+28% {height: 0px; background:rgb(0, 255, 121)}
+36% {height: 0px; background:rgb(0, 255, 121)}
+43% {height: 0px; background:rgb(0, 255, 121)}
+51% {height: 0px; background:rgb(0, 255, 121)}
+59% {height: 0px; background:rgb(0, 255, 121)}
+67% {height: 0px; background:rgb(0, 255, 121)}
+75% {height: 3px; background:rgb(0, 255, 121)}
+100% {height: 3px; background:rgb(0, 255, 121)}
+
+        }
+        
+    #bar16_color {
+        left: 80px;
+        top: 95px;
+        background-color: rgb(0, 255, 121);
+        -webkit-animation: bar16_color_anim 3s ease-out infinite ; 
+        animation: bar16_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(144deg); /* IE 9 */
+        -webkit-transform: rotate(144deg); /* Safari */
+        transform: rotate(144deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 255, 121);
+        }
+    
+    #bar17_black {
+        left: 164px;
+        top: 128px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar17_black_anim 3s ease-out infinite ; 
+        animation: bar17_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(153deg); /* IE 9 */
+        -webkit-transform: rotate(153deg); /* Safari */
+        transform: rotate(153deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar17_white {
+        left: 134px;
+        top: 108px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar17_white_anim 3s ease-out infinite ; 
+        animation: bar17_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(153deg); /* IE 9 */
+        -webkit-transform: rotate(153deg); /* Safari */
+        transform: rotate(153deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar17_color_anim {
+            0% {height: 0px; background:rgb(0, 255, 159)}
+5% {height: 0px; background:rgb(0, 255, 159)}
+12% {height: 0px; background:rgb(0, 255, 159)}
+20% {height: 0px; background:rgb(0, 255, 159)}
+28% {height: 0px; background:rgb(0, 255, 159)}
+36% {height: 0px; background:rgb(0, 255, 159)}
+43% {height: 0px; background:rgb(0, 255, 159)}
+51% {height: 0px; background:rgb(0, 255, 159)}
+59% {height: 0px; background:rgb(0, 255, 159)}
+67% {height: 0px; background:rgb(0, 255, 159)}
+75% {height: 2px; background:rgb(0, 255, 159)}
+100% {height: 2px; background:rgb(0, 255, 159)}
+
+        }
+        
+    #bar17_color {
+        left: 101px;
+        top: 83px;
+        background-color: rgb(0, 255, 159);
+        -webkit-animation: bar17_color_anim 3s ease-out infinite ; 
+        animation: bar17_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(153deg); /* IE 9 */
+        -webkit-transform: rotate(153deg); /* Safari */
+        transform: rotate(153deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 255, 159);
+        }
+    
+    #bar18_black {
+        left: 180px;
+        top: 122px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar18_black_anim 3s ease-out infinite ; 
+        animation: bar18_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(162deg); /* IE 9 */
+        -webkit-transform: rotate(162deg); /* Safari */
+        transform: rotate(162deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar18_white {
+        left: 153px;
+        top: 100px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar18_white_anim 3s ease-out infinite ; 
+        animation: bar18_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(162deg); /* IE 9 */
+        -webkit-transform: rotate(162deg); /* Safari */
+        transform: rotate(162deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar18_color_anim {
+            0% {height: 0px; background:rgb(0, 255, 197)}
+5% {height: 0px; background:rgb(0, 255, 197)}
+12% {height: 0px; background:rgb(0, 255, 197)}
+20% {height: 0px; background:rgb(0, 255, 197)}
+28% {height: 0px; background:rgb(0, 255, 197)}
+36% {height: 0px; background:rgb(0, 255, 197)}
+43% {height: 0px; background:rgb(0, 255, 197)}
+51% {height: 0px; background:rgb(0, 255, 197)}
+59% {height: 0px; background:rgb(0, 255, 197)}
+67% {height: 0px; background:rgb(0, 255, 197)}
+75% {height: 2px; background:rgb(0, 255, 197)}
+100% {height: 2px; background:rgb(0, 255, 197)}
+
+        }
+        
+    #bar18_color {
+        left: 124px;
+        top: 73px;
+        background-color: rgb(0, 255, 197);
+        -webkit-animation: bar18_color_anim 3s ease-out infinite ; 
+        animation: bar18_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(162deg); /* IE 9 */
+        -webkit-transform: rotate(162deg); /* Safari */
+        transform: rotate(162deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 255, 197);
+        }
+    
+    #bar19_black {
+        left: 196px;
+        top: 118px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar19_black_anim 3s ease-out infinite ; 
+        animation: bar19_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(171deg); /* IE 9 */
+        -webkit-transform: rotate(171deg); /* Safari */
+        transform: rotate(171deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar19_white {
+        left: 172px;
+        top: 95px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar19_white_anim 3s ease-out infinite ; 
+        animation: bar19_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(171deg); /* IE 9 */
+        -webkit-transform: rotate(171deg); /* Safari */
+        transform: rotate(171deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar19_color_anim {
+            0% {height: 0px; background:rgb(0, 255, 235)}
+5% {height: 0px; background:rgb(0, 255, 235)}
+12% {height: 0px; background:rgb(0, 255, 235)}
+20% {height: 0px; background:rgb(0, 255, 235)}
+28% {height: 0px; background:rgb(0, 255, 235)}
+36% {height: 0px; background:rgb(0, 255, 235)}
+43% {height: 0px; background:rgb(0, 255, 235)}
+51% {height: 0px; background:rgb(0, 255, 235)}
+59% {height: 0px; background:rgb(0, 255, 235)}
+67% {height: 0px; background:rgb(0, 255, 235)}
+75% {height: 0px; background:rgb(0, 255, 235)}
+100% {height: 0px; background:rgb(0, 255, 235)}
+
+        }
+        
+    #bar19_color {
+        left: 148px;
+        top: 67px;
+        background-color: rgb(0, 255, 235);
+        -webkit-animation: bar19_color_anim 3s ease-out infinite ; 
+        animation: bar19_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(171deg); /* IE 9 */
+        -webkit-transform: rotate(171deg); /* Safari */
+        transform: rotate(171deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 255, 235);
+        }
+           
+        @-webkit-keyframes
+        bar20_black_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 20px;}
+67% {height: 20px;}
+75% {height: 0px;}
+100% {height: 0px;}
+
+        }
+        
+    #bar20_black {
+        left: 211px;
+        top: 117px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar20_black_anim 3s ease-out infinite ; 
+        animation: bar20_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(179deg); /* IE 9 */
+        -webkit-transform: rotate(179deg); /* Safari */
+        transform: rotate(179deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+    
+    #bar20_white {
+        left: 190px;
+        top: 94px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar20_white_anim 3s ease-out infinite ; 
+        animation: bar20_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(179deg); /* IE 9 */
+        -webkit-transform: rotate(179deg); /* Safari */
+        transform: rotate(179deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar20_color_anim {
+            0% {height: 0px; background:rgb(0, 235, 255)}
+5% {height: 0px; background:rgb(0, 235, 255)}
+12% {height: 0px; background:rgb(0, 235, 255)}
+20% {height: 0px; background:rgb(0, 235, 255)}
+28% {height: 26px; background:rgb(0, 235, 255)}
+36% {height: 27px; background:rgb(0, 235, 255)}
+43% {height: 26px; background:rgb(0, 235, 255)}
+51% {height: 26px; background:rgb(0, 235, 255)}
+59% {height: 0px; background:rgb(0, 235, 255)}
+67% {height: 0px; background:rgb(0, 235, 255)}
+75% {height: 1px; background:rgb(0, 235, 255)}
+100% {height: 1px; background:rgb(0, 235, 255)}
+
+        }
+        
+    #bar20_color {
+        left: 170px;
+        top: 66px;
+        background-color: rgb(0, 235, 255);
+        -webkit-animation: bar20_color_anim 3s ease-out infinite ; 
+        animation: bar20_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(179deg); /* IE 9 */
+        -webkit-transform: rotate(179deg); /* Safari */
+        transform: rotate(179deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 235, 255);
+        }
+    
+    #bar21_black {
+        left: 228px;
+        top: 118px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar21_black_anim 3s ease-out infinite ; 
+        animation: bar21_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(189deg); /* IE 9 */
+        -webkit-transform: rotate(189deg); /* Safari */
+        transform: rotate(189deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar21_white {
+        left: 212px;
+        top: 95px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar21_white_anim 3s ease-out infinite ; 
+        animation: bar21_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(189deg); /* IE 9 */
+        -webkit-transform: rotate(189deg); /* Safari */
+        transform: rotate(189deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar21_color_anim {
+            0% {height: 0px; background:rgb(0, 197, 255)}
+5% {height: 0px; background:rgb(0, 197, 255)}
+12% {height: 0px; background:rgb(0, 197, 255)}
+20% {height: 0px; background:rgb(0, 197, 255)}
+28% {height: 0px; background:rgb(0, 197, 255)}
+36% {height: 0px; background:rgb(0, 197, 255)}
+43% {height: 0px; background:rgb(0, 197, 255)}
+51% {height: 0px; background:rgb(0, 197, 255)}
+59% {height: 0px; background:rgb(0, 197, 255)}
+67% {height: 0px; background:rgb(0, 197, 255)}
+75% {height: 2px; background:rgb(0, 197, 255)}
+100% {height: 2px; background:rgb(0, 197, 255)}
+
+        }
+        
+    #bar21_color {
+        left: 196px;
+        top: 67px;
+        background-color: rgb(0, 197, 255);
+        -webkit-animation: bar21_color_anim 3s ease-out infinite ; 
+        animation: bar21_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(189deg); /* IE 9 */
+        -webkit-transform: rotate(189deg); /* Safari */
+        transform: rotate(189deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 197, 255);
+        }
+           
+        @-webkit-keyframes
+        bar22_black_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 17px;}
+100% {height: 17px;}
+
+        }
+        
+    #bar22_black {
+        left: 244px;
+        top: 122px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar22_black_anim 3s ease-out infinite ; 
+        animation: bar22_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(198deg); /* IE 9 */
+        -webkit-transform: rotate(198deg); /* Safari */
+        transform: rotate(198deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+    
+    #bar22_white {
+        left: 231px;
+        top: 100px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar22_white_anim 3s ease-out infinite ; 
+        animation: bar22_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(198deg); /* IE 9 */
+        -webkit-transform: rotate(198deg); /* Safari */
+        transform: rotate(198deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar22_color_anim {
+            0% {height: 0px; background:rgb(0, 159, 255)}
+5% {height: 0px; background:rgb(0, 159, 255)}
+12% {height: 0px; background:rgb(0, 159, 255)}
+20% {height: 0px; background:rgb(0, 159, 255)}
+28% {height: 0px; background:rgb(0, 159, 255)}
+36% {height: 0px; background:rgb(0, 159, 255)}
+43% {height: 0px; background:rgb(0, 159, 255)}
+51% {height: 0px; background:rgb(0, 159, 255)}
+59% {height: 0px; background:rgb(0, 159, 255)}
+67% {height: 0px; background:rgb(0, 159, 255)}
+75% {height: 7px; background:rgb(0, 159, 255)}
+100% {height: 7px; background:rgb(0, 159, 255)}
+
+        }
+        
+    #bar22_color {
+        left: 220px;
+        top: 73px;
+        background-color: rgb(0, 159, 255);
+        -webkit-animation: bar22_color_anim 3s ease-out infinite ; 
+        animation: bar22_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(198deg); /* IE 9 */
+        -webkit-transform: rotate(198deg); /* Safari */
+        transform: rotate(198deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 159, 255);
+        }
+           
+        @-webkit-keyframes
+        bar23_black_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 20px;}
+100% {height: 20px;}
+
+        }
+        
+    #bar23_black {
+        left: 260px;
+        top: 128px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar23_black_anim 3s ease-out infinite ; 
+        animation: bar23_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(207deg); /* IE 9 */
+        -webkit-transform: rotate(207deg); /* Safari */
+        transform: rotate(207deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+    
+    #bar23_white {
+        left: 250px;
+        top: 108px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar23_white_anim 3s ease-out infinite ; 
+        animation: bar23_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(207deg); /* IE 9 */
+        -webkit-transform: rotate(207deg); /* Safari */
+        transform: rotate(207deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar23_color_anim {
+            0% {height: 0px; background:rgb(0, 121, 255)}
+5% {height: 0px; background:rgb(0, 121, 255)}
+12% {height: 0px; background:rgb(0, 121, 255)}
+20% {height: 0px; background:rgb(0, 121, 255)}
+28% {height: 0px; background:rgb(0, 121, 255)}
+36% {height: 0px; background:rgb(0, 121, 255)}
+43% {height: 0px; background:rgb(0, 121, 255)}
+51% {height: 0px; background:rgb(0, 121, 255)}
+59% {height: 0px; background:rgb(0, 121, 255)}
+67% {height: 0px; background:rgb(0, 121, 255)}
+75% {height: 65px; background:rgb(0, 121, 255)}
+100% {height: 65px; background:rgb(0, 121, 255)}
+
+        }
+        
+    #bar23_color {
+        left: 243px;
+        top: 83px;
+        background-color: rgb(0, 121, 255);
+        -webkit-animation: bar23_color_anim 3s ease-out infinite ; 
+        animation: bar23_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(207deg); /* IE 9 */
+        -webkit-transform: rotate(207deg); /* Safari */
+        transform: rotate(207deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 121, 255);
+        }
+           
+        @-webkit-keyframes
+        bar24_black_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 1px;}
+100% {height: 1px;}
+
+        }
+        
+    #bar24_black {
+        left: 274px;
+        top: 137px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar24_black_anim 3s ease-out infinite ; 
+        animation: bar24_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(216deg); /* IE 9 */
+        -webkit-transform: rotate(216deg); /* Safari */
+        transform: rotate(216deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+    
+    #bar24_white {
+        left: 267px;
+        top: 118px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar24_white_anim 3s ease-out infinite ; 
+        animation: bar24_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(216deg); /* IE 9 */
+        -webkit-transform: rotate(216deg); /* Safari */
+        transform: rotate(216deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar24_color_anim {
+            0% {height: 0px; background:rgb(0, 82, 255)}
+5% {height: 0px; background:rgb(0, 82, 255)}
+12% {height: 0px; background:rgb(0, 82, 255)}
+20% {height: 0px; background:rgb(0, 82, 255)}
+28% {height: 0px; background:rgb(0, 82, 255)}
+36% {height: 0px; background:rgb(0, 82, 255)}
+43% {height: 0px; background:rgb(0, 82, 255)}
+51% {height: 0px; background:rgb(0, 82, 255)}
+59% {height: 0px; background:rgb(0, 82, 255)}
+67% {height: 0px; background:rgb(0, 82, 255)}
+75% {height: 29px; background:rgb(0, 82, 255)}
+100% {height: 29px; background:rgb(0, 82, 255)}
+
+        }
+        
+    #bar24_color {
+        left: 264px;
+        top: 95px;
+        background-color: rgb(0, 82, 255);
+        -webkit-animation: bar24_color_anim 3s ease-out infinite ; 
+        animation: bar24_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(216deg); /* IE 9 */
+        -webkit-transform: rotate(216deg); /* Safari */
+        transform: rotate(216deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 82, 255);
+        }
+    
+    #bar25_black {
+        left: 286px;
+        top: 148px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar25_black_anim 3s ease-out infinite ; 
+        animation: bar25_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(225deg); /* IE 9 */
+        -webkit-transform: rotate(225deg); /* Safari */
+        transform: rotate(225deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar25_white {
+        left: 283px;
+        top: 131px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar25_white_anim 3s ease-out infinite ; 
+        animation: bar25_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(225deg); /* IE 9 */
+        -webkit-transform: rotate(225deg); /* Safari */
+        transform: rotate(225deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar25_color_anim {
+            0% {height: 0px; background:rgb(0, 44, 255)}
+5% {height: 0px; background:rgb(0, 44, 255)}
+12% {height: 0px; background:rgb(0, 44, 255)}
+20% {height: 0px; background:rgb(0, 44, 255)}
+28% {height: 0px; background:rgb(0, 44, 255)}
+36% {height: 0px; background:rgb(0, 44, 255)}
+43% {height: 0px; background:rgb(0, 44, 255)}
+51% {height: 0px; background:rgb(0, 44, 255)}
+59% {height: 0px; background:rgb(0, 44, 255)}
+67% {height: 0px; background:rgb(0, 44, 255)}
+75% {height: 15px; background:rgb(0, 44, 255)}
+100% {height: 15px; background:rgb(0, 44, 255)}
+
+        }
+        
+    #bar25_color {
+        left: 283px;
+        top: 111px;
+        background-color: rgb(0, 44, 255);
+        -webkit-animation: bar25_color_anim 3s ease-out infinite ; 
+        animation: bar25_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(225deg); /* IE 9 */
+        -webkit-transform: rotate(225deg); /* Safari */
+        transform: rotate(225deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(0, 44, 255);
+        }
+           
+        @-webkit-keyframes
+        bar26_black_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 16px;}
+67% {height: 12px;}
+75% {height: 0px;}
+100% {height: 0px;}
+
+        }
+        
+    #bar26_black {
+        left: 297px;
+        top: 160px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar26_black_anim 3s ease-out infinite ; 
+        animation: bar26_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(234deg); /* IE 9 */
+        -webkit-transform: rotate(234deg); /* Safari */
+        transform: rotate(234deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+    
+    #bar26_white {
+        left: 296px;
+        top: 147px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar26_white_anim 3s ease-out infinite ; 
+        animation: bar26_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(234deg); /* IE 9 */
+        -webkit-transform: rotate(234deg); /* Safari */
+        transform: rotate(234deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar26_color_anim {
+            0% {height: 0px; background:rgb(49, 50, 78)}
+5% {height: 29px; background:rgb(49, 50, 78)}
+12% {height: 28px; background:rgb(49, 50, 78)}
+20% {height: 28px; background:rgb(49, 50, 78)}
+28% {height: 0px; background:rgb(49, 50, 78)}
+36% {height: 0px; background:rgb(49, 50, 78)}
+43% {height: 0px; background:rgb(49, 50, 78)}
+51% {height: 1px; background:rgb(49, 50, 78)}
+59% {height: 0px; background:rgb(49, 50, 78)}
+67% {height: 1px; background:rgb(49, 50, 78)}
+75% {height: 9px; background:rgb(49, 50, 78)}
+100% {height: 9px; background:rgb(49, 50, 78)}
+
+        }
+        
+    #bar26_color {
+        left: 299px;
+        top: 130px;
+        background-color: rgb(49, 50, 78);
+        -webkit-animation: bar26_color_anim 3s ease-out infinite ; 
+        animation: bar26_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(234deg); /* IE 9 */
+        -webkit-transform: rotate(234deg); /* Safari */
+        transform: rotate(234deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(49, 50, 78);
+        }
+    
+    #bar27_black {
+        left: 306px;
+        top: 174px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar27_black_anim 3s ease-out infinite ; 
+        animation: bar27_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(243deg); /* IE 9 */
+        -webkit-transform: rotate(243deg); /* Safari */
+        transform: rotate(243deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar27_white {
+        left: 306px;
+        top: 164px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar27_white_anim 3s ease-out infinite ; 
+        animation: bar27_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(243deg); /* IE 9 */
+        -webkit-transform: rotate(243deg); /* Safari */
+        transform: rotate(243deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar27_color_anim {
+            0% {height: 0px; background:rgb(53, 49, 78)}
+5% {height: 0px; background:rgb(53, 49, 78)}
+12% {height: 0px; background:rgb(53, 49, 78)}
+20% {height: 0px; background:rgb(53, 49, 78)}
+28% {height: 0px; background:rgb(53, 49, 78)}
+36% {height: 0px; background:rgb(53, 49, 78)}
+43% {height: 0px; background:rgb(53, 49, 78)}
+51% {height: 0px; background:rgb(53, 49, 78)}
+59% {height: 0px; background:rgb(53, 49, 78)}
+67% {height: 0px; background:rgb(53, 49, 78)}
+75% {height: 7px; background:rgb(53, 49, 78)}
+100% {height: 7px; background:rgb(53, 49, 78)}
+
+        }
+        
+    #bar27_color {
+        left: 311px;
+        top: 151px;
+        background-color: rgb(53, 49, 78);
+        -webkit-animation: bar27_color_anim 3s ease-out infinite ; 
+        animation: bar27_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(243deg); /* IE 9 */
+        -webkit-transform: rotate(243deg); /* Safari */
+        transform: rotate(243deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(53, 49, 78);
+        }
+    
+    #bar28_black {
+        left: 312px;
+        top: 190px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar28_black_anim 3s ease-out infinite ; 
+        animation: bar28_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(252deg); /* IE 9 */
+        -webkit-transform: rotate(252deg); /* Safari */
+        transform: rotate(252deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar28_white {
+        left: 314px;
+        top: 183px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar28_white_anim 3s ease-out infinite ; 
+        animation: bar28_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(252deg); /* IE 9 */
+        -webkit-transform: rotate(252deg); /* Safari */
+        transform: rotate(252deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar28_color_anim {
+            0% {height: 0px; background:rgb(70, 0, 255)}
+5% {height: 0px; background:rgb(70, 0, 255)}
+12% {height: 0px; background:rgb(70, 0, 255)}
+20% {height: 0px; background:rgb(70, 0, 255)}
+28% {height: 0px; background:rgb(70, 0, 255)}
+36% {height: 0px; background:rgb(70, 0, 255)}
+43% {height: 0px; background:rgb(70, 0, 255)}
+51% {height: 0px; background:rgb(70, 0, 255)}
+59% {height: 0px; background:rgb(70, 0, 255)}
+67% {height: 0px; background:rgb(70, 0, 255)}
+75% {height: 6px; background:rgb(70, 0, 255)}
+100% {height: 6px; background:rgb(70, 0, 255)}
+
+        }
+        
+    #bar28_color {
+        left: 321px;
+        top: 174px;
+        background-color: rgb(70, 0, 255);
+        -webkit-animation: bar28_color_anim 3s ease-out infinite ; 
+        animation: bar28_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(252deg); /* IE 9 */
+        -webkit-transform: rotate(252deg); /* Safari */
+        transform: rotate(252deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(70, 0, 255);
+        }
+    
+    #bar29_black {
+        left: 316px;
+        top: 206px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar29_black_anim 3s ease-out infinite ; 
+        animation: bar29_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(261deg); /* IE 9 */
+        -webkit-transform: rotate(261deg); /* Safari */
+        transform: rotate(261deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar29_white {
+        left: 319px;
+        top: 202px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar29_white_anim 3s ease-out infinite ; 
+        animation: bar29_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(261deg); /* IE 9 */
+        -webkit-transform: rotate(261deg); /* Safari */
+        transform: rotate(261deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar29_color_anim {
+            0% {height: 0px; background:rgb(108, 0, 255)}
+5% {height: 0px; background:rgb(108, 0, 255)}
+12% {height: 0px; background:rgb(108, 0, 255)}
+20% {height: 0px; background:rgb(108, 0, 255)}
+28% {height: 0px; background:rgb(108, 0, 255)}
+36% {height: 0px; background:rgb(108, 0, 255)}
+43% {height: 0px; background:rgb(108, 0, 255)}
+51% {height: 0px; background:rgb(108, 0, 255)}
+59% {height: 0px; background:rgb(108, 0, 255)}
+67% {height: 0px; background:rgb(108, 0, 255)}
+75% {height: 5px; background:rgb(108, 0, 255)}
+100% {height: 5px; background:rgb(108, 0, 255)}
+
+        }
+        
+    #bar29_color {
+        left: 327px;
+        top: 198px;
+        background-color: rgb(108, 0, 255);
+        -webkit-animation: bar29_color_anim 3s ease-out infinite ; 
+        animation: bar29_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(261deg); /* IE 9 */
+        -webkit-transform: rotate(261deg); /* Safari */
+        transform: rotate(261deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(108, 0, 255);
+        }
+    
+    #bar30_black {
+        left: 318px;
+        top: 222px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar30_black_anim 3s ease-out infinite ; 
+        animation: bar30_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(270deg); /* IE 9 */
+        -webkit-transform: rotate(270deg); /* Safari */
+        transform: rotate(270deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar30_white {
+        left: 321px;
+        top: 222px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar30_white_anim 3s ease-out infinite ; 
+        animation: bar30_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(270deg); /* IE 9 */
+        -webkit-transform: rotate(270deg); /* Safari */
+        transform: rotate(270deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar30_color_anim {
+            0% {height: 0px; background:rgb(146, 0, 255)}
+5% {height: 0px; background:rgb(146, 0, 255)}
+12% {height: 0px; background:rgb(146, 0, 255)}
+20% {height: 0px; background:rgb(146, 0, 255)}
+28% {height: 0px; background:rgb(146, 0, 255)}
+36% {height: 0px; background:rgb(146, 0, 255)}
+43% {height: 0px; background:rgb(146, 0, 255)}
+51% {height: 0px; background:rgb(146, 0, 255)}
+59% {height: 0px; background:rgb(146, 0, 255)}
+67% {height: 0px; background:rgb(146, 0, 255)}
+75% {height: 6px; background:rgb(146, 0, 255)}
+100% {height: 6px; background:rgb(146, 0, 255)}
+
+        }
+        
+    #bar30_color {
+        left: 329px;
+        top: 222px;
+        background-color: rgb(146, 0, 255);
+        -webkit-animation: bar30_color_anim 3s ease-out infinite ; 
+        animation: bar30_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(270deg); /* IE 9 */
+        -webkit-transform: rotate(270deg); /* Safari */
+        transform: rotate(270deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(146, 0, 255);
+        }
+    
+    #bar31_black {
+        left: 316px;
+        top: 238px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar31_black_anim 3s ease-out infinite ; 
+        animation: bar31_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(279deg); /* IE 9 */
+        -webkit-transform: rotate(279deg); /* Safari */
+        transform: rotate(279deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar31_white {
+        left: 319px;
+        top: 242px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar31_white_anim 3s ease-out infinite ; 
+        animation: bar31_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(279deg); /* IE 9 */
+        -webkit-transform: rotate(279deg); /* Safari */
+        transform: rotate(279deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar31_color_anim {
+            0% {height: 0px; background:rgb(184, 0, 255)}
+5% {height: 0px; background:rgb(184, 0, 255)}
+12% {height: 0px; background:rgb(184, 0, 255)}
+20% {height: 0px; background:rgb(184, 0, 255)}
+28% {height: 0px; background:rgb(184, 0, 255)}
+36% {height: 0px; background:rgb(184, 0, 255)}
+43% {height: 0px; background:rgb(184, 0, 255)}
+51% {height: 0px; background:rgb(184, 0, 255)}
+59% {height: 0px; background:rgb(184, 0, 255)}
+67% {height: 0px; background:rgb(184, 0, 255)}
+75% {height: 6px; background:rgb(184, 0, 255)}
+100% {height: 6px; background:rgb(184, 0, 255)}
+
+        }
+        
+    #bar31_color {
+        left: 327px;
+        top: 246px;
+        background-color: rgb(184, 0, 255);
+        -webkit-animation: bar31_color_anim 3s ease-out infinite ; 
+        animation: bar31_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(279deg); /* IE 9 */
+        -webkit-transform: rotate(279deg); /* Safari */
+        transform: rotate(279deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(184, 0, 255);
+        }
+    
+    #bar32_black {
+        left: 312px;
+        top: 254px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar32_black_anim 3s ease-out infinite ; 
+        animation: bar32_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(288deg); /* IE 9 */
+        -webkit-transform: rotate(288deg); /* Safari */
+        transform: rotate(288deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar32_white {
+        left: 314px;
+        top: 261px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar32_white_anim 3s ease-out infinite ; 
+        animation: bar32_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(288deg); /* IE 9 */
+        -webkit-transform: rotate(288deg); /* Safari */
+        transform: rotate(288deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar32_color_anim {
+            0% {height: 0px; background:rgb(50, 25, 53)}
+5% {height: 0px; background:rgb(50, 25, 53)}
+12% {height: 0px; background:rgb(50, 25, 53)}
+20% {height: 0px; background:rgb(50, 25, 53)}
+28% {height: 0px; background:rgb(50, 25, 53)}
+36% {height: 0px; background:rgb(50, 25, 53)}
+43% {height: 0px; background:rgb(50, 25, 53)}
+51% {height: 0px; background:rgb(50, 25, 53)}
+59% {height: 0px; background:rgb(50, 25, 53)}
+67% {height: 0px; background:rgb(50, 25, 53)}
+75% {height: 4px; background:rgb(50, 25, 53)}
+100% {height: 4px; background:rgb(50, 25, 53)}
+
+        }
+        
+    #bar32_color {
+        left: 321px;
+        top: 270px;
+        background-color: rgb(50, 25, 53);
+        -webkit-animation: bar32_color_anim 3s ease-out infinite ; 
+        animation: bar32_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(288deg); /* IE 9 */
+        -webkit-transform: rotate(288deg); /* Safari */
+        transform: rotate(288deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(50, 25, 53);
+        }
+           
+        @-webkit-keyframes
+        bar33_black_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 5px;}
+67% {height: 1px;}
+75% {height: 0px;}
+100% {height: 0px;}
+
+        }
+        
+    #bar33_black {
+        left: 306px;
+        top: 270px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar33_black_anim 3s ease-out infinite ; 
+        animation: bar33_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(297deg); /* IE 9 */
+        -webkit-transform: rotate(297deg); /* Safari */
+        transform: rotate(297deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid black;
+        }
+    
+    #bar33_white {
+        left: 306px;
+        top: 280px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar33_white_anim 3s ease-out infinite ; 
+        animation: bar33_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(297deg); /* IE 9 */
+        -webkit-transform: rotate(297deg); /* Safari */
+        transform: rotate(297deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar33_color_anim {
+            0% {height: 0px; background:rgb(53, 25, 53)}
+5% {height: 0px; background:rgb(53, 25, 53)}
+12% {height: 0px; background:rgb(53, 25, 53)}
+20% {height: 0px; background:rgb(53, 25, 53)}
+28% {height: 0px; background:rgb(53, 25, 53)}
+36% {height: 0px; background:rgb(53, 25, 53)}
+43% {height: 0px; background:rgb(53, 25, 53)}
+51% {height: 0px; background:rgb(53, 25, 53)}
+59% {height: 19px; background:rgb(53, 25, 53)}
+67% {height: 1px; background:rgb(53, 25, 53)}
+75% {height: 5px; background:rgb(53, 25, 53)}
+100% {height: 5px; background:rgb(53, 25, 53)}
+
+        }
+        
+    #bar33_color {
+        left: 311px;
+        top: 293px;
+        background-color: rgb(53, 25, 53);
+        -webkit-animation: bar33_color_anim 3s ease-out infinite ; 
+        animation: bar33_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(297deg); /* IE 9 */
+        -webkit-transform: rotate(297deg); /* Safari */
+        transform: rotate(297deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(53, 25, 53);
+        }
+    
+    #bar34_black {
+        left: 297px;
+        top: 284px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar34_black_anim 3s ease-out infinite ; 
+        animation: bar34_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(306deg); /* IE 9 */
+        -webkit-transform: rotate(306deg); /* Safari */
+        transform: rotate(306deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar34_white {
+        left: 296px;
+        top: 297px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar34_white_anim 3s ease-out infinite ; 
+        animation: bar34_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(306deg); /* IE 9 */
+        -webkit-transform: rotate(306deg); /* Safari */
+        transform: rotate(306deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar34_color_anim {
+            0% {height: 0px; background:rgb(255, 0, 210)}
+5% {height: 0px; background:rgb(255, 0, 210)}
+12% {height: 0px; background:rgb(255, 0, 210)}
+20% {height: 0px; background:rgb(255, 0, 210)}
+28% {height: 0px; background:rgb(255, 0, 210)}
+36% {height: 0px; background:rgb(255, 0, 210)}
+43% {height: 0px; background:rgb(255, 0, 210)}
+51% {height: 0px; background:rgb(255, 0, 210)}
+59% {height: 0px; background:rgb(255, 0, 210)}
+67% {height: 0px; background:rgb(255, 0, 210)}
+75% {height: 7px; background:rgb(255, 0, 210)}
+100% {height: 7px; background:rgb(255, 0, 210)}
+
+        }
+        
+    #bar34_color {
+        left: 299px;
+        top: 314px;
+        background-color: rgb(255, 0, 210);
+        -webkit-animation: bar34_color_anim 3s ease-out infinite ; 
+        animation: bar34_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(306deg); /* IE 9 */
+        -webkit-transform: rotate(306deg); /* Safari */
+        transform: rotate(306deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 0, 210);
+        }
+    
+    #bar35_black {
+        left: 286px;
+        top: 296px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar35_black_anim 3s ease-out infinite ; 
+        animation: bar35_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(315deg); /* IE 9 */
+        -webkit-transform: rotate(315deg); /* Safari */
+        transform: rotate(315deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar35_white {
+        left: 283px;
+        top: 313px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar35_white_anim 3s ease-out infinite ; 
+        animation: bar35_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(315deg); /* IE 9 */
+        -webkit-transform: rotate(315deg); /* Safari */
+        transform: rotate(315deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar35_color_anim {
+            0% {height: 0px; background:rgb(255, 0, 172)}
+5% {height: 0px; background:rgb(255, 0, 172)}
+12% {height: 0px; background:rgb(255, 0, 172)}
+20% {height: 0px; background:rgb(255, 0, 172)}
+28% {height: 0px; background:rgb(255, 0, 172)}
+36% {height: 0px; background:rgb(255, 0, 172)}
+43% {height: 0px; background:rgb(255, 0, 172)}
+51% {height: 0px; background:rgb(255, 0, 172)}
+59% {height: 0px; background:rgb(255, 0, 172)}
+67% {height: 0px; background:rgb(255, 0, 172)}
+75% {height: 11px; background:rgb(255, 0, 172)}
+100% {height: 11px; background:rgb(255, 0, 172)}
+
+        }
+        
+    #bar35_color {
+        left: 283px;
+        top: 333px;
+        background-color: rgb(255, 0, 172);
+        -webkit-animation: bar35_color_anim 3s ease-out infinite ; 
+        animation: bar35_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(315deg); /* IE 9 */
+        -webkit-transform: rotate(315deg); /* Safari */
+        transform: rotate(315deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 0, 172);
+        }
+    
+    #bar36_black {
+        left: 274px;
+        top: 307px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar36_black_anim 3s ease-out infinite ; 
+        animation: bar36_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(324deg); /* IE 9 */
+        -webkit-transform: rotate(324deg); /* Safari */
+        transform: rotate(324deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+    
+    #bar36_white {
+        left: 267px;
+        top: 326px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar36_white_anim 3s ease-out infinite ; 
+        animation: bar36_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(324deg); /* IE 9 */
+        -webkit-transform: rotate(324deg); /* Safari */
+        transform: rotate(324deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar36_color_anim {
+            0% {height: 0px; background:rgb(255, 0, 133)}
+5% {height: 0px; background:rgb(255, 0, 133)}
+12% {height: 0px; background:rgb(255, 0, 133)}
+20% {height: 0px; background:rgb(255, 0, 133)}
+28% {height: 0px; background:rgb(255, 0, 133)}
+36% {height: 0px; background:rgb(255, 0, 133)}
+43% {height: 0px; background:rgb(255, 0, 133)}
+51% {height: 0px; background:rgb(255, 0, 133)}
+59% {height: 0px; background:rgb(255, 0, 133)}
+67% {height: 0px; background:rgb(255, 0, 133)}
+75% {height: 17px; background:rgb(255, 0, 133)}
+100% {height: 17px; background:rgb(255, 0, 133)}
+
+        }
+        
+    #bar36_color {
+        left: 264px;
+        top: 349px;
+        background-color: rgb(255, 0, 133);
+        -webkit-animation: bar36_color_anim 3s ease-out infinite ; 
+        animation: bar36_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(324deg); /* IE 9 */
+        -webkit-transform: rotate(324deg); /* Safari */
+        transform: rotate(324deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 0, 133);
+        }
+    
+    #bar37_black {
+        left: 260px;
+        top: 316px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar37_black_anim 3s ease-out infinite ; 
+        animation: bar37_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(333deg); /* IE 9 */
+        -webkit-transform: rotate(333deg); /* Safari */
+        transform: rotate(333deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar37_white_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 0px;}
+100% {height: 0px;}
+
+        }
+        
+    #bar37_white {
+        left: 250px;
+        top: 336px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar37_white_anim 3s ease-out infinite ; 
+        animation: bar37_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(333deg); /* IE 9 */
+        -webkit-transform: rotate(333deg); /* Safari */
+        transform: rotate(333deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid #aaa;
+        }
+           
+        @-webkit-keyframes
+        bar37_color_anim {
+            0% {height: 0px; background:rgb(255, 0, 95)}
+5% {height: 0px; background:rgb(255, 0, 95)}
+12% {height: 0px; background:rgb(255, 0, 95)}
+20% {height: 0px; background:rgb(255, 0, 95)}
+28% {height: 0px; background:rgb(255, 0, 95)}
+36% {height: 0px; background:rgb(255, 0, 95)}
+43% {height: 0px; background:rgb(255, 0, 95)}
+51% {height: 0px; background:rgb(255, 0, 95)}
+59% {height: 0px; background:rgb(255, 0, 95)}
+67% {height: 0px; background:rgb(255, 0, 95)}
+75% {height: 28px; background:rgb(255, 0, 95)}
+100% {height: 28px; background:rgb(255, 0, 95)}
+
+        }
+        
+    #bar37_color {
+        left: 243px;
+        top: 361px;
+        background-color: rgb(255, 0, 95);
+        -webkit-animation: bar37_color_anim 3s ease-out infinite ; 
+        animation: bar37_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(333deg); /* IE 9 */
+        -webkit-transform: rotate(333deg); /* Safari */
+        transform: rotate(333deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 0, 95);
+        }
+    
+    #bar38_black {
+        left: 244px;
+        top: 322px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar38_black_anim 3s ease-out infinite ; 
+        animation: bar38_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(342deg); /* IE 9 */
+        -webkit-transform: rotate(342deg); /* Safari */
+        transform: rotate(342deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar38_white_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 5px;}
+100% {height: 5px;}
+
+        }
+        
+    #bar38_white {
+        left: 231px;
+        top: 344px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar38_white_anim 3s ease-out infinite ; 
+        animation: bar38_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(342deg); /* IE 9 */
+        -webkit-transform: rotate(342deg); /* Safari */
+        transform: rotate(342deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid #aaa;
+        }
+           
+        @-webkit-keyframes
+        bar38_color_anim {
+            0% {height: 0px; background:rgb(255, 0, 57)}
+5% {height: 0px; background:rgb(255, 0, 57)}
+12% {height: 0px; background:rgb(255, 0, 57)}
+20% {height: 0px; background:rgb(255, 0, 57)}
+28% {height: 0px; background:rgb(255, 0, 57)}
+36% {height: 0px; background:rgb(255, 0, 57)}
+43% {height: 0px; background:rgb(255, 0, 57)}
+51% {height: 0px; background:rgb(255, 0, 57)}
+59% {height: 0px; background:rgb(255, 0, 57)}
+67% {height: 0px; background:rgb(255, 0, 57)}
+75% {height: 43px; background:rgb(255, 0, 57)}
+100% {height: 43px; background:rgb(255, 0, 57)}
+
+        }
+        
+    #bar38_color {
+        left: 220px;
+        top: 371px;
+        background-color: rgb(255, 0, 57);
+        -webkit-animation: bar38_color_anim 3s ease-out infinite ; 
+        animation: bar38_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(342deg); /* IE 9 */
+        -webkit-transform: rotate(342deg); /* Safari */
+        transform: rotate(342deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 0, 57);
+        }
+    
+    #bar39_black {
+        left: 228px;
+        top: 326px;
+        background-color: rgb(0, 0, 0);
+        -webkit-animation: bar39_black_anim 3s ease-out infinite ; 
+        animation: bar39_black_anim 3s ease-out infinite;
+        -ms-transform: rotate(351deg); /* IE 9 */
+        -webkit-transform: rotate(351deg); /* Safari */
+        transform: rotate(351deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid white;
+        }
+           
+        @-webkit-keyframes
+        bar39_white_anim {
+            0% {height: 0px;}
+5% {height: 0px;}
+12% {height: 0px;}
+20% {height: 0px;}
+28% {height: 0px;}
+36% {height: 0px;}
+43% {height: 0px;}
+51% {height: 0px;}
+59% {height: 0px;}
+67% {height: 0px;}
+75% {height: 9px;}
+100% {height: 9px;}
+
+        }
+        
+    #bar39_white {
+        left: 212px;
+        top: 349px;
+        background-color: rgb(255, 255, 255);
+        -webkit-animation: bar39_white_anim 3s ease-out infinite ; 
+        animation: bar39_white_anim 3s ease-out infinite;
+        -ms-transform: rotate(351deg); /* IE 9 */
+        -webkit-transform: rotate(351deg); /* Safari */
+        transform: rotate(351deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid #aaa;
+        }
+           
+        @-webkit-keyframes
+        bar39_color_anim {
+            0% {height: 0px; background:rgb(255, 0, 19)}
+5% {height: 0px; background:rgb(255, 0, 19)}
+12% {height: 0px; background:rgb(255, 0, 19)}
+20% {height: 0px; background:rgb(255, 0, 19)}
+28% {height: 0px; background:rgb(255, 0, 19)}
+36% {height: 0px; background:rgb(255, 0, 19)}
+43% {height: 0px; background:rgb(255, 0, 19)}
+51% {height: 0px; background:rgb(255, 0, 19)}
+59% {height: 0px; background:rgb(255, 0, 19)}
+67% {height: 0px; background:rgb(255, 0, 19)}
+75% {height: 36px; background:rgb(255, 0, 19)}
+100% {height: 36px; background:rgb(255, 0, 19)}
+
+        }
+        
+    #bar39_color {
+        left: 196px;
+        top: 377px;
+        background-color: rgb(255, 0, 19);
+        -webkit-animation: bar39_color_anim 3s ease-out infinite ; 
+        animation: bar39_color_anim 3s ease-out infinite;
+        -ms-transform: rotate(351deg); /* IE 9 */
+        -webkit-transform: rotate(351deg); /* Safari */
+        transform: rotate(351deg);
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        border: 1px solid rgb(255, 0, 19);
+        }
+    
