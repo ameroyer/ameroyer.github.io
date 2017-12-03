@@ -1687,11 +1687,11 @@
         @-webkit-keyframes
         bar2_20_color_anim {
             0% {height: 0px; background:rgb(35, 177, 189)}
-5% {height: 24px; background:rgb(35, 177, 189)}
-12% {height: 20px; background:rgb(35, 177, 189)}
+5% {height: 25px; background:rgb(35, 177, 189)}
+12% {height: 21px; background:rgb(35, 177, 189)}
 20% {height: 20px; background:rgb(35, 177, 189)}
 28% {height: 15px; background:rgb(35, 177, 189)}
-36% {height: 9px; background:rgb(35, 177, 189)}
+36% {height: 10px; background:rgb(35, 177, 189)}
 43% {height: 8px; background:rgb(35, 177, 189)}
 51% {height: 8px; background:rgb(35, 177, 189)}
 59% {height: 0px; background:rgb(35, 177, 189)}
@@ -2145,9 +2145,9 @@
         @-webkit-keyframes
         bar2_26_color_anim {
             0% {height: 0px; background:rgb(35, 39, 188)}
-5% {height: 8px; background:rgb(35, 39, 188)}
+5% {height: 9px; background:rgb(35, 39, 188)}
 12% {height: 11px; background:rgb(35, 39, 188)}
-20% {height: 12px; background:rgb(35, 39, 188)}
+20% {height: 13px; background:rgb(35, 39, 188)}
 28% {height: 18px; background:rgb(35, 39, 188)}
 36% {height: 24px; background:rgb(35, 39, 188)}
 43% {height: 24px; background:rgb(35, 39, 188)}
