@@ -192,16 +192,20 @@ line-height: 30px;
 
 
 // home page post summary
+.home {
+text-align: center;
+}
+
 .post-main {
 text-align: center;
 overflow: hidden;
-width: 32%;
+width: 320px;
 height: 320px;
 display: inline-block;
 }
 
 .post-main img {
-max-width: 100%;
+width: 100%;
 height: 100%;
 }
 
