@@ -6,13 +6,15 @@ categories: visualization, data, html, css, python
 thumb: /images/thumbs/wonderwheel.png
 ---
 
-<link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image2.css">
-<link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image3.css">
 
-*Wonderwheel* is a small data visualization project for representing images as animated hue histogram. More specifically, an image will be represented as three separate hue histograms (for visually black pixels, white pixels, and the rest, i.e. "color" pixels). 
+Wonderwheel is a small data visualization project for representing images as animated hue histogram. More specifically, an image will be represented as three separate hue histograms (for visually black pixels, white pixels, and the rest, i.e. "color" pixels). 
 
 The animation is obtained by generating such histograms at different stages of blurriness of the image (in decreasing order) and is displayed using *CSS3* transitions. 
 See below for an example of such visualizations:
+
+
+<link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image2.css">
+<link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image3.css">
 
 <div style="width:10%; float:right">
 <table border="1" cellpadding="6" align="right">
