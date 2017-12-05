@@ -74,7 +74,7 @@ where $$C$$ is a constant we can safely ignore for the loss and $$D$$ is the dim
 #### Implementation
 
 
-First, we define the input loading queue which reads images from a given list of filenames and feed them through an optional preprocessing function.
+First, we define the input loading queue which reads images from a given list of filenames and feeds them through an optional preprocessing function.
 
 The `get_inputs_queue` function returns a queue whose elements are input dictionary with keys:
 
