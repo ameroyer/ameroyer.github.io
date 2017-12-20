@@ -1,4 +1,4 @@
-Repo for [ameroyer.github.io](ameroyer.github.io)
+Repo for [ameroyer.github.io](http://ameroyer.github.io)
 
 This webpage contains various code snippets and other small projects I have worked one. 
 See the following index by thematic categories for more details.
