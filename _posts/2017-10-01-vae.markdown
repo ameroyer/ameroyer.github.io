@@ -6,12 +6,12 @@ categories: python, tensorflow, generative, vae
 thumb: /images/thumbs/vae.jpg
 ---
 
-This post presents a simple Tensorflow implementation of the Variational Auto-encoder model (VAE) introduced in <a href="https://arxiv.org/abs/1312.6114" target="_blank"><i>Auto-Encoding Variational Bayes</i>, D. Kingma, M. Welling, ICLR 2017</a>, applied in particular on the <a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA</a> faces dataset
+This post presents a simple Tensorflow implementation of the Variational Auto-encoder model (VAE) introduced in <a href="https://arxiv.org/abs/1312.6114" target="_blank"><i>Auto-Encoding Variational Bayes</i>, D. Kingma, M. Welling, ICLR 2017</a>, that I will apply to the <a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA</a> faces dataset here.
 
+     
+### Model
 
-#### Model
-
-Variational Auto-encoders (VAE) are simple generative models that contain a latent representation. Given latent code $$z$$ sampled from a prior distribution <span>$$p_{\theta}(z)$$</span>, we generate a sample $$x$$ from the conditional <span>$$p_{\theta}(x\ |\ z)$$</span>. The goal is to learn the parameters of this generative model as well as how to map data points to latent codes.
+Variational Auto-encoders (VAE) are probabilistic generative models relying on a simple latent representation that captures the input data intrinsic properties. Given latent code $$z$$ sampled from a prior distribution <span>$$p_{\theta}(z)$$</span>, we generate a sample $$x$$ from the conditional <span>$$p_{\theta}(x\ |\ z)$$</span>. The goal is to learn the parameters of this generative model as well as how to map data points to latent codes.
 
 In many cases however, the posterior distribution <span>$$p_{\theta}(z\ |\ x)$$</span> is intractable. It is instead approximated by a parametric model <span>$$q_{\phi}(z\ |\ x)$$</span>, where $$\phi$$ are called the variational parameters (see the graphical model below). In the following, we will drop the $$\theta$$ and $$\phi$$ notations for simplicity. 
 
@@ -56,9 +56,139 @@ The vanilla VAE is parametrized with Gaussian function as follows:
 
   * The latent code prior is <span>$$p(z) = \mathcal{N}(z\ |\ 0, 1)$$</span>
   *  <span>$$q(z\ |\ x) = \mathcal{N}(z\ |\ \mu_q(x), \sigma_q(x))$$</span> is a Gaussian with diagonal covariance, where $$\mu_q$$ and $$\sigma_q$$ are output by the encoder network.
-  * <span>$$p(x\ |\ z) = \mathcal{N}(x\ |\ \mu_p(z), \sigma_p)$$</span> is a Gaussian with diagonal covariance, where $$\mu_p$$ is the reconstruction output by the decoder network.
+  * <span>$$p(x\ |\ z) = \mathcal{N}(x\ |\ \mu_p(z), \sigma_p)$$</span> is a Gaussian with diagonal covariance, where $$\mu_p$$ is the reconstruction output by the decoder network and $$\sigma_p \in \mathbb{R}$$ is an hyperparameter.
 
- In practice, $$\sigma_p$$ is taken as a constant in $$\mathbb{R}$$. This means we can simplify the reconstruction loss term in $${\mathcal L}_{ELBO}$$:
+### Implementation
+
+#### Inputs pipeline
+First, we define the input loading queue which reads images from a given list of filenames and feeds them through an optional preprocessing function. I use Tensorflow queues utilities rather than placeholder so all input-related operations are built in the static graph directly.
+<span class='truc'>gloubi</span>
+The `get_inputs_queue` function returns a queue whose elements are input dictionary with key "image": A 4D Tensor of size (BATCH_SIZE, HEIGHT, WIDTH, N_CHANNELS) representing the input images.
+
+
+
+```python
+# Read Image from file
+inputs = {}    
+filename_queue = tf.train.string_input_producer(
+    filenames, capacity=capacity, shuffle=False)
+_, reader = tf.WholeFileReader().read(filename_queue)
+image = tf.image.decode_jpeg(reader, channels=channels, name='decoder')
+inputs['image'] = image
+        
+# Preprocess the inputs
+with tf.variable_scope('inputs_preprocess'):
+    inputs = preprocess_inputs(inputs)
+    
+# Batch and shuffle the inputs 
+inputs = tf.train.shuffle_batch(
+    inputs,  batch_size, capacity, min_after_dequeue)
+```
+
+The `preprocess_inputs` function simply performs a central crop on the input image, resizes them to square size 128x128 and finally maps them to [-1, 1].
+```python
+# Map to [-1, 1]
+with tf.control_dependencies([tf.assert_type(inputs['image'], tf.uint8)]):
+   inputs['image'] = tf.image.convert_image_dtype(
+       inputs['image'], tf.float32)
+   inputs['image'] = (inputs['image'] - 0.5) * 2
+        
+# Central crop to minimal side
+height = tf.shape(inputs['image'])[0]
+width = tf.shape(inputs['image'])[1]
+min_side =  tf.minimum(height, width)
+offset_height = (height - min_side) // 2
+offset_width = (width - min_side) // 2
+inputs['image'] = tf.image.crop_to_bounding_box(
+    inputs['image'], offset_height, offset_width, min_side, min_side)
+    
+# Resize
+if size is not None and size > 0:
+    inputs['image'] = tf.image.resize_images(inputs['image'], (size, size))
+```
+
+#### Architecture
+For the feed-forward network, I use a rather simple convolutional architecture with ReLU activations, batch normalization layers and max-pooling.
+More specifically, the encoder is described and implemented as follow
+
+**_Encoder_**
+
+* *Inputs*: (batch size **x** 128 **x** 128 **x** 3) in [-1, 1]
+* 5 convolutional blocks
+* Convolutions, stride 2
+* ReLU activation and Batch normalization
+* Max-pooling
+* Final block: (batch size **x** 4 **x** 4 **x** c)
+* 2 separate fully-connected layers
+* *Outputs*:  $$\mu_q$$ and $$\sigma_q$$, mean and log variance of the latent code, each (batch size **x** num_latent_dims)
+
+```python
+with tf.variable_scope('encoder', reuse=reuse):
+   # Convolutions
+    with slim.arg_scope([slim.conv2d],
+        stride=2,
+	weights_initializer=weights_initializer,
+	activation_fn=activation_fn,
+	normalizer_fn=normalizer_fn,
+	normalizer_params=normalizer_params,
+	padding='SAME'):
+        net = inputs
+        for i, num_filter in enumerate(num_filters):
+            net = slim.conv2d(net, num_filter,
+	        [kernel_size, kernel_size], scope='conv%d' % (i + 1))
+                
+    # Fully connected
+    net = tf.contrib.layers.flatten(net)
+        
+    with slim.arg_scope([slim.fully_connected],
+        weights_initializer=weights_initializer,
+	normalizer_fn=None,
+	activation_fn=None):
+        z_mean = slim.fully_connected(net, num_dims)
+        z_log_var = slim.fully_connected(net, num_dims)
+```
+
+**_Decoder_**
+
+* *Inputs*: (batch size **x** num_latent_dims)
+* 1 deconvolution upscale the input to (batch size **x** 4 **x** 4 **x** c)
+* 5 deconvolutional blocks
+* transpose convolution, stride 2
+* ReLU activation and Batch normalization
+* *Outputs*: $$\mu_p$$, (batch size **x** 128 **x** 128 **x** 3) in [-1, 1], mean of the image distribution
+
+```python
+with tf.variable_scope('decoder', reuse=reuse):
+    with slim.arg_scope([slim.conv2d_transpose],
+        stride=2,
+	weights_initializer=weights_initializer,
+	activation_fn=activation_fn,
+	normalizer_fn=normalizer_fn,
+	normalizer_params=normalizer_params,
+	padding='SAME'):
+        # Flattened input -> 4 x 4 patch
+        shape = latent_z.get_shape().as_list()
+        net = tf.reshape(latent_z, (shape[0], 1, 1, shape[1]))
+        net = slim.conv2d_transpose(net, num_filters[0], [4, 4], stride=1,
+	    padding='VALID', scope='deconv1')
+        # Upscale via deconvolutions
+        for i, num_filter in enumerate(num_filters[1:]):
+            net = slim.conv2d_transpose(net, num_filter, [kernel_size, kernel_size],
+	        scope='deconv%d' % (i + 2))
+            
+        # Final deconvolution
+        net = slim.conv2d_transpose(net, 3, [3, 3],
+	    stride=2,
+	    activation_fn=tf.nn.tanh,
+	    normalizer_fn=None,
+	    scope='deconv_out')
+       return net    
+```
+
+#### Loss function
+Now that we have the main architecture, we need to define the training loss function. In our particular setting, the $${\mathcal L}_{ELBO}$$ can be simplified as follows.
+
+First, $$\sigma_p$$ is taken as a constant in $$\mathbb{R}$$. This means we can simplify the reconstruction loss term in $${\mathcal L}_{ELBO}$$:
 	
 <div style="text-align: center; margin:10px">
 $$
@@ -71,245 +201,24 @@ $$
 
 where $$C$$ is a constant we can safely ignore for the loss and $$D$$ is the dimensionality of $$x$$. The above equation shows that $$\sigma_p$$ acts as a weighting factor on the reconstruction loss term between $$x$$ and the output decoder mean $$\mu_p(z)$$. In particular, when $$\sigma_p \rightarrow 0$$, we revert to a classical auto-encoder where the reconstruction loss term totally overweights the latent loss term in  $${\mathcal L}_{ELBO}$$.
 
-#### Implementation
+
+Secondly, since the prior distribution and the encoder distribution are Gaussian with diagonal covariance, the KL divergence term can be expressed in analytical form (<a href="https://stats.stackexchange.com/questions/60680/kl-divergence-between-two-multivariate-gaussians/60699" target="_blank">see for instance</a>):
+
+<div style="text-align: center; margin:10px">
+$$
+\begin{align}
+\mbox{KL}(q(z\ |\ x)\ \|\ p(z)) &= \mbox{KL}\left(\mathcal{N}(\mu_q, \sigma_q)\ |\ \mathcal{N}(0, 1) \right)\\
+ &= \frac{1}{2} \sum_{i=1}^d - \log (\sigma_q^i) - 1  + \sigma_q^i +  {\mu_q^i}^2 
+\end{align}
+$$
+</div>
+
+where $$d$$ is the dimension of the latent space.
 
 
-First, we define the input loading queue which reads images from a given list of filenames and feeds them through an optional preprocessing function.
+In practice, we approximate expectations with sum over samples, and we use vector arithmetics, which leads to the following expression for each term:
 
-The `get_inputs_queue` function returns a queue whose elements are input dictionary with keys:
-
-* `image`: A 4D Tensor of size (BATCH_SIZE, HEIGHT, WIDTH, N_CHANNELS) representing the input images.
-
-The `preprocess_inputs` function simply performs a central crop on the input image, resizes them to 128x128 and finally maps them to [-1, 1].
-
-
-```python
-def get_inputs_queue(filenames, 
-                     preprocess_inputs=None,
-                     batch_size=32,
-                     num_threads=5,
-                     extension='jpg', 
-                     channels=3,
-                     capacity=800,
-                     min_after_dequeue=100):
-    """Returns a queue containing the inputs batches read from a list of files.
-    
-    Args:
-      filenames: List of image files to read the input from.
-      preprocess_inputs: Preprocessing function taking a dictionary as input 
-        and outputting a dictionnary with the same keys.
-      batch_size: Batch size.
-      num_threads: Number of readers for the batch queue.
-      extension: Image format.
-      channels: Number of image channels.
-      capacity: Queue capacity.
-      min_after_dequeue: Min_after_dequeue parameter for the shuffle queue.
-      
-    Returns: 
-      A queue containing the input batches, where each input is a dictionary
-      of Tensors.
-    """
-    inputs = {}    
-    # Read Image
-    filename_queue = tf.train.string_input_producer(
-        filenames, capacity=capacity, shuffle=False)
-    _, reader = tf.WholeFileReader().read(filename_queue)
-    if extension in ['jpg', 'jpeg']:
-        image = tf.image.decode_jpeg(reader, channels=channels, name='decoder')
-        inputs['image'] = image
-    else:
-        raise ValueError('%s unimplemented' % extension)
-        
-    # Preprocess the inputs
-    if preprocess_inputs is not None:
-        input_keys = sorted(list(inputs.keys()))
-        with tf.variable_scope('inputs_preprocess'):
-            inputs = preprocess_inputs(inputs)
-        assert sorted(list(inputs.keys())) == input_keys
-    
-    # Batch the inputs 
-    inputs = tf.train.shuffle_batch(inputs, 
-                                    batch_size, 
-                                    capacity, 
-                                    min_after_dequeue,
-                                    num_threads=num_threads, 
-                                    name='inputs_batches_queue')
-    return inputs   
-
-def preprocess_inputs(inputs, tight_crop=False, size=256):
-    """Preprocess input images to map them to [0, 1] and square-resize them.
-    
-    Args:
-      inputs: A dictionary of Tensors.
-      tight_crop: If True, the input face is further cropped.
-      size: The square size to resize image to.
-      
-    Returns:
-      The preprocessed dictionary of inputs with normalized images.
-    """
-    # Map to [-1, 1]
-    with tf.control_dependencies([tf.assert_type(inputs['image'], tf.uint8)]):
-        inputs['image'] = tf.image.convert_image_dtype(
-            inputs['image'], tf.float32)
-        inputs['image'] = (inputs['image'] - 0.5) * 2
-        
-    # Central crop to minimal side
-    height = tf.shape(inputs['image'])[0]
-    width = tf.shape(inputs['image'])[1]
-    min_side = 108 if tight_crop else tf.minimum(height, width)
-    offset_height = (height - min_side) // 2
-    offset_width = (width - min_side) // 2
-    inputs['image'] = tf.image.crop_to_bounding_box(
-        inputs['image'], offset_height, offset_width, min_side, min_side)
-    
-    # Resize
-    if size is not None and size > 0:
-        inputs['image'] = tf.image.resize_images(inputs['image'], (size, size))
-    
-    return inputs
-```
-
-We define the main architecture of the auto-encoder structure as follows:
-
-#### Encoder
-
-* *Inputs*: (batch size **x** 128 **x** 128 **x** 3) in [-1, 1]
-* 5 convolutional blocks
-* Convolutions, stride 2
-* ReLU activation and Batch normalization
-* Max-pooling
-* Final block: (batch size **x** 4 **x** 4 **x** c)
-* 2 separate fully-connected layers
-* *Outputs*: mean and log variance of the latent code, each (batch size **x** num_latent_dims)
-
-#### Decoder
-
-* *Inputs*: (batch size **x** num_latent_dims)
-* 1 deconvolution upscale the input to (batch size **x** 4 **x** 4 **x** c)
-* 5 deconvolutional blocks
-* transpose convolution, stride 2
-* ReLU activation and Batch normalization
-* *Outputs*: (batch size **x** 128 **x** 128 **x** 3) in [-1, 1], mean of the image distribution
-
-```python
-def encoder(inputs, 
-            num_filters, 
-            num_dims,
-            kernel_size=5,
-            activation_fn=tf.nn.relu, 
-            normalizer_fn=slim.batch_norm,
-            normalizer_decay=0.99,
-            is_training=True, 
-            reuse=False):
-    """Simple convolutional encoder with ReLU, batch norm and max-pool.
-    
-    Args:
-      inputs: 4D Tensor of images.
-      num_filters: Number of filters for each convolutional block.
-      num_dims: Number of dimensions of the output latent representation.
-      activation_fn: Activation function. Defaults to elu.
-      normalizer_fn: Normalization function. Defaults to Batch norm. Set to
-          None for no normalization.
-      normalizer_decay: Decay for the normalization.
-      is_training: Whether the model is in training mode.
-      reuse: Whether to reuse the variables or not.
-      
-    Returns:
-      Two 2D Tensors representing the mean and variance of the latent normal distribution
-    """
-    assert(len(num_filters) > 0 and num_dims > 0)
-    # Config
-    weights_initializer = tf.contrib.layers.xavier_initializer()
-    normalizer_params = {'is_training': is_training, 'decay': normalizer_decay}
-    
-    # Network
-    with tf.variable_scope('encoder', reuse=reuse):
-        # Convolutions
-        with slim.arg_scope([slim.conv2d],
-                            stride=2,
-                            weights_initializer=weights_initializer,
-                            activation_fn=activation_fn,
-                            normalizer_fn=normalizer_fn,
-                            normalizer_params=normalizer_params,
-                            padding='SAME'):
-            net = inputs
-            for i, num_filter in enumerate(num_filters):
-                net = slim.conv2d(net, num_filter, [kernel_size, kernel_size],
-                                  scope='conv%d' % (i + 1))
-                
-        # Fully connected
-        assert net.get_shape()[1].value == 4
-        assert net.get_shape()[2].value == 4
-        net = tf.contrib.layers.flatten(net)
-        
-        with slim.arg_scope([slim.fully_connected],
-                            weights_initializer=weights_initializer,
-                            normalizer_fn=None,
-                            activation_fn=None):
-            z_mean = slim.fully_connected(net, num_dims)
-            z_log_var = slim.fully_connected(net, num_dims)
-            
-        return z_mean, z_log_var
-    
-def decoder(latent_z, 
-            num_filters,
-            kernel_size=5,
-            activation_fn=tf.nn.relu, 
-            normalizer_fn=slim.batch_norm,
-            normalizer_decay=0.99,
-            is_training=True, 
-            reuse=False):
-    """ Simple convolutional decoder with deconvolutions and ReLU.
-    
-    Args:
-      latent_z: 2D Tensor representing the latent variable.
-      num_filters: Number of filters for each deconvolutional block.
-      activation_fn: Activation function. Defaults to elu.
-      normalizer_fn: Normalization function. Defaults to Batch norm. Set to
-          None for no normalization.
-      normalizer_decay: Decay for the normalization.
-      is_training: Whether the model is in training mode.
-      reuse: Whether to reuse the variables or not.
-      
-    Returns:
-      A 4D Tensor representing the output images in [-1, 1]
-      
-    """
-    # Config
-    weights_initializer = tf.contrib.layers.xavier_initializer()
-    normalizer_params = {'is_training': is_training, 'decay': normalizer_decay}
-    
-    # Network
-    with tf.variable_scope('decoder', reuse=reuse):
-        with slim.arg_scope([slim.conv2d_transpose], stride=2,
-                            weights_initializer=weights_initializer,
-                            activation_fn=activation_fn,
-                            normalizer_fn=normalizer_fn,
-                            normalizer_params=normalizer_params,
-                            padding='SAME'):
-            # Flattened input -> 4 x 4 patch
-            shape = latent_z.get_shape().as_list()
-            net = tf.reshape(latent_z, (shape[0], 1, 1, shape[1]))
-            net = slim.conv2d_transpose(net, num_filters[0], [4, 4], stride=1,
-                                        padding='VALID', 
-                                        scope='deconv1')
-            # Upscale via deconvolutions
-            for i, num_filter in enumerate(num_filters[1:]):
-                net = slim.conv2d_transpose(net, num_filter, [kernel_size, kernel_size],
-                                            scope='deconv%d' % (i + 2))
-            
-            # Final deconvolution
-            net = slim.conv2d_transpose(net, 3, [3, 3], 
-                                        stride=2,
-                                        activation_fn=tf.nn.tanh,
-                                        normalizer_fn=None,
-                                        scope='deconv_out')
-            return net    
-```
-
-The VAE objective is typically decomposed in two terms:
-
-  * The **pixel loss**, which is the expectation of the decoder output under the latent codes distribution generated by the encoder
+  * The **pixel loss** is the expectation of the decoder output under the latent codes distribution generated by the encoder
   <div style="text-align:center">
 $$
   \begin{align}
@@ -317,7 +226,7 @@ $$
   \end{align}
 $$
   </div>
-  * The **latent loss**, which is the KL-divergence between the encoder distribution <span>$$q(z\ |\ x)$$</span> (Gaussian with diagonal covariance matrix) and the prior <span>$$p(z) = \mathcal{N}(z\ |\ 0, 1)$$</span>
+  * The **latent loss** is the KL-divergence between the encoder distribution <span>$$q(z\ |\ x)$$</span> (Gaussian with diagonal covariance matrix) and the prior <span>$$p(z) = \mathcal{N}(z\ |\ 0, 1)$$</span>
   <div style="text-align:center">
 $$
   \begin{align}  
@@ -329,59 +238,32 @@ $$
 
 ```python
 def get_pixel_loss(images, reconstructions, weight=1.0):
-"""Returns the VAE pixel loss
-
-Args:
-images: Input images
-reconstructions: Generated reconstructions
-"""
-return weight * tf.reduce_mean(tf.square(images - reconstructions))
+    return weight * tf.reduce_mean(tf.square(images - reconstructions))
 
 def get_latent_loss(z_mean, z_log_var, weight=1.0):
-"""Returns the VAE latent loss for a N(0, 1) latent distribution.
-
-Args:
-z_mean: Estimated means for the latent Gaussian distribution.
-z_log_var: Log of the estimated variances for the latent distribution.
-weight: Optional loss weight.
-
-Returns:
-The latent loss in the VAE objective.      
-"""
-return weight * 0.5 * tf.reduce_mean(
-tf.reduce_sum(tf.square(z_mean) + tf.exp(z_log_var) - z_log_var - 1., axis=1))
+    return weight * 0.5 * tf.reduce_mean(tf.reduce_sum(
+        tf.square(z_mean) + tf.exp(z_log_var) - z_log_var - 1., axis=1))
 ```
 
-Finally, we define a few utilities function for Tensorboard summaries. The main VAE summaries contain the image reconstructions, sample generations and scalar summary for losses.
 
-Additionally, we define a text summary which contains the configuration of the current run and will only be updated infrequently.
+#### Training
 
-Now we're ready for training. We will set the following hyperparameters and use a `Monitored training session `that will take care of starting the input queues, defining the summary writer etc for us.
+Now we're ready for training. We will use the default Adam optimizer.
+In the original notebook, I additionally define a few utilities function for Tensorboard summaries. The main VAE summaries contain the image reconstructions, sample generations and scalar summary for losses. 
+I also use a `Monitored training session `that will take care of starting the input queues, defining the summary writer etc.
+
+The following hyperparameters can be defined in the code:
 
 * `NUM_GPUS`, number of GPUs to use in experiments
 * `GPU_MEM_FRAC`, fraction of RAM to allocate per GPU
-* `BASE_DIR`, base image directory
-* `EXTENSION`, image format
-* `TIGHT_CROP`, if True, the input faces are further cropped to the main facial features, i.e. excluding background and hair
 * `BATCH_SIZE`, batch size
-* `NUM_ROWS`, number of rows in the image grids for Tensorboard summaries. Note that `NUM_ROWS * NUM_ROWS` should be smaller than `BATCH_SIZE`
 * `SIZE`, input image size
 * `NUM_DIMS`, number of dimensions of the latent code
 * `NUM_ENCODER_FILTERS`, list of filter numbers for each convolutional block in the encoder
 * `NUM_DECODER_FILTERS`, list of filter numbers for each convolutional block in the decoder
 * `LEARNING_RATE`, base learning rate
-* `LATENT_LOSS_WEIGHT`, weight for the latent loss term
-* `ADAM_MOMENTUM`, $\beta_1$ parameter in the ADAM optimizer
-* `BASE_LOG_DIR`, base log directory path
-* `EXP_NAME`, base name for the experiment
-* `SAVE_SUMMARIES_STEPS`, save summaries very given steps
-* `SAVE_CHECKPOINT_SECS`, save checkpoint every given seconds
-* `MAX_TO_KEEP`, max number of past checkpoints to keep
-* `LOG_GLOBALSTEP_STEPS`, print the global step every given steps
-* `SAVE_IMAGES_STEPS`, save image outputs every given steps
-* `SAVE_IMAGES_KEYS`, list of image outputs to save
-* `NUM_STEPS`, number of training steps to run. Set to negative for infinite run.
-
+* `LATENT_LOSS_WEIGHT`, weight for the latent loss term (note that this is directly tied to the $$\sigma_p$$ parameter)
+* `ADAM_MOMENTUM`, $$\beta_1$$ parameter in the ADAM optimizer
 
 
 ```python
@@ -390,11 +272,7 @@ with tf.Graph().as_default():
     for i in range(NUM_GPUS):
         # inputs
         with tf.name_scope('inputs_%d' % (i + 1)):
-            inputs = get_inputs_queue(
-                glob.glob(os.path.join(BASE_DIR, '*.%s' % EXTENSION)),
-                lambda x: preprocess_inputs(x, tight_crop=TIGHT_CROP, size=SIZE), 
-                batch_size=BATCH_SIZE,
-                extension=EXTENSION)
+            inputs = get_inputs_queue(BASE_DIR, batch_size=BATCH_SIZE)
             
         # outputs
         outputs = {}
@@ -419,77 +297,28 @@ with tf.Graph().as_default():
         # loss 
         with tf.name_scope('loss_%d' % i):
             pixel_loss =  get_pixel_loss(inputs['image'], outputs['reconstruction'])
-            tf.add_to_collection('total_pixel_loss', pixel_loss)
-            latent_loss = get_latent_loss(outputs['z_means'], outputs['z_log_vars'], 
+            latent_loss = get_latent_loss(outputs['z_means'],
+					  outputs['z_log_vars'], 
                                           weight=LATENT_LOSS_WEIGHT)
-            tf.add_to_collection('total_latent_loss', latent_loss)
             
     # Optimization
     global_step = tf.contrib.framework.get_or_create_global_step()
-    optimizer = tf.train.AdamOptimizer(learning_rate=LEARNING_RATE, beta1=ADAM_MOMENTUM)
+    optimizer = tf.train.AdamOptimizer(
+        learning_rate=LEARNING_RATE, beta1=ADAM_MOMENTUM)
     pixel_loss = tf.add_n(tf.get_collection('total_pixel_loss')) / NUM_GPUS
     latent_loss = tf.add_n(tf.get_collection('total_latent_loss')) / NUM_GPUS
     loss = pixel_loss + latent_loss
     train_op = optimizer.minimize(loss, global_step=global_step, 
                                   colocate_gradients_with_ops=True)
     
-    tf.summary.scalar('pixel', pixel_loss, family='losses')
-    tf.summary.scalar('latent', latent_loss, family='losses')
-    tf.summary.scalar('total', loss, family='losses')
-    
     # Add update operations for Batch norm
     update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS) 
     train_op = tf.group(train_op, *update_ops)
-    
-    # Track the moving averages of all trainable variables.
-    if NUM_GPUS > 1:
-        variable_averages = tf.train.ExponentialMovingAverage(0.9995, global_step)
-        variables_averages_op = variable_averages.apply(tf.trainable_variables())
-        # Group all updates to into a single train op.
-        train_op = tf.group(train_op, variables_averages_op)
-    
-    ## Inference Network
-    # Samples
-    with tf.name_scope('sampled'):
-        sampled_z = tf.random_normal((BATCH_SIZE, NUM_DIMS))
-        outputs['sampled'] = decoder(sampled_z, 
-                                     num_filters=NUM_DECODER_FILTERS,
-                                     is_training=False,
-                                     reuse=True) 
-    # Interpolation
-    with tf.name_scope('interpolated'):
-        sampled_z_1 = tf.random_normal(( NUM_DIMS, 1))
-        sampled_z_2 = tf.random_normal((NUM_DIMS, 1))
-        coeffs = np.linspace(0., 1., NUM_ROWS * NUM_ROWS)
-        sampled_z = sampled_z_1 * coeffs + sampled_z_2 * (1 - coeffs)
-        sampled_z = tf.transpose(sampled_z, (1, 0))
-        outputs['interpolated'] = decoder(sampled_z, 
-                                            num_filters=NUM_DECODER_FILTERS,
-                                            is_training=False,
-                                            reuse=True)    
-    
-    ## Additional Summaries
-    add_vae_summaries(inputs, outputs, num_rows=NUM_ROWS)
-    add_vae_config_summary()
-        
+            
     ## Launch the training session
     try:
-        global_step_ = 0
-        LOG_DIR = os.path.join(BASE_LOG_DIR, EXP_NAME, datetime.now().strftime("%m-%d_%H-%M"))
         with get_monitored_training_session() as sess:
             while not sess.should_stop():
-                # If save images
-                if (global_step_ + 1) % SAVE_IMAGES_STEPS == 0:
-                    out_ = sess.run([global_step, loss, train_op] + 
-                                    [outputs[k] for k in SAVE_IMAGES_KEYS])
-                    global_step_, loss_ = out_[0], out_[1]
-                    for k, img in zip(SAVE_IMAGES_KEYS, out_[3:]):
-                        scipy.misc.imsave(
-                            os.path.join(LOG_DIR, 'images', 
-                                         '%s_%d.jpg' % (k, global_step_ + 1)), 
-                            img[0])   
-                # Normal step
-                else:
                     global_step_,loss_, _ = sess.run([global_step, loss, train_op])
                 print('\rStep %d: %.3f' % (global_step_, loss_), end='')
     except KeyboardInterrupt:
@@ -497,11 +326,12 @@ with tf.Graph().as_default():
 ```
 
 #### Results
-
+After training the model for some time on the CelebA dataset, I obtain the following results (reconstructions, samples and interpolation).
 ![png](/notebooks/2017_10_1_VAE/output_13_1.png)
 
-
-Finally, we can search for the nearest neighbors of the generated images in the training set (in terms of L2 distance), to check for any potential overfitting problems (which does not seem to be the case here):
+As is typical for VAEs under a Gaussian assumption, the resulting samples are rather blurry.
+However the model is able to generate new unseen samples.
+In fact, we can search for the nearest neighbors of the generated images in the training set (in terms of L2 distance), to check for any potential overfitting problems (which does not seem to be the case here):
 
 
 <div style="text-align:center">
