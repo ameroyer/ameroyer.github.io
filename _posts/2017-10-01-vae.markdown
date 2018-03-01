@@ -9,7 +9,7 @@ thumb: /images/thumbs/vae.jpg
 This post presents a simple Tensorflow implementation of the Variational Auto-encoder model (VAE) introduced in <a href="https://arxiv.org/abs/1312.6114" target="_blank"><i>Auto-Encoding Variational Bayes</i>, D. Kingma, M. Welling, ICLR 2017</a>, that I will apply to the <a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA</a> faces dataset here.
 
      
-### Model
+### <i class="fa fa-edit"></i> Model
 
 Variational Auto-encoders (VAE) are probabilistic generative models relying on a simple latent representation that captures the input data intrinsic properties. Given latent code $$z$$ sampled from a prior distribution <span>$$p_{\theta}(z)$$</span>, we generate a sample $$x$$ from the conditional <span>$$p_{\theta}(x\ |\ z)$$</span>. The goal is to learn the parameters of this generative model as well as how to map data points to latent codes.
 
@@ -58,12 +58,12 @@ The vanilla VAE is parametrized with Gaussian function as follows:
   *  <span>$$q(z\ |\ x) = \mathcal{N}(z\ |\ \mu_q(x), \sigma_q(x))$$</span> is a Gaussian with diagonal covariance, where $$\mu_q$$ and $$\sigma_q$$ are output by the encoder network.
   * <span>$$p(x\ |\ z) = \mathcal{N}(x\ |\ \mu_p(z), \sigma_p)$$</span> is a Gaussian with diagonal covariance, where $$\mu_p$$ is the reconstruction output by the decoder network and $$\sigma_p \in \mathbb{R}$$ is an hyperparameter.
 
-### Implementation
+### <i class="fa fa-wrench"></i> Implementation
 
 #### Inputs pipeline
 First, we define the input loading queue which reads images from a given list of filenames and feeds them through an optional preprocessing function. I use Tensorflow queues utilities rather than placeholder so all input-related operations are built in the static graph directly.
-<span class='truc'>gloubi</span>
-The `get_inputs_queue` function returns a queue whose elements are input dictionary with key "image": A 4D Tensor of size (BATCH_SIZE, HEIGHT, WIDTH, N_CHANNELS) representing the input images.
+<span class="">gloubi</span>
+The <span class="inline-code">get_inputs_queue</span> function returns a queue whose elements are input dictionary with key "image": A 4D Tensor of size (BATCH_SIZE, HEIGHT, WIDTH, N_CHANNELS) representing the input images.
 
 
 
@@ -173,8 +173,8 @@ with tf.variable_scope('decoder', reuse=reuse):
 	    padding='VALID', scope='deconv1')
         # Upscale via deconvolutions
         for i, num_filter in enumerate(num_filters[1:]):
-            net = slim.conv2d_transpose(net, num_filter, [kernel_size, kernel_size],
-	        scope='deconv%d' % (i + 2))
+            net = slim.conv2d_transpose(net, num_filter, 
+	        [kernel_size, kernel_size], scope='deconv%d' % (i + 2))
             
         # Final deconvolution
         net = slim.conv2d_transpose(net, 3, [3, 3],
