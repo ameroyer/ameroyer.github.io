@@ -62,8 +62,8 @@ The vanilla VAE is parametrized with Gaussian function as follows:
 
 #### Inputs pipeline
 First, we define the input loading queue which reads images from a given list of filenames and feeds them through an optional preprocessing function. I use Tensorflow queues utilities rather than placeholder so all input-related operations are built in the static graph directly.
-<span class="">gloubi</span>
-The <span class="inline-code">get_inputs_queue</span> function returns a queue whose elements are input dictionary with key "image": A 4D Tensor of size (BATCH_SIZE, HEIGHT, WIDTH, N_CHANNELS) representing the input images.
+
+The <span class="inline-code">get_inputs_queue</span> function returns a queue whose elements are input dictionary with key "image": A 4D Tensor of size  <span class="inline-code">(batch_size, height, width, num_channels)</span> representing the inputs.
 
 
 
@@ -85,7 +85,8 @@ inputs = tf.train.shuffle_batch(
     inputs,  batch_size, capacity, min_after_dequeue)
 ```
 
-The `preprocess_inputs` function simply performs a central crop on the input image, resizes them to square size 128x128 and finally maps them to [-1, 1].
+The  <span class="inline-code">preprocess_inputs</span> function simply performs a central crop on the input image, resizes them to square size 128x128 and finally maps them to [-1, 1].
+
 ```python
 # Map to [-1, 1]
 with tf.control_dependencies([tf.assert_type(inputs['image'], tf.uint8)]):
@@ -113,25 +114,25 @@ More specifically, the encoder is described and implemented as follow
 
 **_Encoder_**
 
-* *Inputs*: (batch size **x** 128 **x** 128 **x** 3) in [-1, 1]
+* *Inputs*:  <span class="inline-code">(batch size, 128, 128, 3)</span> in [-1, 1]
 * 5 convolutional blocks
 * Convolutions, stride 2
 * ReLU activation and Batch normalization
 * Max-pooling
-* Final block: (batch size **x** 4 **x** 4 **x** c)
+* Final block:  <span class="inline-code">(batch size, 4, 4, c)</span>
 * 2 separate fully-connected layers
-* *Outputs*:  $$\mu_q$$ and $$\sigma_q$$, mean and log variance of the latent code, each (batch size **x** num_latent_dims)
+* *Outputs*:  $$\mu_q$$ and $$\log (\sigma_q)$$, each  of size <span class="inline-code">(batch size, num_latent_dims)</span>
 
 ```python
 with tf.variable_scope('encoder', reuse=reuse):
    # Convolutions
     with slim.arg_scope([slim.conv2d],
-        stride=2,
-	weights_initializer=weights_initializer,
-	activation_fn=activation_fn,
-	normalizer_fn=normalizer_fn,
-	normalizer_params=normalizer_params,
-	padding='SAME'):
+			stride=2,
+			weights_initializer=weights_initializer,
+			activation_fn=activation_fn,
+			normalizer_fn=normalizer_fn,
+			normalizer_params=normalizer_params,
+			padding='SAME'):
         net = inputs
         for i, num_filter in enumerate(num_filters):
             net = slim.conv2d(net, num_filter,
@@ -141,48 +142,45 @@ with tf.variable_scope('encoder', reuse=reuse):
     net = tf.contrib.layers.flatten(net)
         
     with slim.arg_scope([slim.fully_connected],
-        weights_initializer=weights_initializer,
-	normalizer_fn=None,
-	activation_fn=None):
+			weights_initializer=weights_initializer,
+			normalizer_fn=None,
+			activation_fn=None):
         z_mean = slim.fully_connected(net, num_dims)
         z_log_var = slim.fully_connected(net, num_dims)
 ```
 
 **_Decoder_**
 
-* *Inputs*: (batch size **x** num_latent_dims)
-* 1 deconvolution upscale the input to (batch size **x** 4 **x** 4 **x** c)
+* *Inputs*:  <span class="inline-code">(batch size, num_latent_dims)</span>
+* 1 deconvolution upscale the input to  <span class="inline-code">(batch size, 4,  4, c)
 * 5 deconvolutional blocks
 * transpose convolution, stride 2
 * ReLU activation and Batch normalization
-* *Outputs*: $$\mu_p$$, (batch size **x** 128 **x** 128 **x** 3) in [-1, 1], mean of the image distribution
+* *Outputs*: $$\mu_p$$,  <span class="inline-code">(batch size, 128, 128, 3)</span> in [-1, 1], mean of the image distribution
 
 ```python
 with tf.variable_scope('decoder', reuse=reuse):
     with slim.arg_scope([slim.conv2d_transpose],
-        stride=2,
-	weights_initializer=weights_initializer,
-	activation_fn=activation_fn,
-	normalizer_fn=normalizer_fn,
-	normalizer_params=normalizer_params,
-	padding='SAME'):
+			stride=2,
+			weights_initializer=weights_initializer,
+			activation_fn=activation_fn,
+			normalizer_fn=normalizer_fn,
+			normalizer_params=normalizer_params,
+			padding='SAME'):
         # Flattened input -> 4 x 4 patch
         shape = latent_z.get_shape().as_list()
         net = tf.reshape(latent_z, (shape[0], 1, 1, shape[1]))
         net = slim.conv2d_transpose(net, num_filters[0], [4, 4], stride=1,
 	    padding='VALID', scope='deconv1')
+
         # Upscale via deconvolutions
         for i, num_filter in enumerate(num_filters[1:]):
             net = slim.conv2d_transpose(net, num_filter, 
 	        [kernel_size, kernel_size], scope='deconv%d' % (i + 2))
             
         # Final deconvolution
-        net = slim.conv2d_transpose(net, 3, [3, 3],
-	    stride=2,
-	    activation_fn=tf.nn.tanh,
-	    normalizer_fn=None,
-	    scope='deconv_out')
-       return net    
+        net = slim.conv2d_transpose(net, 3, [3, 3], stride=2,
+	    activation_fn=tf.nn.tanh, normalizer_fn=None, scope='deconv_out')
 ```
 
 #### Loss function
@@ -218,7 +216,7 @@ where $$d$$ is the dimension of the latent space.
 
 In practice, we approximate expectations with sum over samples, and we use vector arithmetics, which leads to the following expression for each term:
 
-  * The **pixel loss** is the expectation of the decoder output under the latent codes distribution generated by the encoder
+  * The  <span class="inline-code">pixel loss</span> is the expectation of the decoder output under the latent codes distribution generated by the encoder
   <div style="text-align:center">
 $$
   \begin{align}
@@ -226,7 +224,7 @@ $$
   \end{align}
 $$
   </div>
-  * The **latent loss** is the KL-divergence between the encoder distribution <span>$$q(z\ |\ x)$$</span> (Gaussian with diagonal covariance matrix) and the prior <span>$$p(z) = \mathcal{N}(z\ |\ 0, 1)$$</span>
+  * The  <span class="inline-code">latent loss</span> is the KL-divergence between the encoder distribution <span>$$q(z\ |\ x)$$</span> (Gaussian with diagonal covariance matrix) and the prior <span>$$p(z) = \mathcal{N}(z\ |\ 0, 1)$$</span>
   <div style="text-align:center">
 $$
   \begin{align}  
@@ -250,20 +248,20 @@ def get_latent_loss(z_mean, z_log_var, weight=1.0):
 
 Now we're ready for training. We will use the default Adam optimizer.
 In the original notebook, I additionally define a few utilities function for Tensorboard summaries. The main VAE summaries contain the image reconstructions, sample generations and scalar summary for losses. 
-I also use a `Monitored training session `that will take care of starting the input queues, defining the summary writer etc.
+I also use a  <span class="inline-code">MonitoredTrainingSession</span> that will take care of starting the input queues, defining the summary writer etc.
 
 The following hyperparameters can be defined in the code:
 
-* `NUM_GPUS`, number of GPUs to use in experiments
-* `GPU_MEM_FRAC`, fraction of RAM to allocate per GPU
-* `BATCH_SIZE`, batch size
-* `SIZE`, input image size
-* `NUM_DIMS`, number of dimensions of the latent code
-* `NUM_ENCODER_FILTERS`, list of filter numbers for each convolutional block in the encoder
-* `NUM_DECODER_FILTERS`, list of filter numbers for each convolutional block in the decoder
-* `LEARNING_RATE`, base learning rate
-* `LATENT_LOSS_WEIGHT`, weight for the latent loss term (note that this is directly tied to the $$\sigma_p$$ parameter)
-* `ADAM_MOMENTUM`, $$\beta_1$$ parameter in the ADAM optimizer
+*  <span class="inline-code">NUM_GPUS</span>, number of GPUs to use in experiments
+*  <span class="inline-code">GPU_MEM_FRAC</span>, fraction of RAM to allocate per GPU
+*  <span class="inline-code">BATCH_SIZE</span>, batch size
+*  <span class="inline-code">SIZE</span>, input image size
+*  <span class="inline-code">NUM_DIMS</span>, number of dimensions of the latent code
+*  <span class="inline-code">NUM_ENCODER_FILTERS</span>, list of filter numbers for each convolutional block in the encoder
+*  <span class="inline-code">NUM_DECODER_FILTERS</span>, list of filter numbers for each convolutional block in the decoder
+*  <span class="inline-code">LEARNING_RATE</span>, base learning rate
+*  <span class="inline-code">LATENT_LOSS_WEIGHT</span>, weight for the latent loss term (directly related to $$\sigma_p$$)
+*  <span class="inline-code">ADAM_MOMENTUM</span>, $$\beta_1$$ parameter in the ADAM optimizer
 
 
 ```python
@@ -296,7 +294,8 @@ with tf.Graph().as_default():
     
         # loss 
         with tf.name_scope('loss_%d' % i):
-            pixel_loss =  get_pixel_loss(inputs['image'], outputs['reconstruction'])
+            pixel_loss =  get_pixel_loss(
+	        inputs['image'], outputs['reconstruction'])
             latent_loss = get_latent_loss(outputs['z_means'],
 					  outputs['z_log_vars'], 
                                           weight=LATENT_LOSS_WEIGHT)

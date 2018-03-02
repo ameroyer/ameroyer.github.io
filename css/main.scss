@@ -276,10 +276,10 @@ font-weight: bold;
 
 
 .inline-code{
-    color: #005;
-    font-family: "Lucida Sans Typewriter";
-    letter-spacing: 2px;
-    
+    background-color: $beige;
+    font-family: "Courier New";
+    font-size:18px;
+    letter-spacing: -1.5px
 }
 
 h4 {
