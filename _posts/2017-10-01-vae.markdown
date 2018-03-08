@@ -11,7 +11,7 @@ This post presents a simple Tensorflow implementation of the Variational Auto-en
      
 ### <i class="fa fa-edit"></i> Model
 
-Variational Auto-encoders (VAE) are probabilistic generative models relying on a simple latent representation that captures the input data intrinsic properties. Given latent code $$z$$ sampled from a prior distribution <span>$$p_{\theta}(z)$$</span>, we generate a sample $$x$$ from the conditional <span>$$p_{\theta}(x\ |\ z)$$</span>. The goal is to learn the parameters of this generative model as well as how to map data points to latent codes.
+Variational Auto-encoders (VAE) are <span class="keyword">probabilistic generative models</span> relying on a simple latent representation that captures the input data intrinsic properties. Given latent code $$z$$ sampled from a prior distribution <span>$$p_{\theta}(z)$$</span>, we generate a sample $$x$$ from the conditional <span>$$p_{\theta}(x\ |\ z)$$</span>. The goal is to learn the parameters of this generative model as well as how to map data points to latent codes.
 
 In many cases however, the posterior distribution <span>$$p_{\theta}(z\ |\ x)$$</span> is intractable. It is instead approximated by a parametric model <span>$$q_{\phi}(z\ |\ x)$$</span>, where $$\phi$$ are called the variational parameters (see the graphical model below). In the following, we will drop the $$\theta$$ and $$\phi$$ notations for simplicity. 
 
@@ -30,12 +30,12 @@ In many cases however, the posterior distribution <span>$$p_{\theta}(z\ |\ x)$$<
 <img src='/notebooks/2017_10_1_VAE/interpolated_grid_660001.jpg' style="width:35%">
 </div>
 
-To summarize, a VAE is composed from an encoder <span>$$q(z\ |\ x)$$</span>, which maps an input $$x$$  to a latent representation $$z$$, typically of much lower dimension, and a decoder <span>$$p(x\ |\ z)$$</span> that generates sample $$x$$ from a latent code $$z$$. Both of these mappings are parametrized as neural networks in practice, and our goal is to find their optimal parameters by maximizing the data likelihood, $$p(x)$$. 
+To summarize, a VAE is composed from an <span class="keyword">encoder</span> <span>$$q(z\ |\ x)$$</span>, which maps an input $$x$$  to a latent representation $$z$$, typically of much lower dimension, and a <span class="keyword">decoder</span> <span>$$p(x\ |\ z)$$</span> that generates sample $$x$$ from a latent code $$z$$. Both of these mappings are parametrized as neural networks in practice, and our goal is to find their optimal parameters by maximizing the data likelihood, $$p(x)$$. 
 
 
 #### Training objective 
 
-As the likelihood is intractable, we indeed derive the following *variational lower bound* (also known as $${\mathcal L}_{ELBO}$$) on the  data log-likelihood:
+As the likelihood is intractable, we indeed derive the following <span class="keyword">variational lower bound</span> (also known as $${\mathcal L}_{ELBO}$$) on the  data log-likelihood:
 
 <div style="text-align: center; margin:10px">
 $$
@@ -52,7 +52,7 @@ Finally, note that this bound is optimal when the encoder perfectly approximates
 
 #### Parametrization
 
-The vanilla VAE is parametrized with Gaussian function as follows:
+The vanilla VAE is parametrized with <span class="keyword">Gaussian</span> function as follows:
 
   * The latent code prior is <span>$$p(z) = \mathcal{N}(z\ |\ 0, 1)$$</span>
   *  <span>$$q(z\ |\ x) = \mathcal{N}(z\ |\ \mu_q(x), \sigma_q(x))$$</span> is a Gaussian with diagonal covariance, where $$\mu_q$$ and $$\sigma_q$$ are output by the encoder network.
@@ -325,7 +325,7 @@ with tf.Graph().as_default():
 ```
 
 #### Results
-After training the model for some time on the CelebA dataset, I obtain the following results (reconstructions, samples and interpolation).
+After training the model for some time on the <span class="keyword">CelebA</span> dataset, I obtain the following results (reconstructions, samples and interpolation).
 ![png](/notebooks/2017_10_1_VAE/output_13_1.png)
 
 As is typical for VAEs under a Gaussian assumption, the resulting samples are rather blurry.

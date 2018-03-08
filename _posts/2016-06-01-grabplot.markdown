@@ -7,10 +7,10 @@ thumb: /images/thumbs/grabplot.png
 ---
 
 
+
+Grabplot is an interactive tool for plotting simple shapes on the integer lattices using a <span class="inline-code">matplotlib</span> backend. The resulting figure can be saved as a `.poly` file and fed to Triangulation softwares such as [Triangle](https://www.cs.cmu.edu/~quake/triangle.html).
+
 ### <i class="fa fa-clipboard"></i> Presentation
-
-Grabplot is an interactive tool for plotting simple shapes on the integer lattices using a Matplotlib backend. The resulting figure can be saved as a `.poly` file and fed to Triangulation softwares such as [Triangle](https://www.cs.cmu.edu/~quake/triangle.html).
-
 
 <table border="1" cellpadding="6" align="right">
 <tr>
@@ -38,7 +38,7 @@ The interactive <span class="inline-code">matplotlib</span> figure has the follo
 
 #### LineTracker
 
-The core module of GrabPlot is an interactive line tracker object that keeps track of the keyboard events and point clicks on the figure.
+The core module of GrabPlot is an interactive <span class="keyword">line tracker</span> object that keeps track of the keyboard events and point clicks on the figure.
 
 
 ```python
@@ -52,57 +52,57 @@ class LineTracker:
 On a click event, the tracker first matches the target the closest point on the integer lattice if the click event occurs close enough in space (see  <span class="inline-code">accept_thresh</span> parameter). It then adds the correct point to the cumulative list of vertices.
 
 ```python
-    def accept_point(self, x, y):
-        return ((abs(x - round(x)) < self.accept_thresh) and 
-	        (abs(y - round(y)) < self.accept_thresh))
+def accept_point(self, x, y):
+return ((abs(x - round(x)) < self.accept_thresh) and 
+        (abs(y - round(y)) < self.accept_thresh))
 
-    def __call__(self, event):
-        """Mouse click event routine."""
-        x, y = event.xdata, event.ydata
-        if (not event.inaxes in self.fig.axes) or (not self.accept_point(x, y)):
-            return
+def __call__(self, event):
+"""Mouse click event routine."""
+x, y = event.xdata, event.ydata
+if (not event.inaxes in self.fig.axes) or (not self.accept_point(x, y)):
+    return
 
-        x, y = round(x), round(y)
-        self.coords[-1][0].append(x)
-        self.coords[-1][1].append(y)
-        ## If starting point of a new line
-        if len(self.coords[-1][0]) == 1:
-            self.lines.append(plt.plot([x], [y]))
-        # Otherwise
-        else:
-            self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
+x, y = round(x), round(y)
+self.coords[-1][0].append(x)
+self.coords[-1][1].append(y)
+## If starting point of a new line
+if len(self.coords[-1][0]) == 1:
+    self.lines.append(plt.plot([x], [y]))
+# Otherwise
+else:
+    self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
 ```
 
 The second type of event are key press. In that case, we first need to identify which key has been pressed and updates the graphic display accordingly. In particular, we incorporate a  feature to remove the latest drawn point for the figure and to create a new contour (either as a hull (i.e., filled area) or as a hole).
 
 ```python
-    def press_handler(self, event):
-        ## Remove a point from the graph
-        if event.key == 'x':
-            if len(self.coords[-1][0]) > 0:
-                self.coords[-1][0] = self.coords[-1][0][:-1]
-                self.coords[-1][1] = self.coords[-1][1][:-1]
-		self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
+def press_handler(self, event):
+## Remove a point from the graph
+if event.key == 'x':
+    if len(self.coords[-1][0]) > 0:
+        self.coords[-1][0] = self.coords[-1][0][:-1]
+        self.coords[-1][1] = self.coords[-1][1][:-1]
+	self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
 
-        ## Add a new line (hole or hull)
-        elif event.key == 'h' or event.key == 'n' or event.key == 'enter':
-            # Close previous line
-            if len(self.coords) and 
-	       ((self.coords[-1][0][-1], self.coords[-1][1][-1]) != 
-	        (self.coords[-1][0][0], self.coords[-1][1][0])):
+## Add a new line (hole or hull)
+elif event.key == 'h' or event.key == 'n' or event.key == 'enter':
+    # Close previous line
+    if len(self.coords) and 
+       ((self.coords[-1][0][-1], self.coords[-1][1][-1]) != 
+        (self.coords[-1][0][0], self.coords[-1][1][0])):
 
-                self.coords[-1][0].append(self.coords[-1][0][0])
-                self.coords[-1][1].append(self.coords[-1][1][0])
-                self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
+        self.coords[-1][0].append(self.coords[-1][0][0])
+        self.coords[-1][1].append(self.coords[-1][1][0])
+        self.lines[-1].set_data(self.coords[-1][0], self.coords[-1][1])
 
-            # Add new line
-            if event.key == 'h' or event.key == 'n':
-                self.coords.append([[], [], True if event.key == 'h' else False])
+    # Add new line
+    if event.key == 'h' or event.key == 'n':
+        self.coords.append([[], [], True if event.key == 'h' else False])
 ```
 
 #### Output to .poly file
 
-We then write an I/O function to output the given shape as a <span class="inline-code">.poly</span> file. A <span class="inline-code">.poly</span> file defines the vertices of the shape (newline separated), then the filled contours of the shape (as a list of points) and finally the holes in the shape , again as a list of point. In particular, this file format can be used as input format for <a href="https://www.cs.cmu.edu/~quake/triangle.html" target="_blank">Triangle</a> software for meshing or Triangulation.
+We then write an <span class="keyword">I/O function</span> to output the given shape as a <span class="inline-code">.poly</span> file. A <span class="inline-code">.poly</span> file defines the vertices of the shape (newline separated), then the filled contours of the shape (as a list of points) and finally the holes in the shape , again as a list of point. In particular, this file format can be used as input format for <a href="https://www.cs.cmu.edu/~quake/triangle.html" target="_blank">Triangle</a> software for meshing or triangulation.
 
 
 ```python            

@@ -7,11 +7,10 @@ thumb: /images/thumbs/wonderwheel.png
 ---
 
 
-Wonderwheel is a small data visualization project for representing images as animated hue histogram. More specifically, an image will be represented as three separate hue histograms (for visually black pixels, white pixels, and the rest, i.e. "color" pixels). 
 
-The animation is obtained by generating such histograms at different stages of blurriness of the image (in decreasing order) and is displayed using *CSS3* transitions. 
-See below for an example of such visualizations:
-
+Wonderwheel is a small data visualization project for representing images color distributions.
+ More specifically, an image is represented as <span class="keyword">three separate hue histograms</span> for visually black pixels, visually white pixel, and the rest (perceived color inormation).
+Finally, I generate the histogram at different stages of blurriness of the image (in decreasing order) to obtain an animation, displayed with pure <span class="inline-code">HTML/CSS</span>. 
 
 <link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image2.css">
 <link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image3.css">
@@ -513,54 +512,48 @@ See below for an example of such visualizations:
 </div>
 </div>
 
-The histograms are build in the following way:
 
-  * I first map the input image to the HSV (Hue Saturation Value) domain
+
+### <i class="fa fa-wrench"></i> Computing the histograms
+The first step is to extract black, white and color pixels from the image. I first map the input image to the HSV (Hue Saturation Value) domain.
 
 ```python
-    # RGB -> HSV
-    hue, sat, val = np.split(colors.rgb_to_hsv(image / 255.), 3, axis=-1)
+hue, sat, val = np.split(colors.rgb_to_hsv(image / 255.), 3, axis=-1)
 ```
 
-  * Then I exclude visually white and black pixels (i.e., those whose value is not in a certain given range), for which I build a separate histogram 
+I then extract black (resp. white) pixels as pixels whose value is below (resp. above) a certain threhsold
 
 ```python
-    # isolate black and white tones by value
-    white_values = np.where(val > white_value_threshold)
-    black_values = np.where(val < black_value_threshold)
-    
-    # Black tones histograms
-    hue_bins = np.linspace(0.0, 1.0, num_bins + 1, endpoint=True)
-    mask = np.zeros_like(hue)
-    mask[black_values] = sat[black_values]**sat_weight
-    black_hist, _ = np.histogram(hue, bins=hue_bins, weights=mask)
-    black_hist[np.isnan(black_hist)] = 0.
-    
-    # White tones histograms
-    mask = np.zeros_like(hue)
-    mask[white_values] = sat[white_values]**sat_weight
-    white_hist, _ = np.histogram(hue, bins=hue_bins, weights=mask)
-    white_hist[np.isnan(white_hist)] = 0.
+black_values = np.where(val < black_value_threshold)
+
+hue_bins = np.linspace(0.0, 1.0, num_bins + 1, endpoint=True)
+mask = sat[black_values]
+black_hist, _ = np.histogram(hue, bins=hue_bins, weights=mask)
+black_hist[np.isnan(black_hist)] = 0.
 ```
 
-  * The remaining pixels will be used to compute the hue histograms. Each hue is additionally weighted by its saturation (low saturation values get smaller weights) and its "originality" (how far it is from the average hue in the image). The color of the bar is additionally affected by the average saturation and value for this specific hue in the image.
+ The remaining pixels will be used to compute the hue histograms. Each hue is additionally weighted by its *saturation*, so that low saturation colors, i.e. gray. get smaller weights, and an *originality factor*, which is defined as how far the color is from the average hue in the image.
+
 
 ```python
-    # Build the weighted hue histogram
-    hue[white_values] = -1
-    hue[black_values] = -1
-    weights = 1. + originality_weight * np.abs(hue - np.mean(hue[hue >= 0])) * sat**sat_weight
-    hue_hist, _ = np.histogram(hue, bins=hue_bins, weights=weights)
-    hue_hist[np.isnan(hue_hist)] = 0.
+hue[white_values] = -1
+hue[black_values] = -1
+weights = sat**sat_weight * np.abs(hue - np.mean(hue[hue >= 0])) 
+hue_hist, _ = np.histogram(hue, bins=hue_bins, weights=weights)
+```
 
-    # Compute bar colors based on average saturation and value
-    data['colors'] = []
-    for i, bin_center in enumerate(hue_bins):
-        index = np.where((hue > bin_center  - bins_offset) & (hue < bin_center + bins_offset))
-        color = colorsys.hsv_to_rgb(bin_center, 1., 1.)
-        if index[0].shape[0] > 0: 
-            color = colorsys.hsv_to_rgb(bin_center, np.mean(sat[index]), np.mean(val[index]))
-        data['colors'].append([int(x * 255) for x in color])
+
+And the color of the histogram bar should take into account the average saturation and value for this specific hue in the image.
+
+```python
+data['colors'] = []
+for i, bin_center in enumerate(hue_bins):
+index = np.where((hue > bin_center  - bins_offset) & 
+                 (hue < bin_center + bins_offset))
+color = colorsys.hsv_to_rgb(bin_center,
+			    np.mean(sat[index]), 
+			    np.mean(val[index]))
+data['colors'].append(color)
 ```
 
 
@@ -569,123 +562,60 @@ The histograms are build in the following way:
 </div>
 
 
-Finally, I added a small animation component for the visualization. I generate a color histogram for a given image  at different stage of bluriness (Gaussian filter with decreasing variance); the result is animated using simple html and css3 transitions.
 
+### <i class="fa fa-paint-brush"></i> Visualization
+Finally, I added a small animation component for the visualization. 
 
+First I generate a color histogram for a given image  at different stage of bluriness (Gaussian filter with decreasing variance); The intuition is that the most important or salient colors will be present at a high-level while details will start appearing at fine-grained reoslution.
 
 ```python
-    # Collect data
-    image = imread(image_path)
-    if resize is not None:
-        w, h, _ = image.shape
-        ratio = resize / max(w, h)
-        image = imresize(image, (int(ratio * image.shape[0]),
-                                 int(ratio * image.shape[1])))
-    data = {}
-    resolutions = np.linspace(40., 0., num_resolutions, endpoint=True)
-    for r in resolutions:
-        aux = ndimage.gaussian_filter(image, sigma=r)
-        aux = create_equalizer(aux, num_bins=num_bins)
-        if 'centers' not in data:
-            data = aux
-            for key in ['hues', 'white', 'black']:
-                data[key] = np.expand_dims(data[key], 0)
-        else:
-            for key in ['hues', 'white', 'black']:
-                data[key] = np.concatenate([data[key], 
-                                            np.expand_dims(aux[key], 0)],
-                                           axis=0)
-                
-    # Add time points
-    times = np.linspace(5, 75, num_resolutions, endpoint=True)
+resolutions = np.linspace(40., 0., num_resolutions, endpoint=True)
+for r in resolutions:
+img = ndimage.gaussian_filter(image, sigma=r)
+aux = create_equalizer(img, num_bins=num_bins)
+data = np.concatenate([data, aux])
+```
+ 
+And finally, the animation is created by representing each bar as a rectangular div with transition animation.
 
-    # Base template       
-    css_template = """
-    .frame {
-        position: absolute;
-        top: 0;
-        margin:0;
-        }
-    .{base_name} {
-        position: relative;
-        width: {bar_width}px;
-        margin:0;
-        float: left;
-        }
-    """.format(base_name=base_name,
-               bar_width=bar_width)
+```python               
+# Define bar template
+bar_template = """
+#{name} {
+left: {pos_left}px;
+top: {pos_top}px;
+background-color: rgb({r}, {g}, {b});
+-webkit-animation: {name}_anim {duration}s ease-out infinite ; 
+animation: {name}_anim {duration}s ease-out infinite;
+-ms-transform: rotate({rot}deg); /* IE 9 */
+-webkit-transform: rotate({rot}deg); /* Safari */
+transform: rotate({rot}deg);
+-webkit-transform-origin: 50% 0%;
+-moz-transform-origin: 50% 0%;
+-o-transform-origin: 50% 0%;
+transform-origin: 50% 0%;
+border: {border_width}px solid {border_color};
+}
+"""
 
- # Define bar 
-    bar_template = """
-    #{name} {
-        left: {pos_left}px;
-        top: {pos_top}px;
-        background-color: rgb({r}, {g}, {b});
-        -webkit-animation: {name}_anim {duration}s ease-out infinite ; 
-        animation: {name}_anim {duration}s ease-out infinite;
-        -ms-transform: rotate({rot}deg); /* IE 9 */
-        -webkit-transform: rotate({rot}deg); /* Safari */
-        transform: rotate({rot}deg);
-        -webkit-transform-origin: 50% 0%;
-        -moz-transform-origin: 50% 0%;
-        -o-transform-origin: 50% 0%;
-        transform-origin: 50% 0%;
-        border: {border_width}px solid {border_color};
-        }
-    """
-    
-    # Define bar animation
-    def write_anim(name, heights, colors=None):
-        assert len(times) == len(heights)
-        template = ""
-        start = 'from'
-        if colors is None:
-            for i in range(len(times)):
-                template += "%d%% {height: %dpx;}\n" % (times[i], int(heights[i]))
-        else:
-            for i in range(len(times)):
-                template += "%d%% {height: %dpx; background:rgb(%d, %d, %d)}\n" % (
-                    times[i], int(heights[i]), colors[i][0], colors[i][1], colors[i][2])
-        # template
-        template =  """       
-        @-webkit-keyframes
-        {name}_anim {
-            {content}
-        }
-        """.format(name=name, content=template)
-        return template
-    
-    # Write CSS
-    with open('%s.css' % output_name, 'w') as f:
-        f.write(css_template)
-        for i in range(num_bars):
-            angle = int((data['centers'][i] - norm_angle) * 360)
-            offset_top = np.sin((angle + 90.) / 360. * 2 * np.pi)
-            offset_left = np.cos((angle + 90.)/ 360. * 2 * np.pi)
-
-            # Color bars
-            offset_length += max_white_bar_height + image_border
-            name = "%s%d_color" % (base_name, i)
-            border_color = 'white'
-            if sum(np.round(data['hues'][:, i])) > 0.:
-                f.write(write_anim(name, data['hues'][:, i], 
-                                   colors=[data['colors'][i] for _ in range(len(times))]))
-                border_color = "rgb(%s, %s, %s)" % (data['colors'][i][0], 
-						    data['colors'][i][1], 
-                                                    data['colors'][i][2])
-            f.write(bar_template.format(
-                    name=name, 
-                    duration=duration,
-                    pos_top=center + int(offset_top * offset_length),
-                    pos_left=(center + int(offset_left * offset_length) 
-			     - 2 * bar_width - bar_width // 2),
-                    rot=angle, 
-                    r=data['colors'][i][0],
-                    g=data['colors'][i][1],
-                    b=data['colors'][i][2],
-                    border_width=1,
-                    border_color=border_color))
-            
-            # ... similar for black and white bars ...
+# Define bar animation
+def write_anim(name, heights, colors=None):
+assert len(times) == len(heights)
+template = ""
+start = 'from'
+if colors is None:
+    for i in range(len(times)):
+        template += "%d%% {height: %dpx;}\n" % (times[i], int(heights[i]))
+else:
+    for i in range(len(times)):
+        template += "%d%% {height: %dpx; background:rgb(%d, %d, %d)}\n" % (
+            times[i], int(heights[i]), colors[i][0], colors[i][1], colors[i][2])
+template =  """       
+@-webkit-keyframes
+{name}_anim {
+    {content}
+}
+""".format(name=name, content=template)
+return template
 ```
 

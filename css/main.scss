@@ -282,14 +282,20 @@ font-weight: bold;
     letter-spacing: -1.5px
 }
 
+.keyword{
+    color: $gold;
+    font-weight: bold
+}
+
+
 h4 {
   color: $blue;
   letter-spacing: 2px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 h3 {
-  margin-top:30px;
+  margin-top:35px;
   overflow:hidden;
   letter-spacing: 4px;
   color: $orange;
