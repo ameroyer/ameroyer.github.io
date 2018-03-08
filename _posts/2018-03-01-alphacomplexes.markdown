@@ -85,7 +85,6 @@ V_x = \left[ y \in \mathbb{R}^2,\ \mbox{s.t. } \forall x' \in S,\ || y - x||_2 \
 
 
 ```python
-#### Voronoi Diagram
 def voronoi_diagram(samples, ax=None):
     # Extract Voronoi regions (sicpy)
     vor = Voronoi(samples, qhull_options="Q0")
@@ -97,6 +96,8 @@ def voronoi_diagram(samples, ax=None):
 		   (centers[1], vor.points[centers[1]]))
                   for edges, centers in zip(vor.ridge_vertices, vor.ridge_points)} 
 ```
+
+#### Building the triangulation
 
 Finally, the Delaunay triangulation is built as the dual of the Voronoi diagram, i.e. we form an edge between any two points $$x, x' \in S$$ if and only if their respective cells $$V_x$$ and $$V_{x'}$$ touch (have a common edge) in the Voronoi diagram.
 
@@ -131,7 +132,7 @@ for i, q in enumerate(neighbours):
 <img src="/notebooks/2016_08_01_AlphaComplexes/delaunay.png">
 </div>
 
-### <i class="fa fa-circle" style="font-size:12px"></i> <i class="fa fa-circle" style="font-size:12px"></i> <i class="fa fa-circle-o" style="font-size:12px"></i> Alpha Complexes
+### <i class="fa fa-circle" style="font-size:12px"></i> <i class="fa fa-circle" style="font-size:12px"></i> <i class="fa fa-circle" style="font-size:12px"></i> Alpha Complexes
 
 As we have seen in the previous example, the Delaunay triangluation yields a much more interesting result shape than the convex hull. However, it produces a dense partition of the space and in particular doesn't recover <span class="keyword">topological information</span> from the shape such as holes or connected components.
 
@@ -141,14 +142,17 @@ Alpha complexes are a susbset of the Delaunay Triangulation that tackles this is
 Vor_r(S) = \left[ V_x \cap B_{r}(x),\ \forall x \in S \right]
 \end{align}
 
-In order to build the restricted Voronoi diagram, we need to start from the initial Voronoi diagram and compute its intersections with balls of radius $$r$$. In 2D, this means we need to compute intersections between circles and the lines composing the diagram
 
+#### Line-circle intersection
+In order to build the restricted Voronoi diagram, we need to start from the initial Voronoi diagram and compute its intersections with balls of radius $$r$$. In 2D, this means we need to compute intersections between circles and the lines composing the diagram.
+
+
+The first two easy cases are when the line segment of the diagram, [p, q] is fully inside or fully outside the circle.
+
+<div style="text-align:center">
+<img src="/notebooks/2016_08_01_AlphaComplexes/case1.png" width="40%"> <img src="/notebooks/2016_08_01_AlphaComplexes/case2.png" width="40%">
+</div>
 ```python
-"""
-Return the segment intersection of [p, q] with the circle of center ``center`` 
-and radius ``r``
-"""
-
 # Case 1: If p and q are both in the circle -> clip to [p, q]
 if is_in_circle(p, center, r) and is_in_circle(q, center, r):
 return [(p, q)], True, True
@@ -165,82 +169,78 @@ a = slope**2 + 1
 b = 2 * (slope * (intersect - center[1]) - center[0])
 c = center[0]**2 + (intersect - center[1])**2 - r**2
 
-# No intersection -> clip to circle
+# Case 2: No intersection 
 delta = b**2 - 4*a*c
 if delta <= 0:
     return [], False, False
+```
 
+When the segment does intersect with the circle, we need to take into consideration whether it intersects from the "left", from the "right" or from both sides (here we order the segment extremities by increasing order of their x-coordinate).
+
+
+<div style="text-align:center">
+<img src="/notebooks/2016_08_01_AlphaComplexes/case3.png" width="30%"> <img src="/notebooks/2016_08_01_AlphaComplexes/case4.png" width="30%"> <img src="/notebooks/2016_08_01_AlphaComplexes/case5.png" width="30%">
+</div>
+
+```python
 # Intersection -> clip to [p2, q2] n [p, q]
 else:
 pt1 = p; pt2 = q
 is_in_pq = lambda z: (z >=  p[0]) and (z <= q[0])
 check = False # check will be True iff [p2, q2] n [p, q] is empty
 
-# Case 2: p is not in the circle
+# Case 3: p is not in the circle
 if not is_in_circle(p, center, r):
     x = (- b - np.sqrt(delta)) / (2 * a) 
     pt1 = np.array([x, slope*x + intersect])
     check = not is_in_pq(x)
 
-# Case 3: q is not in the circle
+# Case 4: q is not in the circle
 if not is_in_circle(q, center, r):
     x = (- b + np.sqrt(delta)) / (2 * a) 
     pt2 = np.array([x, slope*x + intersect])
     check = (check or cp) and (not is_in_pq(x))
 
-# Case 4: neither p or q are inside the circle
-return ([], False, False) if check else ([(pt1, pt2)], cp, cq)
+# Case 5: neither p or q are inside the circle
+return ([], False, False) if check else 
+    ([(pt1, pt2)],  is_in_circle(p, center, r),  is_in_circle(q, center, r))
 ```
- TODO(code)
+
+#### Building the restricted Voronoi diagram
+Once we have this construction, we can build the restricted Voronoi Diagram. We consider every segment $$[p, q]$$ of the Voronoi diagram. Let us denote $$V_x$$ and $$v_y$$ the two Voronoi cells that lie on both sides of $$[p, q]$$; we say $$[p, q]$$ is a <i>ridge</i> between $$V_x$$ and $$V_y$$. 
+
+We need to compute the intersections between $$[p, q]$$ and $$B(x, r)$$ (or equivalently, $$B(y ,r)$$, since by definition of the Voronoi diagram, any point on the ridge is equidistant from $$x$$ and $$y$$). 
+A restricted Voronoi cell is represented as a sequence of edges $$[(p_0, q_0), \dots (p_n, q_n)]$$, where $$[p_i, q_i]$$ is a segment. Furthermore, either $$q_i = p_{i + 1}$$, or $$q_i \neq p_{i + 1}$$ in which case $$q_i$$ and $$p_{i + 1}$$ are joint by a circle segment.
 
 ```python
-def alpha_complex(samples, vor_regions, vor_ridges, r):
-    """
-    Jointly compute the alpha complex and Voronoi diagram of the given samples cloud.
-    
-    Args:
-     * ``samples`` (*matrix of size n_samples x 2*): 2D coordinates of the samples.
-     * ``vor_regions`` (*list of (center, region edges, edge indices)*): Precomputed region in the Voronoi diagram.
-     * ``vor_ridges`` (*dictionnary edge index -> (x, y) center of neighboring Voronoi cell*)
-     * ``r`` (*float*): Radius of the balls.
-     
-    Returns:
-     * ``restricted_voronoi_cells``: Restricted Voronoi diagram structure.
-     * ``alpha_complex_edges``: List of edges in the Alpha complex.
-    """
-    # Build the restricted Voronoi diagram
-    restricted_voronoi_cells = [] 
-    alpha_complex_cells = [[], []]
-    triangles = defaultdict(lambda: [])
-    for center, region, region_indices, edge_indices in vor_regions:
-        restr_region = [] 
-        for i, p in enumerate(region):
-            q = region[(i + 1) % len(region)]
-            inter, clip_p, clip_q = line_circle_intersection(p, q, center, r)
-            if len(inter):
-                restr_region.extend(inter)
-                #alpha_complex_edges.append(vor_ridges[edge_indices[i]])
-            # If triangles
-                if clip_p and not edge_indices[i] in triangles[region_indices[i]]:
-                    triangles[region_indices[i]].append(edge_indices[i])
-                if clip_q and not edge_indices[i] in triangles[region_indices[(i + 1) % len(region)]]:
-                    triangles[region_indices[(i + 1) % len(region)]].append(edge_indices[i])
-                else:
-                    alpha_complex_cells[0].append(edge_indices[i])
+for center, region, region_indices, edge_indices in vor_regions:
+    restr_region = [] 
+    for i, p in enumerate(region):
+        q = region[(i + 1) % len(region)]
+        inter, clip_p, clip_q = line_circle_intersection(p, q, center, r)
+        restr_region.extend(inter)
         restricted_voronoi_cells.append((center, restr_region)) 
-    # Build apla complex (distinguish edges from triangles)
-    seen_edges = []
-    # Define triangles
-    for vertex, incident_edges in triangles.items():
-        if len(incident_edges) == 3:
-            vertices = [(x, y) for e in incident_edges for (x, y) in vor_ridges[e]]
-            _, aux = np.unique([x[0] for x in vertices], return_index=True)
-            alpha_complex_cells[1].append([vertices[i][1] for i in aux])
-            seen_edges.extend(incident_edges)
-    # Remove duplicate edges
-    alpha_complex_cells[0] = list(set(alpha_complex_cells[0]) - set(seen_edges))
-    alpha_complex_cells[0] = map(lambda x: [y[1] for y in vor_ridges[x]], alpha_complex_cells[0])
-    return restricted_voronoi_cells, alpha_complex_cells
+```
+
+#### Building the alpha complex
+Building the alpha complex from the restricted Voronoi diagram is straightforward. We will split it in two sets: the <span class="keyword">triangles</span>, which are triangles of the Delaunay triangulation and occur whenever a point lying at the intersection of three Voronoi cells still exist in the restricted Voronoi diagram (i.e. if it belongs to one the balls of radius $$r$$).
+The second set are the <span class="keyword">edges</span> and are the leftover edges which still exist in the alpha complex but are not part of a full triangle due to the radius constraint.
+
+```python
+    ... # continued
+    if clip_p:
+        triangles[region_indices[i]].append(edge_indices[i])
+    if clip_q:
+        triangles[region_indices[(i + 1) % len(region)]].append(edge_indices[i])
+    else:
+        alpha_complex_cells[0].append(edge_indices[i])
+
+# Form triangles
+for vertex, incident_edges in triangles.items():
+if len(incident_edges) == 3:
+    vertices = [(x, y) for e in incident_edges for (x, y) in vor_ridges[e]]
+    _, aux = np.unique([x[0] for x in vertices], return_index=True)
+    alpha_complex_cells[1].append([vertices[i][1] for i in aux])
 ```
 
 <div style="text-align:center; margin-bottom:40px">
