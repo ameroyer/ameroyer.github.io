@@ -13,8 +13,14 @@ See the following index by thematic categories for more details.
 | [GLO](http://ameroyer.github.io/python,/tensorflow,/generative,/vae/2017/10/12/glo.html) | <img src="images/thumbs/glo.jpg" width=80px>  | Generative latent optimization model as introduced <br> in *Optimizing the latent space of Generative Networks* |
 
 
+### Computer Science
+| Link      | Preview       | Description   |
+| :------------: | :-----------: | :----------- |
+| [Alpha complexes](http://ameroyer.github.io/python,/topology,/meshing/2018/03/01/alphacomplexes.html) | <img src="images/thumbs/alphacomplexes.png" width=80px>  | Introduction to restricted Voronoi Diagram and alpha complexes |
+
 ### Data Visualization
 
 | Link      | Preview       | Description   |
 | :------------: | :-----------: | :----------- |
 | [Wonderwheel](http://ameroyer.github.io/visualization,/data,/html,/css,/python/2017/12/02/wonderwheel.html) | <img src="images/thumbs/wonderwheel.png" width=80px>  | Interactive CSS3/HTML5 image visualization based on <br> hue histograms at multiple image resolutions |
+| [Grabplot](http://ameroyer.github.io/python,/snippet/2016/06/01/grabplot.html) | <img src="images/thumbs/grabplot.png" width=80px>  | Interactive Matplotlib back-end for plotting a figure on a fixed 2D lattices and output the polygon shape in a standard .poly format |
