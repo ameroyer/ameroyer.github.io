@@ -2,7 +2,8 @@
 layout: post
 title:  "wonderwheel"
 date:   2017-12-02 10:00:00 +0200
-categories: visualization, data, html, css, python
+tags: visualization, css
+categories: projects
 thumb: /images/thumbs/wonderwheel.png
 ---
 

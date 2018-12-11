@@ -2,7 +2,8 @@
 layout: post
 title:  "grabplot: interactive plotting with matplotlib"
 date:   2016-06-01 10:00:00 +0200
-categories: python, snippet
+categories: projects
+tags: python, snippet
 thumb: /images/thumbs/grabplot.png
 ---
 

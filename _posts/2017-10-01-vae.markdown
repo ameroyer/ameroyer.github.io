@@ -2,7 +2,8 @@
 layout: post
 title:  "variational auto-encoders"
 date:   2017-10-01 10:00:00 +0200
-categories: python, tensorflow, generative, vae
+tags: generative, tensorflow
+categories: projects
 thumb: /images/thumbs/vae.jpg
 ---
 

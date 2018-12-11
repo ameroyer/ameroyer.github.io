@@ -2,7 +2,8 @@
 layout: post
 title:  "generative latent optimization"
 date:   2017-10-12 10:00:00 +0200
-categories: python, tensorflow, generative, vae
+tags: generative, tensorflow
+categories: projects
 thumb: /images/thumbs/glo.jpg
 ---
 

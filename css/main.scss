@@ -210,8 +210,8 @@ text-align: center;
 .post-main {
 text-align: center;
 overflow: hidden;
-width: 300px;
-height: 300px;
+width: 200px;
+height: 200px;
 display: inline-block;
 }
 
@@ -225,25 +225,24 @@ text-decoration: none; }
 
 // main page: post describtion
 .post-main .textbox {
-height: 150px;
+height: 100px;
 width:100%;
 background-color: rgba(255, 255, 255, 0.8);
 position:relative;
-top:-200px;
+top:-133px;
 visibility: hidden
 }
 
 .post-main .title {
 position: relative;
 background-color: rgba(255, 255, 255, 0.8);
-bottom:200px;
-padding-left:25px;
-padding-right:25px;
-
+bottom:133px;
+padding-left:15px;
+padding-right:15px;
 }
 
 .post-main .text {
-padding:20px;
+padding:10px;
 visibility: hidden;
 transform: translateY(0);
 transition: 0s;
@@ -264,14 +263,15 @@ opacity: 1;
 .post-link {
 line-height:0.7em;
 color:$brown;
-font-size:30px;
+font-size:20px;
 font-variant: small-caps;
 font-weight: bold;
 }
 
 .post-meta, .post-main a{
 color:$brown;
-font-weight: bold; 
+font-weight: bold;
+font-size: 10px
 }
 
 
@@ -342,4 +342,19 @@ table.summary th {
   text-align: center;
   background-color: $gold;
   color: white;
+}
+
+
+h2 {
+    text-align: left;
+  overflow:hidden;
+  letter-spacing: 4px;
+  color: $orange;
+}
+h2:after{
+  content:'';
+  display:inline-block;
+  width:100%; height:100%;
+  margin-right:-100%;
+  border-bottom:1px solid $orange;
 }

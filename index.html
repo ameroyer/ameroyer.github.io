@@ -3,17 +3,51 @@ layout: default
 ---
 
 <div class="home">
+  <div style="width:50%; float:left">
+    <h2>Reading Notes</h2>
+    
+    {% for post in site.categories.readingnotes %}
+    <div class = "post-main" >
+      <a href="{{ post.url | prepend: site.baseurl }}">  
+	<img src ="{{ post.thumb }}">   
+	<div class="title">
+	  <span class="post-link">{{ post.title }}</span>
+	<span class="post-meta">
+	  <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}
+	</span>
+	<span class="post-meta">
+	  <i class="fa fa-tags" aria-hidden="true"></i> {{ post.tags }}
+	</span>
+	</div>
 
+	<div class="textbox">
+	  <div class="text">
+	    <p style="text-align: left; padding-left: 20px; padding-top: 5px; font-style:italic">
+	      {{ post.content | truncate: 100 | strip_html }} 
+	    </p>
+	  </div>
+	</div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
 
-  {% for post in site.posts %}
-
+  
+<div style="width:50%; margin-left:50%">
+  <h2>Projects</h2>
+  
+  {% for post in site.categories.projects %}
   <div class = "post-main" >
-
     <a href="{{ post.url | prepend: site.baseurl }}">  
       <img src ="{{ post.thumb }}">   
       <div class="title">
 	<span class="post-link">{{ post.title }}</span>
-	<span class="post-meta"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%b %-d, %Y" }} - <i class="fa fa-sitemap" aria-hidden="true"></i> {{ post.categories }}</span>
+	<span class="post-meta">
+	  <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}
+	</span>
+	<span class="post-meta">
+	  <i class="fa fa-tags" aria-hidden="true"></i> {{ post.tags }}
+	</span>
       </div>
 
       <div class="textbox">
@@ -28,7 +62,5 @@ layout: default
   </div>
 
   {% endfor %}
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <div>
 </div>

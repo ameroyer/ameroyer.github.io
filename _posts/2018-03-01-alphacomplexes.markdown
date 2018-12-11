@@ -2,7 +2,8 @@
 layout: post
 title:  "mesh generation with alpha complexes"
 date:   2018-03-01 10:00:00 +0200
-categories: python, topology, meshing
+tags: topology, meshing
+categories: projects
 thumb: /images/thumbs/alphacomplexes.png
 ---
 

@@ -2,7 +2,8 @@
 layout: post
 title:  "reversible residual networks"
 date:   2018-12-05 10:00:00 +0200
-categories: reading, deep learning
+tags: deep learning
+categories: readingnotes
 thumb: /images/thumbs/revnet.png
 ---
 
