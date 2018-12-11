@@ -1,97 +1,160 @@
 /**
  * Site header
  */
-.site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
 
+
+/**Navigation**/
+nav {    
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 50px;
+    background: #444444;
+    border-bottom: 2px solid #000000;
+    z-index: 1;
+}
+
+nav li#name {
+    float:right;
+    height:50px;  
+    line-height:50px;
+    text-shadow:1px 1px 2px #1C1D45;
+    font-weight:normal;
+    font-variant:small-caps;
+    color:#DDDDDD;
+    word-spacing:6pt;
+    padding-right : 12px;
+    padding-top: 5px;
+    font: 38px "Courier New", Courier, monospace; 
+}
+
+nav ul {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    list-style-type:none;
+    padding: 0;
+}
+
+nav ul li a{
+    float: left;
+    display: block;
+    height: $header-height;
+    line-height: 80px;
+    width: 60px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.site-header nav ul li a i.fa{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li a.current i{
+    color: #dddddd;
+}
+
+nav ul li a.current span{
+    visibility: visible;
+    opacity:1;
+    z-index: 0;
+    color: #dddddd;
+}
+/*Navigation independent colors*/
+nav ul li#home a{
+    background-color: #ff9600;
+    border-bottom: 3px solid #ea5b14;
+    color: #ff9600;
+}
+
+nav ul li#home a:hover{
+      background-color: #ea5b14;
+}
+
+nav ul li#cv a{
+    background-color: #86db33;
+    border-bottom: 3px solid #5eab12;
+    color: #86db33;
+}
+
+nav ul li#cv a:hover{
+      background-color: #5eab12;
+}
+
+nav ul li#research a{
+    background-color: #66add6;
+    border-bottom: 3px solid #1280bf;
+    color: #66add6;
+}
+
+nav ul li#research a:hover{
+      background-color: #1280bf;
+}
+
+nav ul li#code a{
+    background-color: #ea596d;
+    border-bottom: 3px solid #b1124e;
+    color: #ea596d;
+}
+
+nav ul li#code a:hover{
+      background-color: #b1124e;
+}
+
+nav ul li#blog a{
+    background-color: #deb6ff;
+    border-bottom: 3px solid #704496;
+    color: #deb6ff;
+}
+
+nav ul li#blog a:hover{
+      background-color: #704496;
+}
+
+/*Hover effect*/
+nav ul li a:hover span {
+    visibility:visible;  	
+    opacity:1;
+    transition-delay:0s;
+    z-index: 1;
+}
+
+nav ul li a span {
+    font: 30px "Trebuchet MS", Helvetica, sans-serif; 
+    font-variant: small-caps; 
+    position: absolute; 
+    left: 330px; 
+    top: 0px;
+    line-height: 50px;
+    width: 150px;
+    text-align: left;
+    background-color: #444444;
+    visibility:hidden;
+    opacity:0;
+    transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+}
+
+nav ul li a:hover {
+      -webkit-transition: background-color 0.2s ease-out;
+      -moz-transition: background-color 0.2s ease-out;
+      -o-transition: background-color 0.2s ease-out;
+      -ms-transition: background-color 0.2s ease-out;
+      transition: background-color 0.2s ease-out;
+  }
+
+.blog_thumb{
+    width: 50%
+}
+
+
+/*Header*/
+.site-header {
+    min-height: 56px;
     // Positioning context for the mobile navigation icon
     position: relative;
 }
-
-.site-title {
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
-
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
-}
-
-.site-nav {
-    float: right;
-    line-height: 56px;
-
-    .menu-icon {
-        display: none;
-    }
-
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the last one
-        &:not(:last-child) {
-            margin-right: 20px;
-        }
-    }
-
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-
-            &:not(:last-child) {
-                margin-right: 0;
-            }
-            margin-left: 20px;
-        }
-    }
-}
-
 
 
 /**
