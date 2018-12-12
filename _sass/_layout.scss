@@ -28,7 +28,7 @@ nav li#name {
     font: 38px "Courier New", Courier, monospace; 
 }
 
-nav ul {
+.site-header nav ul {
     position: relative;
     width: 80%;
     margin: auto;
@@ -37,7 +37,7 @@ nav ul {
     padding: 0;
 }
 
-nav ul li a{
+.site-header nav ul li a{
     float: left;
     display: block;
     height: $header-height;
@@ -52,11 +52,11 @@ nav ul li a{
     text-decoration: none;
 }
 
-nav ul li a.current i{
+.site-header nav ul li a.current i{
     color: #dddddd;
 }
 
-nav ul li a.current span{
+.site-header nav ul li a.current span{
     visibility: visible;
     opacity:1;
     z-index: 0;
@@ -121,7 +121,7 @@ nav ul li a:hover span {
     z-index: 1;
 }
 
-nav ul li a span {
+.site-header nav ul li a span {
     font: 30px "Trebuchet MS", Helvetica, sans-serif; 
     font-variant: small-caps; 
     position: absolute; 
