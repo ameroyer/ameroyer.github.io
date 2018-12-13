@@ -64,15 +64,18 @@ $on-laptop:        800px;
 
 body{
 font-family: "Trebuchet MS", Helvetica, sans-serif;
-overflow-y: scroll;
 }
 
 // main area
 .page-content {
-position: absolute;
-top: $header-height;
-padding-top: 35px;
-width: 100%;
+    position: fixed;
+    top: 52px;
+    padding-top: 50px;
+    height: 100%;
+    width: 100%;
+    overflow-y:auto; 
+    overflow-x:hidden; 
+    z-index:0
 }
 
 // main header
