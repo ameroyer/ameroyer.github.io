@@ -15,7 +15,8 @@ This post contains my reading notes about the <span class="keyword">RevNet</span
 
 Residual Networks (ResNets) <span class="citations">[3]</span> have greatly advanced the state-of-the-art in Deep Learning by making  it possible to train much deeper networks via the addition of skip connections. However, in order to compute gradients during the backpropagation pass, all the units' activations have to be stored during the feed-forward pass, leading to high memory requirements for these very deep networks.
 
-Instead, the authors propose a **reversible architecture** in which activations at one layer can be computed from the ones of the next. Leveraging this invertibility property, they design  a more efficient implementation of backpropagation, effectively trading compute power for memory storage.
+Instead, the authors propose a <span class="keyword">reversible architecture</span> in which activations at one layer can be computed from the ones of the next. Leveraging this invertibility property, they design  a more efficient implementation of backpropagation, effectively trading compute power for memory storage.
+
   * <span class="keyword">Pros (+):</span> The change does not negatively impact model accuracy (for equivalent number of model parameters) and it only requires a small change in the backpropagation algorithm.
   * <span class="keyword">Cons (-):</span> Increased number of parameters, not fully reversible (see $$i$$RevNets)
 
