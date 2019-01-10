@@ -1,3 +1,11 @@
 _site
 .sass-cache
 .jekyll-metadata
+*~
+.ipynb_checkpoints/
+notebooks/2016_06_01 Grabplot/demo.*
+notebooks/2016_08_01_AlphaComplexes/*.jpg
+notebooks/2017_12_02_wonderwheel/images
+notebooks/2017_12_02_wonderwheel/html
+
+
