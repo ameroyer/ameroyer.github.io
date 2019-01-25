@@ -60,7 +60,7 @@ $$
 \end{align}
 $$
 
-Typically, $$p_z$$ is chosen to be Gaussian, and samples are build by inverting $$f$$, i.e.,$$\tilde(z) \sim p(\mathbf z),\ \tilde x = f^{-1}(\tilde z)$$. And $$f_{\phi}$$ is build such that computing the log determinant of the Jacobian in the previous equation is tractable.
+Typically, $$p_z$$ is chosen to be Gaussian, and samples are build by inverting $$f$$, i.e., $$\tilde{z} \sim p(\mathbf z),\ \tilde x = f^{-1}(\tilde z)$$. And $$f_{\phi}$$ is build such that computing the log determinant of the Jacobian in the previous equation is tractable.
 
 First, they observe that contribution of the flow can be decomposed in a <span class="keyword">density</span> element (*left term*) and a <span class="keyword">volume</span> element (*right term*), resulting from the change of variables formula. Experiment results with Glow [4] show that the higher density  on SVHN mostly comes from the volume element contribution.
 Interestingly this negative results seems quite robust: The authors also performed experiments with different types of flow formulation, e.g., constant volume flows (where the volume term  is constant for all $$x$$) and with an ensemble of generative models, and still observe similar trends.
