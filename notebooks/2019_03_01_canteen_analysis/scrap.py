@@ -23,6 +23,7 @@ header_names = ['year',
 
 # Init file
 csv_file = 'sv_restaurant_data.csv'
+csv_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), csv_file)
 if not os.path.isfile(csv_file):
   with open(csv_file, 'w', newline='') as f:
     csv.DictWriter(f, fieldnames=header_names).writeheader()
