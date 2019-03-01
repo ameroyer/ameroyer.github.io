@@ -1,0 +1,31 @@
+year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Soups,,1.1,ACGL,beef broth/garnish
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Soups,,1.1,AG,cream of corn soup
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,home-style cooking,4.0,AC,pasta with ham/small salad
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,vegetarian,5.0,AFG,falafel balls/tomato eggplant salad/mint yogurt
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,fish & seafood,6.0,AD,grilled hake/ratatouille/olive potatoes
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Dessert,,1.3,ACG,poppy seed cheese cake
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Soups,,1.1,ACGL,beef broth/garnish
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Soups,,1.1,AG,creamed garlic soup
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,vegetarian,4.0,AH,"pumpkin spinach pan/dates, nuts/bulgur"
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,home-style cooking,5.0,GM,"""Käsekrainer""/french fries/onion mustard"
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,international,6.0,ACG,gratinated chicken filet/with tomato & mozzarella/bell peper and zucchini/herb pasta
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Dessert,,1.3,,latte macchiato cake
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Soups,,1.1,ACGL,beef broth/garnish
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Soups,,1.1,A,minestrone
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,vegetarian,4.0,ACG,potato vegetable strudel/leaf salad/herb dip
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,home-style cooking,5.0,AC,breaded fried /chicken schnitzel/rice
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,asia,6.0,AFH,wok noodles/turkey strips/vegetables and cashews
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Dessert,,1.3,ACG,yogurt fruit cake
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Soups,,1.1,ACGL,beef broth/garnish
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Soups,,1.1,AG,cream of cauliflower soup
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,home-style cooking,4.0,AG,"grilled ""Leberkäse""/green beans with dill/and potatoes"
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,vegetarian,5.0,AFL,jambalaya/bulgur
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,international,6.0,ACLO,Esterházy beef escalope/green pasta/root vegetables
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Dessert,,1.3,ACG,apricot cake
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Soups,,1.1,ACGL,beef broth/garnish
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Soups,,1.1,AG,creamed basil soup
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,vegetarian,4.0,AG,buttermilk/vegetable curry/spelt
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,fish & seafood,5.0,ACD,breaded fried plaice/parsley potatoes/sweet dishes/apricot dumplings
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,international,6.0,AF,beef rendang/pak choi/tomato rice
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Dessert,,1.3,,chocolate cake
