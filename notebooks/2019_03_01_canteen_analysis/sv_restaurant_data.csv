@@ -1,31 +1,165 @@
 year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
+2016,17,2016-04-25,2016-04-29,Monday,2016-04-25,Soups,,1.1,ACGL,beef broth/garnish
+2016,17,2016-04-25,2016-04-29,Monday,2016-04-25,Soups,,1.1,AC,cream of zucchini soup
+2016,17,2016-04-25,2016-04-29,Monday,2016-04-25,Menus,mediterranean,4,A,chili con carne/bread
+2016,17,2016-04-25,2016-04-29,Monday,2016-04-25,Menus,vegetarian,5,AG,farfalle/dill sauce/rucola
+2016,17,2016-04-25,2016-04-29,Monday,2016-04-25,Menus,international,6,,pork medaillons/stewed vegetables/herb potatoes
+2016,17,2016-04-25,2016-04-29,Monday,2016-04-25,Dessert,,1.3,ACG,cream cheese apricot strudel
+2016,17,2016-04-25,2016-04-29,Tuesday,2016-04-26,Soups,,1.1,ACGL,beef broth/garnish
+2016,17,2016-04-25,2016-04-29,Tuesday,2016-04-26,Soups,,1.1,AGO,herbed cream soup
+2016,17,2016-04-25,2016-04-29,Tuesday,2016-04-26,Menus,vegetarian,4,ACG,spinach dumpling/asparagus ragout
+2016,17,2016-04-25,2016-04-29,Tuesday,2016-04-26,Menus,asia,5,F,chicken filet/mango coconut sauce/asian vegetables/rice
+2016,17,2016-04-25,2016-04-29,Tuesday,2016-04-26,Menus,international,6,AGO,pork stew/zurich style/pasta
+2016,17,2016-04-25,2016-04-29,Tuesday,2016-04-26,Dessert,,1.3,ACGH,chocolate nut roulade
+2016,17,2016-04-25,2016-04-29,Wednesday,2016-04-27,Soups,,1.1,ACGL,beef broth/garnish
+2016,17,2016-04-25,2016-04-29,Wednesday,2016-04-27,Soups,,1.1,A,cream of tomatoes soup
+2016,17,2016-04-25,2016-04-29,Wednesday,2016-04-27,Menus,vegetarian,4,AG,spaghetti/mushroom leek sauce
+2016,17,2016-04-25,2016-04-29,Wednesday,2016-04-27,Menus,home-style cooking,5,AC,chicken schnitzel/herb rice
+2016,17,2016-04-25,2016-04-29,Wednesday,2016-04-27,Menus,fish & seafood,6,D,hake/vegetable bouillabaisse/boiled potatoes
+2016,17,2016-04-25,2016-04-29,Wednesday,2016-04-27,Dessert,,1.3,ACG,lemon cake
+2016,17,2016-04-25,2016-04-29,Thursday,2016-04-28,Soups,,1.1,ACGL,beef broth/garnish
+2016,17,2016-04-25,2016-04-29,Thursday,2016-04-28,Soups,,1.1,ACG,cream of corn soup
+2016,17,2016-04-25,2016-04-29,Thursday,2016-04-28,Menus,home-style cooking,4,AG,"grilled ""Leberkäse""/creamy vegetables/hash brown potatoes"
+2016,17,2016-04-25,2016-04-29,Thursday,2016-04-28,Menus,vegetarian,5,O,vegan potato zucchini fritters/iceberg lettuce/herb vinaigrette
+2016,17,2016-04-25,2016-04-29,Thursday,2016-04-28,Menus,asia,6,ACFR,beef strips/wok-fried vegetables/egg noodles
+2016,17,2016-04-25,2016-04-29,Thursday,2016-04-28,Dessert,,1.3,ACG,raspberry cake
+2016,17,2016-04-25,2016-04-29,Friday,2016-04-29,Soups,,1.1,ACGL,beef broth/garnish
+2016,17,2016-04-25,2016-04-29,Friday,2016-04-29,Soups,,1.1,AG,cream of vegetables soup
+2016,17,2016-04-25,2016-04-29,Friday,2016-04-29,Menus,vegetarian,4,AGO,greek vegetable stew/feta cheese/bread
+2016,17,2016-04-25,2016-04-29,Friday,2016-04-29,Menus,fish & seafood,5,ACDGM,fish and chips/mashed peas/tartar sauce
+2016,17,2016-04-25,2016-04-29,Friday,2016-04-29,Menus,international,6,AGO,coq au vin/thyme potatoes/mushrooms
+2016,17,2016-04-25,2016-04-29,Friday,2016-04-29,Dessert,,1.3,ACGHFP,biscuit cream cake
+2016,18,2016-05-02,2016-05-06,Monday,2016-05-02,Soups,,1.1,ACGL,beef broth/garnish
+2016,18,2016-05-02,2016-05-06,Monday,2016-05-02,Soups,,1.1,,sweet potato soup
+2016,18,2016-05-02,2016-05-06,Monday,2016-05-02,Menus,home-style cooking,4,GM,“Käsekrainer” sausage/french fries/onion mustard
+2016,18,2016-05-02,2016-05-06,Monday,2016-05-02,Menus,pasta,5,ACG,gratinated macaroni/spinach/tomatoes with mozarella
+2016,18,2016-05-02,2016-05-06,Monday,2016-05-02,Menus,international,6,AGM,beef Jalfrezi/coconut rice
+2016,18,2016-05-02,2016-05-06,Monday,2016-05-02,Dessert,,1.3,AHM,sour cherry cheese cake
+2016,18,2016-05-02,2016-05-06,Tuesday,2016-05-03,Soups,,1.1,ACGL,beef broth/garnish
+2016,18,2016-05-02,2016-05-06,Tuesday,2016-05-03,Soups,,1.1,AG,carrot ginger soup
+2016,18,2016-05-02,2016-05-06,Tuesday,2016-05-03,Menus,vegetarian,4,AC,"""Krautfleckerl"" (cabbage and pasta)/salad"
+2016,18,2016-05-02,2016-05-06,Tuesday,2016-05-03,Menus,asia,5,GM,tomato chicken/tomato raita/yellow rice
+2016,18,2016-05-02,2016-05-06,Tuesday,2016-05-03,Menus,fish & seafood,6,ADG,salmon trout/mashed potatoes with spinach/grilled tomato
+2016,18,2016-05-02,2016-05-06,Tuesday,2016-05-03,Dessert,,1.3,AC,blueberry muffin
+2016,18,2016-05-02,2016-05-06,Wednesday,2016-05-04,Soups,,1.1,ACGL,beef broth/garnish
+2016,18,2016-05-02,2016-05-06,Wednesday,2016-05-04,Soups,,1.1,AG,cream of cauliflower soup
+2016,18,2016-05-02,2016-05-06,Wednesday,2016-05-04,Menus,vegetarian,4,G,red lentil curry/basmati rice/coriander
+2016,18,2016-05-02,2016-05-06,Wednesday,2016-05-04,Menus,home-style cooking,5,ACGM,deep-fried breaded corned pork escalope/potato salad
+2016,18,2016-05-02,2016-05-06,Wednesday,2016-05-04,Menus,mediterranean,6,ACGM,spelt burger/grilled chicken filet/coleslaw/honey mustard sauce
+2016,18,2016-05-02,2016-05-06,Wednesday,2016-05-04,Dessert,,1.3,ACFGH,"""Malakoffschnitte"""
+2016,18,2016-05-02,2016-05-06,Friday,2016-05-06,Soups,,1.1,ACGL,beef broth/garnish
+2016,18,2016-05-02,2016-05-06,Friday,2016-05-06,Soups,,1.1,AC,cream of asparagus soup
+2016,18,2016-05-02,2016-05-06,Friday,2016-05-06,Menus,pasta,4,AC,spaghetti/tomato-vegetable sauce
+2016,18,2016-05-02,2016-05-06,Friday,2016-05-06,Menus,fish & seafood,5,ACDG,cod with herb crust/tomato couscous
+2016,18,2016-05-02,2016-05-06,Friday,2016-05-06,Menus,international,6,G,grilled pork cutlet/polenta/green beans with bacon
+2016,18,2016-05-02,2016-05-06,Friday,2016-05-06,Dessert,,1.3,ACFGH,nut nougat cake
+2016,20,2016-05-16,2016-05-20,Tuesday,2016-05-17,Soups,,1.1,ACGL,beef broth/garnish
+2016,20,2016-05-16,2016-05-20,Tuesday,2016-05-17,Soups,,1.1,AG,pea soup
+2016,20,2016-05-16,2016-05-20,Tuesday,2016-05-17,Menus,,4,,
+2016,20,2016-05-16,2016-05-20,Tuesday,2016-05-17,Menus,,5,,
+2016,20,2016-05-16,2016-05-20,Tuesday,2016-05-17,Menus,,6,,
+2016,20,2016-05-16,2016-05-20,Tuesday,2016-05-17,Dessert,,1.3,,
+2016,20,2016-05-16,2016-05-20,Wednesday,2016-05-18,Soups,,1.1,ACGL,beef broth/garnish
+2016,20,2016-05-16,2016-05-20,Wednesday,2016-05-18,Soups,,1.1,AF,vietnamese pho chay rice noodle tofu soup
+2016,20,2016-05-16,2016-05-20,Wednesday,2016-05-18,Menus,,4,,
+2016,20,2016-05-16,2016-05-20,Wednesday,2016-05-18,Menus,,5,,
+2016,20,2016-05-16,2016-05-20,Wednesday,2016-05-18,Menus,,6,,
+2016,20,2016-05-16,2016-05-20,Wednesday,2016-05-18,Dessert,,1.3,,
+2016,20,2016-05-16,2016-05-20,Thursday,2016-05-19,Soups,,1.1,ACGL,beef broth/garnish
+2016,20,2016-05-16,2016-05-20,Thursday,2016-05-19,Soups,,1.1,G,cream of corn soup
+2016,20,2016-05-16,2016-05-20,Thursday,2016-05-19,Menus,,4,,
+2016,20,2016-05-16,2016-05-20,Thursday,2016-05-19,Menus,,5,,
+2016,20,2016-05-16,2016-05-20,Thursday,2016-05-19,Menus,,6,,
+2016,20,2016-05-16,2016-05-20,Thursday,2016-05-19,Dessert,,1.3,,
+2016,20,2016-05-16,2016-05-20,Friday,2016-05-20,Soups,,1.1,ACGL,beef broth/garnish
+2016,20,2016-05-16,2016-05-20,Friday,2016-05-20,Soups,,1.1,ADFG,laksa soup
+2016,20,2016-05-16,2016-05-20,Friday,2016-05-20,Menus,,4,,
+2016,20,2016-05-16,2016-05-20,Friday,2016-05-20,Menus,,5,,
+2016,20,2016-05-16,2016-05-20,Friday,2016-05-20,Menus,,6,,
+2016,20,2016-05-16,2016-05-20,Friday,2016-05-20,Dessert,,1.3,,
+2016,21,2016-05-23,2016-05-27,Monday,2016-05-23,Soups,,1.1,ACGL,beef broth/garnish
+2016,21,2016-05-23,2016-05-27,Monday,2016-05-23,Soups,,1.1,,
+2016,21,2016-05-23,2016-05-27,Monday,2016-05-23,Menus,,4,,
+2016,21,2016-05-23,2016-05-27,Monday,2016-05-23,Menus,,5,,
+2016,21,2016-05-23,2016-05-27,Monday,2016-05-23,Menus,,6,,
+2016,21,2016-05-23,2016-05-27,Monday,2016-05-23,Dessert,,1.3,,
+2016,21,2016-05-23,2016-05-27,Tuesday,2016-05-24,Soups,,1.1,ACGL,beef broth/garnish
+2016,21,2016-05-23,2016-05-27,Tuesday,2016-05-24,Soups,,1.1,,
+2016,21,2016-05-23,2016-05-27,Tuesday,2016-05-24,Menus,,4,,
+2016,21,2016-05-23,2016-05-27,Tuesday,2016-05-24,Menus,,5,,
+2016,21,2016-05-23,2016-05-27,Tuesday,2016-05-24,Menus,,6,,
+2016,21,2016-05-23,2016-05-27,Tuesday,2016-05-24,Dessert,,1.3,,
+2016,21,2016-05-23,2016-05-27,Wednesday,2016-05-25,Soups,,1.1,ACGL,beef broth/garnish
+2016,21,2016-05-23,2016-05-27,Wednesday,2016-05-25,Soups,,1.1,,
+2016,21,2016-05-23,2016-05-27,Wednesday,2016-05-25,Menus,,4,,
+2016,21,2016-05-23,2016-05-27,Wednesday,2016-05-25,Menus,,5,,
+2016,21,2016-05-23,2016-05-27,Wednesday,2016-05-25,Menus,,6,,
+2016,21,2016-05-23,2016-05-27,Wednesday,2016-05-25,Dessert,,1.3,,
+2016,21,2016-05-23,2016-05-27,Friday,2016-05-27,Soups,,1.1,ACGL,beef broth/garnish
+2016,21,2016-05-23,2016-05-27,Friday,2016-05-27,Soups,,1.1,,
+2016,21,2016-05-23,2016-05-27,Friday,2016-05-27,Menus,,4,,
+2016,21,2016-05-23,2016-05-27,Friday,2016-05-27,Menus,,5,,
+2016,21,2016-05-23,2016-05-27,Friday,2016-05-27,Menus,,6,,
+2016,21,2016-05-23,2016-05-27,Friday,2016-05-27,Dessert,,1.3,,
 2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Soups,,1.1,ACGL,beef broth/garnish
 2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Soups,,1.1,AG,cream of corn soup
-2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,home-style cooking,4.0,AC,pasta with ham/small salad
-2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,vegetarian,5.0,AFG,falafel balls/tomato eggplant salad/mint yogurt
-2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,fish & seafood,6.0,AD,grilled hake/ratatouille/olive potatoes
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,home-style cooking,4,AC,pasta with ham/small salad
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,vegetarian,5,AFG,falafel balls/tomato eggplant salad/mint yogurt
+2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Menus,fish & seafood,6,AD,grilled hake/ratatouille/olive potatoes
 2019,8,2019-02-25,2019-03-01,Monday,2019-02-25,Dessert,,1.3,ACG,poppy seed cheese cake
 2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Soups,,1.1,ACGL,beef broth/garnish
 2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Soups,,1.1,AG,creamed garlic soup
-2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,vegetarian,4.0,AH,"pumpkin spinach pan/dates, nuts/bulgur"
-2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,home-style cooking,5.0,GM,"""Käsekrainer""/french fries/onion mustard"
-2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,international,6.0,ACG,gratinated chicken filet/with tomato & mozzarella/bell peper and zucchini/herb pasta
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,vegetarian,4,AH,"pumpkin spinach pan/dates, nuts/bulgur"
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,home-style cooking,5,GM,"""Käsekrainer""/french fries/onion mustard"
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,international,6,ACG,gratinated chicken filet/with tomato & mozzarella/bell peper and zucchini/herb pasta
 2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Dessert,,1.3,,latte macchiato cake
 2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Soups,,1.1,ACGL,beef broth/garnish
 2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Soups,,1.1,A,minestrone
-2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,vegetarian,4.0,ACG,potato vegetable strudel/leaf salad/herb dip
-2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,home-style cooking,5.0,AC,breaded fried /chicken schnitzel/rice
-2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,asia,6.0,AFH,wok noodles/turkey strips/vegetables and cashews
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,vegetarian,4,ACG,potato vegetable strudel/leaf salad/herb dip
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,home-style cooking,5,AC,breaded fried /chicken schnitzel/rice
+2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Menus,asia,6,AFH,wok noodles/turkey strips/vegetables and cashews
 2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Dessert,,1.3,ACG,yogurt fruit cake
 2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Soups,,1.1,ACGL,beef broth/garnish
 2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Soups,,1.1,AG,cream of cauliflower soup
-2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,home-style cooking,4.0,AG,"grilled ""Leberkäse""/green beans with dill/and potatoes"
-2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,vegetarian,5.0,AFL,jambalaya/bulgur
-2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,international,6.0,ACLO,Esterházy beef escalope/green pasta/root vegetables
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,home-style cooking,4,AG,"grilled ""Leberkäse""/green beans with dill/and potatoes"
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,vegetarian,5,AFL,jambalaya/bulgur
+2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Menus,international,6,ACLO,Esterházy beef escalope/green pasta/root vegetables
 2019,8,2019-02-25,2019-03-01,Thursday,2019-02-28,Dessert,,1.3,ACG,apricot cake
 2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Soups,,1.1,ACGL,beef broth/garnish
 2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Soups,,1.1,AG,creamed basil soup
-2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,vegetarian,4.0,AG,buttermilk/vegetable curry/spelt
-2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,fish & seafood,5.0,ACD,breaded fried plaice/parsley potatoes/sweet dishes/apricot dumplings
-2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,international,6.0,AF,beef rendang/pak choi/tomato rice
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,vegetarian,4,AG,buttermilk/vegetable curry/spelt
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,fish & seafood,5,ACD,breaded fried plaice/parsley potatoes
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,sweet dishes,5,ACG,apricot dumplings
+2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Menus,international,6,AF,beef rendang/pak choi/tomato rice
 2019,8,2019-02-25,2019-03-01,Friday,2019-03-01,Dessert,,1.3,,chocolate cake
+2019,9,2019-03-04,2019-03-08,Monday,2019-03-04,Soups,,1.1,ACGL,beef broth/garnish
+2019,9,2019-03-04,2019-03-08,Monday,2019-03-04,Soups,,1.1,AGL,creamed curry soup
+2019,9,2019-03-04,2019-03-08,Monday,2019-03-04,Menus,home-style cooking,4,ACG,macaroni/carbonara sauce/parmesan cheese
+2019,9,2019-03-04,2019-03-08,Monday,2019-03-04,Menus,vegetarian,5,ALO,vegetable croquettes/lentil salad/tomato salsa
+2019,9,2019-03-04,2019-03-08,Monday,2019-03-04,Menus,fish & seafood,6,AD,salmon trout/vegetable/Ebly
+2019,9,2019-03-04,2019-03-08,Monday,2019-03-04,Dessert,,1.3,ACFGH,"""Malakoffschnitte"""
+2019,9,2019-03-04,2019-03-08,Tuesday,2019-03-05,Soups,,1.1,ACGL,beef broth/garnish
+2019,9,2019-03-04,2019-03-08,Tuesday,2019-03-05,Soups,,1.1,AG,creamed basil soup
+2019,9,2019-03-04,2019-03-08,Tuesday,2019-03-05,Menus,vegetarian,4,AF,Moroccan/chickpea stew/couscous
+2019,9,2019-03-04,2019-03-08,Tuesday,2019-03-05,Menus,home-style cooking,5,A,turkey cabbage stew/with paprika/caraway potatoes
+2019,9,2019-03-04,2019-03-08,Tuesday,2019-03-05,Menus,international,6,AC,herbed pork cutlet/broccoli and cauliflower/pasta
+2019,9,2019-03-04,2019-03-08,Tuesday,2019-03-05,Dessert,,1.3,ACG,apple strudel
+2019,9,2019-03-04,2019-03-08,Wednesday,2019-03-06,Soups,,1.1,ACGL,beef broth/garnish
+2019,9,2019-03-04,2019-03-08,Wednesday,2019-03-06,Soups,,1.1,AG,cream of carrot soup
+2019,9,2019-03-04,2019-03-08,Wednesday,2019-03-06,Menus,vegetarian,4,ACG,vegetable casserole/raw vegetable leaf salad/herb dip
+2019,9,2019-03-04,2019-03-08,Wednesday,2019-03-06,Menus,home-style cooking,5,AG,breaded fried/pork schnitzel/rice
+2019,9,2019-03-04,2019-03-08,Wednesday,2019-03-06,Menus,mediterranean,6,AD,grilled sea bass/truffled potato mash/colorful vegetables
+2019,9,2019-03-04,2019-03-08,Wednesday,2019-03-06,Dessert,,1.3,A,vegan/plum cake
+2019,9,2019-03-04,2019-03-08,Thursday,2019-03-07,Soups,,1.1,ACGL,beef broth/garnish
+2019,9,2019-03-04,2019-03-08,Thursday,2019-03-07,Soups,,1.1,AG,cream of broccoli soup
+2019,9,2019-03-04,2019-03-08,Thursday,2019-03-07,Menus,home-style cooking,4,AC,braised paprika chicken/pasta
+2019,9,2019-03-04,2019-03-08,Thursday,2019-03-07,Menus,vegetarian,5,AF,vegan coconut curry/jasmin rice
+2019,9,2019-03-04,2019-03-08,Thursday,2019-03-07,Menus,international,6,AGL,boiled beef/spinach/roast potatoes
+2019,9,2019-03-04,2019-03-08,Thursday,2019-03-07,Dessert,,1.3,ACG,pear cream cheese strudel
+2019,9,2019-03-04,2019-03-08,Friday,2019-03-08,Soups,,1.1,ACGL,beef broth/garnish
+2019,9,2019-03-04,2019-03-08,Friday,2019-03-08,Soups,,1.1,AG,cream of celery soup
+2019,9,2019-03-04,2019-03-08,Friday,2019-03-08,Menus,vegetarian,4,AG,spinach lasagne/tomato ragout
+2019,9,2019-03-04,2019-03-08,Friday,2019-03-08,Menus,fish & seafood,5,ACDG,breaded fried codfish filet/rice
+2019,9,2019-03-04,2019-03-08,Friday,2019-03-08,Menus,sweet dishes,5,ACG,curd dumplings
+2019,9,2019-03-04,2019-03-08,Friday,2019-03-08,Menus,international,6,GNO,Oriental braised chicken/with dates/sesame rice/peas
+2019,9,2019-03-04,2019-03-08,Friday,2019-03-08,Dessert,,1.3,ACGH,"""Punschschnitte"""
