@@ -75,6 +75,16 @@ for i, day_row in enumerate(soup.find(
       except AttributeError:
         row['subcategory'] = ''
         row['name'] = txt.split(' (', 1)[0].strip()
+      # Sweet dishes
+      if '/sweet dishes/' in row['name']:
+        main, sweets = row['name'].split( '/sweet dishes/', 1)
+        row['name'] = main
+        sweet_row = row.copy()
+        sweet_row['name'] = sweets
+        sweet_row['subcategory'] = 'sweet dishes'
+        sweet_row['allergens'] = 'ACG'
+        with open(csv_file, 'a', newline='') as f:
+          csv.DictWriter(f, fieldnames=header_names).writerow(sweet_row)
       # Write row
       with open(csv_file, 'a', newline='') as f:
         csv.DictWriter(f, fieldnames=header_names).writerow(row)
