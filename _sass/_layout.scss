@@ -93,29 +93,29 @@ nav ul li#research a:hover{
       background-color: #1280bf;
 }
 
-nav ul li#code a{
+nav ul li#blog a{
     background-color: #ea596d;
     border-bottom: 3px solid #b1124e;
     color: #ea596d;
 }
 
-nav ul li#code a:hover{
+nav ul li#blog a:hover{
       background-color: #b1124e;
 }
 
-nav ul li#blog a{
+nav ul li#notes a{
     background-color: #deb6ff;
     border-bottom: 3px solid #704496;
     color: #deb6ff;
 }
 
-nav ul li#blog a:hover{
+nav ul li#notes a:hover{
       background-color: #704496;
 }
 
 /*Hover effect*/
 nav ul li a:hover span {
-    visibility:visible;  	
+    visibility: visible;  	
     opacity:1;
     transition-delay:0s;
     z-index: 1;
@@ -128,7 +128,7 @@ nav ul li a:hover span {
     left: 330px; 
     top: 0px;
     line-height: 50px;
-    width: 150px;
+    width: 200px;
     text-align: left;
     background-color: #444444;
     visibility:hidden;
