@@ -116,12 +116,12 @@ nav ul li#notes a:hover{
 /*Hover effect*/
 nav ul li a:hover span {
     visibility: visible;  	
-    opacity:1;
+    opacity: 1;
     transition-delay:0s;
     z-index: 1;
 }
 
-.site-header nav ul li a span {
+nav ul li a span {
     font: 30px "Trebuchet MS", Helvetica, sans-serif; 
     font-variant: small-caps; 
     position: absolute; 
@@ -131,18 +131,10 @@ nav ul li a:hover span {
     width: 200px;
     text-align: left;
     background-color: #444444;
-    visibility:hidden;
-    opacity:0;
+    visibility: hidden;  	
+    opacity: 0;
     transition:visibility 0s linear 0.2s,opacity 0.2s linear;
 }
-
-nav ul li a:hover {
-      -webkit-transition: background-color 0.2s ease-out;
-      -moz-transition: background-color 0.2s ease-out;
-      -o-transition: background-color 0.2s ease-out;
-      -ms-transition: background-color 0.2s ease-out;
-      transition: background-color 0.2s ease-out;
-  }
 
 .blog_thumb{
     width: 50%
