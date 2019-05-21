@@ -66,6 +66,7 @@ for i, day_row in enumerate(soup.find(
       # allergens
       try:
         row['allergens'] = re.findall('\[[A-Z]*\]', txt)[0][1:-1]
+        row['allergens'] = ''.join(sorted(row['allergens']))
       except (IndexError, TypeError):
         row['allergens'] = ''
       # name and subcategory
