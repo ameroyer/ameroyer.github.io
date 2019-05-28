@@ -447,3 +447,9 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,20,2019-05-20,2019-05-24,Friday,2019-05-24,Menus,fish & seafood,5,ACDG,breaded fried pike perch/parsley potatoes
 2019,20,2019-05-20,2019-05-24,Friday,2019-05-24,Menus,international,6,AF,curry with/beef balls/coriander rice
 2019,20,2019-05-20,2019-05-24,Friday,2019-05-24,Dessert,,1.3,ACFG,chocolate cake
+2019,21,2019-05-27,2019-05-31,Monday,2019-05-27,Soups,,1.1,ACGL,beef broth/garnish
+2019,21,2019-05-27,2019-05-31,Monday,2019-05-27,Soups,,1.1,A,cream of tomato soup
+2019,21,2019-05-27,2019-05-31,Monday,2019-05-27,Menus,international,4.0,AF,sweet and sour/turkey/basmati rice
+2019,21,2019-05-27,2019-05-31,Monday,2019-05-27,Menus,vegetarian,5.0,ACFG,soya ragout/mushroom sauce/noodles
+2019,21,2019-05-27,2019-05-31,Monday,2019-05-27,Menus,fish & seafood,6.0,AD,salmon trout filet/fennel/potatoes
+2019,21,2019-05-27,2019-05-31,Monday,2019-05-27,Dessert,,1.3,ACFGH,"""Malakoffschnitte"""
