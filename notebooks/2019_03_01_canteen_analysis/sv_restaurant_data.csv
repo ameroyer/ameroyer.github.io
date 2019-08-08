@@ -400,3 +400,88 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Menus,home-style cooking,5.3,AC,breaded fried/chicken schnitzel/rice
 2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Menus,asia,6.3,ACF,red beef curry/egg noodles
 2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Dessert,,1.4,ACGH,nut strudel
+2019,24,2019-06-17,2019-06-21,Monday,2019-06-17,Soups,,1.15,ACGL,beef broth/garnish
+2019,24,2019-06-17,2019-06-21,Monday,2019-06-17,Soups,,1.15,AL,minestrone
+2019,24,2019-06-17,2019-06-21,Monday,2019-06-17,Menus,home-style cooking,4.2,AN,potato goulash/sausage/bread roll
+2019,24,2019-06-17,2019-06-21,Monday,2019-06-17,Menus,vegetarian,5.3,AF,fried noodles/bamboo curry
+2019,24,2019-06-17,2019-06-21,Monday,2019-06-17,Menus,fish & seafood,6.3,AD,grilled hake/spring vegetables/wild rice
+2019,24,2019-06-17,2019-06-21,Monday,2019-06-17,Dessert,,1.4,ACG,banana cake
+2019,25,2019-06-24,2019-06-28,Monday,2019-06-24,Soups,,1.15,ACGL,beef broth/garnish
+2019,25,2019-06-24,2019-06-28,Monday,2019-06-24,Soups,,1.15,AG,creamed garlic soup
+2019,25,2019-06-24,2019-06-28,Monday,2019-06-24,Menus,home-style cooking,4.2,G,"roasted ""Leberkäse""/mashed potatoes/peas"
+2019,25,2019-06-24,2019-06-28,Monday,2019-06-24,Menus,vegetarian,5.3,AC,colorful leaf salad/breaded fried cheese/cranberries
+2019,25,2019-06-24,2019-06-28,Monday,2019-06-24,Menus,fish & seafood,6.3,DHLR,paella with vegetables/and seafood
+2019,25,2019-06-24,2019-06-28,Monday,2019-06-24,Dessert,,1.4,ACFGH,nut nougat cake
+2019,26,2019-07-01,2019-07-05,Monday,2019-07-01,Soups,,1.15,ACGL,beef broth/garnish
+2019,26,2019-07-01,2019-07-05,Monday,2019-07-01,Soups,,1.15,M,creamy lentil soup
+2019,26,2019-07-01,2019-07-05,Monday,2019-07-01,Menus,home-style cooking,4.2,A,curry sausage/french fries
+2019,26,2019-07-01,2019-07-05,Monday,2019-07-01,Menus,vegetarian,5.3,ALN,vegan/chickpea stew/pita bread
+2019,26,2019-07-01,2019-07-05,Monday,2019-07-01,Menus,fish & seafood,6.3,AD,trout filet/colorful vegetables/rosemary potatoes
+2019,26,2019-07-01,2019-07-05,Monday,2019-07-01,Dessert,,1.4,ACG,curd cream cake
+2019,26,2019-07-01,2019-07-05,Tuesday,2019-07-02,Soups,,1.15,ACGL,beef broth/garnish
+2019,26,2019-07-01,2019-07-05,Tuesday,2019-07-02,Soups,,1.15,AG,sorrel soup
+2019,26,2019-07-01,2019-07-05,Tuesday,2019-07-02,Menus,vegetarian,4.2,A,vegetable jambalaya/basmati rice
+2019,26,2019-07-01,2019-07-05,Tuesday,2019-07-02,Menus,home-style cooking,5.3,AC,beef goulash/home made spaetzle
+2019,26,2019-07-01,2019-07-05,Tuesday,2019-07-02,Menus,international,6.3,CFGLM,spare ribs/potato chips/BBQ sauce
+2019,26,2019-07-01,2019-07-05,Tuesday,2019-07-02,Dessert,,1.4,ACG,latte macchiato cake
+2019,26,2019-07-01,2019-07-05,Wednesday,2019-07-03,Soups,,1.15,ACGL,beef broth/garnish
+2019,26,2019-07-01,2019-07-05,Wednesday,2019-07-03,Soups,,1.15,AG,cream of zucchini soup
+2019,26,2019-07-01,2019-07-05,Wednesday,2019-07-03,Menus,vegetarian,4.2,G,potato pizza/leaf salad/garlic dip
+2019,26,2019-07-01,2019-07-05,Wednesday,2019-07-03,Menus,home-style cooking,5.3,ACG,pork cordon bleu/vegetable rice
+2019,26,2019-07-01,2019-07-05,Wednesday,2019-07-03,Menus,asia,6.3,GN,chicken with dates/sesame rice/broccoli
+2019,26,2019-07-01,2019-07-05,Wednesday,2019-07-03,Dessert,,1.4,ACG,yogurt fruit cake
+2019,26,2019-07-01,2019-07-05,Thursday,2019-07-04,Soups,,1.15,ACGL,beef broth/garnish
+2019,26,2019-07-01,2019-07-05,Thursday,2019-07-04,Soups,,1.15,AGL,creamed celery soup
+2019,26,2019-07-01,2019-07-05,Thursday,2019-07-04,Menus,home-style cooking,4.2,L,boiled pork Styrian style/potatoes/horseradish
+2019,26,2019-07-01,2019-07-05,Thursday,2019-07-04,Menus,vegetarian,5.3,ACG,spinach canneloni/tomato basil sauce/grana cheese
+2019,26,2019-07-01,2019-07-05,Thursday,2019-07-04,Menus,international,6.3,AC,"beef ragout/mushrooms, vegetables/whole wheat noodles"
+2019,26,2019-07-01,2019-07-05,Thursday,2019-07-04,Dessert,,1.4,ACG,apricot cake
+2019,26,2019-07-01,2019-07-05,Friday,2019-07-05,Soups,,1.15,ACGL,beef broth/garnish
+2019,26,2019-07-01,2019-07-05,Friday,2019-07-05,Soups,,1.15,A,carrot ginger soup
+2019,26,2019-07-01,2019-07-05,Friday,2019-07-05,Menus,vegetarian,4.2,ACG,cheese dumpling/leaf salad/herb dip
+2019,26,2019-07-01,2019-07-05,Friday,2019-07-05,Menus,sweet dishes,5.3,ACG,"""Powidltascherl"""
+2019,26,2019-07-01,2019-07-05,Friday,2019-07-05,Menus,fish & seafood,5.3,ACDFLM,fish and chips/garlic sauce
+2019,26,2019-07-01,2019-07-05,Friday,2019-07-05,Menus,international,6.3,A,turkey skewer/letcho/rice
+2019,26,2019-07-01,2019-07-05,Friday,2019-07-05,Dessert,,1.4,ACFG,chocolate cake
+2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Soups,,1.15,ACGL,beef broth/garnish
+2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Soups,,1.15,A,cream of tomato soup
+2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Menus,international,4.2,ACF,sweet and sour pork/vegetable noodles
+2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Menus,vegetarian,5.3,AG,polenta nuggets/colorful vegetables/chive dip
+2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Menus,fish & seafood,6.3,ADG,grilled salmon steak/safron sauce/wild rice/broccoli
+2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Dessert,,1.4,ACG,red currant meringue cake
+2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Soups,,1.15,ACGL,beef broth/garnish
+2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Soups,,1.15,AGL,cream of celery soup
+2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Menus,home-style cooking,4.2,G,"""Käsekrainer""/potato wedges/grill sauce"
+2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Menus,vegetarian,5.3,G,baked potato/spinach/feta cheese/leaf salad
+2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Menus,fish & seafood,6.3,AD,grilled hake/colorful vegetables/herb tender wheat
+2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Dessert,,1.4,ACG,cream cheese strudel
+2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Soups,,1.15,ACGL,beef broth/garnish
+2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Soups,,1.15,A,cream of bell pepper soup
+2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Menus,home-style cooking,4.2,AC,braised paprika chicken/home made spaetzle
+2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Menus,vegetarian,5.3,ACG,summer salad/crispy mozzarella sticks/tomato yogurt
+2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Menus,fish & seafood,6.3,ABCG,green noodles/dill sauce/shrimp skewer
+2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Dessert,,1.4,ACGH,"""Kardinalschnitte"""
+2019,30,2019-07-29,2019-08-02,Monday,2019-07-29,Soups,,1.15,ACGL,beef broth/garnish
+2019,30,2019-07-29,2019-08-02,Monday,2019-07-29,Soups,,1.15,AL,minestrone
+2019,30,2019-07-29,2019-08-02,Monday,2019-07-29,Menus,home-style cooking,4.2,ACGLO,chicken wings/potato chips/cocktail sauce
+2019,30,2019-07-29,2019-08-02,Monday,2019-07-29,Menus,vegetarian,5.3,G,potato pizza/colorful salad/chive dip
+2019,30,2019-07-29,2019-08-02,Monday,2019-07-29,Menus,fish & seafood,6.3,AD,grilled fish/mixed vegetable/parsley potatoes
+2019,30,2019-07-29,2019-08-02,Monday,2019-07-29,Dessert,,1.4,ACG,bluebery cake
+2019,30,2019-07-29,2019-08-02,Tuesday,2019-07-30,Soups,,1.15,ACGL,beef broth/garnish
+2019,30,2019-07-29,2019-08-02,Tuesday,2019-07-30,Soups,,1.15,AG,herb cream soup
+2019,30,2019-07-29,2019-08-02,Tuesday,2019-07-30,Menus,vegetarian,4.2,ACG,mixed salad/mixed baked
+2019,30,2019-07-29,2019-08-02,Tuesday,2019-07-30,Menus,asia,5.3,AF,"""Acht Schätze""/basmati rice"
+2019,30,2019-07-29,2019-08-02,Tuesday,2019-07-30,Menus,international,6.3,AGLM,boiled beef/cream spinach/rösti
+2019,30,2019-07-29,2019-08-02,Tuesday,2019-07-30,Dessert,,1.4,ACFG,coffee cream sponge cake
+2019,30,2019-07-29,2019-08-02,Wednesday,2019-07-31,Soups,,1.15,ACGL,beef broth/garnish
+2019,30,2019-07-29,2019-08-02,Wednesday,2019-07-31,Soups,,1.15,,"""Vichyssoise""/cold potato leek soup"
+2019,30,2019-07-29,2019-08-02,Wednesday,2019-07-31,Menus,vegetarian,4.2,ACG,vegetable patties/summer salad/herb dip
+2019,30,2019-07-29,2019-08-02,Wednesday,2019-07-31,Menus,home-style cooking,5.3,ACG,piquant cordon bleu/rice
+2019,30,2019-07-29,2019-08-02,Wednesday,2019-07-31,Menus,asia,6.3,AF,grilled turkey strips/Asian noodles/potato patties
+2019,30,2019-07-29,2019-08-02,Wednesday,2019-07-31,Dessert,,1.4,ACG,strawberry cake
+2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Soups,,1.15,ACGL,beef broth/garnish
+2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Soups,,1.15,AG,creamed garlic soup
+2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Menus,asia,4.2,ACF,"""Nasi Goreng""/fried rice"
+2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Menus,vegetarian,5.3,AFG,"""Kärntner Kasnudeln""/filled pasta/butter/chive"
+2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Menus,fish & seafood,6.3,D,steamed catfish filet/root vegetables/boiled potatoes
+2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Dessert,,1.4,ACFG,lemon cake
