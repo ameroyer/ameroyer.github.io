@@ -60,7 +60,7 @@ class PolyaUrn extends D3Component {
 	    .text(d3.format(",.2f")(props.b / (props.a + props.b)))
 	    .attr("font-family", "sans-serif")
 	    .attr("font-size", "18px")
-	    .attr("fill", (props.b > props.a) ? bcolor : a_color);
+	    .attr("fill", (props.b > props.a) ? bcolor : acolor);
     }
 
     update(props, oldProps) {
@@ -100,7 +100,7 @@ class PolyaUrn extends D3Component {
 	}
 	d3.select('#ratio')
 	    .text(d3.format(",.2f")(props.b / (props.a + props.b)))
-	    .attr("fill", (props.b > props.a) ? bcolor : a_color);
+	    .attr("fill", (props.b > props.a) ? bcolor : acolor);
     }
 }
 

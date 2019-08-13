@@ -22,7 +22,6 @@ the urn, place it back in the urn and add a new ball of the same color
 in the urn; Repeat the following step [equation]n[/equation] times.
 [/div]
 
-x
 
 [var name:"a" value: 1 /]
 [var name:"b" value: 2 /]
