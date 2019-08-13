@@ -485,3 +485,15 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Menus,vegetarian,5.3,AFG,"""Kärntner Kasnudeln""/filled pasta/butter/chive"
 2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Menus,fish & seafood,6.3,D,steamed catfish filet/root vegetables/boiled potatoes
 2019,31,2019-08-05,2019-08-09,Monday,2019-08-05,Dessert,,1.4,ACFG,lemon cake
+2019,32,2019-08-12,2019-08-16,Monday,2019-08-12,Soups,,1.15,ACGL,beef broth/garnish
+2019,32,2019-08-12,2019-08-16,Monday,2019-08-12,Soups,,1.15,G,cold cucumber soup
+2019,32,2019-08-12,2019-08-16,Monday,2019-08-12,Menus,ethno food,4.2,AF,chicken tajine/sweet potatoes/basmati rice
+2019,32,2019-08-12,2019-08-16,Monday,2019-08-12,Menus,vegetarian,5.3,ACG,whole wheat pasta/dried tomatoes/arugula pesto
+2019,32,2019-08-12,2019-08-16,Monday,2019-08-12,Menus,fish & seafood,6.3,AD,roasted pike perch/letcho/fried potatoes
+2019,32,2019-08-12,2019-08-16,Monday,2019-08-12,Dessert,,1.4,ACG,curd cream cake
+2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Soups,,1.15,ACGL,beef broth/garnish
+2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Soups,,1.15,M,red lentil soup
+2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Menus,vegetarian,4.2,A,ginger coconut curry/green beans/couscous
+2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Menus,home-style cooking,5.3,A,braised pork escalope/rice with peas
+2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Menus,international,6.3,AGN,Kebap/rice/or pita bread
+2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Dessert,,1.4,ACG,latte macchiato cake

@@ -4,16 +4,21 @@ const d3 = require('d3');
 
 const width = 650;
 const height = 250;
-const border = 4;
-const bordercolor = "DarkGray";
 const acolor = "Orange";
 const bcolor = "CornflowerBlue";
+const text_color = "#888888";
 const num_cols = 8;
 const r = Math.floor(width / 2 / num_cols / 2);
 
-class CustomD3Component extends D3Component {
+
+class PolyaUrn extends D3Component {
     initialize(node, props) {
 	const svg = (this.svg = d3.select(node).append('svg'));
+	svg.append("rect")
+	    .attr("width", "100%")
+	    .attr("height", "100%")
+	    .attr("fill", "white");
+	
 	svg
 	    .attr('viewBox', `0 0 ${width} ${height}`)
 	    .style('width', '100%')
@@ -38,6 +43,24 @@ class CustomD3Component extends D3Component {
 		.attr('cy', height - r - Math.floor( i / num_cols) * 2 * r)
 		.style("fill", bcolor);
 	}
+	
+	const txt = svg.append("text")
+	      .attr("x", 5)
+	      .attr("y", 25)
+	      .text( "Ratio b / (a + b) = " )
+	      .attr("font-family", "sans-serif")
+	      .attr("font-size", "18px")
+	      .attr("fill", text_color);
+
+	const bbox = txt.node().getBBox();
+	svg.append("text")
+	    .attr("x", bbox.x + bbox.width + 5)
+	    .attr("y", txt.attr("y"))
+            .attr("id", "ratio")
+	    .text(d3.format(",.2f")(props.b / (props.a + props.b)))
+	    .attr("font-family", "sans-serif")
+	    .attr("font-size", "18px")
+	    .attr("fill", (props.b > props.a) ? bcolor : a_color);
     }
 
     update(props, oldProps) {
@@ -70,7 +93,15 @@ class CustomD3Component extends D3Component {
 	    .ease(d3.easeExp)
 	    .duration(500)
 	    .attr('cy', height - r - Math.floor(pos / num_cols) * 2 * r);
+	if (props.a > props.b) {
+	    color = acolor;
+	} else {
+	    color = bcolor;
+	}
+	d3.select('#ratio')
+	    .text(d3.format(",.2f")(props.b / (props.a + props.b)))
+	    .attr("fill", (props.b > props.a) ? bcolor : a_color);
     }
 }
 
-module.exports = CustomD3Component;
+module.exports = PolyaUrn;
