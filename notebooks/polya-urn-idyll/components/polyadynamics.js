@@ -6,7 +6,7 @@ const width = 650;
 const height = 250;
 const acolor = "Orange";
 const bcolor = "CornflowerBlue";
-const text_color = "#888888";
+const text_color = "#222222";
 const num_cols = 15;
 const r = Math.floor(width / 2 / num_cols / 2);
 const line_offset = 2;
@@ -19,23 +19,56 @@ class PolyaDynamics extends D3Component {
 	svg.append("rect")
 	    .attr("width", "100%")
 	    .attr("height", "100%")
-	    .attr("fill", "white");
-	
+	    .attr("fill", "white");	
 	svg
 	    .attr('viewBox', `0 0 ${width} ${height}`)
 	    .style('width', '100%')
 	    .style('height', '${height}');
 
 
+	let y0 = height * (1 - props.b0 / (props.a0 + props.b0));
 	svg.append("line")  
 	    .style("stroke", "black") 
             .style("stroke-dasharray", ("3, 3")) 
 	    .style("opacity", 0.8)
 	    .attr("x1", 0) 
-	    .attr("y1", height * (1 - props.b0 / (props.a0 + props.b0 ) )) 
+	    .attr("y1", y0) 
 	    .attr("x2", (props.num_steps + 1) * 10)   
-	    .attr("y2", height * (1 - props.b0 / (props.b0 + props.a0)));
-	let duration = 2000 / props.num_steps;
+	    .attr("y2", y0);
+
+	
+	svg.append("text")
+	      .attr("x", width - 55)
+	      .attr("y", y0)
+	      .text( "Y")
+	      .attr("font-family", "sans-serif")
+	      .attr("font-size", "16px")
+	      .attr("fill", text_color)
+	      .append('tspan')
+	      .text('0')
+	      .style('font-size', '10px')
+	      .attr('dx', '-.2em')
+	      .attr('dy', '.7em');
+
+	 svg.append("text")
+	      .attr("x",  width - 40)
+	      .attr("y", y0)
+	      .text( "= " + y0)
+	      .attr("font-family", "sans-serif")
+	      .attr("font-size", "16px")
+	    .attr("fill", text_color);
+	
+	svg.append("rect")
+	    .attr("x", width - 60)
+	    .attr("y", y0 - 20)
+	    .attr("width", 60)
+	    .attr("height", 15)
+	    .attr("fill", "none")
+	    .style("stroke", text_color)
+	    .style("stroke-width", 1);
+	
+	
+	let duration = 2200 / props.num_steps;
 	var i = 0;
 	var j = 0;
 	var b = Array(props.num_runs).fill(props.b0);

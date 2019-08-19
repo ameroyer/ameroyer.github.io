@@ -161,7 +161,7 @@ Let us introduce [equation]Y_n = \frac{B_n}{a + b +n}[/equation], the ratio of t
 
 And of course we can also verify this in simulations:
 
-[PolyaDynamics className:"d3-component" state:state a0:2 b0:2 run:run num_steps:100 num_runs: 50/]
+[PolyaDynamics className:"d3-component" state:state a0:2 b0:2 run:run num_steps:100 num_runs: 60/]
 
 #### Convergence
 
