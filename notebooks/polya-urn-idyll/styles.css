@@ -1,0 +1,76 @@
+.d3-component svg {
+  background: #ddd;
+  max-height: 300px;
+}
+
+@media all and (max-width: 1000px) {
+  .d3-component svg {
+    max-height: 200px;
+  }
+}
+
+
+.definition{
+    text-align: center;
+    font-style: italic;
+    background: #EEEEEE;
+    padding: 12px;
+    border-radius: 15px;
+    margin-bottom: 25px
+}
+
+.simulate {
+    border: 1px black solid;
+    padding: 5px;
+    vertical-align: center;
+    background-color: #FFFFFF;
+    font-size: 16px
+}
+
+.equation {
+    border: 1px black solid;
+    width: 65%;
+    margin: auto;
+    margin-bottom: 23px
+}
+
+.simulate:hover {
+    background-color: #EEEEEE;
+}
+
+.detail {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid Tomato
+}
+
+
+.detail:before, .detail:after {
+    content:"\A";
+    border-style: solid;
+    border-width: 7px 10px 7px 0;
+    position: absolute;
+    top: 8px;
+}
+
+.detail:before {
+    border-color: transparent Tomato transparent transparent;
+    left: -10px;
+}
+
+.detail:after {
+    border-color: transparent white transparent transparent;
+    left: -9px;
+}
+
+.text_detail {
+    color: Tomato;
+    border-bottom: 1px dotted Tomato;
+}
+.popb{
+    color: CornflowerBlue;
+}
+
+.popa{
+    color: Orange;
+}

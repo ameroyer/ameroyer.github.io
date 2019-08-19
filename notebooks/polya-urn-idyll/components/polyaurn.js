@@ -6,7 +6,7 @@ const width = 650;
 const height = 260;
 const acolor = "Orange";
 const bcolor = "CornflowerBlue";
-const text_color = "#888888";
+const text_color = "#222222";
 const num_cols = 15;
 const r = Math.floor(width / 2 / num_cols / 2);
 const line_offset = 2;
@@ -55,11 +55,11 @@ class PolyaUrn extends D3Component {
 	init_urn(svg, props.a0, props.b0);
 	
 	const txt = svg.append("text")
-	      .attr("x", 5)
+	      .attr("x", 2 * width / 3)
 	      .attr("y", 25)
 	      .text( "Ratio b / (a + b) = " )
 	      .attr("font-family", "sans-serif")
-	      .attr("font-size", "18px")
+	      .attr("font-size", "16px")
 	      .attr("fill", text_color);
 
 	const bbox = txt.node().getBBox();
@@ -69,7 +69,7 @@ class PolyaUrn extends D3Component {
             .attr("id", "ratio")
 	    .text(d3.format(",.2f")(props.b0 / (props.a0 + props.b0)))
 	    .attr("font-family", "sans-serif")
-	    .attr("font-size", "18px")
+	    .attr("font-size", "16px")
 	    .attr("fill", (props.b0 > props.a0) ? bcolor : acolor);
 
 	svg.append("rect")

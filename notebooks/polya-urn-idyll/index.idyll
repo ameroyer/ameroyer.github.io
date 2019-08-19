@@ -1,15 +1,14 @@
 [meta title:"Polya Urn Idyll" description:"Short description of your
 project" /]
 
-[Header fullWidth:true title:"Polya Urn Idyll" subtitle:"Welcome to
-Idyll. Open index.idyll to start writing" author:"Your Name Here"
-authorLink:"https://idyll-lang.org" date:`(new
+[Header fullWidth:true title:"Pólya Urn" subtitle:"An interactive study of the Pólya urn model" author:"Amélie Royer"
+authorLink:"https://pub.ist.ac.at/~aroyer/" date:`(new
 Date()).toDateString()` background:"#222222" color:"#ffffff" /]
 
 
 ## Introduction
 
-The Polyà urn model is a statistical experiment in which we study the distribution of two populations of distinctly colored balls in an urn. In its simplest form, the problem can be stated as follows:
+The Pólya urn model is a statistical experiment in which we study the distribution of two populations of distinctly colored balls in an urn. In its simplest form, the problem can be stated as follows:
 
 [div className:"definition"]
 Given an urn containing initially [equation]a[/equation]   [span className:"popa"] orange[/span] balls and [equation]b[/equation]   [span className:"popb"] blue[/span] balls, we pick one ball at random from the urn, place it back in the urn and add one new ball of the same color in the urn; We then repeat this sampling procedure [equation]n[/equation] times.
@@ -26,22 +25,21 @@ Given an urn containing initially [equation]a[/equation]   [span className:"popa
 Simulate
 [/button]
 [/Inline]
-Polyà urn wih [equation]a =[/equation] [Dynamic value:a0 max:12 min:1 display:`a0.toString()`/] and [equation]b =[/equation] [Dynamic value:b0 max:12 min:1 display:`b0.toString()`/]
+Pólya urn wih [equation]a =[/equation] [Dynamic value:a0 max:12 min:1 display:`a0.toString()`/] and [equation]b =[/equation] [Dynamic value:b0 max:12 min:1 display:`b0.toString()`/]
 [/div]
 [PolyaUrn className:"d3-component" state:state a0:a0 b0:b0 run:run /]
 
 
-TODO motivation
+It is a good example of how small imbalances are magnified over time, as the more ball of one color are drawn the more they are likely to be drawn. In the following we study interesting probability quatities to understnad the dynamics of the model, and in particular with respect to the initial ratio.
 
 
 ## Basic dynamics of the model
 
-#### f
+#### Composition of the urn at step n
 Let us first express the *probability of having picked [equation]k[/equation] [Population text:" blue" group:"b" /] objects after [equation]n \geq k[/equation] steps* of the experiment. Denoting by [equation]B_n[/equation] the number of blue balls at step  [equation]n[/equation], and by [equation]S_n[/equation] the sampling event at step [equation]n[/equation], taking value [span className:"popb"]1[/span] if a blue ball is sampled and  [span className:"popa"]0[/span] otherwise:
 
 [Equation display:true]
-\mathbb{P} (B_n = b + k) = \sum_{\textbf{s} \in {\{0, 1\}}^n \atop
-\sum_i \textbf{s}_i = k}  \mathbb{P}(\mathbf{s}) =  \sum_{\mathbf{s} \in {\{0, 1\}}^n \atop \sum_i \mathbf{s}_i = k}  \mathbb{P}(S_1 = s_1, \dots S_{n} = s_n)
+\mathbb{P} (B_n = b + k) =   \sum_{\mathbf{s} \in {\{0, 1\}}^n \atop \sum_i \mathbf{s}_i = k}  \mathbb{P}(S_1 = s_1, \dots S_{n} = s_n)
 [/Equation]
 
 
@@ -51,7 +49,9 @@ Let us first express the *probability of having picked [equation]k[/equation] [P
 [Equation]= \mathbb{P}(S_1 = s_1)  \mathbb{P}(S_2 = s_2\ |\ S_1 = s_1) \dots[/Equation]
 [/div]
 [/Aside]
-We can expand the inner term by using the probability [span className:"text_detail"]chain rule[/span]: the probability of drawing a ball of a certain color is simply the ratio of correspondingly colored balls in the urn, which evolves with each sampling. More formally, the conditional probability of drawing a [span className:"popb"]blue[/span]  can be written as:
+
+
+We can expand the inner term by using the probability [span className:"text_detail"]chain rule[/span]. Moreover, the probability of drawing a ball of a certain color is simply the ratio of correspondingly colored balls in the urn, which evolves with each sampling. Therefore, the conditional probability of drawing a [span className:"popb"]blue[/span]  can be written as:
 
 [Aside][equation](1)[/equation][/Aside]
 [Equation display:true]
@@ -59,7 +59,7 @@ We can expand the inner term by using the probability [span className:"text_deta
 \frac{b + \sum_{i = 1}^{n - 1} s_i}{a + b + n - 1}
 [/Equation]
 
-From this expression, we can see that the probability does not depend on the  time step [equation]n[/equation] but rather on *how many blue balls have been sampled until now*. In other words, for any sequence of draws [equation]\mathbf{s}[/equation], we can arrange the order in which the balls have been drawn to see that equation [equation](1)[/equation] is equivalent to:
+From this expression, we can see that the probability does not depend on the  time step [equation]n[/equation] but rather on *how many blue balls have been sampled until now*. In other words, for any sequence of draws [equation]\mathbf{s}[/equation], we can arrange the order in which the balls have been drawn without affecting the probability of the next draw. More formally, it means that equation [equation](1)[/equation] is equivalent to:
 
 [Aside][equation](2)[/equation][/Aside]
 [Equation display:true]
@@ -68,18 +68,7 @@ S_{\bar{\mathbf{s}}} = \textcolor{CornflowerBlue}{1},
 S_{\bar{\mathbf{s}} + 1} = \textcolor{Orange}{0} \dots S_{n-1} = \textcolor{Orange}{0}  )
 [/Equation]
 
-where [equation]\bar{\mathbf{s}}[/equation] is a shortcut notation for [equation]\sum_{i=1}^{n-1} s_i[/equation] from [equation](1)[/equation]. The same analysis holds for the conditional probability of drawing a orange ball.
-
-
-[Aside]
-[div className:"detail"]
-Illustration
-[/div]
-[/Aside]
-TODO(plot)
-
-
-Bringing everything together, we can finally write
+where [equation]\bar{\mathbf{s}}[/equation] is a shortcut notation for [equation]\sum_{i=1}^{n-1} s_i[/equation] from [equation](1)[/equation]. The same analysis holds for the conditional probability of drawing an orange ball. Bringing everything together, we can finally write
 [Equation display:true]
 \mathbb{P} (B_n = b + k) = \binom{n}{k} \mathbb{P}(S_1 =
 \textcolor{CornflowerBlue}{1}, \dots, S_k = \textcolor{CornflowerBlue}{1}, S_{k+1} = \textcolor{Orange}{0} \dots S_{n} = \textcolor{Orange}{0})
@@ -91,41 +80,90 @@ Bringing everything together, we can finally write
 = \binom{n}{k} \frac{(b+k-1)! (a+b-1)! (a+n-k-1)!}{(b-1)! (a-1)! (a+b+n-1)!}
 [/Equation]
 
-[Aside][equation](3)[/equation][/Aside]
-[Equation display:true style.color=red]
+
+[div className:"equation"]
+[Equation display:true]
 \mathbb{P} (B_n = b + k) = \frac{\binom{n}{k} \binom{a+b}{b}}{\binom{a+b+n-1}{b+k}}  \frac{ab}{(a+b)(b+k)}
+[/Equation]
+[/div]
+
+
+#### Probability of the  next draw
+
+Following the previous paragraph, we can now compute the probability of *picking a [span className:"popb"]blue[/span] ball at step [equation]n + 1[/equation]*, independently of the state of the urn at time [equation]n [/equation]:
+
+[equation display:true]
+\mathbb{P} (S_{n + 1} = 1) = \sum_{j=0}^{n} \mathbb{P}(S_{n+1} = 1\ |\ B_{n} = b + j)\ \mathbb{P}(B_{n} = b + j)
+[/equation]
+
+[Aside][equation](3)[/equation][/Aside]
+[equation display:true]
+= \frac{ab\binom{a+b}{b}}{(a+b+n)(a+b)} \underbrace{\sum_{j=0}^{n} \frac{\binom{n}{j}}{\binom{a+b+n-1}{b+j}}}_{f(n, a, b)}
+[/equation]
+
+
+
+
+[Aside]
+[div className:"detail"]
+Pascal's triangle: [Equation]\binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}[/Equation]
+[/div]
+[/Aside]
+
+To simplify the expression of [equation]f(n, a, b)[/equation], we can use [span className:"text_detail"]Pascal's triangle formula[/span] on the numerator (while isolating the terms for [equation]j = 0[/equation] and [equation]j = n[/equation]) and observe that:
+[Equation display:true]
+f(n, a, b) = \sum_{j=0}^n \frac{\binom{n}{j}}{\binom{a+b+n-1}{b+j}}
 [/Equation]
 
 [Equation display:true]
-&=  \binom{n}{k} \mathbb{P}(O_1 = 1)  \dots  \mathbb{P}(O_k = 1\ |\ O_{1\dots k-1} = 1) \mathbb{P}(O_{k+1} = 0\ |\ O_{1\dots k} = 1) \\ &\dots \mathbb{P}(O_{n} = 0\ |\ O_{1\dots k} = 1, O_{k+1\dots n} = 0)\\
-&= \binom{n}{k} \prod_{p=0}^{k-1} \frac{b + p}{a+ b + p}  \prod_{q=0}^{n-k-1} \frac{a + q}{a+ b + q} = \binom{n}{k} \frac{(b+k-1)! (a+b-1)! (a+n-k-1)!}{(b-1)! (a-1)! (a+b+n-1)!} &(1)\\
-\mathbb{P} (B_n = b + k) &= \frac{\binom{n}{k} \binom{a+b}{b}}{\binom{a+b+n-1}{b+k}}  \frac{ab}{(a+b)(b+k)}
+= \frac{1}{\binom{a+b+n-1}{b}} + \frac{1}{\binom{a+b+n-1}{b+n}} + \sum_{j=1}^{n-1} \frac{\binom{n-1}{j}}{\binom{a+b+n-1}{b+j}} + \sum_{j=1}^{n-1} \frac{\binom{n-1}{j-1}}{\binom{a+b+n-1}{b+j}}
 [/Equation]
 
-Consequently, we can compute the probability of **picking a black ball at step $k$**, independently of the state of the urn at time $k - 1$:
-\begin{align*}
-\mathbb{P} (O_k = 1) &= \sum_{j=0}^k \mathbb{P}(O_k = 1\ |\ B_{k-1} = b + j)\ \mathbb{P}(B_{k-1} = b + j) \\
-&= \frac{ab\binom{a+b}{b}}{(a+b+k)(a+b)} \underbrace{\sum_{j=0}^k \frac{\binom{k}{j}}{\binom{a+b+k-1}{b+j}}}_{f(k, a, b)}
-\end{align*}
+[Equation display:true]
+= \sum_{j=0}^{n-1} \frac{\binom{n-1}{j}}{\binom{a+b+n-1}{b+j}} + \sum_{j=0}^{n-1} \frac{\binom{n-1}{j}}{\binom{a+b+n-1}{b+ j +1}}
+[/Equation]
 
+[Equation display:true]
+f(n, a, b) = f(n-1, a+1, b) + f(n-1, a, b+1)
+[/Equation]
 
-To obtain a simpler expression, we use Pascal's triangle on the numerator and observe that:
-\begin{align*}
-f(k, a, b) &= \sum_{j=0}^k \frac{\binom{k}{j}}{\binom{a+b+k-1}{b+j}} = \frac{1}{\binom{a+b+k-1}{b}} + \frac{1}{\binom{a+b+k-1}{b+k}} + \sum_{j=1}^{k-1} \frac{\binom{k-1}{j}}{\binom{a+b+k-1}{b+j}} + \sum_{j=1}^{k-1} \frac{\binom{k-1}{j-1}}{\binom{a+b+k-1}{b+j}}\\
-&= \sum_{j=0}^{k-1} \frac{\binom{k-1}{j}}{\binom{a+b+k-1}{b+j}} + \sum_{j=0}^{k-1} \frac{\binom{k-1}{j}}{\binom{a+b+k-1}{b+j+1}}\\
-f(k, a, b) &= f(k-1, a+1, b) + f(k-1, a, b+1)
-\end{align*}
+By extending the relation, one can infer and finally prove by induction over [equation]n[/equation], that [equation]f(n, a, b) = \frac{a+b+n}{(a+b) \binom{a+b-1}{b}}[/equation]. Plugging this expression in Equation (3), we finally get:
 
-By extending the relation, one can infer and finally prove by induction over $k$, that $f(k, a, b) = \frac{a+b+k}{(a+b) \binom{a+b-1}{b}}$, thus:
-\begin{align*}
-\mathbb{P} (O_k = 1) &= \frac{b}{a+b}
-\end{align*}
+[div className:"equation"]
+[equation display:true]
+\mathbb{P} (S_n = 1) = \frac{b}{a+b}
+[/equation]
+[/div]
 
-In particular, for the case where $a = 1$ and $b = 1$, we have 
-$\mathbb{P} (B_n = k + 1) = \frac{1}{n + 1}$ and $\mathbb{P} (O_k = 1) = \frac{b}{a+b} = \frac{1}{2}$, i.e. all urn configurations are equiprobable.
+In other words, the overall probability of the urn composition after [equation]n[/equation] only *depends on the initial color distribution in the urn*. In particular, for the case where [equation]a = 1[/equation] and [equation]b = 1[/equation] we have 
+[equation]\mathbb{P} (B_n = k + 1) = \frac{[\!|\ k \leq n \ |\!]}{n + 1}[/equation] and [equation]\mathbb{P} (S_n = 1) = 0.5[/equation]. In other words, all urn configurations are equiprobable.
 
 ## Asymptotic Behaviour
+The previous result highlights an *interesting property*: While various urn composition can be reached from the same initiation configuration  ([span className:"popa"][equation]a[/equation][/span], [span className:"popb"][equation]b[/equation][/span]), their overall probability still very much depends on the initial ratio.
+Therefore, one can also wonder what the urn would look like asymptotically, when the number of repeats [equation]n[/equation] goes to [equation] \infty[/equation].
 
+
+Let us introduce [equation]Y_n = \frac{B_n}{a + b +n}[/equation], the ratio of the two colored ball populations at step [equation]n[/equation]. Using the previous results, we can easily see that the expected value of [equation]Y_n[/equation] is equal to the initial ratio, independently of the time step:
+
+[equation display:true]
+\mathbb{E}(Y_n) = \sum_{k=0}^n \mathbb{P}(B_n = b + k) \frac{b + k}{a + b +n}
+[/equation]
+
+[equation display:true]
+ = \sum_{k=0}^n \mathbb{P}(B_n = b + k) \mathbb{P}(S_n = 1\ |\ B_n = b + k) =  \mathbb{P}(S_n = 1) 
+[/equation]
+
+[div className:"equation"]
+[equation display:true]
+\mathbb{E}(Y_n) = \frac{b}{a + b}
+[/equation]
+[/div]
+
+And of course we can also verify this in simulations:
+
+[PolyaDynamics className:"d3-component" state:state a0:2 b0:2 run:run num_steps:100 num_runs: 50/]
+
+#### Convergence
 
 
 ## Generalized Polyà urn

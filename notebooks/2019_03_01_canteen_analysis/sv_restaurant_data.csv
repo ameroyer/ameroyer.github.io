@@ -497,3 +497,21 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Menus,home-style cooking,5.3,A,braised pork escalope/rice with peas
 2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Menus,international,6.3,AGN,Kebap/rice/or pita bread
 2019,32,2019-08-12,2019-08-16,Tuesday,2019-08-13,Dessert,,1.4,ACG,latte macchiato cake
+2019,33,2019-08-19,2019-08-23,Monday,2019-08-19,Soups,,1.15,ACGL,beef broth/garnish
+2019,33,2019-08-19,2019-08-23,Monday,2019-08-19,Soups,,1.15,AG,cream of leek soup
+2019,33,2019-08-19,2019-08-23,Monday,2019-08-19,Menus,pasta,4.2,ACGL,spaghetti/bolognese/grana cheese
+2019,33,2019-08-19,2019-08-23,Monday,2019-08-19,Menus,vegetarian,5.3,ACFGL,spring rolls/Asian salad/chili dip
+2019,33,2019-08-19,2019-08-23,Monday,2019-08-19,Menus,fish & seafood,6.3,AD,salmon trout filet/vegetables with fennel/baked potatoes
+2019,33,2019-08-19,2019-08-23,Monday,2019-08-19,Dessert,,1.4,ACG,red currant meringue cake
+2019,33,2019-08-19,2019-08-23,Tuesday,2019-08-20,Soups,,1.15,ACGL,beef broth/garnish
+2019,33,2019-08-19,2019-08-23,Tuesday,2019-08-20,Soups,,1.15,AG,carrot apple soup
+2019,33,2019-08-19,2019-08-23,Tuesday,2019-08-20,Menus,vegetarian,4.2,A,spicy mango curry/herb couscous
+2019,33,2019-08-19,2019-08-23,Tuesday,2019-08-20,Menus,home-style cooking,5.3,ACFGLMO,"""Käsekrainer""/french fries/grill sauce"
+2019,33,2019-08-19,2019-08-23,Tuesday,2019-08-20,Menus,international,6.3,A,turkey skewer/ratatouille/bulgur
+2019,33,2019-08-19,2019-08-23,Tuesday,2019-08-20,Dessert,,1.4,ACG,apple strudel
+2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Soups,,1.15,ACGL,beef broth/garnish
+2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Soups,,1.15,AG,cream of parsnip soup
+2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Menus,vegetarian,4.2,ACG,mushroom goulash/bread dumpling
+2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Menus,home-style cooking,5.3,AC,breaded fried/cured pork schnitzel/parsley potatoes
+2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Menus,asia,6.3,AF,beef rendang/coconut rice
+2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Dessert,,1.4,ACGH,"""Punschschnitte"""
