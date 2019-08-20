@@ -25,7 +25,7 @@ Given an urn containing initially [equation]a[/equation]   [span className:"popa
 Simulate
 [/button]
 [/Inline]
-Pólya urn wih [equation]a =[/equation] [Dynamic value:a0 max:12 min:1 display:`a0.toString()`/] and [equation]b =[/equation] [Dynamic value:b0 max:12 min:1 display:`b0.toString()`/]
+Pólya urn with [equation]a =[/equation] [Dynamic value:a0 max:12 min:1 display:`a0.toString()`/] and [equation]b =[/equation] [Dynamic value:b0 max:12 min:1 display:`b0.toString()`/]
 [/div]
 [PolyaUrn className:"d3-component" state:state a0:a0 b0:b0 run:run /]
 
@@ -159,9 +159,21 @@ Let us introduce [equation]Y_n = \frac{B_n}{a + b +n}[/equation], the ratio of t
 [/equation]
 [/div]
 
-And of course we can also verify this in simulations:
+This can also be observed in simulations. Here, blue lines ( [span className:"legend_lines"]---[/span] ) represent the observed value of [equation]Y_n[/equation] over time step [equation]n[/equation] for different runs with the same initial conditions [equation]a[/equation] and [equation]b[/equation]. Red circles ( [span className:"legend_circles"]●[/span] ) mark the average of these values for each time step, hence serve as an approximation of [equation]\mathbb{E}(Y_n)[/equation]
 
-[PolyaDynamics className:"d3-component" state:state a0:2 b0:2 run:run num_steps:100 num_runs: 60/]
+[var name:"a0_fig_dynamics" value:1 type:int/]
+[var name:"b0_fig_dynamics" value:2 type:int/]
+[var name:"run_fig_dynamics" value:false /]
+
+[div]
+[Inline]
+[button className:"simulate" onClick:`run = true`]
+Simulate
+[/button]
+[/Inline]
+observed [equation]Y_n[/equation] with [equation]a =[/equation] [Dynamic value:a0_fig_dynamics max:12 min:1 display:`a0.toString()`/] and [equation]b =[/equation] [Dynamic value:b0_fig_dynamics max:12 min:1 display:`b0.toString()`/] for 60 runs over 100 steps.
+[/div]
+[PolyaDynamics className:"d3-component" state:state a0:a0_fig_dynamics b0:b0_fig_dynamics run:run_fig_dynamics num_steps:100 num_runs: 60/]
 
 #### Convergence
 

@@ -74,3 +74,13 @@
 .popa{
     color: Orange;
 }
+
+.legend_lines {
+    color: PowderBlue;
+    font-weight: bold;
+}
+
+.legend_circles {
+    color: Tomato;
+    font-weight: bold;
+}

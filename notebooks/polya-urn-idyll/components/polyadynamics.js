@@ -36,10 +36,13 @@ class PolyaDynamics extends D3Component {
 	    .attr("x2", (props.num_steps + 1) * 10)   
 	    .attr("y2", y0);
 
-	
+	let vgap = 20;
+	let vheight = 26;
+	let hgap = 8;
+	let hwidth = 65;
 	svg.append("text")
-	      .attr("x", width - 55)
-	      .attr("y", y0)
+	      .attr("x", width - hgap - hwidth + 5)
+	      .attr("y", y0 - vgap)
 	      .text( "Y")
 	      .attr("font-family", "sans-serif")
 	      .attr("font-size", "16px")
@@ -51,18 +54,18 @@ class PolyaDynamics extends D3Component {
 	      .attr('dy', '.7em');
 
 	 svg.append("text")
-	      .attr("x",  width - 40)
-	      .attr("y", y0)
-	      .text( "= " + y0)
+	      .attr("x",  width - hgap - hwidth + 15)
+	      .attr("y", y0 - vgap)
+	    .text( "= " + d3.format(",.2f")(props.b0 / (props.a0 + props.b0)))
 	      .attr("font-family", "sans-serif")
 	      .attr("font-size", "16px")
 	    .attr("fill", text_color);
 	
 	svg.append("rect")
-	    .attr("x", width - 60)
-	    .attr("y", y0 - 20)
-	    .attr("width", 60)
-	    .attr("height", 15)
+	    .attr("x", width - hwidth - hgap)
+	    .attr("y", y0 - vgap - 17)
+	    .attr("width", hwidth)
+	    .attr("height", vheight)
 	    .attr("fill", "none")
 	    .style("stroke", text_color)
 	    .style("stroke-width", 1);
@@ -90,8 +93,7 @@ class PolyaDynamics extends D3Component {
 	    }
 	    
 	    let sum = b.reduce((previous, current) => current += previous);
-	    let avg = sum / b.length;
-	    
+	    let avg = sum / b.length;	    
 	    svg.append("circle")
 		.transition()
 		.duration(duration)
