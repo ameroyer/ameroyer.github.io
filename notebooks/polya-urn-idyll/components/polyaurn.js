@@ -92,7 +92,7 @@ class PolyaUrn extends D3Component {
 	var pos;
 	var offset;
 	var sign;
-	const max_balls = (Math.floor(height / (2 * r + line_offset)) - 1) * num_cols
+	const max_balls = (Math.floor(height / (2 * r + line_offset)) - 1) * num_cols;
 
 	if (oldProps.run) {
 	    while ((a < max_balls) & (b  < max_balls)) {

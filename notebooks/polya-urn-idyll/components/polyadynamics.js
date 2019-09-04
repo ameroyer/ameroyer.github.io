@@ -4,6 +4,7 @@ const d3 = require('d3');
 
 const width = 650;
 const height = 250;
+const widget_height = 250;
 const acolor = "Orange";
 const bcolor = "CornflowerBlue";
 const text_color = "#222222";
@@ -12,6 +13,55 @@ const r = Math.floor(width / 2 / num_cols / 2);
 const line_offset = 2;
 const text_padding = 4;
 
+
+function init(svg, a0, b0, num_steps) {
+    let y0 = height * (1 - b0 / (a0 + b0));
+    svg.append("line")  
+	.style("stroke", "black") 
+        .style("stroke-dasharray", ("3, 3")) 
+	.style("opacity", 0.8)
+	.attr("x1", 0) 
+	.attr("y1", y0) 
+	.attr("x2", (num_steps + 1) * 10)   
+	.attr("y2", y0);
+
+    let vgap = 20;
+    let vheight = 26;
+    let hgap = 8;
+    let hwidth = 65;
+
+    let y0_t = (b0 > a0)? y0 + vgap + vheight : y0;
+    svg.append("text")
+	.attr("x", width - hgap - hwidth + 5)
+	.attr("y", y0_t - vgap)
+	.text( "Y")
+	.attr("font-family", "sans-serif")
+	.attr("font-size", "16px")
+	.attr("fill", text_color)
+	.append('tspan')
+	.text('0')
+	.style('font-size', '10px')
+	.attr('dx', '-.2em')
+	.attr('dy', '.7em');
+
+    svg.append("text")
+	.attr("x",  width - hgap - hwidth + 15)
+	.attr("y", y0_t - vgap)
+	.text( "= " + d3.format(",.2f")(b0 / (a0 + b0)))
+	.attr("font-family", "sans-serif")
+	.attr("font-size", "16px")
+	.attr("fill", text_color);
+    
+    svg.append("rect")
+	.attr("id", "text_box")
+	.attr("x", width - hwidth - hgap)
+	.attr("y", y0_t - vgap - 17)
+	.attr("width", hwidth)
+	.attr("height", vheight)
+	.attr("fill", "none")
+	.style("stroke", text_color)
+	.style("stroke-width", 1);
+}
 
 class PolyaDynamics extends D3Component {
     initialize(node, props) {
@@ -23,132 +73,52 @@ class PolyaDynamics extends D3Component {
 	svg
 	    .attr('viewBox', `0 0 ${width} ${height}`)
 	    .style('width', '100%')
-	    .style('height', '${height}');
-
-
-	let y0 = height * (1 - props.b0 / (props.a0 + props.b0));
-	svg.append("line")  
-	    .style("stroke", "black") 
-            .style("stroke-dasharray", ("3, 3")) 
-	    .style("opacity", 0.8)
-	    .attr("x1", 0) 
-	    .attr("y1", y0) 
-	    .attr("x2", (props.num_steps + 1) * 10)   
-	    .attr("y2", y0);
-
-	let vgap = 20;
-	let vheight = 26;
-	let hgap = 8;
-	let hwidth = 65;
-	svg.append("text")
-	      .attr("x", width - hgap - hwidth + 5)
-	      .attr("y", y0 - vgap)
-	      .text( "Y")
-	      .attr("font-family", "sans-serif")
-	      .attr("font-size", "16px")
-	      .attr("fill", text_color)
-	      .append('tspan')
-	      .text('0')
-	      .style('font-size', '10px')
-	      .attr('dx', '-.2em')
-	      .attr('dy', '.7em');
-
-	 svg.append("text")
-	      .attr("x",  width - hgap - hwidth + 15)
-	      .attr("y", y0 - vgap)
-	    .text( "= " + d3.format(",.2f")(props.b0 / (props.a0 + props.b0)))
-	      .attr("font-family", "sans-serif")
-	      .attr("font-size", "16px")
-	    .attr("fill", text_color);
-	
-	svg.append("rect")
-	    .attr("x", width - hwidth - hgap)
-	    .attr("y", y0 - vgap - 17)
-	    .attr("width", hwidth)
-	    .attr("height", vheight)
-	    .attr("fill", "none")
-	    .style("stroke", text_color)
-	    .style("stroke-width", 1);
-	
-	
-	let duration = 2200 / props.num_steps;
-	var i = 0;
-	var j = 0;
-	var b = Array(props.num_runs).fill(props.b0);
-	for (i=0; i < props.num_steps; i++) {	    
-	    for (j=0; j < props.num_runs; j++) {
-		let adrawn = Math.random() > b[j] / (props.a0 + props.b0 + i);
-		if (!adrawn) {b[j]++;}		
-		
-		svg.append("line") 
-		    .style("stroke", "PowderBlue") 
-		    .style("opacity", 0.35)
-		    .transition()
-		    .duration(duration)
-		    .delay(i * duration)
-		    .attr("x1", i * 10) 
-		    .attr("y1", height * (1 - (adrawn? b[j]: b[j] - 1) / (props.a0 + props.b0 + i ) )) 
-		    .attr("x2", (i + 1) * 10) 
-		    .attr("y2", height * (1 - b[j] / (props.b0 + props.a0 + i + 1)));
-	    }
-	    
-	    let sum = b.reduce((previous, current) => current += previous);
-	    let avg = sum / b.length;	    
-	    svg.append("circle")
-		.transition()
-		.duration(duration)
-		.delay(i * duration)
-		.attr("cx", i * 10)
-		.attr("cy", height * (1 - avg / (props.b0 + props.a0 + i + 1)))
-		.attr("r", 3)
-		.style("fill", "Tomato");
-	}
+	    .style('height', '${height}');	
+	init(svg, props.a0, props.b0, props.num_steps);
     }
 
     update(props, oldProps) {
 	this.svg.selectAll("svg > circle").remove();
-	init_urn(this.svg, props.a0, props.b0);
+	this.svg.selectAll("svg > line").remove();	
+	this.svg.selectAll("svg > text").remove();	
+	d3.select('#text_box').remove();
+	init(this.svg, props.a0, props.b0, props.num_steps);
 	
-	var a = props.a0;
-	var b = props.b0;
-	var color;
-	var pos;
-	var offset;
-	var sign;
-	const max_balls = (Math.floor(height / (2 * r + line_offset)) - 1) * num_cols
-
-	if (oldProps.run) {
-	    while ((a < max_balls) & (b  < max_balls)) {
-		if (Math.random() > b / (a + b)) {
-		    color = acolor;
-		    sign = -1;
-		    pos = a++;
-		} else {		    
-		    color = bcolor;
-		    sign = 1;
-		    pos = b++;
-		};
+	if (oldProps.run) { 	    
+	    let duration = 2200 / props.num_steps;
+	    var i = 0;
+	    var j = 0;
+	    var b = Array(props.num_runs).fill(props.b0);
+	    for (i=0; i < props.num_steps; i++) {	    
+		for (j=0; j < props.num_runs; j++) {
+		    let adrawn = Math.random() > b[j] / (props.a0 + props.b0 + i);
+		    if (!adrawn) {b[j]++;}		
+		    
+		    this.svg.append("line") 
+			.style("stroke", "PowderBlue") 
+			.style("opacity", 0.35)
+			.transition()
+			.duration(duration)
+			.delay(i * duration)
+			.attr("x1", i * 10) 
+			.attr("y1", height * (1 - (adrawn? b[j]: b[j] - 1) / (props.a0 + props.b0 + i ) )) 
+			.attr("x2", (i + 1) * 10) 
+			.attr("y2", height * (1 - b[j] / (props.b0 + props.a0 + i + 1)));
+		}
 		
-		this.svg
-		    .append('circle')
-		    .attr('r', r)
-		    .attr('cx', width / 2 + sign * (r + pos % num_cols * 2 * r))
-		    .attr('cy', - r)
-		    .style("fill", color);
-		
-		this.svg
-		    .select('circle:last-child')
+		let sum = b.reduce((previous, current) => current += previous);
+		let avg = sum / b.length;	    
+		this.svg.append("circle")
 		    .transition()
-		    .ease(d3.easeExp)
-		    .duration(500)
-		    .delay((a + b) * 5)
-		    .attr('cy', height - r - line_offset  - Math.floor(pos / num_cols) * (line_offset + 2 * r));
+		    .duration(duration)
+		    .delay(i * duration)
+		    .attr("cx", i * 10)
+		    .attr("cy", height * (1 - avg / (props.b0 + props.a0 + i + 1)))
+		    .attr("r", 3)
+		    .style("fill", "Tomato");
 	    }
 	}
 	
-	d3.select('#ratio')
-	    .text(d3.format(",.2f")(b / (a + b)))
-	    .attr("fill", (b > a) ? bcolor : acolor);
 	props.updateProps({
 	    run: false
 	})

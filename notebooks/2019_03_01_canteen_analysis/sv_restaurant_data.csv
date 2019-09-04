@@ -515,3 +515,39 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Menus,home-style cooking,5.3,AC,breaded fried/cured pork schnitzel/parsley potatoes
 2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Menus,asia,6.3,AF,beef rendang/coconut rice
 2019,33,2019-08-19,2019-08-23,Wednesday,2019-08-21,Dessert,,1.4,ACGH,"""Punschschnitte"""
+2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Soups,,1.15,ACGL,beef broth/garnish
+2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Soups,,1.15,AG,cream of kohlrabi soup
+2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Menus,home-style cooking,4.2,ACG,pork escalope with/mushroom sauce/noodles
+2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Menus,vegetarian,5.3,AFG,soya gyros/zaziki/rice
+2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Menus,fish & seafood,6.3,AD,grilled pike perch filet/mangold potatoes/bell peppers
+2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Dessert,,1.4,ACG,cream cheese strudel
+2019,34,2019-08-26,2019-08-30,Tuesday,2019-08-27,Soups,,1.15,ACGL,beef broth/garnish
+2019,34,2019-08-26,2019-08-30,Tuesday,2019-08-27,Soups,,1.15,A,cream of corn soup
+2019,34,2019-08-26,2019-08-30,Tuesday,2019-08-27,Menus,vegetarian,4.2,ACG,spinach lasagne/fresh cheese sauce
+2019,34,2019-08-26,2019-08-30,Tuesday,2019-08-27,Menus,home-style cooking,5.3,,grilled chicken/rice with peas
+2019,34,2019-08-26,2019-08-30,Tuesday,2019-08-27,Menus,international,6.3,AH,lamb ragout/beans/almond couscous
+2019,34,2019-08-26,2019-08-30,Tuesday,2019-08-27,Dessert,,1.4,ACGH,tiramisu cake
+2019,34,2019-08-26,2019-08-30,Wednesday,2019-08-28,Soups,,1.15,ACGL,beef broth/garnish
+2019,34,2019-08-26,2019-08-30,Wednesday,2019-08-28,Soups,,1.15,AG,cream of cauliflower soup
+2019,34,2019-08-26,2019-08-30,Wednesday,2019-08-28,Menus,vegetarian,4.2,ACG,leaf salad/cheese dumpling/herb dip
+2019,34,2019-08-26,2019-08-30,Wednesday,2019-08-28,Menus,home-style cooking,5.3,AC,turkey schnitzel/rice
+2019,34,2019-08-26,2019-08-30,Wednesday,2019-08-28,Menus,asia,6.3,AF,thai vegetables/roasted duk/teriyaki sauce
+2019,34,2019-08-26,2019-08-30,Wednesday,2019-08-28,Dessert,,1.4,ACG,yogurt cake
+2019,35,2019-09-02,2019-09-06,Monday,2019-09-02,Soups,,1.15,ACGL,beef broth/garnish
+2019,35,2019-09-02,2019-09-06,Monday,2019-09-02,Soups,,1.15,AG,mushroom soup
+2019,35,2019-09-02,2019-09-06,Monday,2019-09-02,Menus,home-style cooking,4.2,GM,"""Berner Würstel""/french fries/onion mustard"
+2019,35,2019-09-02,2019-09-06,Monday,2019-09-02,Menus,vegetarian,5.3,ACG,"penne tricolore/arugula pesto/cherry tomatoes, zucchini/grana cheese"
+2019,35,2019-09-02,2019-09-06,Monday,2019-09-02,Menus,fish & seafood,6.3,AD,grilled hake/colorful vegetables/parsley potatoes
+2019,35,2019-09-02,2019-09-06,Monday,2019-09-02,Dessert,,1.4,ACGH,"""Kardinalschnitte"""
+2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Soups,,1.15,ACGL,beef broth/garnish
+2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Soups,,1.15,A,cream of bell pepper soup
+2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Menus,vegetarian,4.2,AF,Moroccan/chickpea stew/couscous
+2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Menus,home-style cooking,5.3,AN,potato sausage goulash/bread roll
+2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Menus,international,6.3,AC,beef escalope with onions/green noodles/Brussels sprouts
+2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Dessert,,1.4,ACFG,Black Forest cake
+2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Soups,,1.15,ACGL,beef broth/garnish
+2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Soups,,1.15,AG,cream of broccoli soup
+2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,vegetarian,4.2,A,Indian/carrot cabbage bhaji/bulgur
+2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,home-style cooking,5.3,ACG,turkey cordon bleu/potato salad
+2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,mediterranean,6.3,AG,chicken breast/creamy polenta/bell peppers and zucchini
+2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Dessert,,1.4,ACFG,blueberry muffin

@@ -15,19 +15,19 @@ Given an urn containing initially [equation]a[/equation]   [span className:"popa
 [/div]
 
 
-[var name:"a0" value:1 type:int/]
-[var name:"b0" value:2 type:int/]
-[var name:"run" value:false /]
+[var name:"a0_fig_urn" value:1 type:int/]
+[var name:"b0_fig_urn" value:2 type:int/]
+[var name:"run_fig_urn" value:false /]
 
 [div]
 [Inline]
-[button className:"simulate" onClick:`run = true`]
+[button className:"simulate" onClick:`run_fig_urn = true`]
 Simulate
 [/button]
 [/Inline]
-Pólya urn with [equation]a =[/equation] [Dynamic value:a0 max:12 min:1 display:`a0.toString()`/] and [equation]b =[/equation] [Dynamic value:b0 max:12 min:1 display:`b0.toString()`/]
+Pólya urn with [equation]a =[/equation] [Dynamic value:a0_fig_urn max:12 min:1 display:`a0_fig_urn.toString()`/] and [equation]b =[/equation] [Dynamic value:b0_fig_urn max:12 min:1 display:`b0_fig_urn.toString()`/]
 [/div]
-[PolyaUrn className:"d3-component" state:state a0:a0 b0:b0 run:run /]
+[PolyaUrn className:"d3-component" state:state a0:a0_fig_urn b0:b0_fig_urn run:run_fig_urn /]
 
 
 It is a good example of how small imbalances are magnified over time, as the more ball of one color are drawn the more they are likely to be drawn. In the following we study interesting probability quatities to understnad the dynamics of the model, and in particular with respect to the initial ratio.
@@ -36,7 +36,7 @@ It is a good example of how small imbalances are magnified over time, as the mor
 ## Basic dynamics of the model
 
 #### Composition of the urn at step n
-Let us first express the *probability of having picked [equation]k[/equation] [Population text:" blue" group:"b" /] objects after [equation]n \geq k[/equation] steps* of the experiment. Denoting by [equation]B_n[/equation] the number of blue balls at step  [equation]n[/equation], and by [equation]S_n[/equation] the sampling event at step [equation]n[/equation], taking value [span className:"popb"]1[/span] if a blue ball is sampled and  [span className:"popa"]0[/span] otherwise:
+Let us first express the *probability of having picked [equation]k[/equation] [span className:"popb"]blue[/span] objects after [equation]n \geq k[/equation] steps* of the experiment. Denoting by [equation]B_n[/equation] the number of blue balls at step  [equation]n[/equation], and by [equation]S_n[/equation] the sampling event at step [equation]n[/equation], taking value [span className:"popb"]1[/span] if a blue ball is sampled and  [span className:"popa"]0[/span] otherwise:
 
 [Equation display:true]
 \mathbb{P} (B_n = b + k) =   \sum_{\mathbf{s} \in {\{0, 1\}}^n \atop \sum_i \mathbf{s}_i = k}  \mathbb{P}(S_1 = s_1, \dots S_{n} = s_n)
@@ -155,23 +155,25 @@ Let us introduce [equation]Y_n = \frac{B_n}{a + b +n}[/equation], the ratio of t
 
 [div className:"equation"]
 [equation display:true]
-\mathbb{E}(Y_n) = \frac{b}{a + b}
+\mathbb{E}(Y_n) = \frac{b}{a + b} = Y_0
 [/equation]
 [/div]
 
-This can also be observed in simulations. Here, blue lines ( [span className:"legend_lines"]---[/span] ) represent the observed value of [equation]Y_n[/equation] over time step [equation]n[/equation] for different runs with the same initial conditions [equation]a[/equation] and [equation]b[/equation]. Red circles ( [span className:"legend_circles"]●[/span] ) mark the average of these values for each time step, hence serve as an approximation of [equation]\mathbb{E}(Y_n)[/equation]
+This can also be observed in simulations. Here, blue lines ( [span className:"legend_lines"]---[/span] ) represent the observed value of [equation]Y_n[/equation] over time step [equation]n[/equation] for different runs with the same initial conditions [equation]a[/equation] and [equation]b[/equation]. Red circles ( [span className:"legend_circles"]●[/span] ) mark the average of these values for each time step, hence serve as an approximation of [equation]\mathbb{E}(Y_n)[/equation].
 
 [var name:"a0_fig_dynamics" value:1 type:int/]
 [var name:"b0_fig_dynamics" value:2 type:int/]
+[var name:"num_runs_fig_dynamics" value:70 type:int/]
+[var name:"num_steps_fig_dynamics" value:100 type:int/]
 [var name:"run_fig_dynamics" value:false /]
 
 [div]
 [Inline]
-[button className:"simulate" onClick:`run = true`]
+[button className:"simulate" onClick:`run_fig_dynamics = true`]
 Simulate
 [/button]
 [/Inline]
-observed [equation]Y_n[/equation] with [equation]a =[/equation] [Dynamic value:a0_fig_dynamics max:12 min:1 display:`a0.toString()`/] and [equation]b =[/equation] [Dynamic value:b0_fig_dynamics max:12 min:1 display:`b0.toString()`/] for 60 runs over 100 steps.
+observed values of [equation]Y_n[/equation] with [equation]a =[/equation] [Dynamic value:a0_fig_dynamics max:12 min:1 display:`a0_fig_dynamics.toString()`/] and [equation]b =[/equation] [Dynamic value:b0_fig_dynamics max:12 min:1 display:`b0_fig_dynamics.toString()`/] for [Display value:num_runs_fig_dynamics format:"d" /] distinct runs over [equation]n =[/equation] [Display value:num_steps_fig_dynamics format:"d" /] time steps.
 [/div]
 [PolyaDynamics className:"d3-component" state:state a0:a0_fig_dynamics b0:b0_fig_dynamics run:run_fig_dynamics num_steps:100 num_runs: 60/]
 
