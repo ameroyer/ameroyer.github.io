@@ -6,7 +6,7 @@ authorLink:"https://pub.ist.ac.at/~aroyer/" date:`(new
 Date()).toDateString()` background:"#222222" color:"#ffffff" /]
 
 
-## Introduction
+# Introduction
 
 The Pólya urn model is a statistical experiment in which we study the distribution of two populations of distinctly colored balls in an urn. In its simplest form, the problem can be stated as follows:
 
@@ -33,9 +33,9 @@ Pólya urn with [equation]a =[/equation] [Dynamic value:a0_fig_urn max:12 min:1 
 It is a good example of how small imbalances are magnified over time, as the more ball of one color are drawn the more they are likely to be drawn. In the following we study interesting probability quatities to understnad the dynamics of the model, and in particular with respect to the initial ratio.
 
 
-## Basic dynamics of the model
+# Basic dynamics of the model
 
-#### Composition of the urn at step n
+### Composition of the urn at step n
 Let us first express the *probability of having picked [equation]k[/equation] [span className:"popb"]blue[/span] objects after [equation]n \geq k[/equation] steps* of the experiment. Denoting by [equation]B_n[/equation] the number of blue balls at step  [equation]n[/equation], and by [equation]S_n[/equation] the sampling event at step [equation]n[/equation], taking value [span className:"popb"]1[/span] if a blue ball is sampled and  [span className:"popa"]0[/span] otherwise:
 
 [Equation display:true]
@@ -88,17 +88,21 @@ where [equation]\bar{\mathbf{s}}[/equation] is a shortcut notation for [equation
 [/div]
 
 
-#### Probability of the  next draw
+### Probability of the  next draw
 
-Following the previous paragraph, we can now compute the probability of *picking a [span className:"popb"]blue[/span] ball at step [equation]n + 1[/equation]*, independently of the state of the urn at time [equation]n [/equation]:
+Following the previous result, we can now compute the probability of *picking a [span className:"popb"]blue[/span] ball at step [equation]n + 1[/equation]*, independently of the state of the urn at time [equation]n [/equation]:
 
 [equation display:true]
-\mathbb{P} (S_{n + 1} = 1) = \sum_{j=0}^{n} \mathbb{P}(S_{n+1} = 1\ |\ B_{n} = b + j)\ \mathbb{P}(B_{n} = b + j)
+\mathbb{P} (S_{n + 1} = 1) = \sum_{k=0}^{n} \mathbb{P}(S_{n+1} = 1\ |\ B_{n} = b + k)\ \mathbb{P}(B_{n} = b + k)
+[/equation]
+
+[equation display:true]
+= \sum_{k=0}^{n} \frac{b+k}{a+b+n}\ \mathbb{P}(B_{n} = b + k)
 [/equation]
 
 [Aside][equation](3)[/equation][/Aside]
 [equation display:true]
-= \frac{ab\binom{a+b}{b}}{(a+b+n)(a+b)} \underbrace{\sum_{j=0}^{n} \frac{\binom{n}{j}}{\binom{a+b+n-1}{b+j}}}_{f(n, a, b)}
+= \frac{ab\binom{a+b}{b}}{(a+b+n)(a+b)} \underbrace{\sum_{k=0}^{n} \frac{\binom{n}{k}}{\binom{a+b+n-1}{b+k}}}_{f(n, a, b)}
 [/equation]
 
 
@@ -138,9 +142,14 @@ By extending the relation, one can infer and finally prove by induction over [eq
 In other words, the overall probability of the urn composition after [equation]n[/equation] only *depends on the initial color distribution in the urn*. In particular, for the case where [equation]a = 1[/equation] and [equation]b = 1[/equation] we have 
 [equation]\mathbb{P} (B_n = k + 1) = \frac{[\!|\ k \leq n \ |\!]}{n + 1}[/equation] and [equation]\mathbb{P} (S_n = 1) = 0.5[/equation]. In other words, all urn configurations are equiprobable.
 
-## Asymptotic Behaviour
-The previous result highlights an *interesting property*: While various urn composition can be reached from the same initiation configuration  ([span className:"popa"][equation]a[/equation][/span], [span className:"popb"][equation]b[/equation][/span]), their overall probability still very much depends on the initial ratio.
-Therefore, one can also wonder what the urn would look like asymptotically, when the number of repeats [equation]n[/equation] goes to [equation] \infty[/equation].
+
+
+
+# Asymptotic Behaviour
+
+### Expected Value
+
+Since various urn compositions can be reached from the same initiation configuration  ([span className:"popa"][equation]a[/equation][/span], [span className:"popb"][equation]b[/equation][/span]),  one can also wonder what the urn would look like asymptotically, when the number of repeats [equation]n[/equation] goes to [equation] \infty[/equation].
 
 
 Let us introduce [equation]Y_n = \frac{B_n}{a + b +n}[/equation], the ratio of the two colored ball populations at step [equation]n[/equation]. Using the previous results, we can easily see that the expected value of [equation]Y_n[/equation] is equal to the initial ratio, independently of the time step:
@@ -159,7 +168,6 @@ Let us introduce [equation]Y_n = \frac{B_n}{a + b +n}[/equation], the ratio of t
 [/equation]
 [/div]
 
-This can also be observed in simulations. Here, blue lines ( [span className:"legend_lines"]---[/span] ) represent the observed value of [equation]Y_n[/equation] over time step [equation]n[/equation] for different runs with the same initial conditions [equation]a[/equation] and [equation]b[/equation]. Red circles ( [span className:"legend_circles"]●[/span] ) mark the average of these values for each time step, hence serve as an approximation of [equation]\mathbb{E}(Y_n)[/equation].
 
 [var name:"a0_fig_dynamics" value:1 type:int/]
 [var name:"b0_fig_dynamics" value:2 type:int/]
@@ -167,20 +175,64 @@ This can also be observed in simulations. Here, blue lines ( [span className:"le
 [var name:"num_steps_fig_dynamics" value:100 type:int/]
 [var name:"run_fig_dynamics" value:false /]
 
+
+This can also be observed in simulations. Here, blue lines ( [span className:"legend_lines"]---[/span] ) represent the observed value of [equation]Y_n[/equation] for each timestep [equation] n \leq [/equation]  [Display value:num_steps_fig_dynamics format:"d" /]  for [Display value:num_runs_fig_dynamics format:"d" /]  different runs with the same initial conditions [equation]a[/equation] and [equation]b[/equation]. Red circles ( [span className:"legend_circles"]●[/span] ) mark the average of these values across runs, for each time step, hence serve as an approximation of [equation]\mathbb{E}(Y_n)[/equation].
+
 [div]
 [Inline]
 [button className:"simulate" onClick:`run_fig_dynamics = true`]
 Simulate
 [/button]
 [/Inline]
-observed values of [equation]Y_n[/equation] with [equation]a =[/equation] [Dynamic value:a0_fig_dynamics max:12 min:1 display:`a0_fig_dynamics.toString()`/] and [equation]b =[/equation] [Dynamic value:b0_fig_dynamics max:12 min:1 display:`b0_fig_dynamics.toString()`/] for [Display value:num_runs_fig_dynamics format:"d" /] distinct runs over [equation]n =[/equation] [Display value:num_steps_fig_dynamics format:"d" /] time steps.
+observed values of [equation]Y_n[/equation] with [equation]a =[/equation] [Dynamic value:a0_fig_dynamics max:12 min:1 display:`a0_fig_dynamics.toString()`/] and [equation]b =[/equation] [Dynamic value:b0_fig_dynamics max:12 min:1 display:`b0_fig_dynamics.toString()`/].
 [/div]
 [PolyaDynamics className:"d3-component" state:state a0:a0_fig_dynamics b0:b0_fig_dynamics run:run_fig_dynamics num_steps:100 num_runs: 60/]
 
-#### Convergence
+### Distribution
+Going further, we can also study the convergence *in distribution* of the random variable [equation]Y_n[/equation]. First we observe that the probability distribution of [equation]Y_n[/equation] is directly linked to the one of [equation]B_n[/equation], that we expressed earlier. Moreover, we can further simply the expression by making use of the [Gamma](https://en.wikipedia.org/wiki/Gamma_function) and [Beta](https://en.wikipedia.org/wiki/Beta_function) functions. This yields the following result:
+
+[Equation display:true]
+\mathbb{P}\left(Y_n = \frac{b + k}{a + b+ n}\right) = \mathbb{P} (B_n = b + k) = \frac{\binom{n}{k} \binom{a+b}{b}}{\binom{a+b+n-1}{b+k}}  \frac{ab}{(a+b)(b+k)}
+[/Equation]
+
+[Equation display:true]
+= \binom{n}{k}\frac{ab \binom{a+b}{b}}{a + b} \frac{1}{\binom{a+b+n-1}{b+k}(b+k)} 
+[/Equation]
+
+[Equation display:true]
+= \binom{n}{k} \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)} \frac{\Gamma(b + k) \Gamma(a + n - k)}{\Gamma(a + b + n)}
+[/Equation]
 
 
-## Generalized Polyà urn
+[div className:"equation"]
+[equation display:true]
+\mathbb{P}\left(Y_n = \frac{b + k}{a + b+ n}\right)  = \binom{n}{k} \frac{B(b + k, a + n - k)}{B(a, b)}
+[/equation]
+[/div]
+
+Where the Gamma and Beta functions are defined as [equation]\Gamma: x \mapsto (x - 1)![/equation] and [equation]B: (a, b) \mapsto \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)} = \int_0^1 x^{a-1} (1-x)^{b-1}dx[/equation] respectively.
+
+To prove a convergence in distribution, we want to look at the limit of the repartition function of [equation]Y_n[/equation], defined as [equation]F_{Y_n}(x) = \mathbb{P}(Y_n \leq x)[/equation], when the time step [equation]n \rightarrow \infty[/equation]. Using the previous simplified expression, we have:
+
+
+[Equation display:true]
+F_{Y_n} (t) = \sum_{k = 0}^{t (a + b+ n) - b} \mathbb{P}\left(Y_n = \frac{b + k}{a + b+ n}\right) 
+[/Equation]
+
+
+[Equation display:true]
+= \frac{1}{B(a,b)} \int_0^1 \sum_{k=0}^{t(a+b+n) - b} \binom{n}{k} x^{b+k-1} (1 - x)^{a+n-k-1} dx
+[/Equation]
+
+[Equation display:true]
+= \frac{1}{B(a,b)} \int_0^1 x^{b-1} (1 - x)^{a-1} \underbrace{\sum_{k=0}^{t(a+b+n) - b} \binom{n}{k} x^{k} (1 - x)^{n-k}}_{g(x, t, n,a,b)} dx
+[/Equation]
+
+Thus [equation]g(x,t,n, a, b)[/equation] is the only term that depends on [equation]n[/equation]. It is clear that this term is linked to the Binomial function. More specifically, we define the random variable [equation]X_n[/equation] with a binomial distribution of parameters [equation]n[/equation] and [equation]x \in [0, 1][/equation]. Then we have exactly [equation]g(x, t, n, a, b) = \mathbb{P}(X_n \leq t(a+b+n) - b)[/equation].
+
+
+
+# Generalized Polyà urn
 
 
 
