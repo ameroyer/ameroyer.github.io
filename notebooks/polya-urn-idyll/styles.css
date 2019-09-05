@@ -23,7 +23,7 @@
     border: 1px black solid;
     padding: 5px;
     vertical-align: center;
-    background-color: #FFFFFF;
+    background-color: #EEE;
     font-size: 16px
 }
 
@@ -31,11 +31,12 @@
     border: 1px black solid;
     width: 72%;
     margin: auto;
+    background: #EEEEEE;
     margin-bottom: 23px
 }
 
 .simulate:hover {
-    background-color: #EEEEEE;
+    background-color: Tomato;
 }
 
 .detail {
@@ -92,7 +93,8 @@ h1 {
 }
 
 h3 {
-    margin-top: 20px
+    margin-top: 30px;
+    color: DodgerBlue;
 }
 
 a {
@@ -101,6 +103,6 @@ a {
 }
 
 a:hover { 
-    color: DodgerBlue;
+    color: Tomato;
     text-decoration: underline
 }

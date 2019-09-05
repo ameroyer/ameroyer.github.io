@@ -59,7 +59,7 @@ We can expand the inner term by using the probability [span className:"text_deta
 \frac{b + \sum_{i = 1}^{n - 1} s_i}{a + b + n - 1}
 [/Equation]
 
-From this expression, we can see that the probability does not depend on the  time step [equation]n[/equation] but rather on *how many blue balls have been sampled until now*. In other words, for any sequence of draws [equation]\mathbf{s}[/equation], we can arrange the order in which the balls have been drawn without affecting the probability of the next draw. More formally, it means that equation [equation](1)[/equation] is equivalent to:
+From this expression, we can see that the probability does not depend on the  time step [equation]n[/equation] but rather on *how many blue balls have been sampled until now*. In other words, for any sequence of draws [equation]\mathbf{s}[/equation], we can arrange the order in which the balls have been drawn without affecting the probability of the next draw. More formally, it means that **Equation (1)** is equivalent to:
 
 [Aside][equation](2)[/equation][/Aside]
 [Equation display:true]
@@ -131,7 +131,7 @@ f(n, a, b) = \sum_{j=0}^n \frac{\binom{n}{j}}{\binom{a+b+n-1}{b+j}}
 f(n, a, b) = f(n-1, a+1, b) + f(n-1, a, b+1)
 [/Equation]
 
-By extending the relation, one can infer and finally prove by induction over [equation]n[/equation], that [equation]f(n, a, b) = \frac{a+b+n}{(a+b) \binom{a+b-1}{b}}[/equation]. Plugging this expression in Equation (3), we finally get:
+By extending the relation, one can infer and finally prove by induction over [equation]n[/equation], that [equation]f(n, a, b) = \frac{a+b+n}{(a+b) \binom{a+b-1}{b}}[/equation]. Plugging this expression in **Equation (3)**, we finally get:
 
 [div className:"equation"]
 [equation display:true]
@@ -212,7 +212,7 @@ Going further, we can also study the convergence *in distribution* of the random
 
 Where the Gamma and Beta functions are defined as [equation]\Gamma: x \mapsto (x - 1)![/equation] and [equation]B: (a, b) \mapsto \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)} = \int_0^1 x^{a-1} (1-x)^{b-1}dx[/equation] respectively.
 
-To prove a convergence in distribution, we want to look at the limit of the repartition function of [equation]Y_n[/equation], defined as [equation]F_{Y_n}(x) = \mathbb{P}(Y_n \leq x)[/equation], when the time step [equation]n \rightarrow \infty[/equation]. Using the previous simplified expression, we have:
+To prove a convergence in distribution, we want to look at *the limit of the repartition function* of [equation]Y_n[/equation], defined as [equation]F_{Y_n}(x) = \mathbb{P}(Y_n \leq x)[/equation], when the time step [equation]n \rightarrow \infty[/equation]. Using the previous simplified expression, we have:
 
 
 [Equation display:true]
@@ -224,11 +224,38 @@ F_{Y_n} (t) = \sum_{k = 0}^{t (a + b+ n) - b} \mathbb{P}\left(Y_n = \frac{b + k}
 = \frac{1}{B(a,b)} \int_0^1 \sum_{k=0}^{t(a+b+n) - b} \binom{n}{k} x^{b+k-1} (1 - x)^{a+n-k-1} dx
 [/Equation]
 
+[Aside][equation](4)[/equation][/Aside]
 [Equation display:true]
 = \frac{1}{B(a,b)} \int_0^1 x^{b-1} (1 - x)^{a-1} \underbrace{\sum_{k=0}^{t(a+b+n) - b} \binom{n}{k} x^{k} (1 - x)^{n-k}}_{g(x, t, n,a,b)} dx
 [/Equation]
 
-Thus [equation]g(x,t,n, a, b)[/equation] is the only term that depends on [equation]n[/equation]. It is clear that this term is linked to the Binomial function. More specifically, we define the random variable [equation]X_n[/equation] with a binomial distribution of parameters [equation]n[/equation] and [equation]x \in [0, 1][/equation]. Then we have exactly [equation]g(x, t, n, a, b) = \mathbb{P}(X_n \leq t(a+b+n) - b)[/equation].
+Thus [equation]g(x,t,n, a, b)[/equation] is the only term that depends on [equation]n[/equation]. It is clear that this term is linked to the Binomial function. More specifically, if we define the random variable [equation]X_n[/equation] with a binomial distribution of parameters [equation]n[/equation] and [equation]x \in [0, 1][/equation], then we have exactly [equation]g(x, t, n, a, b) = \mathbb{P}(X_n \leq t(a+b+n) - b)[/equation].
+
+We can then apply the [Demoivre-Laplace theorem](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), which derives from the Central Limit theorem, and yields that, for large [equation]n[/equation], 
+
+[Equation display:true]
+g(x, t, n, ab) \simeq \Phi\left(\frac{n (t - x)}{\sqrt{nx(1-x)}} + \frac{t(a+b) - b}{\sqrt{nx(1-x)}}\right)
+[/Equation]
+
+where [equation]\Phi[/equation] is the repartition function of the standard Gaussian distribution, [equation]\mathcal{N}(0,1)[/equation], and is continuous and bounded. As a result, we have that:
+
+
+[Equation display:true]
+\text{lim}_{n \rightarrow \infty} g(x, t, n, ab) = \left\{\begin{array}{lr}
+        1, & \text{if } t > x\\
+        0, & \text{if } t < x
+        \end{array}\right.
+[/Equation]
+
+By splitting the integral from **Equation (4)** at point [equation]t \in [0, 1][/equation], we can conlude that
+
+[div className:"equation"]
+[Equation display:true]
+\text{lim}_{n \rightarrow \infty} F_{Y_n} (t) = \frac{1}{B(a,b)} \int_0^t x^{b-1} (1 - x)^{a-1} dx
+[/Equation]
+[/div]
+
+In other words, the proportion of blue balls in the urn, [equation]Y_n[/equation], converges in distribution to the Beta distribution with parameters *[span className:"popb"]b[/span]* and  *[span className:"popa"]a[/span]* when [equation]n[/equation] grows.
 
 
 
