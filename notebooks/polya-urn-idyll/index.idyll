@@ -59,7 +59,8 @@ We can expand the inner term by using the probability [span className:"text_deta
 \frac{b + \sum_{i = 1}^{n - 1} s_i}{a + b + n - 1}
 [/Equation]
 
-From this expression, we can see that the probability does not depend on the  time step [equation]n[/equation] but rather on *how many blue balls have been sampled until now*. In other words, for any sequence of draws [equation]\mathbf{s}[/equation], we can arrange the order in which the balls have been drawn without affecting the probability of the next draw. More formally, it means that **Equation (1)** is equivalent to:
+From this expression, we can see that the probability does not depend on the  time step [equation]n[/equation] but rather on *how many blue balls have been sampled until now*. This also means that the model is *Markovian* as the probability at step [equation]n[/equation] only depends on the urn's composition at step [equation]n - 1[/equation].
+Consequently, for any sequence of draws [equation]\mathbf{s}[/equation], we can arrange the order in which the balls have been drawn without affecting the probability of the next draw. More formally, it means that **Equation (1)** is equivalent to:
 
 [Aside][equation](2)[/equation][/Aside]
 [Equation display:true]
@@ -206,11 +207,11 @@ Going further, we can also study the convergence *in distribution* of the random
 
 [div className:"equation"]
 [equation display:true]
-\mathbb{P}\left(Y_n = \frac{b + k}{a + b+ n}\right)  = \binom{n}{k} \frac{B(b + k, a + n - k)}{B(a, b)}
+\mathbb{P}\left(Y_n = \frac{b + k}{a + b+ n}\right)  = \binom{n}{k} \frac{\beta(b + k, a + n - k)}{\beta(a, b)}
 [/equation]
 [/div]
 
-Where the Gamma and Beta functions are defined as [equation]\Gamma: x \mapsto (x - 1)![/equation] and [equation]B: (a, b) \mapsto \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)} = \int_0^1 x^{a-1} (1-x)^{b-1}dx[/equation] respectively.
+Where the Gamma and Beta functions are defined as [equation]\Gamma: x \mapsto (x - 1)![/equation] and [equation]\beta: (a, b) \mapsto \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)} = \int_0^1 x^{a-1} (1-x)^{b-1}dx[/equation] respectively.
 
 To prove a convergence in distribution, we want to look at *the limit of the repartition function* of [equation]Y_n[/equation], defined as [equation]F_{Y_n}(x) = \mathbb{P}(Y_n \leq x)[/equation], when the time step [equation]n \rightarrow \infty[/equation]. Using the previous simplified expression, we have:
 
@@ -221,27 +222,27 @@ F_{Y_n} (t) = \sum_{k = 0}^{t (a + b+ n) - b} \mathbb{P}\left(Y_n = \frac{b + k}
 
 
 [Equation display:true]
-= \frac{1}{B(a,b)} \int_0^1 \sum_{k=0}^{t(a+b+n) - b} \binom{n}{k} x^{b+k-1} (1 - x)^{a+n-k-1} dx
+= \frac{1}{\beta(a,b)} \int_0^1 \sum_{k=0}^{t(a+b+n) - b} \binom{n}{k} x^{b+k-1} (1 - x)^{a+n-k-1} dx
 [/Equation]
 
 [Aside][equation](4)[/equation][/Aside]
 [Equation display:true]
-= \frac{1}{B(a,b)} \int_0^1 x^{b-1} (1 - x)^{a-1} \underbrace{\sum_{k=0}^{t(a+b+n) - b} \binom{n}{k} x^{k} (1 - x)^{n-k}}_{g(x, t, n,a,b)} dx
+= \frac{1}{\beta(a,b)} \int_0^1 x^{b-1} (1 - x)^{a-1} \underbrace{\sum_{k=0}^{t(a+b+n) - b} \binom{n}{k} x^{k} (1 - x)^{n-k}}_{g(x, t, n,a,b)} dx
 [/Equation]
 
-Thus [equation]g(x,t,n, a, b)[/equation] is the only term that depends on [equation]n[/equation]. It is clear that this term is linked to the Binomial function. More specifically, if we define the random variable [equation]X_n[/equation] with a binomial distribution of parameters [equation]n[/equation] and [equation]x \in [0, 1][/equation], then we have exactly [equation]g(x, t, n, a, b) = \mathbb{P}(X_n \leq t(a+b+n) - b)[/equation].
+Thus [equation]g(x,t,n, a, b)[/equation] is the only term that depends on [equation]n[/equation]. It is clear that this term is linked to the Binomial function. More specifically, if we define the random variable [equation]X_n[/equation] with a binomial distribution of parameters [equation]n[/equation] and [equation]x \in [0, 1][/equation], then we have exactly that [equation]g(x, t, n, a, b) = \mathbb{P}(X_n \leq t(a+b+n) - b)[/equation].
 
-We can then apply the [Demoivre-Laplace theorem](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), which derives from the Central Limit theorem, and yields that, for large [equation]n[/equation], 
+We can then directly apply the [Demoivre-Laplace theorem](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), which derives from the Central Limit theorem, to [equation]X_n[/equation] which yields that, for large [equation]n[/equation], 
 
 [Equation display:true]
-g(x, t, n, ab) \simeq \Phi\left(\frac{n (t - x)}{\sqrt{nx(1-x)}} + \frac{t(a+b) - b}{\sqrt{nx(1-x)}}\right)
+g(x, t, n, a,b) \simeq \Phi\left(\frac{n (t - x)}{\sqrt{nx(1-x)}} + \frac{t(a+b) - b}{\sqrt{nx(1-x)}}\right)
 [/Equation]
 
 where [equation]\Phi[/equation] is the repartition function of the standard Gaussian distribution, [equation]\mathcal{N}(0,1)[/equation], and is continuous and bounded. As a result, we have that:
 
 
 [Equation display:true]
-\text{lim}_{n \rightarrow \infty} g(x, t, n, ab) = \left\{\begin{array}{lr}
+\text{lim}_{n \rightarrow \infty} g(x, t, n, a,b) = \left\{\begin{array}{lr}
         1, & \text{if } t > x\\
         0, & \text{if } t < x
         \end{array}\right.
@@ -251,11 +252,11 @@ By splitting the integral from **Equation (4)** at point [equation]t \in [0, 1][
 
 [div className:"equation"]
 [Equation display:true]
-\text{lim}_{n \rightarrow \infty} F_{Y_n} (t) = \frac{1}{B(a,b)} \int_0^t x^{b-1} (1 - x)^{a-1} dx
+\text{lim}_{n \rightarrow \infty} F_{Y_n} (t) = \frac{1}{\beta(a,b)} \int_0^t x^{b-1} (1 - x)^{a-1} dx
 [/Equation]
 [/div]
 
-In other words, the proportion of blue balls in the urn, [equation]Y_n[/equation], converges in distribution to the Beta distribution with parameters *[span className:"popb"]b[/span]* and  *[span className:"popa"]a[/span]* when [equation]n[/equation] grows.
+The right-side term is exactly the repartition function of a Beta distribution at point [equation]t[/equation]. Thus, the proportion of blue balls in the urn, [equation]Y_n[/equation], converges in distribution to the Beta distribution with parameters *[span className:"popb"]b[/span]* and  *[span className:"popa"]a[/span]* when [equation]n[/equation] grows.
 
 
 
@@ -263,104 +264,8 @@ In other words, the proportion of blue balls in the urn, [equation]Y_n[/equation
 
 
 
-Configuration can be done via the `idyll` field in `package.json`.
 
-## Markup
+#### References
 
-Idyll is based on Markdown.
-
-You can use familiar syntax to create **bold** (`**bold**` ) and
-*italic* (``*italic*` ) styles,
-
-* lists of items,
-
-``` * lists * of * items, ```
-
-1. and numbered 2. lists 3. of items,
-
-
-``` 1. and numbered 2. lists 3. of items, ```
-
-in addition to [hyperlinks](https://idyll-lang.org) and images:
-
-![quill](static/images/quill.svg)
-
-``` ![quill](static/images/quill.svg) ```
-
-## Components
-
-Components can be embedded using a bracket syntax:
-
-``` [Range /] ```
-
-and can contain nested content:
-
-``` [Equation]e = mc^{2}[/Equation] ```
-
-Components accept properties:
-
-``` [Range value:x min:0 max:1 /] ```
-
-that can be bound to variables to achieve interactivity (more in next
-section).
-
-
-A variety of components are included by default. See [all the
-available components](https://idyll-lang.org/docs/components/). You
-can also use any html tag, for example: `[div] A div! [/div]`.
-
-To create your own, add it to the `components/` folder. There are
-examples of how to use Idyll with React and D3 based components
-already included.
-
-
-
-## Interactivity
-
-Here is how you can instantiate a variable and bind it to a component:
-
-[var name:"exampleVar" value:5 /]
-
-[Range min:0 max:10 value:exampleVar /] [Display value:exampleVar /]
-
-``` [var name:"exampleVar" value:5 /]
-
-[Range min:0 max:10 value:exampleVar /] [Display value:exampleVar /]
-```
-
-## Learn More
-
-To learn more see the documentation at https://idyll-lang.org/docs/,
-join our [chatroom](https://gitter.im/idyll-lang/Lobby), or see the
-project on [GitHub](https://github.com/idyll-lang/idyll).
-
-[hr /]
-
-# Technical Details
-
-## Installation
-
-- Make sure you have `idyll` installed (`npm i -g idyll`).  Clone this
-- repo and run `npm install`.
-
-## Developing a post locally
-
-Run `idyll`.
-
-## Building a post for production
-
-Run `idyll build`. The output will appear in the top-level `build`
-folder. To change the output location, change the `output` option in
-`package.json`.
-
-## Deploying
-
-Make sure your post has been built, then deploy the docs folder via
-any static hosting service.
-
-## Dependencies
-
-You can install custom dependencies by running `npm install
-<package-name> --save`. Note that any collaborators will also need
-download the package locally by running `npm install` after pulling
-the changes.
+* *"Urnes aléatoires, populations en équilibre et séries génératrices"*, B. Mallein, 2010
+* *"Rate of convergence of Polya's urn to the Beta distribution"*, J. Drinane, 2008 
