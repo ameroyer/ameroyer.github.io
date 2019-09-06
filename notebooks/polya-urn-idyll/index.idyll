@@ -19,6 +19,8 @@ Given an urn containing initially [equation]a[/equation]   [span className:"popa
 [var name:"b0_fig_urn" value:2 type:int/]
 [var name:"run_fig_urn" value:false /]
 
+
+[div className:"figure"]
 [div]
 [Inline]
 [button className:"simulate" onClick:`run_fig_urn = true`]
@@ -29,6 +31,8 @@ Pólya urn with [equation]a =[/equation] [Dynamic value:a0_fig_urn max:12 min:1 
 [/div]
 [PolyaUrn className:"d3-component" state:state a0:a0_fig_urn b0:b0_fig_urn run:run_fig_urn /]
 
+**Figure 1**: Simple Polya urn simulation
+[/div]
 
 It is a good example of how small imbalances are magnified over time, as the more ball of one color are drawn the more they are likely to be drawn. In the following we study interesting probability quatities to understnad the dynamics of the model, and in particular with respect to the initial ratio.
 
@@ -160,7 +164,7 @@ Let us introduce [equation]Y_n = \frac{B_n}{a + b +n}[/equation], the ratio of t
 [/equation]
 
 [equation display:true]
- = \sum_{k=0}^n \mathbb{P}(B_n = b + k) \mathbb{P}(S_n = 1\ |\ B_n = b + k) =  \mathbb{P}(S_n = 1) 
+= \sum_{k=0}^n \mathbb{P}(B_n = b + k) \mathbb{P}(S_n = 1\ |\ B_n = b + k) =  \mathbb{P}(S_n = 1) 
 [/equation]
 
 [div className:"equation"]
@@ -179,6 +183,8 @@ Let us introduce [equation]Y_n = \frac{B_n}{a + b +n}[/equation], the ratio of t
 
 This can also be observed in simulations. Here, blue lines ( [span className:"legend_lines"]---[/span] ) represent the observed value of [equation]Y_n[/equation] for each timestep [equation] n \leq [/equation]  [Display value:num_steps_fig_dynamics format:"d" /]  for [Display value:num_runs_fig_dynamics format:"d" /]  different runs with the same initial conditions [equation]a[/equation] and [equation]b[/equation]. Red circles ( [span className:"legend_circles"]●[/span] ) mark the average of these values across runs, for each time step, hence serve as an approximation of [equation]\mathbb{E}(Y_n)[/equation].
 
+
+[div className:"figure"]
 [div]
 [Inline]
 [button className:"simulate" onClick:`run_fig_dynamics = true`]
@@ -188,6 +194,9 @@ Simulate
 observed values of [equation]Y_n[/equation] with [equation]a =[/equation] [Dynamic value:a0_fig_dynamics max:12 min:1 display:`a0_fig_dynamics.toString()`/] and [equation]b =[/equation] [Dynamic value:b0_fig_dynamics max:12 min:1 display:`b0_fig_dynamics.toString()`/].
 [/div]
 [PolyaDynamics className:"d3-component" state:state a0:a0_fig_dynamics b0:b0_fig_dynamics run:run_fig_dynamics num_steps:100 num_runs: 60/]
+
+**Figure 2**: Asymptotic distribution of a Polya urn experiment
+[/div]
 
 ### Distribution
 Going further, we can also study the convergence *in distribution* of the random variable [equation]Y_n[/equation]. First we observe that the probability distribution of [equation]Y_n[/equation] is directly linked to the one of [equation]B_n[/equation], that we expressed earlier. Moreover, we can further simply the expression by making use of the [Gamma](https://en.wikipedia.org/wiki/Gamma_function) and [Beta](https://en.wikipedia.org/wiki/Beta_function) functions. This yields the following result:
@@ -243,9 +252,9 @@ where [equation]\Phi[/equation] is the repartition function of the standard Gaus
 
 [Equation display:true]
 \text{lim}_{n \rightarrow \infty} g(x, t, n, a,b) = \left\{\begin{array}{lr}
-        1, & \text{if } t > x\\
-        0, & \text{if } t < x
-        \end{array}\right.
+1, & \text{if } t > x\\
+0, & \text{if } t < x
+\end{array}\right.
 [/Equation]
 
 By splitting the integral from **Equation (4)** at point [equation]t \in [0, 1][/equation], we can conlude that
@@ -258,6 +267,15 @@ By splitting the integral from **Equation (4)** at point [equation]t \in [0, 1][
 
 The right-side term is exactly the repartition function of a Beta distribution at point [equation]t[/equation]. Thus, the proportion of blue balls in the urn, [equation]Y_n[/equation], converges in distribution to the Beta distribution with parameters *[span className:"popb"]b[/span]* and  *[span className:"popa"]a[/span]* when [equation]n[/equation] grows.
 
+[div className:"figure"]
+[Inline][img src:"static/images/polya_1_1.png" width:"300px"/][/Inline]
+[Inline][img src:"static/images/polya_1_6.png" width:"300px"/][/Inline]
+
+[Inline][img src:"static/images/polya_4_9.png" width:"300px"/][/Inline]
+[Inline][img src:"static/images/polya_7_2.png" width:"300px"/][/Inline]
+
+**Figure 3:** Histogram of observed values of [equation]Y_{1000}[/equation] for 10000 runs with different initial conditions (a, b) compared to the density function of the [equation]\beta(b, a)[/equation] distribution. 
+[/div]
 
 
 # Generalized Polyà urn
