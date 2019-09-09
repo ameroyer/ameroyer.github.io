@@ -35,7 +35,7 @@ Pólya urn with [equation]a =[/equation] [Dynamic value:a0_fig_urn max:12 min:1 
 [/div]
 
 
-This process is a good example of a model where small imbalances are magnified over time: In fact, the more balls of one color are drawn, the more this color is likely to be drawn. In the following, we study the dynamics of the model from a probabilistic point of view and its asymptotical properties, in particular with respect to the initial ratio of populations.
+This process is a good example of a model where small imbalances are magnified over time: In fact, the more balls of one color are drawn, the more this color is likely to be drawn. As such, it has been used to model for instance propoagation of epidemics in a population [(Hayhoe et al.)](https://arxiv.org/pdf/1705.02239.pdf) or the correlated dynamics between novelty events [(Tria et al, 2014)](https://www.nature.com/articles/srep05890). In the following, we study the dynamics of the model from a probabilistic point of view and its asymptotical properties, in particular with respect to the initial ratio of populations.
 
 
 # Basic dynamics of the model
@@ -235,7 +235,7 @@ We can further simplify the expression by making use of the [Gamma](https://en.w
 
 Where the Gamma and Beta functions are defined as [equation]\Gamma: x \mapsto (x - 1)![/equation] and [equation]\beta: (a, b) \mapsto \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)} = \int_0^1 x^{a-1} (1-x)^{b-1}dx[/equation] respectively.
 
-Note that, up to a simple rearrangement of terms in **Equation (4)**, we observe that [equation]Y_n[/equation] follows a [Dirichlet-multinomal](https://en.wikipedia.org/wiki/Dirichlet-multinomial_distribution) distribution with parameters [equation]\alpha = (a, b)[/equation]. in fact, this distribution is also known as the *multivariate Pólya distribution* and can be generalized to urns with more than two color populations.
+Note that, up to a simple rearrangement of terms in **Equation (4)**, we observe that [equation]Y_n[/equation] follows a [Dirichlet-multinomal](https://en.wikipedia.org/wiki/Dirichlet-multinomial_distribution) distribution with parameters [equation]\alpha = (a, b)[/equation]. And in fact, this distribution is also known as the *multivariate Pólya distribution* and can be generalized to urns with more than two color populations.
 
 
 ### Asymptotic distribution
@@ -296,7 +296,7 @@ The right-side term is exactly the repartition function of a [Beta distribution]
 
 
 # Generalized Pólya urn
-Generalized Pólya urn follow the same workflow as the one we have been working with until now, but with different replacement values. More specifically, the experiment is described as follows:
+We won't study such models here, but it is possible to extend the Pólya urn experiment to more flexible frameworks: Generalized Pólya urns follow the same workflow as the one we have been working with until now, but with different replacement values. More specifically, the experiment is described as follows:
 
 [div className:"definition"]
 Given an urn containing initially [equation]a[/equation]   [span className:"popa"] orange[/span] balls and [equation]b[/equation]   [span className:"popb"] blue[/span] balls, we pick one ball at random from the urn. **If the ball is  [span className:"popa"]orange[/span]**, place it back and add   [span className:"popa"][equation]\alpha[/equation][/span]  new orange balls and  [span className:"popb"][equation]\beta[/equation][/span]  new blue balls to the urn; **If the ball is  [span className:"popb"] blue[/span]**, do the same but with  [span className:"popa"][equation]\gamma[/equation][/span]  new orange balls and  [span className:"popb"][equation]\delta[/equation][/span] respectively instead. We then repeat this sampling procedure [equation]n[/equation] times.
@@ -307,9 +307,17 @@ Such a model is often represented by its initial conditions (*[span className:"p
 \gamma & \delta
 \end{pmatrix} [/equation].
 
-#### References
+It is also possible to generalize the urn to an arbitrary number of colors, leading to a [equation]d \times d[/equation] replacement matrix. For instance, in the standard Pólya setting, we have [equation]d = 2[/equation] and [equation]R = \begin{pmatrix}
+1 & 0 \\
+0& 1
+\end{pmatrix} = I_2[/equation]
 
+# References
+
+* *"A Polya Contagion Model for Networks"*, M. Hayhoe et al, 2017
 * *"A survey of random processes with reinforcement"*, R. Pemantle, 2017
+* *"On generalized Pólya urn models"*, M. Chen and M. Kuba, 2011
 * *"Pólya urn models: Lecture Notes"*, N. Pouyanne, 2004
 * *"Rate of convergence of Polya's urn to the Beta distribution"*, J. Drinane, 2008
+* "*The dynamics of correlated novelties"*, F. Tria et al, 2014
 * *"Urnes aléatoires, populations en équilibre et séries génératrices"*, B. Mallein, 2010
