@@ -551,3 +551,9 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,home-style cooking,5.3,ACG,turkey cordon bleu/potato salad
 2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,mediterranean,6.3,AG,chicken breast/creamy polenta/bell peppers and zucchini
 2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Dessert,,1.4,ACFG,blueberry muffin
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Soups,,1.15,ACGL,beef broth/garnish
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Soups,,1.15,AL,minestrone
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Menus,home-style cooking,4.2,ACG,rice pork stew/grana cheese
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Menus,vegetarian,5.3,ACG,spinach pancake/leaf salad/garlic dip
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Menus,fish & seafood,6.3,D,salmon steak/spinach/rosemary potatoes
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Dessert,,1.4,ACG,blueberry cake
