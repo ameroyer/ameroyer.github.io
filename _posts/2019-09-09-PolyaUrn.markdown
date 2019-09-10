@@ -18,14 +18,27 @@ Markup sources for this blog post can be found [here](https://github.com/ameroye
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-    <title>An interactive study of the Pólya urn model</title>
-    <meta property="og:title" content="The Pólya Urn Model" />
-    <meta charset="utf-8" />
-    <meta property="og:type" content="article" />
-<meta property="og:image" content="http://ameroyer.github.io/images/thumbs/polya.png" />
+	
+	<!-- Primary Meta Tags -->
+<title>An interactive study of the Pólya urn model</title>
+<meta name="title" content="An interactive study of the Pólya urn model">
+<meta name="description" content="In this blog post, we study the dynamics of the Pólya Urn model from a probabilistic point of view and its asymptotical properties, in particular with respect to the initial ratio of populations.">
 
-    <meta property="og:description" content="An interactive study of the Pólya Urn model" />
-    <meta property="description" content="An interactive study of the Pólya Urn model" />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://metatags.io/">
+<meta property="og:title" content="An interactive study of the Pólya urn model">
+<meta property="og:description" content="In this blog post, we study the dynamics of the Pólya Urn model from a probabilistic point of view and its asymptotical properties, in particular with respect to the initial ratio of populations.">
+<meta property="og:image" content="http://ameroyer.github.io/images/thumbs/polya.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:title" content="An interactive study of the Pólya urn model">
+<meta property="twitter:description" content="In this blog post, we study the dynamics of the Pólya Urn model from a probabilistic point of view and its asymptotical properties, in particular with respect to the initial ratio of populations.">
+<meta property="twitter:image" content="http://ameroyer.github.io/images/thumbs/polya.png">
+
+    <meta charset="utf-8" />
     <link
       rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
