@@ -557,3 +557,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Menus,vegetarian,5.3,ACG,spinach pancake/leaf salad/garlic dip
 2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Menus,fish & seafood,6.3,D,salmon steak/spinach/rosemary potatoes
 2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Dessert,,1.4,ACG,blueberry cake
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Soups,,1.15,ACGL,beef broth/garnish
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Soups,,1.15,AL,minestrone
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Menus,home-style cooking,4.2,ACG,rice pork stew/grana cheese
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Menus,vegetarian,5.3,ACG,spinach pancake/leaf salad/garlic dip
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Menus,fish & seafood,6.3,D,salmon steak/spinach/rosemary potatoes
+2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Dessert,,1.4,ACG,blueberry cake
+2019,36,2019-09-09,2019-09-13,Tuesday,2019-09-10,Soups,,1.15,ACGL,beef broth/garnish
+2019,36,2019-09-09,2019-09-13,Tuesday,2019-09-10,Soups,,1.15,AG,creamed herb soup
+2019,36,2019-09-09,2019-09-13,Tuesday,2019-09-10,Menus,vegetarian,4.2,AC,farfalle with/vegetables and cabbage/small salad
+2019,36,2019-09-09,2019-09-13,Tuesday,2019-09-10,Menus,home-style cooking,5.3,AN,chili con carne/bread roll
+2019,36,2019-09-09,2019-09-13,Tuesday,2019-09-10,Menus,international,6.3,AC,Esterházy beef escalope/colorful noodles/Brussels sprouts
+2019,36,2019-09-09,2019-09-13,Tuesday,2019-09-10,Dessert,,1.4,ACFG,coffee cream sponge cake
+2019,36,2019-09-09,2019-09-13,Wednesday,2019-09-11,Soups,,1.15,ACGL,beef broth/garnish
+2019,36,2019-09-09,2019-09-13,Wednesday,2019-09-11,Soups,,1.15,AG,potato soup
+2019,36,2019-09-09,2019-09-13,Wednesday,2019-09-11,Menus,vegetarian,4.2,A,"""Briami""/Greek/potato vegetable ragout"
+2019,36,2019-09-09,2019-09-13,Wednesday,2019-09-11,Menus,home-style cooking,5.3,ACM,breaded fried /chicken schnitzel/potato salad with/lamb's lettuce
+2019,36,2019-09-09,2019-09-13,Wednesday,2019-09-11,Menus,mediterranean,6.3,AC,pork filet/ratatouille/herb penne
+2019,36,2019-09-09,2019-09-13,Wednesday,2019-09-11,Dessert,,1.4,ACG,strawberry cake
+2019,36,2019-09-09,2019-09-13,Thursday,2019-09-12,Soups,,1.15,ACGL,beef broth/garnish
+2019,36,2019-09-09,2019-09-13,Thursday,2019-09-12,Soups,,1.15,AG,cream of leek soup
+2019,36,2019-09-09,2019-09-13,Thursday,2019-09-12,Menus,home-style cooking,4.2,ACFM,cevapcici/french fries/onion mustard
+2019,36,2019-09-09,2019-09-13,Thursday,2019-09-12,Menus,vegetarian,5.3,ACG,spinach macaroni gratinated/with tomato and cheese/small salad
+2019,36,2019-09-09,2019-09-13,Thursday,2019-09-12,Menus,international,6.3,GM,tandoori chicken/tomato raita/curcuma rice
+2019,36,2019-09-09,2019-09-13,Thursday,2019-09-12,Dessert,,1.4,ACFG,pear chocolate cake
+2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Soups,,1.15,ACGL,beef broth/garnish
+2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Soups,,1.15,AG,cream of cauliflower soup
+2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,vegetarian,4.2,ACG,pumpkin with/safron coconut sauce/wild rice
+2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,sweet dishes,5.3,ACG,potato noodles with nuts
+2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,fish & seafood,5.3,ACDGH,breaded fried fish/parsley potatoes
+2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,international,6.3,A,veal ragout/vegetable bulgur
+2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Dessert,,1.4,ACFGH,"""Esterházyschnitte"""

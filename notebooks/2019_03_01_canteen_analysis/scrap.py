@@ -53,6 +53,8 @@ for i, day_row in enumerate(soup.find(
       day = category_column.find('b').string.strip()
       base_row['day'], base_row['date'] = day.split(', ')
       continue
+    if j >3: # Ignore foodtrucks
+       continue
     # Parse all item in the current category
     row = base_row.copy()
     row['category'] = category_names[j]
