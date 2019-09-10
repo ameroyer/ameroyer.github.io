@@ -5,6 +5,7 @@ date:   2018-03-01 10:00:00 +0200
 tags: topology, meshing
 categories: projects
 thumb: /images/thumbs/alphacomplexes.png
+description: "A short introduction and Python implementation of the Delaunay and Alpha Complexes triangulation in 2D."
 ---
 
 
@@ -16,7 +17,7 @@ This post is a short introduction and Python implementation of the Delaunay and 
 Mesh generation is the problem of generating a mesh composed of polygons (or polyhedrons in higher dimensions) from a cloud of points. This has typical applications for instance in Computer Graphics, when one wants to produce a model of a surface matching a given point cloud.  In particular, an interesting issue is how well the generated mesh respect the original shape that the point cloud is induced from. This obviously depends on the cloud density, but also on the meshing algorithm used.
 
 
-In this post, I will focus on the 2D case for simplicity and introduce <span class="keyword">Delaunay Triangulation</span> and <span class="keyword">Alpha Complexes</span> for mesh generation. 
+In this post, I will focus on the 2D case for simplicity and introduce <span class="keyword">Delaunay Triangulation</span> and <span class="keyword">Alpha Complexes</span> for mesh generation.
 We will see that Alpha Complexes are a subset of the Delaunay Triangulation and that they are able to preserve topological information from the initial shape: Contrary to the Delaunay triangulation, it can generates meshes with holes thanks to a <span class="keyword">radius constraint</span>.
 
 
@@ -56,7 +57,7 @@ def generate_cloud_from_image(N, image):
 <img src="/notebooks/2016_08_01_AlphaComplexes/samples.png">
 </div>
 
-     
+
 
 #### The convex hull
 A first possible very simple meshing algorithm is to take the convex hull of the points cloud. The <span class="keyword">convex hull</span> of a point set is simply the tightest convex set that contains the whole set. While simple to build, this model is heavily constrained by the convex requirement, and is a bad approximation for any shape displaying non-convex features.
@@ -75,7 +76,7 @@ A first possible very simple meshing algorithm is to take the convex hull of the
 A triangulation of a 2D point cloud $$S \in \mathbb{R}^2$$ is triangulation of its convex hull, i.e. a partition of the hull in triangles whose vertices are points of $$S$$.
 Additionally, a <span class="keyword"> Delaunay</span> triangulation $$DT(S)$$ is such that no points in $$S$$ is inside any of the circumscribed circles to any of the triangles in $$DT(S)$$, which guarantees a certain regularity to it; In particular it typically prevents very elongated triangles.
 
-**Note:** According to the definition, the Delaunay Triangulation also has a limiting convex constraint. In order to avoid this, a classical trick is to had some boundary points to form a bounding box around the point clouds, forming a new convex hull. Then after the triangulation is done, we simply remove the triangles for which any vertex lies on the boundary. That way, we retrieve a potentially non-convex triangluation of the original point cloud $$S$$.
+**Note:** According to the definition, the Delaunay Triangulation also has a limiting convex constraint. In order to avoid this, a classical trick is to had some boundary points to form a bounding box around the point clouds, forming a new convex hull. Then after the triangulation is done, we simply remove the triangles for which any vertex lies on the boundary. That way, we retrieve a potentially non-convex triangulation of the original point cloud $$S$$.
 
 
 #### Voronoi Diagram
@@ -92,10 +93,10 @@ def voronoi_diagram(samples, ax=None):
 
     # vor_ridges; Maps edge index -> Center of incident Voronoi cells
     n = len(vor.vertices)
-    vor_ridges = {min(edges) * n + max(edges): 
-                  ((centers[0], vor.points[centers[0]]), 
+    vor_ridges = {min(edges) * n + max(edges):
+                  ((centers[0], vor.points[centers[0]]),
 		   (centers[1], vor.points[centers[1]]))
-                  for edges, centers in zip(vor.ridge_vertices, vor.ridge_points)} 
+                  for edges, centers in zip(vor.ridge_vertices, vor.ridge_points)}
 ```
 
 #### Building the triangulation
@@ -115,15 +116,15 @@ for (ip, p), (iq, q) in vor_ridges.values():
     vertices[ip] = p
     vertices[iq] = q
     adjacency[min(ip, iq)].append(max(ip, iq))
-           
-# Build triangles for adjacent cells 
+
+# Build triangles for adjacent cells
 triangles = []
 for p, neighbours in adjacency.items():
 auxp = set(adjacency[p])
 for i, q in enumerate(neighbours):
     auxq = auxp & (set(adjacency[q]))
     for r in neighbours[i+1:]:
-        if max(q,r) in adjacency[min(q, r)] and 
+        if max(q,r) in adjacency[min(q, r)] and
            len(list(auxq.intersection(adjacency[r]))) == 0:
             triangles.append(mp.Polygon(
 		[vertices[p], vertices[q], vertices[r]], closed=True))
@@ -135,9 +136,9 @@ for i, q in enumerate(neighbours):
 
 ### <i class="fa fa-circle" style="font-size:12px"></i> <i class="fa fa-circle" style="font-size:12px"></i> <i class="fa fa-circle" style="font-size:12px"></i> Alpha Complexes
 
-As we have seen in the previous example, the Delaunay triangluation yields a much more interesting result shape than the convex hull. However, it produces a dense partition of the space and in particular doesn't recover <span class="keyword">topological information</span> from the shape such as holes or connected components.
+As we have seen in the previous example, the Delaunay triangulation yields a much more interesting result shape than the convex hull. However, it produces a dense partition of the space and in particular doesn't recover <span class="keyword">topological information</span> from the shape such as holes or connected components.
 
-Alpha complexes are a susbset of the Delaunay Triangulation that tackles this issue. As previously, we will use a dual structure. More specifically, Alpha complexes are defined as the dual construction of the <span class="keyword">restricted Voronoi diagram</span>, $$Vor_r(S)$$. Which is simply the intersection of the Voronoi diagram with balls of radius $$r$$ centered on every point in $$S$$.
+Alpha complexes are a subset of the Delaunay Triangulation that tackles this issue. As previously, we will use a dual structure. More specifically, Alpha complexes are defined as the dual construction of the <span class="keyword">restricted Voronoi diagram</span>, $$Vor_r(S)$$. Which is simply the intersection of the Voronoi diagram with balls of radius $$r$$ centered on every point in $$S$$.
 
 \begin{align}
 Vor_r(S) = \left[ V_x \cap B_{r}(x),\ \forall x \in S \right]
@@ -170,7 +171,7 @@ a = slope**2 + 1
 b = 2 * (slope * (intersect - center[1]) - center[0])
 c = center[0]**2 + (intersect - center[1])**2 - r**2
 
-# Case 2: No intersection 
+# Case 2: No intersection
 delta = b**2 - 4*a*c
 if delta <= 0:
     return [], False, False
@@ -192,35 +193,35 @@ check = False # check will be True iff [p2, q2] n [p, q] is empty
 
 # Case 3: p is not in the circle
 if not is_in_circle(p, center, r):
-    x = (- b - np.sqrt(delta)) / (2 * a) 
+    x = (- b - np.sqrt(delta)) / (2 * a)
     pt1 = np.array([x, slope*x + intersect])
     check = not is_in_pq(x)
 
 # Case 4: q is not in the circle
 if not is_in_circle(q, center, r):
-    x = (- b + np.sqrt(delta)) / (2 * a) 
+    x = (- b + np.sqrt(delta)) / (2 * a)
     pt2 = np.array([x, slope*x + intersect])
     check = (check or cp) and (not is_in_pq(x))
 
 # Case 5: neither p or q are inside the circle
-return ([], False, False) if check else 
+return ([], False, False) if check else
     ([(pt1, pt2)],  is_in_circle(p, center, r),  is_in_circle(q, center, r))
 ```
 
 #### Building the restricted Voronoi diagram
-Once we have this construction, we can build the restricted Voronoi Diagram. We consider every segment $$[p, q]$$ of the Voronoi diagram. Let us denote $$V_x$$ and $$v_y$$ the two Voronoi cells that lie on both sides of $$[p, q]$$; we say $$[p, q]$$ is a <i>ridge</i> between $$V_x$$ and $$V_y$$. 
+Once we have this construction, we can build the restricted Voronoi Diagram. We consider every segment $$[p, q]$$ of the Voronoi diagram. Let us denote $$V_x$$ and $$v_y$$ the two Voronoi cells that lie on both sides of $$[p, q]$$; we say $$[p, q]$$ is a <i>ridge</i> between $$V_x$$ and $$V_y$$.
 
-We need to compute the intersections between $$[p, q]$$ and $$B(x, r)$$ (or equivalently, $$B(y ,r)$$, since by definition of the Voronoi diagram, any point on the ridge is equidistant from $$x$$ and $$y$$). 
+We need to compute the intersections between $$[p, q]$$ and $$B(x, r)$$ (or equivalently, $$B(y ,r)$$, since by definition of the Voronoi diagram, any point on the ridge is equidistant from $$x$$ and $$y$$).
 A restricted Voronoi cell is represented as a sequence of edges $$[(p_0, q_0), \dots (p_n, q_n)]$$, where $$[p_i, q_i]$$ is a segment. Furthermore, either $$q_i = p_{i + 1}$$, or $$q_i \neq p_{i + 1}$$ in which case $$q_i$$ and $$p_{i + 1}$$ are joint by a circle segment.
 
 ```python
 for center, region, region_indices, edge_indices in vor_regions:
-    restr_region = [] 
+    restr_region = []
     for i, p in enumerate(region):
         q = region[(i + 1) % len(region)]
         inter, clip_p, clip_q = line_circle_intersection(p, q, center, r)
         restr_region.extend(inter)
-        restricted_voronoi_cells.append((center, restr_region)) 
+        restricted_voronoi_cells.append((center, restr_region))
 ```
 
 #### Building the alpha complex
@@ -261,4 +262,3 @@ To highlight this, I also generate an animation of the restricted Voronoi diagra
 <div style="text-align:center">
 <img src="/notebooks/2016_08_01_AlphaComplexes/animation.gif">
 </div>
-

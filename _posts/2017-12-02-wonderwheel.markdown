@@ -5,13 +5,14 @@ date:   2017-12-02 10:00:00 +0200
 tags: visualization, css
 categories: projects
 thumb: /images/thumbs/wonderwheel.png
+description: "Wonderwheel is a small data visualization project for representing images color distributions."
 ---
 
 
 
 Wonderwheel is a small data visualization project for representing images color distributions.
- More specifically, an image is represented as <span class="keyword">three separate hue histograms</span> for visually black pixels, visually white pixel, and the rest (perceived color inormation).
-Finally, I generate the histogram at different stages of blurriness of the image (in decreasing order) to obtain an animation, displayed with pure <span class="inline-code">HTML/CSS</span>. 
+ More specifically, an image is represented as <span class="keyword">three separate hue histograms</span> for visually black pixels, visually white pixel, and the rest (perceived color information).
+Finally, I generate the histogram at different stages of blurriness of the image (in decreasing order) to obtain an animation, displayed with pure <span class="inline-code">HTML/CSS</span>.
 
 <link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image2.css">
 <link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image3.css">
@@ -26,7 +27,7 @@ Finally, I generate the histogram at different stages of blurriness of the image
 
 <div style="width:444px; height:444px; position:relative; top:10px; left:0px; float:left">
     <img style="border-radius: 50%; border: 0; top: 122px; left:122px; height: 200px; width:200px; position:relative" src="/notebooks/2017_12_02_wonderwheel/images/image2.jpeg">
-    
+
        <div class ="frame">
            <div class="bar" id="bar0_black"></div>
            <div class="bar" id="bar0_white"></div>
@@ -271,7 +272,7 @@ Finally, I generate the histogram at different stages of blurriness of the image
 
 <div style="width:444px; height:444px; margin-bottom:25px; margin-left:50%; top:10px; position:relative">
     <img style="border-radius: 50%; border: 0; top: 122px; left:122px; height: 200px; width:200px; position:relative" src="/notebooks/2017_12_02_wonderwheel/images/image3.jpeg">
-    
+
 <div class ="frame">
    <div class="bar2_" id="bar2_0_black"></div>
    <div class="bar2_" id="bar2_0_white"></div>
@@ -522,7 +523,7 @@ The first step is to extract black, white and color pixels from the image. I fir
 hue, sat, val = np.split(colors.rgb_to_hsv(image / 255.), 3, axis=-1)
 ```
 
-I then extract black (resp. white) pixels as pixels whose value is below (resp. above) a certain threhsold
+I then extract black (resp. white) pixels as pixels whose value is below (resp. above) a certain threshold
 
 ```python
 black_values = np.where(val < black_value_threshold)
@@ -539,7 +540,7 @@ black_hist[np.isnan(black_hist)] = 0.
 ```python
 hue[white_values] = -1
 hue[black_values] = -1
-weights = sat**sat_weight * np.abs(hue - np.mean(hue[hue >= 0])) 
+weights = sat**sat_weight * np.abs(hue - np.mean(hue[hue >= 0]))
 hue_hist, _ = np.histogram(hue, bins=hue_bins, weights=weights)
 ```
 
@@ -549,10 +550,10 @@ And the color of the histogram bar should take into account the average saturati
 ```python
 data['colors'] = []
 for i, bin_center in enumerate(hue_bins):
-index = np.where((hue > bin_center  - bins_offset) & 
+index = np.where((hue > bin_center  - bins_offset) &
                  (hue < bin_center + bins_offset))
 color = colorsys.hsv_to_rgb(bin_center,
-			    np.mean(sat[index]), 
+			    np.mean(sat[index]),
 			    np.mean(val[index]))
 data['colors'].append(color)
 ```
@@ -565,9 +566,9 @@ data['colors'].append(color)
 
 
 ### <i class="fa fa-paint-brush"></i> Visualization
-Finally, I added a small animation component for the visualization. 
+Finally, I added a small animation component for the visualization.
 
-First I generate a color histogram for a given image  at different stage of bluriness (Gaussian filter with decreasing variance); The intuition is that the most important or salient colors will be present at a high-level while details will start appearing at fine-grained reoslution.
+First I generate a color histogram for a given image  at different stage of blurriness (Gaussian filter with decreasing variance); The intuition is that the most important or salient colors will be present at a high-level while details will start appearing at fine-grained resolution.
 
 ```python
 resolutions = np.linspace(40., 0., num_resolutions, endpoint=True)
@@ -576,17 +577,17 @@ img = ndimage.gaussian_filter(image, sigma=r)
 aux = create_equalizer(img, num_bins=num_bins)
 data = np.concatenate([data, aux])
 ```
- 
+
 And finally, the animation is created by representing each bar as a rectangular div with transition animation.
 
-```python               
+```python
 # Define bar template
 bar_template = """
 #{name} {
 left: {pos_left}px;
 top: {pos_top}px;
 background-color: rgb({r}, {g}, {b});
--webkit-animation: {name}_anim {duration}s ease-out infinite ; 
+-webkit-animation: {name}_anim {duration}s ease-out infinite ;
 animation: {name}_anim {duration}s ease-out infinite;
 -ms-transform: rotate({rot}deg); /* IE 9 */
 -webkit-transform: rotate({rot}deg); /* Safari */
@@ -611,7 +612,7 @@ else:
     for i in range(len(times)):
         template += "%d%% {height: %dpx; background:rgb(%d, %d, %d)}\n" % (
             times[i], int(heights[i]), colors[i][0], colors[i][1], colors[i][2])
-template =  """       
+template =  """
 @-webkit-keyframes
 {name}_anim {
     {content}
@@ -619,4 +620,3 @@ template =  """
 """.format(name=name, content=template)
 return template
 ```
-

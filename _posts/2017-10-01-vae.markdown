@@ -5,16 +5,17 @@ date:   2017-10-01 10:00:00 +0200
 tags: generative, tensorflow
 categories: projects
 thumb: /images/thumbs/vae.jpg
+description: "This post presents a simple introduction and Tensorflow implementation of the Variational Auto-encoder model (VAE)."
 ---
 
 This post presents a simple Tensorflow implementation of the Variational Auto-encoder model (VAE) introduced in <a href="https://arxiv.org/abs/1312.6114" target="_blank"><i>Auto-Encoding Variational Bayes</i>, D. Kingma, M. Welling, ICLR 2017</a>, that I will apply to the <a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA</a> faces dataset here.
 
-     
+
 ### <i class="fa fa-edit"></i> Model
 
 Variational Auto-encoders (VAE) are <span class="keyword">probabilistic generative models</span> relying on a simple latent representation that captures the input data intrinsic properties. Given latent code $$z$$ sampled from a prior distribution <span>$$p_{\theta}(z)$$</span>, we generate a sample $$x$$ from the conditional <span>$$p_{\theta}(x\ |\ z)$$</span>. The goal is to learn the parameters of this generative model as well as how to map data points to latent codes.
 
-In many cases however, the posterior distribution <span>$$p_{\theta}(z\ |\ x)$$</span> is intractable. It is instead approximated by a parametric model <span>$$q_{\phi}(z\ |\ x)$$</span>, where $$\phi$$ are called the variational parameters (see the graphical model below). In the following, we will drop the $$\theta$$ and $$\phi$$ notations for simplicity. 
+In many cases however, the posterior distribution <span>$$p_{\theta}(z\ |\ x)$$</span> is intractable. It is instead approximated by a parametric model <span>$$q_{\phi}(z\ |\ x)$$</span>, where $$\phi$$ are called the variational parameters (see the graphical model below). In the following, we will drop the $$\theta$$ and $$\phi$$ notations for simplicity.
 
 
 
@@ -31,10 +32,10 @@ In many cases however, the posterior distribution <span>$$p_{\theta}(z\ |\ x)$$<
 <img src='/notebooks/2017_10_1_VAE/interpolated_grid_660001.jpg' style="width:35%">
 </div>
 
-To summarize, a VAE is composed from an <span class="keyword">encoder</span> <span>$$q(z\ |\ x)$$</span>, which maps an input $$x$$  to a latent representation $$z$$, typically of much lower dimension, and a <span class="keyword">decoder</span> <span>$$p(x\ |\ z)$$</span> that generates sample $$x$$ from a latent code $$z$$. Both of these mappings are parametrized as neural networks in practice, and our goal is to find their optimal parameters by maximizing the data likelihood, $$p(x)$$. 
+To summarize, a VAE is composed from an <span class="keyword">encoder</span> <span>$$q(z\ |\ x)$$</span>, which maps an input $$x$$  to a latent representation $$z$$, typically of much lower dimension, and a <span class="keyword">decoder</span> <span>$$p(x\ |\ z)$$</span> that generates sample $$x$$ from a latent code $$z$$. Both of these mappings are parametrized as neural networks in practice, and our goal is to find their optimal parameters by maximizing the data likelihood, $$p(x)$$.
 
 
-#### Training objective 
+#### Training objective
 
 As the likelihood is intractable, we indeed derive the following <span class="keyword">variational lower bound</span> (also known as $${\mathcal L}_{ELBO}$$) on the  data log-likelihood:
 
@@ -70,18 +71,18 @@ The <span class="inline-code">get_inputs_queue</span> function returns a queue w
 
 ```python
 # Read Image from file
-inputs = {}    
+inputs = {}
 filename_queue = tf.train.string_input_producer(
     filenames, capacity=capacity, shuffle=False)
 _, reader = tf.WholeFileReader().read(filename_queue)
 image = tf.image.decode_jpeg(reader, channels=channels, name='decoder')
 inputs['image'] = image
-        
+
 # Preprocess the inputs
 with tf.variable_scope('inputs_preprocess'):
     inputs = preprocess_inputs(inputs)
-    
-# Batch and shuffle the inputs 
+
+# Batch and shuffle the inputs
 inputs = tf.train.shuffle_batch(
     inputs,  batch_size, capacity, min_after_dequeue)
 ```
@@ -94,7 +95,7 @@ with tf.control_dependencies([tf.assert_type(inputs['image'], tf.uint8)]):
    inputs['image'] = tf.image.convert_image_dtype(
        inputs['image'], tf.float32)
    inputs['image'] = (inputs['image'] - 0.5) * 2
-        
+
 # Central crop to minimal side
 height = tf.shape(inputs['image'])[0]
 width = tf.shape(inputs['image'])[1]
@@ -103,7 +104,7 @@ offset_height = (height - min_side) // 2
 offset_width = (width - min_side) // 2
 inputs['image'] = tf.image.crop_to_bounding_box(
     inputs['image'], offset_height, offset_width, min_side, min_side)
-    
+
 # Resize
 if size is not None and size > 0:
     inputs['image'] = tf.image.resize_images(inputs['image'], (size, size))
@@ -138,10 +139,10 @@ with tf.variable_scope('encoder', reuse=reuse):
         for i, num_filter in enumerate(num_filters):
             net = slim.conv2d(net, num_filter,
 	        [kernel_size, kernel_size], scope='conv%d' % (i + 1))
-                
+
     # Fully connected
     net = tf.contrib.layers.flatten(net)
-        
+
     with slim.arg_scope([slim.fully_connected],
 			weights_initializer=weights_initializer,
 			normalizer_fn=None,
@@ -176,9 +177,9 @@ with tf.variable_scope('decoder', reuse=reuse):
 
         # Upscale via deconvolutions
         for i, num_filter in enumerate(num_filters[1:]):
-            net = slim.conv2d_transpose(net, num_filter, 
+            net = slim.conv2d_transpose(net, num_filter,
 	        [kernel_size, kernel_size], scope='deconv%d' % (i + 2))
-            
+
         # Final deconvolution
         net = slim.conv2d_transpose(net, 3, [3, 3], stride=2,
 	    activation_fn=tf.nn.tanh, normalizer_fn=None, scope='deconv_out')
@@ -188,7 +189,7 @@ with tf.variable_scope('decoder', reuse=reuse):
 Now that we have the main architecture, we need to define the training loss function. In our particular setting, the $${\mathcal L}_{ELBO}$$ can be simplified as follows.
 
 First, $$\sigma_p$$ is taken as a constant in $$\mathbb{R}$$. This means we can simplify the reconstruction loss term in $${\mathcal L}_{ELBO}$$:
-	
+
 <div style="text-align: center; margin:10px">
 $$
 \begin{align}
@@ -207,7 +208,7 @@ Secondly, since the prior distribution and the encoder distribution are Gaussian
 $$
 \begin{align}
 \mbox{KL}(q(z\ |\ x)\ \|\ p(z)) &= \mbox{KL}\left(\mathcal{N}(\mu_q, \sigma_q)\ |\ \mathcal{N}(0, 1) \right)\\
- &= \frac{1}{2} \sum_{i=1}^d - \log (\sigma_q^i) - 1  + \sigma_q^i +  {\mu_q^i}^2 
+ &= \frac{1}{2} \sum_{i=1}^d - \log (\sigma_q^i) - 1  + \sigma_q^i +  {\mu_q^i}^2
 \end{align}
 $$
 </div>
@@ -228,7 +229,7 @@ $$
   * The  <span class="inline-code">latent loss</span> is the KL-divergence between the encoder distribution <span>$$q(z\ |\ x)$$</span> (Gaussian with diagonal covariance matrix) and the prior <span>$$p(z) = \mathcal{N}(z\ |\ 0, 1)$$</span>
   <div style="text-align:center">
 $$
-  \begin{align}  
+  \begin{align}
   \mathcal{L}_{latent}(\mu, \sigma) = 0.5 \left( \mu^2 + \sigma - \log(\sigma) - 1 \right)
   \end{align}
 $$
@@ -248,7 +249,7 @@ def get_latent_loss(z_mean, z_log_var, weight=1.0):
 #### Training
 
 Now we're ready for training. We will use the default Adam optimizer.
-In the original notebook, I additionally define a few utilities function for Tensorboard summaries. The main VAE summaries contain the image reconstructions, sample generations and scalar summary for losses. 
+In the original notebook, I additionally define a few utilities function for Tensorboard summaries. The main VAE summaries contain the image reconstructions, sample generations and scalar summary for losses.
 I also use a  <span class="inline-code">MonitoredTrainingSession</span> that will take care of starting the input queues, defining the summary writer etc.
 
 The following hyperparameters can be defined in the code:
@@ -266,41 +267,41 @@ The following hyperparameters can be defined in the code:
 
 
 ```python
-with tf.Graph().as_default():    
+with tf.Graph().as_default():
     ## Training Network
     for i in range(NUM_GPUS):
         # inputs
         with tf.name_scope('inputs_%d' % (i + 1)):
             inputs = get_inputs_queue(BASE_DIR, batch_size=BATCH_SIZE)
-            
+
         # outputs
         outputs = {}
         with tf.name_scope('model_%d' % i):
             with tf.device('/gpu:%d' % i):
                 # encode
                 outputs['z_means'], outputs['z_log_vars'] = encoder(
-                    inputs['image'], 
+                    inputs['image'],
                     NUM_ENCODER_FILTERS,
-                    NUM_DIMS, 
+                    NUM_DIMS,
                     reuse=i > 0)
                 # sample
                 z_eps = tf.random_normal((BATCH_SIZE, NUM_DIMS))
-                outputs['latent_z'] = (outputs['z_means'] + z_eps * 
+                outputs['latent_z'] = (outputs['z_means'] + z_eps *
                                        tf.exp(outputs['z_log_vars'] / 2))
                 # decode
                 outputs['reconstruction'] = decoder(
                     outputs['latent_z'],
-                    NUM_DECODER_FILTERS, 
+                    NUM_DECODER_FILTERS,
                     reuse=i > 0)
-    
-        # loss 
+
+        # loss
         with tf.name_scope('loss_%d' % i):
             pixel_loss =  get_pixel_loss(
 	        inputs['image'], outputs['reconstruction'])
             latent_loss = get_latent_loss(outputs['z_means'],
-					  outputs['z_log_vars'], 
+					  outputs['z_log_vars'],
                                           weight=LATENT_LOSS_WEIGHT)
-            
+
     # Optimization
     global_step = tf.contrib.framework.get_or_create_global_step()
     optimizer = tf.train.AdamOptimizer(
@@ -308,13 +309,13 @@ with tf.Graph().as_default():
     pixel_loss = tf.add_n(tf.get_collection('total_pixel_loss')) / NUM_GPUS
     latent_loss = tf.add_n(tf.get_collection('total_latent_loss')) / NUM_GPUS
     loss = pixel_loss + latent_loss
-    train_op = optimizer.minimize(loss, global_step=global_step, 
+    train_op = optimizer.minimize(loss, global_step=global_step,
                                   colocate_gradients_with_ops=True)
-    
+
     # Add update operations for Batch norm
-    update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS) 
+    update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
     train_op = tf.group(train_op, *update_ops)
-            
+
     ## Launch the training session
     try:
         with get_monitored_training_session() as sess:
@@ -322,7 +323,7 @@ with tf.Graph().as_default():
                     global_step_,loss_, _ = sess.run([global_step, loss, train_op])
                 print('\rStep %d: %.3f' % (global_step_, loss_), end='')
     except KeyboardInterrupt:
-        print('\nInterrupted at step %d' % global_step_)                    
+        print('\nInterrupted at step %d' % global_step_)
 ```
 
 #### Results

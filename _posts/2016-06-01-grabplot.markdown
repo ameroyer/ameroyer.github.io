@@ -5,6 +5,7 @@ date:   2016-06-01 10:00:00 +0200
 categories: projects
 tags: python, snippet
 thumb: /images/thumbs/grabplot.png
+description: "Grabplot is an interactive tool for plotting simple shapes on the integer lattices using a matplotlib backend. The resulting figure can be saved as a .poly file and fed to Triangulation softwares such as Triangle"
 ---
 
 
@@ -54,7 +55,7 @@ On a click event, the tracker first matches the target the closest point on the 
 
 ```python
 def accept_point(self, x, y):
-return ((abs(x - round(x)) < self.accept_thresh) and 
+return ((abs(x - round(x)) < self.accept_thresh) and
         (abs(y - round(y)) < self.accept_thresh))
 
 def __call__(self, event):
@@ -88,8 +89,8 @@ if event.key == 'x':
 ## Add a new line (hole or hull)
 elif event.key == 'h' or event.key == 'n' or event.key == 'enter':
     # Close previous line
-    if len(self.coords) and 
-       ((self.coords[-1][0][-1], self.coords[-1][1][-1]) != 
+    if len(self.coords) and
+       ((self.coords[-1][0][-1], self.coords[-1][1][-1]) !=
         (self.coords[-1][0][0], self.coords[-1][1][0])):
 
         self.coords[-1][0].append(self.coords[-1][0][0])
@@ -106,7 +107,7 @@ elif event.key == 'h' or event.key == 'n' or event.key == 'enter':
 We then write an <span class="keyword">I/O function</span> to output the given shape as a <span class="inline-code">.poly</span> file. A <span class="inline-code">.poly</span> file defines the vertices of the shape (newline separated), then the filled contours of the shape (as a list of points) and finally the holes in the shape , again as a list of point. In particular, this file format can be used as input format for <a href="https://www.cs.cmu.edu/~quake/triangle.html" target="_blank">Triangle</a> software for meshing or triangulation.
 
 
-```python            
+```python
 def output_poly(self):
     # Hull coordinates
     point_indices = {}
@@ -126,11 +127,11 @@ def output_poly(self):
             # Segments
             ind_end = len(point_indices)
             segs.extend(["%d %d %d" % (
-	    		 p, p, p + 1 if p < ind_end - 1 else ind_start) 
+	    		 p, p, p + 1 if p < ind_end - 1 else ind_start)
                          for p in range(ind_start, ind_end)])
             # Holes
             if hole:
-                holes.append("%d %s %s" % (len(holes) + 1, float(sum(xs)) / 
+                holes.append("%d %s %s" % (len(holes) + 1, float(sum(xs)) /
                                            len(xs), float(sum(ys)) / len(ys)))
 
         # Write
@@ -162,9 +163,9 @@ ax.set_yticks(range(0, window_size, 1))
 plt.xlim([0, window_size])
 plt.ylim([0, window_size])
 
-if background is not None:    
+if background is not None:
     from scipy.misc import imread
-    plt.imshow(imread(background), zorder=0, 
+    plt.imshow(imread(background), zorder=0,
                extent=[0., window_size, 0, window_size])
 plt.grid()
 
@@ -177,10 +178,10 @@ After plotting and closing the lines, I obtain the following rendition of the Gi
 
 <div style="text-align:center; margin-bottom:25px"><img src="/notebooks/2016_06_01 Grabplot/final_shape.png" width="45%"></div>
 
-Finally applying the <span class="inline-code">triangle</span> software on the output  <span class="inline-code">.poly</span> file yields the following triangulation of the generated verticles:
+Finally applying the <span class="inline-code">triangle</span> software on the output  <span class="inline-code">.poly</span> file yields the following triangulation of the generated vertices:
 
 
     triangle/triangle -p -g -q25 -a1 demo
     triangle/showme demo.1
-    
+
 <div style="text-align:center"><img src ="/notebooks/2016_06_01 Grabplot/output_plot.png" /></div>
