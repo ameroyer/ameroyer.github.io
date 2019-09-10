@@ -1,12 +1,9 @@
 [meta title:"Polya Urn Idyll" description:"Short description of your
 project" /]
 
-[Header fullWidth:true title:"Pólya Urn" subtitle:"An interactive study of the Pólya urn model" author:"Amélie Royer"
-authorLink:"https://pub.ist.ac.at/~aroyer/" date:`(new
-Date()).toDateString()` background:"#222222" color:"#ffffff" /]
 
 
-# Introduction
+### Introduction
 
 The Pólya urn model is a statistical experiment in which we study the distribution of two populations of distinctly colored balls in an urn. In its simplest form, the problem can be stated as follows:
 
@@ -35,12 +32,12 @@ Pólya urn with [equation]a =[/equation] [Dynamic value:a0_fig_urn max:12 min:1 
 [/div]
 
 
-This process is a good example of a model where small imbalances are magnified over time: In fact, the more balls of one color are drawn, the more this color is likely to be drawn. As such, it has been used to model for instance propoagation of epidemics in a population [(Hayhoe et al.)](https://arxiv.org/pdf/1705.02239.pdf) or the correlated dynamics between novelty events [(Tria et al, 2014)](https://www.nature.com/articles/srep05890). In the following, we study the dynamics of the model from a probabilistic point of view and its asymptotical properties, in particular with respect to the initial ratio of populations.
+This process is a good example of a model where small imbalances are magnified over time: In fact, the more balls of one color are drawn, the more this color is likely to be drawn. As such, it has been used to model for instance propagation of epidemics in a population [(Hayhoe et al.)](https://arxiv.org/pdf/1705.02239.pdf) or the correlated dynamics between novelty events [(Tria et al, 2014)](https://www.nature.com/articles/srep05890). In the following, we study the dynamics of the model from a probabilistic point of view and its asymptotical properties, in particular with respect to the initial ratio of populations.
 
 
-# Basic dynamics of the model
+### Basic dynamics of the model
 
-### Composition of the urn at step n
+#### Composition of the urn at step n
 Let us first express the *probability of having picked [equation] k [/equation] [span className:"popb"] blue[/span] objects after [equation]n \geq k[/equation] steps* of the experiment. Denoting by [equation]B_n[/equation] the number of blue balls at step  [equation]n[/equation], and by [equation]S_n[/equation] the sampling event at step [equation]n[/equation], taking value [span className:"popb"]1[/span] if a blue ball is sampled and  [span className:"popa"]0[/span] otherwise:
 
 [Equation display:true]
@@ -101,7 +98,7 @@ where [equation]\bar{\mathbf{s}}[/equation] is a shortcut notation for [equation
 [/div]
 
 
-### Probability of the next draw
+#### Probability of the next draw
 
 Following the previous result, we can now compute the probability of *picking a [span className:"popb"]blue[/span] ball at step [equation]n + 1[/equation]*, independently of the state of the urn at time [equation]n [/equation]:
 
@@ -158,9 +155,9 @@ In other words, the overall probability of the urn composition after [equation]n
 
 
 
-# Asymptotic behavior
+### Asymptotic behavior
 
-### Expected value
+#### Expected value
 
 Since various urn compositions can be reached from the same initial configuration  ([span className:"popa"][equation]a[/equation][/span], [span className:"popb"][equation]b[/equation][/span]),  one can also wonder what the urn composition looks like asymptotically, when the number of repeats [equation]n[/equation] goes to [equation] \infty[/equation].
 
@@ -208,7 +205,7 @@ observed values of [equation]Y_n[/equation] with [equation]a =[/equation] [Dynam
 
 
 
-### Link to the Dirichlet-multinomial distribution
+#### Link to the Dirichlet-multinomial distribution
 Going further, we can also study the convergence *in distribution* of the random variable [equation]Y_n[/equation]. First we observe that the probability distribution of [equation]Y_n[/equation] is directly linked to the one of [equation]B_n[/equation], that we expressed earlier.
 
 [Equation display:true]
@@ -238,7 +235,7 @@ Where the Gamma and Beta functions are defined as [equation]\Gamma: x \mapsto (x
 Note that, up to a simple rearrangement of terms in **Equation (4)**, we observe that [equation]Y_n[/equation] follows a [Dirichlet-multinomal](https://en.wikipedia.org/wiki/Dirichlet-multinomial_distribution) distribution with parameters [equation]\alpha = (a, b)[/equation]. And in fact, this distribution is also known as the *multivariate Pólya distribution* and can be generalized to urns with more than two color populations.
 
 
-### Asymptotic distribution
+#### Asymptotic distribution
 To prove a convergence in distribution, we want to look at *the limit of the repartition function* of [equation]Y_n[/equation], defined as [equation]F_{Y_n}(x) = \mathbb{P}(Y_n \leq x)[/equation], when the time step [equation]n \rightarrow \infty[/equation]. Using the previous simplified expression, we have:
 
 
@@ -295,7 +292,7 @@ The right-side term is exactly the repartition function of a [Beta distribution]
 [/div]
 
 
-# Generalized Pólya urn
+### Generalized Pólya urn
 We won't study such models here, but it is possible to extend the Pólya urn experiment to more flexible frameworks: Generalized Pólya urns follow the same workflow as the one we have been working with until now, but with different replacement values. More specifically, the experiment is described as follows:
 
 [div className:"definition"]
@@ -312,12 +309,12 @@ It is also possible to generalize the urn to an arbitrary number of colors, lead
 0& 1
 \end{pmatrix} = I_2[/equation]
 
-# References
+### References
 
-* *"A Polya Contagion Model for Networks"*, M. Hayhoe et al, 2017
+* *"A Pólya Contagion Model for Networks"*, M. Hayhoe et al, 2017
 * *"A survey of random processes with reinforcement"*, R. Pemantle, 2017
 * *"On generalized Pólya urn models"*, M. Chen and M. Kuba, 2011
 * *"Pólya urn models: Lecture Notes"*, N. Pouyanne, 2004
-* *"Rate of convergence of Polya's urn to the Beta distribution"*, J. Drinane, 2008
+* *"Rate of convergence of Pólya's urn to the Beta distribution"*, J. Drinane, 2008
 * "*The dynamics of correlated novelties"*, F. Tria et al, 2014
 * *"Urnes aléatoires, populations en équilibre et séries génératrices"*, B. Mallein, 2010

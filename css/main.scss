@@ -280,7 +280,6 @@ font-size: 10px
 
 .keyword{
     color: $gold;
-    font-weight: bold
 }
 
 
@@ -353,4 +352,15 @@ h2:after{
   width:100%; height:100%;
   margin-right:-100%;
   border-bottom:1px solid $orange;
+}
+
+
+a {
+    color: $orange;
+    text-decoration: none
+}
+
+a:hover { 
+    color: $orange;
+    text-decoration: underline
 }
