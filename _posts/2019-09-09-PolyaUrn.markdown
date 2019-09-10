@@ -18,15 +18,14 @@ Markup sources for this blog post can be found [here](https://github.com/ameroye
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-    <title>Polya Urn Idyll</title>
-    <meta property="og:title" content="Polya Urn Idyll" />
+    <title>An interactive study of the Pólya urn model</title>
+    <meta property="og:title" content="The Pólya Urn Model" />
     <meta charset="utf-8" />
     <meta property="og:type" content="article" />
+<meta property="og:image" content="http://ameroyer.github.io/images/thumbs/polya.png" />
 
-    <meta property="og:description" content="Short description of your
-project" />
-    <meta property="description" content="Short description of your
-project" />
+    <meta property="og:description" content="An interactive study of the Pólya Urn model" />
+    <meta property="description" content="An interactive study of the Pólya Urn model" />
     <link
       rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
