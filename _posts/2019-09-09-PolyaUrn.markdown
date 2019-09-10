@@ -8,7 +8,9 @@ thumb: /images/thumbs/polya.png
 description: "An interactive study of the Pólya Urn statistical model writen with the Idyll markup language"
 ---
 
-This interactive post was written with the [Idyll](https://idyll-lang.org/) markup language. Markup sources for this blog post can be found [here](https://github.com/ameroyer/ameroyer.github.io/blob/master/notebooks/2019_09_10_polya/index.idyll).
+This interactive post was written with the [Idyll](https://idyll-lang.org/) markup language. 
+
+Markup sources for this blog post can be found [here](https://github.com/ameroyer/ameroyer.github.io/blob/master/notebooks/2019_09_10_polya/index.idyll).
 
 <html lang="en" dir="ltr">
   <head>
