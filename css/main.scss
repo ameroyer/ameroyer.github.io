@@ -355,7 +355,7 @@ h2:after{
 }
 
 
-a {
+a, a:visited {
     color: $orange;
     text-decoration: none
 }
@@ -363,4 +363,12 @@ a {
 a:hover { 
     color: $orange;
     text-decoration: underline
+}
+
+em {
+    color: $gold;
+}
+
+strong {
+    font-weight: bold;
 }
