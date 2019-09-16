@@ -582,3 +582,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,fish & seafood,5.3,ACDGH,breaded fried fish/parsley potatoes
 2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,international,6.3,A,veal ragout/vegetable bulgur
 2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Dessert,,1.4,ACFGH,"""Esterházyschnitte"""
+2019,37,2019-09-16,2019-09-20,Monday,2019-09-16,Soups,,1.15,ACGL,beef broth/garnish
+2019,37,2019-09-16,2019-09-20,Monday,2019-09-16,Soups,,1.15,AG,creamed garlic soup
+2019,37,2019-09-16,2019-09-20,Monday,2019-09-16,Menus,home-style cooking,4.2,G,pork steak/rice/zaziki/herb butter
+2019,37,2019-09-16,2019-09-20,Monday,2019-09-16,Menus,vegetarian,5.3,CGH,roasted cauliflower/white whine mushroom sauce/polenta
+2019,37,2019-09-16,2019-09-20,Monday,2019-09-16,Menus,fish & seafood,6.3,BDH,paella/vegetables/seafood
+2019,37,2019-09-16,2019-09-20,Monday,2019-09-16,Dessert,,1.4,ACFG,lemon cake
+2019,37,2019-09-16,2019-09-20,Tuesday,2019-09-17,Soups,,1.15,ACGL,beef broth/garnish
+2019,37,2019-09-16,2019-09-20,Tuesday,2019-09-17,Soups,,1.15,AO,red beet apple soup
+2019,37,2019-09-16,2019-09-20,Tuesday,2019-09-17,Menus,vegetarian,4.2,AF,"seasonal salad with/pumpkin and runner beans/""Herzweckerl"""
+2019,37,2019-09-16,2019-09-20,Tuesday,2019-09-17,Menus,home-style cooking,5.3,G,chicken wings/potato chips/cocktail sauce
+2019,37,2019-09-16,2019-09-20,Tuesday,2019-09-17,Menus,international,6.3,GLO,"boiled beef/""Rösti"" potatoes/chive sauce/horseradish apple sauce"
+2019,37,2019-09-16,2019-09-20,Tuesday,2019-09-17,Dessert,,1.4,ACFGH,brownie
+2019,37,2019-09-16,2019-09-20,Wednesday,2019-09-18,Soups,,1.15,ACGL,beef broth/garnish
+2019,37,2019-09-16,2019-09-20,Wednesday,2019-09-18,Soups,,1.15,ACG,semolina soup
+2019,37,2019-09-16,2019-09-20,Wednesday,2019-09-18,Menus,vegetarian,4.2,A,porcino ravioli/parsley pesto/sunflower seeds
+2019,37,2019-09-16,2019-09-20,Wednesday,2019-09-18,Menus,home-style cooking,5.3,AC,pork schnitzel/Parisian style/parsley potatoes
+2019,37,2019-09-16,2019-09-20,Wednesday,2019-09-18,Menus,asia,6.3,E,Thai chicken curry/peanuts/rice
+2019,37,2019-09-16,2019-09-20,Wednesday,2019-09-18,Dessert,,1.4,ACG,pear cake
+2019,37,2019-09-16,2019-09-20,Thursday,2019-09-19,Soups,,1.15,ACGL,beef broth/garnish
+2019,37,2019-09-16,2019-09-20,Thursday,2019-09-19,Soups,,1.15,G,cream of potato soup/with pear
+2019,37,2019-09-16,2019-09-20,Thursday,2019-09-19,Menus,home-style cooking,4.2,AC,sausage dumpling/sauerkraut/caraway sauce
+2019,37,2019-09-16,2019-09-20,Thursday,2019-09-19,Menus,vegetarian,5.3,AL,spaghetti/piquant lentil bolognese
+2019,37,2019-09-16,2019-09-20,Thursday,2019-09-19,Menus,international,6.3,CG,veal roast/creamed polenta/broccoli
+2019,37,2019-09-16,2019-09-20,Thursday,2019-09-19,Dessert,,1.4,AFH,vegan carrot muffin
+2019,37,2019-09-16,2019-09-20,Friday,2019-09-20,Soups,,1.15,ACGL,beef broth/garnish
+2019,37,2019-09-16,2019-09-20,Friday,2019-09-20,Soups,,1.15,AF,fennel saffron soup
+2019,37,2019-09-16,2019-09-20,Friday,2019-09-20,Menus,vegetarian,4.2,ACG,zucchini pumpkin bake/salad/herb dip
+2019,37,2019-09-16,2019-09-20,Friday,2019-09-20,Menus,sweet dishes,5.3,ACG,Scheiterhaufen
+2019,37,2019-09-16,2019-09-20,Friday,2019-09-20,Menus,fish & seafood,5.3,ACGR,calamari fritti/potato chips
+2019,37,2019-09-16,2019-09-20,Friday,2019-09-20,Menus,international,6.3,ACG,chicken saltimbocca/gnocchi/basil sauce
+2019,37,2019-09-16,2019-09-20,Friday,2019-09-20,Dessert,,1.4,ACFGH,"""Dobosschnitte"""
