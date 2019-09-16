@@ -1,10 +1,208 @@
-.d3-component svg {
-  background: #ddd;
-  max-height: 300px;
+/* Formatting text portion for tutorial */
+.gif {
+  margin-top: 3vh;
+  width: 60vw;
 }
 
-@media all and (max-width: 1000px) {
-  .d3-component svg {
-    max-height: 200px;
+.article-header {
+  margin-top: 15vh;
+  margin-bottom: 30px;
+}
+
+.line {
+  background-color: black;
+  height: 0.10em;
+  margin-bottom: 4vh;
+}
+
+.arrow {
+  transform: scale(0.5);
+}
+
+.idyll-text-container {
+  width: 90vw;
+  max-width: 80vw !important; /* so not restricted to 600px */
+}
+
+/* Center imgs */
+.gif, .arrow, figcaption {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Some text and pre formatting */
+a {
+  color: #5BAFC1;
+  text-decoration: underline;
+}
+
+figcaption {
+  max-width: 30vw;
+  text-align: center;
+}
+
+figcaption p {
+  font-size: 0.8em !important;
+}
+
+h1, h2, h3 {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #5BAFC1;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+.byline {
+  font-size: 0.9em;
+}
+
+.text p, .idyll-step {
+  font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+  font-size: 14px;
+}
+
+
+
+.emphasize {
+  background-color: rgb(248, 241, 201);
+  color: black;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.25em;
+}
+
+.highlight pre, .code pre {
+  height: 50vh;
+}
+
+.idyll-root {
+  box-sizing: border-box;
+  margin: 0 0;
+  padding: 0;
+  margin-bottom: 60px;
+}
+
+/* Some formatting for the scroll and step boxes */
+.idyll-scroll {
+  margin-top: 0; 
+  width: 100vw;
+}
+
+/* Move the steps up and shorten them */
+.idyll-scroll-text .idyll-step {
+  max-width: 45vw;
+  position: relative;
+  top: -150vh;
+  padding: 4vw;
+}
+
+
+/* CSS for scroller portion of tutorial to follow along */
+.bar, .circle {
+  margin-left: 45vw;
+  background: transparent;
+  transition: 400ms linear all;
+}
+
+/* Format the graphics */
+.circle {
+  height: 35vh;
+}
+
+.bar {
+  width: 25vw;
+  height: 10vh;
+}
+
+/* Animations */
+.rotate1 {
+  transform: rotate(90deg);
+}
+
+.rotate2 {
+  transform: rotate(210deg);
+}
+
+.enlarge1 {
+  transform: scale(2);
+}
+
+.enlarge2 {
+  transform: scale(2.2);
+}
+
+/* Change graphic background based on Scroller id */
+#idyll-scroll-0 .idyll-scroll-graphic {
+  background:  rgb(241, 239, 224);
+}
+
+#idyll-scroll-1 .idyll-scroll-graphic {
+  background: #5BAFC1;
+}
+
+/* Decrease the margin depending on window size for steps */
+@media only screen and (min-width: 600px) {
+  .gif {
+    width: 40vw;
+  }
+
+  .idyll-scroll-text .idyll-step {
+    padding: 2vw;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .bar, .circle {
+    margin-left: 68vw;
+  }
+
+  .text p, .idyll-step {
+    font-size: 15px;
+  }
+
+  .idyll-scroll-text .idyll-step {
+    max-width: 40vw;
+  }
+
+  .idyll-text-container {
+    width: 45vw;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .bar, .circle {
+    margin-left: 75vw;
+  }
+
+  .text p, .idyll-step, p {
+    font-size: 25px;
+  }
+
+  pre {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 2.7em;
+  }
+
+  h2 {
+    font-size: 1.7em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+}
+
