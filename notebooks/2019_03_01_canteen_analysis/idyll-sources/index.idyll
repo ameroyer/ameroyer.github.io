@@ -8,6 +8,18 @@
 [div className:"line"][/div]
 [br/]
 
+
+[var name:"myDynamicData" value:`[]` /]
+[var name:"shouldLoad" value:`false` /]
+
+[WeightedWordList src:"./static/data/schnitzel-names.csv" load:`true` /]
+
+
+
+
+[br/]
+
+
 [div className:"text"]
     [p][a href:"https://idyll-lang.org/" target:"_blank"]Idyll's[/a] Scroller component is a useful way to incorporate
     more narrative structure into an article. As its name suggests, it provides a scroll-based presentation layout 
