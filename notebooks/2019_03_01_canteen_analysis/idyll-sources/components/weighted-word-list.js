@@ -19,7 +19,7 @@ class WeightedWordList extends D3Component {
 	var width = 960,
 	    height = 500;
 
-	const svg = (this.svg = d3.select(node).append('svg'));
+	var svg = (this.svg = d3.select(node).append('svg'));
 	svg.append("rect")
 	    .attr("width", "100%")
 	    .attr("height", "100%")
@@ -29,22 +29,16 @@ class WeightedWordList extends D3Component {
 	    .attr('viewBox', `0 0 ${width} ${height}`)
 	    .style('width', '100%')
 	    .style('height', '${height}');
-
-	var g = svg.append("g");
 	
-	d3.csv(props.src, function(data) {		
-	    console.log(data[0]);
 	    svg.selectAll("text")
-		.data(data)
+		.data(props.data)
 		.enter()
 		.append("text") // append text
-		.attr("x", 200)
-		.attr("y", 400)
-		.attr("dy", -7) // set y position of bottom of text
+		.attr("x", 100)
+	    .attr("y", function(d) { return d.count * 100;})
 		.style("fill", "black") // fill the text with the colour black
 		.attr("text-anchor", "middle") // set anchor y justification
-		.text( function(d) { d.count + 200; }); // define the text to display
-	});	
+		.text(function(d) {return d.name;}); // define the text to display	
     }
 
     update(props, oldProps) {

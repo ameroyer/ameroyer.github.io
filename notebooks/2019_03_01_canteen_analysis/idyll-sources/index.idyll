@@ -8,11 +8,13 @@
 [div className:"line"][/div]
 [br/]
 
+[data name:"cars" source:"schnitzel-names.csv" /]
+[Table data:cars defaultPageSize:5 /]
 
 [var name:"myDynamicData" value:`[]` /]
 [var name:"shouldLoad" value:`false` /]
 
-[WeightedWordList src:"./static/data/schnitzel-names.csv" load:`true` /]
+[WeightedWordList data:cars/]
 
 
 

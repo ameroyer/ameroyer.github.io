@@ -86,7 +86,7 @@ def workcloud(df, day=None):
 
 
 if __name__ == "__main__":
-    target_path = "idyll-sources/static/data"
+    target_path = "idyll-sources/data"
     source_path = "./sv_restaurant_data.csv"
     
     df = pd.read_csv(source_path)
