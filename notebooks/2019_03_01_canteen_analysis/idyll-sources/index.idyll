@@ -16,8 +16,9 @@
 
 [WeightedWordList data:cars/]
 
-
-
+[Loop value:cars]
+  [div]Item[/div][Display value:"_iterator.name" /][br/][Display value:`_iterator["name"]` /][br/]
+[/Loop]
 
 [br/]
 

@@ -2,22 +2,14 @@ const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 
+const transition_duration = 625;
+
 class WeightedWordList extends D3Component {
 
-    loadData(props) {
-	fetch(props.src)
-	    .then((response) => {
-		return response.text();
-	    }).then((text) => {
-		const parsed = d3.csvParse(text);
-		props.updateProps({ value: parsed });
-	    })
-    }
 
-    initialize(node, props) {
-	
+    initialize(node, props) {	
 	var width = 960,
-	    height = 500;
+	    height = 700;
 
 	var svg = (this.svg = d3.select(node).append('svg'));
 	svg.append("rect")
@@ -30,15 +22,21 @@ class WeightedWordList extends D3Component {
 	    .style('width', '100%')
 	    .style('height', '${height}');
 	
-	    svg.selectAll("text")
-		.data(props.data)
-		.enter()
-		.append("text") // append text
-		.attr("x", 100)
-	    .attr("y", function(d) { return d.count * 100;})
-		.style("fill", "black") // fill the text with the colour black
-		.attr("text-anchor", "middle") // set anchor y justification
-		.text(function(d) {return d.name;}); // define the text to display	
+	svg.selectAll("text")
+	    .data(props.data)
+	    .enter()
+	    .append("text") // append text
+	    .attr("x", 200)
+	    .attr("y", function(d) { return d.index * 40;})
+	    .attr("dy", 40)
+	    .attr("text-anchor", "middle") // set anchor y justification
+	    .style("font-size", function(d){return 12 + d.count * 3})
+	    .text(function(d) {return d.name;})
+	    .style("fill", "white") // make the body green
+	    .transition()
+	    .duration(transition_duration)
+	    .delay(function(d) {return d.index * transition_duration * 0.3;})
+	    .style("fill", "red"); // define the text to display	
     }
 
     update(props, oldProps) {
