@@ -8,18 +8,17 @@ class WeightedWordList extends D3Component {
 
 
     initialize(node, props) {	
-	var width = 960,
-	    height = 700;
+	var width = 960;
+	var height = 400;
 
 	var svg = (this.svg = d3.select(node).append('svg'));
-	svg.append("rect")
-	    .attr("width", "100%")
-	    .attr("height", "100%")
-	    .attr("fill", "white");
+	//svg.append("rect")
+	 //   .attr("width", "100%")
+	  //  .attr("height", "100%");
 	
 	svg
 	    .attr('viewBox', `0 0 ${width} ${height}`)
-	    .style('width', '100%')
+	    .style('width', '${width}')
 	    .style('height', '${height}');
 	
 	svg.selectAll("text")

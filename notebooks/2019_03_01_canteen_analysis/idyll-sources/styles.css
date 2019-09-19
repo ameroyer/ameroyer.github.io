@@ -144,11 +144,11 @@ h3 {
 
 /* Change graphic background based on Scroller id */
 #idyll-scroll-0 .idyll-scroll-graphic {
-  background:  rgb(241, 239, 224);
+  background: #25F3AD;
 }
 
 #idyll-scroll-1 .idyll-scroll-graphic {
-  background: #5BAFC1;
+  background: #5B1FC8;
 }
 
 /* Decrease the margin depending on window size for steps */
