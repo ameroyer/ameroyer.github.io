@@ -16,8 +16,8 @@ authorLink:"https://github.com/megan-vo"/]
 [data name:"schnitzelnames" source:"schnitzel-names.csv" /]
 [Scroller currentStep:barStep]
 
-[Graphic]
-[WeightedWordList data:schnitzelnames /]
+[Graphic className:"test"]
+[WeightedWordList data:schnitzelnames load:`barStep > 0` /]
 [/Graphic]
 
 [Step]
