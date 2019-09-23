@@ -1,84 +1,24 @@
 [meta title:"Stack Scroll" description:"Tutorial on Stacked Scrolling" /]
 
-[Header
-title:"Stacking Scroller Components"
-subtitle:"Introduction to leveraging multiple Scrollers in Idyll"
-author:"Megan Vo"
-authorLink:"https://github.com/megan-vo"/]
-[div className:"line"][/div]
-[br/]
-
-
-
-
-// Scroller Tutorial
-[var name:"barStep" value:0 /]
 [data name:"schnitzelnames" source:"schnitzel-names.csv" /]
-[Scroller currentStep:barStep]
+[var name:"pageStepSN" value:0 /]
 
-[Graphic className:"test"]
-[WeightedWordList data:schnitzelnames load:`barStep > 0` /]
+[Scroller currentStep:pageStepSN]
+[Graphic className:"step-graphic"]
+[WeightedWordList data:schnitzelnames load:`pageStepSN > 0` bg:"static/images/valentin-b-kremer-MzVxrOWYmQQ-unsplash.jpg" /]
+[Display value:pageStepSN /]
 [/Graphic]
 
 [Step]
-[p]The **bar** on the right belongs to this first Scroller component.[/p] 
+# The many names of Schnitzel
+Wednesday is commonly known as "Schnitzel day", but did you ever pay attention at the variety of Schnitzel we are offered ?
+[SVG src:"http://www.w3.org/2000/svg" /]
 
-Let's first look at how we can animate **within** a Scroller. Watch how it rotates 
-as you move to the next step.
-[/Step]
-[Step]
-[p]We've reached the next step! You can animate a graphic within a particular Scroller based on what step is entered.[/p]
-
-To keep track of the current step you are in, you can assign a variable to the Scroller's
-```currentStep``` prop and tie it to your graphic:
-
-```
-
-[var name:"barStep" value:0 /]
-[Scroller currentStep:barStep]
-[Graphic]
-[img src:"static/images/bar.svg" 
-className:`barStep === 0 ? "bar" : 
-"bar rotate" + barStep `/]
-[/Graphic]
-
-[Step]
-...
-[/Step]
-[/Scroller]
-```
 
 [/Step]
 
 [Step]
-Now we can write some basic transformations in the [span className:"emphasize"]style.css[/span] file to reflect the 
-```barStep``` prop updates:
-
-```css
-.bar {
-margin-left: 42vw;
-background: transparent;  
-width: 25vw;
-height: 10vh;
-transition: 400ms linear all;
-}
-
-.rotate1 {
-transform: rotate(90deg);
-}
-
-.rotate2 {
-transform: rotate(210deg);
-}
-
-```
-[/Step]
-
-[Step]
-[p]But let's say you want to include another graphic. We could stay here on this Scroller but it would 
-get a little messy... [/p]
-
-So let's **stack**!
+Here is the list of the different Schnitzel options, ordered by decreasing frequencies. There are [Display value: `schnitzelnames.length` format:"d" /]  unique options in total, which one is your favorite ?
 [/Step]
 [/Scroller]
 
@@ -90,6 +30,7 @@ So let's **stack**!
 [img src:"static/images/circle.svg"
 className:`circleStep === 0 ? "circle" : "circle enlarge" + circleStep `/]
 [/Graphic]
+
 [Step]
 [p]Welcome to the second Scroller! Like the first Scroller, we have kept
 track of the step we're on by passing a different variable to the ```currentStep``` prop: [/p]

@@ -4,11 +4,6 @@
   width: 60vw;
 }
 
-.article-header {
-  margin-top: 15vh;
-  margin-bottom: 30px;
-}
-
 .line {
   background-color: black;
   height: 0.10em;
@@ -22,6 +17,7 @@
 .idyll-text-container {
   width: 90vw;
   max-width: 80vw !important; /* so not restricted to 600px */
+  text-align: center;
 }
 
 /* Center imgs */
@@ -95,15 +91,15 @@ h3 {
 
 /* Some formatting for the scroll and step boxes */
 .idyll-scroll {
-  margin-top: 0; 
+  margin-top: 0;
   width: 100vw;
 }
 
 /* Move the steps up and shorten them */
 .idyll-scroll-text .idyll-step {
-  max-width: 45vw;
+    max-width: 45vw;
+    top: -190vh;
   position: relative;
-  top: -150vh;
   padding: 4vw;
 }
 
@@ -144,12 +140,17 @@ h3 {
 
 /* Change graphic background based on Scroller id */
 #idyll-scroll-0 .idyll-scroll-graphic {
-  background: #25F3AD;
+  background: GoldenRod ;
 }
 
 #idyll-scroll-1 .idyll-scroll-graphic {
-  background: #5B1FC8;
+    background: #5B1FC8;
 }
+
+#idyll-scroll-1 {
+    margin-top: -200vh;
+}
+
 
 /* Decrease the margin depending on window size for steps */
 @media only screen and (min-width: 600px) {
@@ -207,7 +208,10 @@ h3 {
 }
 
 
-.test {
+.step-graphic {
     margin-left: 45vw;
-    background-color: green;
+}
+
+img {
+    border: 1px solid black;
 }
