@@ -1,12 +1,15 @@
 [meta title:"Stack Scroll" description:"Tutorial on Stacked Scrolling" /]
 
-[data name:"schnitzelnames" source:"schnitzel-names.csv" /]
+
+
 [var name:"pageStepSN" value:0 /]
+[data name:"schnitzelnames" source:"schnitzel-names.csv" /]
+[data name:"schnitzeltypes" source:"schnitzel-types.csv" /]
+[data name:"schnitzelmeats" source:"schnitzel-meats.csv" /]
 
 [Scroller currentStep:pageStepSN]
 [Graphic className:"step-graphic"]
 [WeightedWordList data:schnitzelnames load:`pageStepSN > 0` bg:"static/images/valentin-b-kremer-MzVxrOWYmQQ-unsplash.jpg" /]
-[Display value:pageStepSN /]
 [/Graphic]
 
 [Step]
@@ -19,6 +22,11 @@ Wednesday is commonly known as "Schnitzel day", but did you ever pay attention a
 
 [Step]
 Here is the list of the different Schnitzel options, ordered by decreasing frequencies. There are [Display value: `schnitzelnames.length` format:"d" /]  unique options in total, which one is your favorite ?
+
+[div className:"charts"]
+[Float width:"49%" position:"left"][PieChart type:"pie" data:schnitzeltypes colorScale:"cool" padding:20  padAngle:5 innerRadius:100 /][/Float]
+[Float width:"49%" position:"right"][PieChart type:"pie" data:schnitzelmeats  colorScale:"cool" padding:40  padAngle:5 innerRadius:100 /][/Float]
+[/div]
 [/Step]
 [/Scroller]
 

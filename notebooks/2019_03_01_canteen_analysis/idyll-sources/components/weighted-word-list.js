@@ -3,11 +3,13 @@ const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 
 const transition_duration = 500;
-const padding = 30;
+const padding = 35;
 const base_font_size = 8;
 const width = 200;
-const height = 200;
+const height = 225;
 const image_offset_x = 15;
+const font_color =  "#fe9001";
+const font_color2 =  "#fe5e31";
 
 function load_text(svg, data) {
     let hstep = (height - padding) / data.length;
@@ -16,13 +18,14 @@ function load_text(svg, data) {
 	.data(data)
 	.enter()
 	.append("text") 
+	.attr("font-family", "Verdana, Geneva, sans-serif")
 	.attr("text-anchor", "middle")
 	.attr("x", width / 2)
 	.attr("y", function(d) { return d.index * hstep;})
 	.attr("dy", padding)
 	.style("font-size", function(d){return base_font_size + d.count })
 	.text(function(d) {return d.name;})
-	.style("fill", "white") 
+	.style("fill", function(d) {return (d.index % 2 == 0) ? font_color2 : font_color; }) 
 	.style("opacity", 0.)
 	.transition()
 	.duration(transition_duration)
@@ -33,7 +36,12 @@ function load_text(svg, data) {
 class WeightedWordList extends D3Component {
     
     initialize(node, props) {
-	var svg = (this.svg = d3.select(node).append('svg'));	
+	var svg = (this.svg = d3.select(node).append('svg'));
+	//svg.append("rect")
+	 //   .attr("width", "100%")
+	 //   .attr("height", "100%")
+	 //   .attr("fill", "white");
+	
 	svg
 	    .attr('viewBox', `0 0 ${width} ${height}`)
 	    .style('width', '100%')
