@@ -1670,3 +1670,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,40,2020-10-05,2020-10-09,Friday,2020-10-09,Menus,fish & seafood,5.3,ACDG,breaded fried codfish/rice
 2020,40,2020-10-05,2020-10-09,Friday,2020-10-09,Menus,international,6.3,AL,lamb roast/onion potatoes/carrots
 2020,40,2020-10-05,2020-10-09,Friday,2020-10-09,Dessert,,1.4,ACFG,chocolate cake
+2020,41,2020-10-12,2020-10-16,Monday,2020-10-12,Soups,,1.15,ACGL,beef broth/garnish
+2020,41,2020-10-12,2020-10-16,Monday,2020-10-12,Soups,,1.15,AG,Styrian sour cream soup
+2020,41,2020-10-12,2020-10-16,Monday,2020-10-12,Menus,home-style cooking,4.2,ACGMO,gratinated/meat pancake/parsley potatoes/tartare sauce
+2020,41,2020-10-12,2020-10-16,Monday,2020-10-12,Menus,vegetarian,5.3,ACG,Tyrolean dumplings/(cheese and spinach)/cabbage with leeks
+2020,41,2020-10-12,2020-10-16,Monday,2020-10-12,Menus,fish & seafood,6.3,ADGL,herbed trout fillet/potato celery mash/red beet couscous
+2020,41,2020-10-12,2020-10-16,Monday,2020-10-12,Dessert,,1.4,ACFGH,"""Malakoffschnitte"""
+2020,41,2020-10-12,2020-10-16,Tuesday,2020-10-13,Soups,,1.15,ACGL,beef broth/garnish
+2020,41,2020-10-12,2020-10-16,Tuesday,2020-10-13,Soups,,1.15,L,minestrone
+2020,41,2020-10-12,2020-10-16,Tuesday,2020-10-13,Menus,vegetarian,4.2,ACFGL,spring rolls/Asian vegetables/rice
+2020,41,2020-10-12,2020-10-16,Tuesday,2020-10-13,Menus,home-style cooking,5.3,AG,cabbage pork stew/caraway potatoes
+2020,41,2020-10-12,2020-10-16,Tuesday,2020-10-13,Menus,international,6.3,ACG,Montafon chicken fillet/bacon leek sauce/spinach spaetzle
+2020,41,2020-10-12,2020-10-16,Tuesday,2020-10-13,Dessert,,1.4,ACG,apple strudel
+2020,41,2020-10-12,2020-10-16,Wednesday,2020-10-14,Soups,,1.15,ACGL,beef broth/garnish
+2020,41,2020-10-12,2020-10-16,Wednesday,2020-10-14,Soups,,1.15,AG,Lungau bread soup
+2020,41,2020-10-12,2020-10-16,Wednesday,2020-10-14,Menus,vegetarian,4.2,ACG,potato vegetable strudel/leaf salad/herb dip
+2020,41,2020-10-12,2020-10-16,Wednesday,2020-10-14,Menus,home-style cooking,5.3,AC,breaded fried/turkey schnitzel/parsley potatoes
+2020,41,2020-10-12,2020-10-16,Wednesday,2020-10-14,Menus,mediterranean,6.3,H,lamb ragout/broccoli/almond balls
+2020,41,2020-10-12,2020-10-16,Wednesday,2020-10-14,Dessert,,1.4,ACGH,"""Punschschnitte"""
+2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Soups,,1.15,L,clear vegetable soup
+2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Soups,,1.15,AGL,cream of celery soup
+2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Menus,ethno food,4.2,FL,"""Acht Schätze""/rice"
+2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Menus,vegetarian,5.3,G,potato pizza/leaf salad/garlic dip
+2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Menus,international,6.3,AGLO,venison ragout/blackberry sauce/polenta
+2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Dessert,,1.4,ACFGH,"""Mozartschnitte"""
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Soups,,1.15,ACGL,beef broth/garnish
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Soups,,1.15,AGL,cream of vegetable soup
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,vegetarian,4.2,AFG,"""Kärntner Kasnudeln""/Carinthian filled pasta/butter/chive"
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,sweet dishes,5.3,ACG,apricot pancake
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,fish & seafood,5.3,ACDG,crusted hake/parsley potatoes
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,international,6.3,AGL,"boiled beef/green beans with dill/""Rösti"" potatoes"
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Dessert,,1.4,ACF,chocolate muffin
