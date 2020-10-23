@@ -1701,3 +1701,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,fish & seafood,5.3,ACDG,crusted hake/parsley potatoes
 2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,international,6.3,AGL,"boiled beef/green beans with dill/""Rösti"" potatoes"
 2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Dessert,,1.4,ACF,chocolate muffin
+2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Soups,,1.15,ACGL,beef broth/garnish
+2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Soups,,1.15,AGO,Tyrolean wine soup
+2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Menus,home-style cooking,4.2,ACG,gratinated/farfalle with ham/herb dip/leaf salad
+2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Menus,vegetarian,5.3,A,mango curry/herb bulgur
+2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Menus,fish & seafood,6.3,D,grilled fish fillet/pumpkin/rosemary potatoes
+2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Dessert,,1.4,ACFG,"""Rehrücken"""
+2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Soups,,1.15,ACGL,beef broth/garnish
+2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Soups,,1.15,A,cream of tomato soup
+2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Menus,vegetarian,4.2,AG,baked potato/ratatouille/sour cream
+2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Menus,home-style cooking,5.3,ACG,cheese dumpling/bacon/warm cabbage salad
+2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Menus,international,6.3,G,turkey steak/zaziki/herb rice
+2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Dessert,,1.4,ACG,poppy seed pear cake
+2020,42,2020-10-19,2020-10-23,Wednesday,2020-10-21,Soups,,1.15,ACGL,beef broth/garnish
+2020,42,2020-10-19,2020-10-23,Wednesday,2020-10-21,Soups,,1.15,AG,Vorarlberg cheese soup
+2020,42,2020-10-19,2020-10-23,Wednesday,2020-10-21,Menus,vegetarian,4.2,AF,tagliatelle verdi/roasted tofu/dried tomatoes
+2020,42,2020-10-19,2020-10-23,Wednesday,2020-10-21,Menus,home-style cooking,5.3,AC,breaded fried/cured pork schnitzel/parsley potatoes
+2020,42,2020-10-19,2020-10-23,Wednesday,2020-10-21,Menus,asia,6.3,AF,"Asian-style beef/mushrooms, sprouts/jasmin rice"
+2020,42,2020-10-19,2020-10-23,Wednesday,2020-10-21,Dessert,,1.4,ACG,yogurt cake
+2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Soups,,1.15,L,clear vegetable soup
+2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Soups,,1.15,AF,cream of curryvegetable soup
+2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Menus,home-style cooking,4.2,ACG,"""Wildschönauer Ofenspeise""/dark bread/bacon/hard cheese"
+2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Menus,vegetarian,5.3,A,falafel/colorful salad/tomato salsa
+2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Menus,international,6.3,CG,grilled chicken fillet/pumpkin risotto/spinach
+2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Dessert,,1.4,ACGH,"""Kardinalschnitte"""
+2020,42,2020-10-19,2020-10-23,Friday,2020-10-23,Soups,,1.15,ACGL,beef broth/garnish
+2020,42,2020-10-19,2020-10-23,Friday,2020-10-23,Soups,,1.15,AG,creamed bean soup
+2020,42,2020-10-19,2020-10-23,Friday,2020-10-23,Menus,vegetarian,4.2,A,"""Briami""/Greek-style/potato vegetable casserole"
+2020,42,2020-10-19,2020-10-23,Friday,2020-10-23,Menus,sweet dishes,5.3,ACG,nut pancake
+2020,42,2020-10-19,2020-10-23,Friday,2020-10-23,Menus,fish & seafood,5.3,ACDGHM,breaded fried codfish fillet/potato cucumber salad
+2020,42,2020-10-19,2020-10-23,Friday,2020-10-23,Menus,international,6.3,ACG,Lavanttal pork roast/sauerkraut/potato dumpling
+2020,42,2020-10-19,2020-10-23,Friday,2020-10-23,Dessert,,1.4,ACGH,apple crumb cake
