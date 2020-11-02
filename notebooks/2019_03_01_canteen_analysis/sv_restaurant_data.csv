@@ -1763,3 +1763,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,43,2020-10-26,2020-10-30,Friday,2020-10-30,Menus,fish & seafood,5.3,ACDG,breaded fried coalfish/parsley potatoes
 2020,43,2020-10-26,2020-10-30,Friday,2020-10-30,Menus,international,6.3,A,lamb leg/green beans with bacon/onion potatoes
 2020,43,2020-10-26,2020-10-30,Friday,2020-10-30,Dessert,,1.4,ACFGH,nut nougat cake
+2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Soups,,1.15,ACGL,beef broth/garnish
+2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Soups,,1.15,AG,Styrian bread soup
+2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Menus,home-style cooking,4.2,AG,"chicken fillet/bacon leek sauce/""Rösti"" potatoes"
+2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Menus,vegetarian,5.3,CGO,mushroom risotto/rocket/grana
+2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Menus,fish & seafood,6.3,ADG,coalfish fillet/oven vegetables/potatoes/tomato spring onion salsa
+2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Dessert,,1.4,ACGH,"""Linzerschnitte"""
+2020,44,2020-11-02,2020-11-06,Tuesday,2020-11-03,Soups,,1.15,ACGL,beef broth/garnish
+2020,44,2020-11-02,2020-11-06,Tuesday,2020-11-03,Soups,,1.15,,vgetable curry soup
+2020,44,2020-11-02,2020-11-06,Tuesday,2020-11-03,Menus,vegetarian,4.2,ACG,penne/arrabiata sauce/grana cheese
+2020,44,2020-11-02,2020-11-06,Tuesday,2020-11-03,Menus,home-style cooking,5.3,,grilled chicken/rice with peas
+2020,44,2020-11-02,2020-11-06,Tuesday,2020-11-03,Menus,international,6.3,A,deer ragout/mushrooms/potato croquettes
+2020,44,2020-11-02,2020-11-06,Tuesday,2020-11-03,Dessert,,1.4,ACFG,pear chocolate cake
+2020,44,2020-11-02,2020-11-06,Wednesday,2020-11-04,Soups,,1.15,ACGL,beef broth/garnish
+2020,44,2020-11-02,2020-11-06,Wednesday,2020-11-04,Soups,,1.15,AG,mushroom soup
+2020,44,2020-11-02,2020-11-06,Wednesday,2020-11-04,Menus,vegetarian,4.2,A,lentil potato patties/marinated raw vegetables
+2020,44,2020-11-02,2020-11-06,Wednesday,2020-11-04,Menus,home-style cooking,5.3,AC,breaded fried chicken/salad/pumpkin seed oil
+2020,44,2020-11-02,2020-11-06,Wednesday,2020-11-04,Menus,asia,6.3,AF,beef rendang/coconut rice
+2020,44,2020-11-02,2020-11-06,Wednesday,2020-11-04,Dessert,,1.4,ACG,strawberry cake
+2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Soups,,1.15,L,clear vegetable soup
+2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Soups,,1.15,AG,cream of leek soup
+2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Menus,home-style cooking,4.2,ACF,sweet and sour pork/vegetable noodles
+2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Menus,vegetarian,5.3,GL,"oven-roasted /pumpkin wedges/vegetable ""Gröstl""/feta cheese"
+2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Menus,international,6.3,AC,beef goulash/home made spaetzle
+2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Dessert,,1.4,ACFG,coffee cream roulade
+2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Soups,,1.15,ACGL,beef broth/garnish
+2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Soups,,1.15,AG,cream of vegetable soup
+2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,vegetarian,4.2,ACG,farfalle with/vegetables and cabbage/herb dip
+2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,sweet dishes,5.3,ACG,apricot dumpling
+2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,fish & seafood,5.3,ACDFGL,fish and chips/garlic sauce
+2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,international,6.3,AG,veal roast/polenta/Brussels sprouts
+2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Dessert,,1.4,ACFGH,"""Esterházy cake"""
