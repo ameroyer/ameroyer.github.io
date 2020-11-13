@@ -1794,3 +1794,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,fish & seafood,5.3,ACDFGL,fish and chips/garlic sauce
 2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,international,6.3,AG,veal roast/polenta/Brussels sprouts
 2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Dessert,,1.4,ACFGH,"""Esterházy cake"""
+2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Soups,,1.15,ACGL,beef broth/garnish
+2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Soups,,1.15,A,cream of pumpkin soup
+2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Menus,home-style cooking,4.2,ACFM,cevapcici/french fries/onion mustard
+2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Menus,vegetarian,5.3,A,couscous-/chickpea casserole/pumpkin
+2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Menus,fish & seafood,6.3,,
+2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Dessert,,1.4,ACFGH,brownie
+2020,45,2020-11-09,2020-11-13,Tuesday,2020-11-10,Soups,,1.15,ACGL,beef broth/garnish
+2020,45,2020-11-09,2020-11-13,Tuesday,2020-11-10,Soups,,1.15,A,cream of carrot soup
+2020,45,2020-11-09,2020-11-13,Tuesday,2020-11-10,Menus,vegetarian,4.2,AF,soya goulasch/mushrooms/bulgur
+2020,45,2020-11-09,2020-11-13,Tuesday,2020-11-10,Menus,home-style cooking,5.3,A,fried sausage/sauerkraut/roasted potatoes
+2020,45,2020-11-09,2020-11-13,Tuesday,2020-11-10,Menus,international,6.3,,
+2020,45,2020-11-09,2020-11-13,Tuesday,2020-11-10,Dessert,,1.4,ACGHP,nut strudel
+2020,45,2020-11-09,2020-11-13,Wednesday,2020-11-11,Soups,,1.15,ACGL,beef broth/garnish
+2020,45,2020-11-09,2020-11-13,Wednesday,2020-11-11,Soups,,1.15,AG,cream of zucchini soup
+2020,45,2020-11-09,2020-11-13,Wednesday,2020-11-11,Menus,vegetarian,4.2,ANO,pumpkin-/runner bean goulash/bread roll
+2020,45,2020-11-09,2020-11-13,Wednesday,2020-11-11,Menus,home-style cooking,5.3,AC,breaded fried/cured pork schnitzel/parsley potatoes
+2020,45,2020-11-09,2020-11-13,Wednesday,2020-11-11,Menus,international,6.3,AEF,african peanut beef pot/rice
+2020,45,2020-11-09,2020-11-13,Wednesday,2020-11-11,Dessert,,1.4,ACG,pear cake
+2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Soups,,1.15,L,clear vegetable soup
+2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Soups,,1.15,A,cream of tomato soup
+2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Menus,home-style cooking,4.2,ACGO,"""Holzhackernockerl""/horseradish"
+2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Menus,vegetarian,5.3,,pumpkin with/safron coconut sauce/wild rice
+2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Menus,asia,6.3,ACF,Chicken Wok/Eggnoodles with vegetable
+2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Dessert,,1.4,AFH,vegan carrot muffin
+2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Soups,,1.15,ACGL,beef broth/garnish
+2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Soups,,1.15,AG,creamed garlic soup
+2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,vegetarian,4.2,ACG,canneloni with spinach/tomato-eggplant sauce/parmesan cheese
+2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,sweet dishes,5.3,ACG,yeast dumplings
+2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,fish & seafood,5.3,ACDGM,breaded fried codfish fillet/potato salad
+2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,international,6.3,AGL,boiled beef/dill beans/potatoe rösti
+2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Dessert,,1.4,ACFGH,"""Dobosschnitte"""
