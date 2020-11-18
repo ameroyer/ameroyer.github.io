@@ -1825,3 +1825,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,fish & seafood,5.3,ACDGM,breaded fried codfish fillet/potato salad
 2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,international,6.3,AGL,boiled beef/dill beans/potatoe rösti
 2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Dessert,,1.4,ACFGH,"""Dobosschnitte"""
+2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Soups,,1.15,ACGL,beef broth/garnish
+2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Soups,,1.15,AG,cream of corn soup
+2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Menus,home-style cooking,4.2,GM,"""Berner Würstel""/french fries/onion mustard"
+2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Menus,vegetarian,5.3,AFL,spaghetti/spicy tofu bolognese
+2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Menus,fish & seafood,6.3,,
+2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Dessert,,1.4,ACG,poppy seed strudel
+2020,46,2020-11-16,2020-11-20,Tuesday,2020-11-17,Soups,,1.15,ACGL,beef broth/garnish
+2020,46,2020-11-16,2020-11-20,Tuesday,2020-11-17,Soups,,1.15,AG,cream of vegetable soup
+2020,46,2020-11-16,2020-11-20,Tuesday,2020-11-17,Menus,vegetarian,4.2,ACG,gnocchi/cheese sauce/parmesan cheese
+2020,46,2020-11-16,2020-11-20,Tuesday,2020-11-17,Menus,home-style cooking,5.3,AC,meat dumpling/sauerkraut/caraway sauce
+2020,46,2020-11-16,2020-11-20,Tuesday,2020-11-17,Menus,international,6.3,,
+2020,46,2020-11-16,2020-11-20,Tuesday,2020-11-17,Dessert,,1.4,ACG,latte macchiato cake
+2020,46,2020-11-16,2020-11-20,Wednesday,2020-11-18,Soups,,1.15,ACGL,beef broth/garnish
+2020,46,2020-11-16,2020-11-20,Wednesday,2020-11-18,Soups,,1.15,AG,creamed caraway soup
+2020,46,2020-11-16,2020-11-20,Wednesday,2020-11-18,Menus,vegetarian,4.2,AM,lentil curry/basmati rice
+2020,46,2020-11-16,2020-11-20,Wednesday,2020-11-18,Menus,home-style cooking,5.3,ACGL,cordon bleu/vegetable rice
+2020,46,2020-11-16,2020-11-20,Wednesday,2020-11-18,Menus,asia,6.3,,
+2020,46,2020-11-16,2020-11-20,Wednesday,2020-11-18,Dessert,,1.4,ACG,curd cream cake
+2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Soups,,1.15,L,clear vegetable soup
+2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Soups,,1.15,AG,cream of broccoli soup
+2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Menus,home-style cooking,4.2,ACGO,"""Bauerngröstl""/horseradish"
+2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Menus,vegetarian,5.3,AG,polenta cakes/Greek vegetables/feta cheese
+2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Menus,international,6.3,,
+2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Dessert,,1.4,ACG,apricot cake
+2020,46,2020-11-16,2020-11-20,Friday,2020-11-20,Soups,,1.15,ACGL,beef broth/garnish
+2020,46,2020-11-16,2020-11-20,Friday,2020-11-20,Soups,,1.15,A,sweet potato soup
+2020,46,2020-11-16,2020-11-20,Friday,2020-11-20,Menus,vegetarian,4.2,ACG,cheese spaetzle/fried onions
+2020,46,2020-11-16,2020-11-20,Friday,2020-11-20,Menus,sweet dishes,5.3,ACG,white bread soufflé
+2020,46,2020-11-16,2020-11-20,Friday,2020-11-20,Menus,fish & seafood,5.3,ACDG,breaded fried plaice/parsley potatoes
+2020,46,2020-11-16,2020-11-20,Friday,2020-11-20,Menus,international,6.3,,
+2020,46,2020-11-16,2020-11-20,Friday,2020-11-20,Dessert,,1.4,ACFG,chocolate cake
