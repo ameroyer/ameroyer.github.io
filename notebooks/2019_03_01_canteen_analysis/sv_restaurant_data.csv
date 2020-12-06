@@ -1881,3 +1881,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,47,2020-11-23,2020-11-27,Friday,2020-11-27,Menus,fish & seafood,5.3,ACGR,calamari fritti/potato chips
 2020,47,2020-11-23,2020-11-27,Friday,2020-11-27,Menus,international,6.3,,
 2020,47,2020-11-23,2020-11-27,Friday,2020-11-27,Dessert,,1.4,ACF,chocolate muffin
+2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Soups,,1.15,ACGL,beef broth/garnish
+2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Soups,,1.15,A,carrot ginger soup
+2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Menus,home-style cooking,4.2,ACG,turkey rice stew/parmesan cheese
+2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Menus,vegetarian,5.3,ACGO,cheese dumpling/cabbage salad
+2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Menus,fish & seafood,6.3,,
+2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Dessert,,1.4,ACGH,"""Rehrücken"""
+2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Soups,,1.15,ACGL,beef broth/garnish
+2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Soups,,1.15,A,cream of tomato soup
+2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Menus,vegetarian,4.2,,vegetable curry/with apple/basmati rice
+2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Menus,home-style cooking,5.3,,
+2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Menus,international,6.3,ALO,boeuf stroganoff/vegetables/pasta
+2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Dessert,,1.4,ACG,poppy seed pear cake
+2020,48,2020-11-30,2020-12-04,Wednesday,2020-12-02,Soups,,1.15,ACGL,beef broth/garnish
+2020,48,2020-11-30,2020-12-04,Wednesday,2020-12-02,Soups,,1.15,AG,creamed herb soup
+2020,48,2020-11-30,2020-12-04,Wednesday,2020-12-02,Menus,vegetarian,4.2,ACG,stuffed zucchini/tomato sauce/parsley potatoes
+2020,48,2020-11-30,2020-12-04,Wednesday,2020-12-02,Menus,home-style cooking,5.3,ACM,breaded fried pork schnitzel/potato salad with/lamb's lettuce
+2020,48,2020-11-30,2020-12-04,Wednesday,2020-12-02,Menus,asia,6.3,,
+2020,48,2020-11-30,2020-12-04,Wednesday,2020-12-02,Dessert,,1.4,ACG,yogurt cake
+2020,48,2020-11-30,2020-12-04,Thursday,2020-12-03,Soups,,1.15,L,clear vegetable soup
+2020,48,2020-11-30,2020-12-04,Thursday,2020-12-03,Soups,,1.15,AG,cream of corn soup
+2020,48,2020-11-30,2020-12-04,Thursday,2020-12-03,Menus,home-style cooking,4.2,,
+2020,48,2020-11-30,2020-12-04,Thursday,2020-12-03,Menus,vegetarian,5.3,ACG,mushroom goulash/bread dumpling
+2020,48,2020-11-30,2020-12-04,Thursday,2020-12-03,Menus,international,6.3,ACF,chicken curry/vegetable wok/fried rice
+2020,48,2020-11-30,2020-12-04,Thursday,2020-12-03,Dessert,,1.4,ACGH,"""Kardinalschnitte"
+2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Soups,,1.15,ACGL,beef broth/garnish
+2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Soups,,1.15,AG,cream of vegetable soup
+2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Menus,vegetarian,4.2,ACG,oatmeal vegetable patties/raw vegetable salad/dip sauce
+2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Menus,sweet dishes,5.3,ACG,semolina pancake bits
+2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Menus,fish & seafood,5.3,ACDG,breaded fried fish/parsley potatoes
+2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Menus,international,6.3,,
+2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Dessert,,1.4,ACGH,apple crumb cake
