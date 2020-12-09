@@ -1912,3 +1912,33 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Menus,fish & seafood,5.3,ACDG,breaded fried fish/parsley potatoes
 2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Menus,international,6.3,,
 2020,48,2020-11-30,2020-12-04,Friday,2020-12-04,Dessert,,1.4,ACGH,apple crumb cake
+2020,49,2020-12-07,2020-12-11,Monday,2020-12-07,Soups,,1.15,ACGL,beef broth/garnish
+2020,49,2020-12-07,2020-12-11,Monday,2020-12-07,Soups,,1.15,AG,cream of spinach soup
+2020,49,2020-12-07,2020-12-11,Monday,2020-12-07,Menus,,4.2,,
+2020,49,2020-12-07,2020-12-11,Monday,2020-12-07,Menus,vegetarian,5.3,A,farfalle/eggplant tomato sauce
+2020,49,2020-12-07,2020-12-11,Monday,2020-12-07,Menus,fish & seafood,6.3,D,grilled salmon/oven-roasted vegetables/rosemary potatoes
+2020,49,2020-12-07,2020-12-11,Monday,2020-12-07,Dessert,,1.4,ACFG,Black Forest cake
+2020,49,2020-12-07,2020-12-11,Tuesday,2020-12-08,Soups,,1.15,,
+2020,49,2020-12-07,2020-12-11,Tuesday,2020-12-08,Soups,,1.15,,
+2020,49,2020-12-07,2020-12-11,Tuesday,2020-12-08,Menus,,4.2,,
+2020,49,2020-12-07,2020-12-11,Tuesday,2020-12-08,Menus,,5.3,,
+2020,49,2020-12-07,2020-12-11,Tuesday,2020-12-08,Menus,,6.3,,
+2020,49,2020-12-07,2020-12-11,Tuesday,2020-12-08,Dessert,,1.4,,
+2020,49,2020-12-07,2020-12-11,Wednesday,2020-12-09,Soups,,1.15,ACGL,beef broth/garnish
+2020,49,2020-12-07,2020-12-11,Wednesday,2020-12-09,Soups,,1.15,A,cream of sweet potatoes
+2020,49,2020-12-07,2020-12-11,Wednesday,2020-12-09,Menus,vegetarian,4.2,ACGH,"gnocchi/herb cheese sauce/radicchio, nuts"
+2020,49,2020-12-07,2020-12-11,Wednesday,2020-12-09,Menus,home-style cooking,5.3,ACG,turkey cordon bleu/rice with peas
+2020,49,2020-12-07,2020-12-11,Wednesday,2020-12-09,Menus,,6.3,,
+2020,49,2020-12-07,2020-12-11,Wednesday,2020-12-09,Dessert,,1.4,ACFG,blueberry muffin
+2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Soups,,1.15,L,clear vegetable soup
+2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Soups,,1.15,AGL,creamed celery soup
+2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Menus,home-style cooking,4.2,GM,"""Berner Würstel""/french fries/onion mustard"
+2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Menus,vegetarian,5.3,AGMO,Indian lentil dhal/cucumber ginger yogurt/pita bread
+2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Menus,,6.3,,
+2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Dessert,,1.4,ACG,raspberry cake
+2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Soups,,1.15,ACGL,beef broth/garnish
+2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Soups,,1.15,AG,mushroom soup
+2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Menus,vegetarian,4.2,G,potato pizza/colorful salad/chive dip
+2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Menus,,5.3,,
+2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Menus,international,6.3,,pork fillet/pilaw rice/Brussels sprouts
+2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Dessert,,1.4,ACFGH,nut nougat cake
