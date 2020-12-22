@@ -9,7 +9,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Soups,,1.1,AG,creamed garlic soup
 2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,vegetarian,4,AH,"pumpkin spinach pan/dates, nuts/bulgur"
 2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,home-style cooking,5,GM,"""Kasekrainer""/french fries/onion mustard"
-2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,international,6,ACG,gratinated chicken filet/with tomato & mozzarella/bell pepper and zucchini/herb pasta
+2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Menus,international,6,ACG,gratinated chicken filet/with tomato & mozzarella/bellpepper and zucchini/herb pasta
 2019,8,2019-02-25,2019-03-01,Tuesday,2019-02-26,Dessert,,1.3,,latte macchiato cake
 2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Soups,,1.1,ACGL,beef broth/garnish
 2019,8,2019-02-25,2019-03-01,Wednesday,2019-02-27,Soups,,1.1,A,minestrone
@@ -65,7 +65,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,10,2019-03-11,2019-03-15,Monday,2019-03-11,Soups,,1.1,AG,sour cream potato soup
 2019,10,2019-03-11,2019-03-15,Monday,2019-03-11,Menus,ethno food,4,ACF,sweet and sour pork/fried rice with egg
 2019,10,2019-03-11,2019-03-15,Monday,2019-03-11,Menus,vegetarian,5,A,whole wheat pasta with/cabbage and vegetables/small salad
-2019,10,2019-03-11,2019-03-15,Monday,2019-03-11,Menus,fish & seafood,6,ADG,salmon steak/safron sauce/bell pepper with zucchini/tender wheat
+2019,10,2019-03-11,2019-03-15,Monday,2019-03-11,Menus,fish & seafood,6,ADG,salmon steak/saffron sauce/bellpepper with zucchini/tender wheat
 2019,10,2019-03-11,2019-03-15,Monday,2019-03-11,Dessert,,1.3,ACG,cream cheese strudel
 2019,10,2019-03-11,2019-03-15,Tuesday,2019-03-12,Soups,,1.1,ACGL,beef broth/garnish
 2019,10,2019-03-11,2019-03-15,Tuesday,2019-03-12,Soups,,1.1,AG,cream of vegetable soup
@@ -80,7 +80,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,10,2019-03-11,2019-03-15,Wednesday,2019-03-13,Menus,asia,6,AF,"asia beef /spring onion, soya sprouts/rice noodles"
 2019,10,2019-03-11,2019-03-15,Wednesday,2019-03-13,Dessert,,1.3,ACG,yogurt cake
 2019,10,2019-03-11,2019-03-15,Thursday,2019-03-14,Soups,,1.1,ACGL,beef broth/garnish
-2019,10,2019-03-11,2019-03-15,Thursday,2019-03-14,Soups,,1.1,AG,creamed bell pepper soup
+2019,10,2019-03-11,2019-03-15,Thursday,2019-03-14,Soups,,1.1,AG,creamed bellpepper soup
 2019,10,2019-03-11,2019-03-15,Thursday,2019-03-14,Menus,home-style cooking,4,,chili con carne/bread roll
 2019,10,2019-03-11,2019-03-15,Thursday,2019-03-14,Menus,vegetarian,5,GH,Oriental rice/eggplant curry/mint yogurt
 2019,10,2019-03-11,2019-03-15,Thursday,2019-03-14,Menus,international,6,GM,turkey breast/tarragon sauce/carrots/brown rice
@@ -137,7 +137,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,12,2019-03-25,2019-03-29,Tuesday,2019-03-26,Dessert,,1.3,ACFG,coffee cream roulade
 2019,12,2019-03-25,2019-03-29,Wednesday,2019-03-27,Soups,,1.1,ACGL,beef broth/garnish
 2019,12,2019-03-25,2019-03-29,Wednesday,2019-03-27,Soups,,1.1,AG,cream of pea soup
-2019,12,2019-03-25,2019-03-29,Wednesday,2019-03-27,Menus,vegetarian,4,ACG,stuffed bell pepper/tomato sauce/boiled potatoes
+2019,12,2019-03-25,2019-03-29,Wednesday,2019-03-27,Menus,vegetarian,4,ACG,stuffed bellpepper/tomato sauce/boiled potatoes
 2019,12,2019-03-25,2019-03-29,Wednesday,2019-03-27,Menus,home-style cooking,5,AC,breaded fried chicken/salad
 2019,12,2019-03-25,2019-03-29,Wednesday,2019-03-27,Menus,asia,6,AGN,Oriental chicken/with dates/sesame rice/carrots
 2019,12,2019-03-25,2019-03-29,Wednesday,2019-03-27,Dessert,,1.3,ACG,strawberry cake
@@ -199,7 +199,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,14,2019-04-08,2019-04-12,Tuesday,2019-04-09,Dessert,,1.3,ACG,latte macchiato cake
 2019,14,2019-04-08,2019-04-12,Wednesday,2019-04-10,Soups,,1.1,ACGL,beef broth/garnish
 2019,14,2019-04-08,2019-04-12,Wednesday,2019-04-10,Soups,,1.1,AG,cream of spinach soup
-2019,14,2019-04-08,2019-04-12,Wednesday,2019-04-10,Menus,vegetarian,4,AC,bell peppers filled with/millet and vegetables/tomato sauce
+2019,14,2019-04-08,2019-04-12,Wednesday,2019-04-10,Menus,vegetarian,4,AC,bellpeppers filled with/millet and vegetables/tomato sauce
 2019,14,2019-04-08,2019-04-12,Wednesday,2019-04-10,Menus,home-style cooking,5,AC,chicken cordon bleu/rice
 2019,14,2019-04-08,2019-04-12,Wednesday,2019-04-10,Menus,asia,6,AH,Indian lamb curry/vegetables/almond rice
 2019,14,2019-04-08,2019-04-12,Wednesday,2019-04-10,Dessert,,1.3,ACG,yogurt fruit cake
@@ -353,7 +353,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,21,2019-05-27,2019-05-31,Monday,2019-05-27,Dessert,,1.3,ACFGH,"""Malakoffschnitte"""
 2019,22,2019-06-03,2019-06-07,Monday,2019-06-03,Soups,,1.15,ACGL,beef broth/garnish
 2019,22,2019-06-03,2019-06-07,Monday,2019-06-03,Soups,,1.15,AG,cream of kohlrabi soup
-2019,22,2019-06-03,2019-06-07,Monday,2019-06-03,Menus,ethno food,4.2,ACG,boueff stroganoff/noodles
+2019,22,2019-06-03,2019-06-07,Monday,2019-06-03,Menus,ethno food,4.2,ACG,boeuf stroganoff/noodles
 2019,22,2019-06-03,2019-06-07,Monday,2019-06-03,Menus,vegetarian,5.3,AFLNO,vegan burger/herb potatoes/grill sauce
 2019,22,2019-06-03,2019-06-07,Monday,2019-06-03,Menus,fish & seafood,6.3,AD,grilled hake/colorful vegetables/herb tender wheat
 2019,22,2019-06-03,2019-06-07,Monday,2019-06-03,Dessert,,1.4,ACG,cream cheese strudel
@@ -365,7 +365,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,22,2019-06-03,2019-06-07,Tuesday,2019-06-04,Dessert,,1.4,ACGH,tiramisu cake
 2019,22,2019-06-03,2019-06-07,Wednesday,2019-06-05,Soups,,1.15,ACGL,beef broth/garnish
 2019,22,2019-06-03,2019-06-07,Wednesday,2019-06-05,Soups,,1.15,AGL,cream of celery soup
-2019,22,2019-06-03,2019-06-07,Wednesday,2019-06-05,Menus,vegetarian,4.2,A,stuffed bell pepper/tomato sauce/boiled potatoes
+2019,22,2019-06-03,2019-06-07,Wednesday,2019-06-05,Menus,vegetarian,4.2,A,stuffed bellpepper/tomato sauce/boiled potatoes
 2019,22,2019-06-03,2019-06-07,Wednesday,2019-06-05,Menus,home-style cooking,5.3,AC,breaded fried /pork schnitzel/rice
 2019,22,2019-06-03,2019-06-07,Wednesday,2019-06-05,Menus,asia,6.3,ACF,roast beef strips/wok vegetables/egg noodles
 2019,22,2019-06-03,2019-06-07,Wednesday,2019-06-05,Dessert,,1.4,ACG,yogurt cake
@@ -389,7 +389,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,23,2019-06-10,2019-06-14,Tuesday,2019-06-11,Menus,international,6.3,A,turkey skewer/letcho/tomato rice
 2019,23,2019-06-10,2019-06-14,Tuesday,2019-06-11,Dessert,,1.4,ACFG,Black Forest cake
 2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Soups,,1.15,ACGL,beef broth/garnish
-2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Soups,,1.15,AG,cream of bell pepper soup
+2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Soups,,1.15,AG,cream of bellpepper soup
 2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Menus,vegetarian,4.2,ACG,macaroni/arabiatta sauce/parmesan cheese
 2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Menus,home-style cooking,5.3,AC,breaded fried/chicken schnitzel/rice
 2019,23,2019-06-10,2019-06-14,Wednesday,2019-06-12,Menus,asia,6.3,ACF,red beef curry/egg noodles
@@ -441,7 +441,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Soups,,1.15,A,cream of tomato soup
 2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Menus,international,4.2,ACF,sweet and sour pork/vegetable noodles
 2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Menus,vegetarian,5.3,AG,polenta nuggets/colorful vegetables/chive dip
-2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Menus,fish & seafood,6.3,ADG,grilled salmon steak/safron sauce/wild rice/broccoli
+2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Menus,fish & seafood,6.3,ADG,grilled salmon steak/saffron sauce/wild rice/broccoli
 2019,27,2019-07-08,2019-07-12,Monday,2019-07-08,Dessert,,1.4,ACG,red currant meringue cake
 2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Soups,,1.15,ACGL,beef broth/garnish
 2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Soups,,1.15,AGL,cream of celery soup
@@ -450,7 +450,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Menus,fish & seafood,6.3,AD,grilled hake/colorful vegetables/herb tender wheat
 2019,28,2019-07-15,2019-07-19,Monday,2019-07-15,Dessert,,1.4,ACG,cream cheese strudel
 2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Soups,,1.15,ACGL,beef broth/garnish
-2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Soups,,1.15,A,cream of bell pepper soup
+2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Soups,,1.15,A,cream of bellpepper soup
 2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Menus,home-style cooking,4.2,AC,braised paprika chicken/home made spaetzle
 2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Menus,vegetarian,5.3,ACG,summer salad/crispy mozzarella sticks/tomato yogurt
 2019,29,2019-07-22,2019-07-26,Monday,2019-07-22,Menus,fish & seafood,6.3,ABCG,green noodles/dill sauce/shrimp skewer
@@ -513,7 +513,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Soups,,1.15,AG,cream of kohlrabi soup
 2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Menus,home-style cooking,4.2,ACG,pork escalope with/mushroom sauce/noodles
 2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Menus,vegetarian,5.3,AFG,soya gyros/zaziki/rice
-2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Menus,fish & seafood,6.3,AD,grilled pike perch filet/mangold potatoes/bell peppers
+2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Menus,fish & seafood,6.3,AD,grilled pike perch filet/mangold potatoes/bellpeppers
 2019,34,2019-08-26,2019-08-30,Monday,2019-08-26,Dessert,,1.4,ACG,cream cheese strudel
 2019,34,2019-08-26,2019-08-30,Tuesday,2019-08-27,Soups,,1.15,ACGL,beef broth/garnish
 2019,34,2019-08-26,2019-08-30,Tuesday,2019-08-27,Soups,,1.15,A,cream of corn soup
@@ -534,7 +534,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,35,2019-09-02,2019-09-06,Monday,2019-09-02,Menus,fish & seafood,6.3,AD,grilled hake/colorful vegetables/parsley potatoes
 2019,35,2019-09-02,2019-09-06,Monday,2019-09-02,Dessert,,1.4,ACGH,"""Kardinalschnitte"""
 2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Soups,,1.15,ACGL,beef broth/garnish
-2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Soups,,1.15,A,cream of bell pepper soup
+2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Soups,,1.15,A,cream of bellpepper soup
 2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Menus,vegetarian,4.2,AF,Moroccan/chickpea stew/couscous
 2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Menus,home-style cooking,5.3,AN,potato sausage goulash/bread roll
 2019,35,2019-09-02,2019-09-06,Tuesday,2019-09-03,Menus,international,6.3,AC,beef escalope with onions/green noodles/Brussels sprouts
@@ -543,7 +543,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Soups,,1.15,AG,cream of broccoli soup
 2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,vegetarian,4.2,A,Indian/carrot cabbage bhaji/bulgur
 2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,home-style cooking,5.3,ACG,turkey cordon bleu/potato salad
-2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,mediterranean,6.3,AG,chicken breast/creamy polenta/bell peppers and zucchini
+2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Menus,mediterranean,6.3,AG,chicken breast/creamy polenta/bellpeppers and zucchini
 2019,35,2019-09-02,2019-09-06,Wednesday,2019-09-04,Dessert,,1.4,ACFG,blueberry muffin
 2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Soups,,1.15,ACGL,beef broth/garnish
 2019,36,2019-09-09,2019-09-13,Monday,2019-09-09,Soups,,1.15,AL,minestrone
@@ -577,7 +577,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,36,2019-09-09,2019-09-13,Thursday,2019-09-12,Dessert,,1.4,ACFG,pear chocolate cake
 2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Soups,,1.15,ACGL,beef broth/garnish
 2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Soups,,1.15,AG,cream of cauliflower soup
-2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,vegetarian,4.2,ACG,pumpkin with/safron coconut sauce/wild rice
+2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,vegetarian,4.2,ACG,pumpkin with/saffron coconut sauce/wild rice
 2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,sweet dishes,5.3,ACG,potato noodles with nuts
 2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,fish & seafood,5.3,ACDGH,breaded fried fish/parsley potatoes
 2019,36,2019-09-09,2019-09-13,Friday,2019-09-13,Menus,international,6.3,A,veal ragout/vegetable bulgur
@@ -616,7 +616,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,38,2019-09-23,2019-09-27,Monday,2019-09-23,Soups,,1.15,ACGL,beef broth/garnish
 2019,38,2019-09-23,2019-09-27,Monday,2019-09-23,Soups,,1.15,A,cabbage soup
 2019,38,2019-09-23,2019-09-27,Monday,2019-09-23,Menus,home-style cooking,4.2,AC,braised paprika chicken/home made spaetzle
-2019,38,2019-09-23,2019-09-27,Monday,2019-09-23,Menus,vegetarian,5.3,CG,"potato pizza/mushrooms,  leek/bell pepper, zucchini/cheese"
+2019,38,2019-09-23,2019-09-27,Monday,2019-09-23,Menus,vegetarian,5.3,CG,"potato pizza/mushrooms,  leek/bellpepper, zucchini/cheese"
 2019,38,2019-09-23,2019-09-27,Monday,2019-09-23,Menus,fish & seafood,6.3,AD,grilled hake/colorful vegetables/brown rice
 2019,38,2019-09-23,2019-09-27,Monday,2019-09-23,Dessert,,1.4,ACG,curd cream cake
 2019,38,2019-09-23,2019-09-27,Tuesday,2019-09-24,Soups,,1.15,ACGL,beef broth/garnish
@@ -684,7 +684,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,40,2019-10-07,2019-10-11,Tuesday,2019-10-08,Soups,,1.15,ACGL,beef broth/garnish
 2019,40,2019-10-07,2019-10-11,Tuesday,2019-10-08,Soups,,1.15,AG,cream of vegetable soup
 2019,40,2019-10-07,2019-10-11,Tuesday,2019-10-08,Menus,pasta,4.2,ACG,penne/arrabiata sauce/parmesan cheese
-2019,40,2019-10-07,2019-10-11,Tuesday,2019-10-08,Menus,home-style cooking,5.3,ACM,stuffed bell pepper/tomato sauce/boiled potatoes
+2019,40,2019-10-07,2019-10-11,Tuesday,2019-10-08,Menus,home-style cooking,5.3,ACM,stuffed bellpepper/tomato sauce/boiled potatoes
 2019,40,2019-10-07,2019-10-11,Tuesday,2019-10-08,Menus,international,6.3,ALMO,"cured pork knuckle/cabbage salad/mustard, horseradish/bread"
 2019,40,2019-10-07,2019-10-11,Tuesday,2019-10-08,Dessert,,1.4,ACGH,tiramisu cake
 2019,40,2019-10-07,2019-10-11,Wednesday,2019-10-09,Soups,,1.15,ACGL,beef broth/garnish
@@ -886,7 +886,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,47,2019-11-25,2019-11-29,Thursday,2019-11-28,Soups,,1.15,AG,cream of chicken soup
 2019,47,2019-11-25,2019-11-29,Thursday,2019-11-28,Menus,home-style cooking,4.2,AN,chili con carne/bread roll
 2019,47,2019-11-25,2019-11-29,Thursday,2019-11-28,Menus,vegetarian,5.3,ACG,gnocchi/basil sauce/grana cheese
-2019,47,2019-11-25,2019-11-29,Thursday,2019-11-28,Menus,international,6.3,AFH,"""Fesenjan""/chicken with walnut-/pomegranate sauce/safron rice"
+2019,47,2019-11-25,2019-11-29,Thursday,2019-11-28,Menus,international,6.3,AFH,"""Fesenjan""/chicken with walnut-/pomegranate sauce/saffron rice"
 2019,47,2019-11-25,2019-11-29,Thursday,2019-11-28,Dessert,,1.4,ACG,raspberry cake
 2019,47,2019-11-25,2019-11-29,Friday,2019-11-29,Soups,,1.15,ACGL,beef broth/garnish
 2019,47,2019-11-25,2019-11-29,Friday,2019-11-29,Soups,,1.15,A,cream of carrot soup
@@ -945,7 +945,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2019,49,2019-12-09,2019-12-13,Wednesday,2019-12-11,Menus,asia,6.3,AFG,krapao gai/turkey /oyster mushrooms/egg fried rice
 2019,49,2019-12-09,2019-12-13,Wednesday,2019-12-11,Dessert,,1.4,ACG,"""pear cake"""
 2019,49,2019-12-09,2019-12-13,Thursday,2019-12-12,Soups,,1.15,L,clear vegetable soup
-2019,49,2019-12-09,2019-12-13,Thursday,2019-12-12,Soups,,1.15,AG,fennel safron soup
+2019,49,2019-12-09,2019-12-13,Thursday,2019-12-12,Soups,,1.15,AG,fennel saffron soup
 2019,49,2019-12-09,2019-12-13,Thursday,2019-12-12,Menus,pasta,4.2,ACGL,spaghetti/bolognese/parmesan cheese
 2019,49,2019-12-09,2019-12-13,Thursday,2019-12-12,Menus,vegetarian,5.3,AF,Indian carrot-/cabbage bhaji/bulgur
 2019,49,2019-12-09,2019-12-13,Thursday,2019-12-12,Menus,international,6.3,ACGM,spelt burger/grilled chicken fillet/coleslaw/honey mustard sauce
@@ -1059,7 +1059,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,4,2020-01-27,2020-01-31,Tuesday,2020-01-28,Soups,,1.15,ACGL,beef broth/garnish
 2020,4,2020-01-27,2020-01-31,Tuesday,2020-01-28,Soups,,1.15,A,tomato soup
 2020,4,2020-01-27,2020-01-31,Tuesday,2020-01-28,Menus,vegetarian,4.2,A,Indian cabbage-/carrot bhaji/couscous
-2020,4,2020-01-27,2020-01-31,Tuesday,2020-01-28,Menus,home-style cooking,5.3,AG,turkey schnitzel/mushroomsauce/vegetable rice
+2020,4,2020-01-27,2020-01-31,Tuesday,2020-01-28,Menus,home-style cooking,5.3,AG,turkey schnitzel/mushroom sauce/vegetable rice
 2020,4,2020-01-27,2020-01-31,Tuesday,2020-01-28,Menus,international,6.3,AG,pork steak/parsnip potato mash/snow peas
 2020,4,2020-01-27,2020-01-31,Tuesday,2020-01-28,Dessert,,1.4,ACG,latte macchiato cake
 2020,4,2020-01-27,2020-01-31,Wednesday,2020-01-29,Soups,,1.15,ACGL,beef broth/garnish
@@ -1082,7 +1082,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,4,2020-01-27,2020-01-31,Friday,2020-01-31,Menus,international,6.3,A,lamb cutlet/ratatouille/rosemary potatoes
 2020,4,2020-01-27,2020-01-31,Friday,2020-01-31,Dessert,,1.4,ACGH,"""Kardinalschnitte"""
 2020,5,2020-02-03,2020-02-07,Monday,2020-02-03,Soups,,1.15,ACGL,beef broth/garnish
-2020,5,2020-02-03,2020-02-07,Monday,2020-02-03,Soups,,1.15,AG,cream of potatoe soup
+2020,5,2020-02-03,2020-02-07,Monday,2020-02-03,Soups,,1.15,AG,cream of potato soup
 2020,5,2020-02-03,2020-02-07,Monday,2020-02-03,Menus,home-style cooking,4.2,ACG,"chicken ragout/mushrooms, vegetables/rotina pasta"
 2020,5,2020-02-03,2020-02-07,Monday,2020-02-03,Menus,vegetarian,5.3,ACG,breaded fried zucchini/tartare sauce/leaf salad
 2020,5,2020-02-03,2020-02-07,Monday,2020-02-03,Menus,fish & seafood,6.3,ACDG,roasted pike perch fillet/mushroom vegetable risotto/herbs
@@ -1120,7 +1120,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,6,2020-02-10,2020-02-14,Monday,2020-02-10,Dessert,,1.4,ACFG,"""Rehrucken"""
 2020,6,2020-02-10,2020-02-14,Tuesday,2020-02-11,Soups,,1.15,ACGL,beef broth/garnish
 2020,6,2020-02-10,2020-02-14,Tuesday,2020-02-11,Soups,,1.15,A,cream of tomato soup
-2020,6,2020-02-10,2020-02-14,Tuesday,2020-02-11,Menus,vegetarian,4.2,ACG,pizza with spinach/bell pepper and feta cheese
+2020,6,2020-02-10,2020-02-14,Tuesday,2020-02-11,Menus,vegetarian,4.2,ACG,pizza with spinach/bellpepper and feta cheese
 2020,6,2020-02-10,2020-02-14,Tuesday,2020-02-11,Menus,home-style cooking,5.3,A,fried sausage/sauerkraut/browned potatoes
 2020,6,2020-02-10,2020-02-14,Tuesday,2020-02-11,Menus,international,6.3,A,lamb ragout/olive potatoes/green beans
 2020,6,2020-02-10,2020-02-14,Tuesday,2020-02-11,Dessert,,1.4,ACG,poppy seed pear cake
@@ -1182,7 +1182,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,8,2020-02-24,2020-02-28,Monday,2020-02-24,Dessert,,1.4,ACGH,"""Linzerschnitte"""
 2020,8,2020-02-24,2020-02-28,Tuesday,2020-02-25,Soups,,1.15,ACGL,beef broth/garnish
 2020,8,2020-02-24,2020-02-28,Tuesday,2020-02-25,Soups,,1.15,A,cream of tomato soup
-2020,8,2020-02-24,2020-02-28,Tuesday,2020-02-25,Menus,vegetarian,4.2,AC,safron pumpkin/coconut sauce/couscous
+2020,8,2020-02-24,2020-02-28,Tuesday,2020-02-25,Menus,vegetarian,4.2,AC,saffron pumpkin/coconut sauce/couscous
 2020,8,2020-02-24,2020-02-28,Tuesday,2020-02-25,Menus,home-style cooking,5.3,,grilled chicken/rice with peas
 2020,8,2020-02-24,2020-02-28,Tuesday,2020-02-25,Menus,international,6.3,ACG,veal goulash/home made spaetzle
 2020,8,2020-02-24,2020-02-28,Tuesday,2020-02-25,Dessert,,1.4,ACFG,donut
@@ -1195,7 +1195,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,8,2020-02-24,2020-02-28,Thursday,2020-02-27,Soups,,1.15,L,clear vegetable soup
 2020,8,2020-02-24,2020-02-28,Thursday,2020-02-27,Soups,,1.15,AG,cream of zucchini soup
 2020,8,2020-02-24,2020-02-28,Thursday,2020-02-27,Menus,home-style cooking,4.2,ACGO,"""Bauerngrostl""/horseradish/small salad"
-2020,8,2020-02-24,2020-02-28,Thursday,2020-02-27,Menus,vegetarian,5.3,G,falaffel balls/tomato eggplant salad/mint dip
+2020,8,2020-02-24,2020-02-28,Thursday,2020-02-27,Menus,vegetarian,5.3,G,falafel balls/tomato eggplant salad/mint dip
 2020,8,2020-02-24,2020-02-28,Thursday,2020-02-27,Menus,international,6.3,A,lamb roast/bulgur/stewed vegetables
 2020,8,2020-02-24,2020-02-28,Thursday,2020-02-27,Dessert,,1.4,ACFG,coffee cream roulade
 2020,8,2020-02-24,2020-02-28,Friday,2020-02-28,Soups,,1.15,ACGL,beef broth/garnish
@@ -1247,7 +1247,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,10,2020-03-09,2020-03-13,Tuesday,2020-03-10,Menus,vegetarian,4.2,ACFG,macaroni/soya tomato sugo/parmesan cheese
 2020,10,2020-03-09,2020-03-13,Tuesday,2020-03-10,Menus,home-style cooking,5.3,G,"""Augsburger"" sausage/green beans with dill/""Rosti"" potatoes"
 2020,10,2020-03-09,2020-03-13,Tuesday,2020-03-10,Menus,international,6.3,ACFGLMO,spare ribs/potato wedges/cocktail sauce
-2020,10,2020-03-09,2020-03-13,Tuesday,2020-03-10,Dessert,,1.4,ACG,latte macciato cake
+2020,10,2020-03-09,2020-03-13,Tuesday,2020-03-10,Dessert,,1.4,ACG,Latte macchiato cake
 2020,10,2020-03-09,2020-03-13,Wednesday,2020-03-11,Soups,,1.15,ACGL,beef broth/garnish
 2020,10,2020-03-09,2020-03-13,Wednesday,2020-03-11,Soups,,1.15,AG,creamed caraway soup
 2020,10,2020-03-09,2020-03-13,Wednesday,2020-03-11,Menus,vegetarian,4.2,ACG,cheese spaetzle/fried onions/small salad
@@ -1255,9 +1255,9 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,10,2020-03-09,2020-03-13,Wednesday,2020-03-11,Menus,asia,6.3,ACF,red beef curry/beans/egg noodles
 2020,10,2020-03-09,2020-03-13,Wednesday,2020-03-11,Dessert,,1.4,ACFGH,honey cake
 2020,10,2020-03-09,2020-03-13,Thursday,2020-03-12,Soups,,1.15,L,clear vegetable soup
-2020,10,2020-03-09,2020-03-13,Thursday,2020-03-12,Soups,,1.15,A,cream of bell pepper soup
+2020,10,2020-03-09,2020-03-13,Thursday,2020-03-12,Soups,,1.15,A,cream of bellpepper soup
 2020,10,2020-03-09,2020-03-13,Thursday,2020-03-12,Menus,home-style cooking,4.2,AN,sausage goulash/bread roll
-2020,10,2020-03-09,2020-03-13,Thursday,2020-03-12,Menus,vegetarian,5.3,G,falaffel/tomato eggplant salad/mint yogurt
+2020,10,2020-03-09,2020-03-13,Thursday,2020-03-12,Menus,vegetarian,5.3,G,falafel/tomato eggplant salad/mint yogurt
 2020,10,2020-03-09,2020-03-13,Thursday,2020-03-12,Menus,international,6.3,,turkey breast/creamy polenta/vegetables with mangold
 2020,10,2020-03-09,2020-03-13,Thursday,2020-03-12,Dessert,,1.4,ACG,apricot cake
 2020,10,2020-03-09,2020-03-13,Friday,2020-03-13,Soups,,1.15,ACGL,beef broth/garnish
@@ -1265,7 +1265,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,10,2020-03-09,2020-03-13,Friday,2020-03-13,Menus,vegetarian,4.2,AGH,"ravioli stuffed with/radicchio and potatoes/green beans, tomato/rucola pesto"
 2020,10,2020-03-09,2020-03-13,Friday,2020-03-13,Menus,sweet dishes,5.3,ACG,yeast dumplings
 2020,10,2020-03-09,2020-03-13,Friday,2020-03-13,Menus,fish & seafood,5.3,ACDGM,breaded fried codfish/potato salad & lamb's lettuce
-2020,10,2020-03-09,2020-03-13,Friday,2020-03-13,Menus,international,6.3,AGLO,chicken fillet gratinated with/tomato and mozzarella/whole wheat pasta/bell pepper
+2020,10,2020-03-09,2020-03-13,Friday,2020-03-13,Menus,international,6.3,AGLO,chicken fillet gratinated with/tomato and mozzarella/whole wheat pasta/bellpepper
 2020,10,2020-03-09,2020-03-13,Friday,2020-03-13,Dessert,,1.4,ACFG,chocolate cake
 2020,28,2020-07-13,2020-07-17,Monday,2020-07-13,Soups,,1.15,ACGL,beef broth/garnish
 2020,28,2020-07-13,2020-07-17,Monday,2020-07-13,Soups,,1.15,AG,cream of celery soup
@@ -1407,7 +1407,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,32,2020-08-10,2020-08-14,Wednesday,2020-08-12,Soups,,1.15,AG,creamed herb soup
 2020,32,2020-08-10,2020-08-14,Wednesday,2020-08-12,Menus,vegetarian,4.2,G,potato pizza/colorful salad/herb dip
 2020,32,2020-08-10,2020-08-14,Wednesday,2020-08-12,Menus,home-style cooking,5.3,AC,breaded fried /cured pork schnitzel/parsley potatoes
-2020,32,2020-08-10,2020-08-14,Wednesday,2020-08-12,Menus,mediterranean,6.3,AO,braised lamb shoulder/bell peppers and zucchini/bulgur
+2020,32,2020-08-10,2020-08-14,Wednesday,2020-08-12,Menus,mediterranean,6.3,AO,braised lamb shoulder/bellpeppers and zucchini/bulgur
 2020,32,2020-08-10,2020-08-14,Wednesday,2020-08-12,Dessert,,1.4,ACG,strawberry cake
 2020,32,2020-08-10,2020-08-14,Thursday,2020-08-13,Soups,,1.15,L,clear vegetable soup
 2020,32,2020-08-10,2020-08-14,Thursday,2020-08-13,Soups,,1.15,A,carrot ginger soup
@@ -1488,10 +1488,10 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,35,2020-08-31,2020-09-04,Monday,2020-08-31,Soups,,1.15,AG,cream of pumpkin soup
 2020,35,2020-08-31,2020-09-04,Monday,2020-08-31,Menus,home-style cooking,4.2,CFLM,chicken wings/potato chips/cocktail sauce
 2020,35,2020-08-31,2020-09-04,Monday,2020-08-31,Menus,vegetarian,5.3,AFO,potato vegetable curry/pak choi/pita bread
-2020,35,2020-08-31,2020-09-04,Monday,2020-08-31,Menus,fish & seafood,6.3,ACDG,salmon steak/safron sauce/pasta tricolore/broccoli
-2020,35,2020-08-31,2020-09-04,Monday,2020-08-31,Dessert,,1.4,ACFGH,"""Malakoffschniite"""
+2020,35,2020-08-31,2020-09-04,Monday,2020-08-31,Menus,fish & seafood,6.3,ACDG,salmon steak/saffron sauce/pasta tricolore/broccoli
+2020,35,2020-08-31,2020-09-04,Monday,2020-08-31,Dessert,,1.4,ACFGH,"""Malakoffschnite"""
 2020,35,2020-08-31,2020-09-04,Tuesday,2020-09-01,Soups,,1.15,ACGL,beef broth/garnish
-2020,35,2020-08-31,2020-09-04,Tuesday,2020-09-01,Soups,,1.15,A,cream of bell pepper soup
+2020,35,2020-08-31,2020-09-04,Tuesday,2020-09-01,Soups,,1.15,A,cream of bellpepper soup
 2020,35,2020-08-31,2020-09-04,Tuesday,2020-09-01,Menus,vegetarian,4.2,AGLO,"bulgur casserole/spinach, dates/dried apricots/mint dip"
 2020,35,2020-08-31,2020-09-04,Tuesday,2020-09-01,Menus,home-style cooking,5.3,,fried sausage/sauerkraut/roasted  potatoes
 2020,35,2020-08-31,2020-09-04,Tuesday,2020-09-01,Menus,international,6.3,AL,grilled chicken breast/pumpkin seed risotto/stewed pumpkin
@@ -1520,7 +1520,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,36,2020-09-07,2020-09-11,Monday,2020-09-07,Menus,home-style cooking,4.2,AC,pork escalope/mocaroni
 2020,36,2020-09-07,2020-09-11,Monday,2020-09-07,Menus,vegetarian,5.3,ACGH,"gnocchi/herb sauce, nuts/radicchio, spring onions"
 2020,36,2020-09-07,2020-09-11,Monday,2020-09-07,Menus,fish & seafood,6.3,AD,salmon trout fillet/stewed pumpkin/fried potatoes
-2020,36,2020-09-07,2020-09-11,Monday,2020-09-07,Dessert,,1.4,ACFG,"""Rehrücken"""
+2020,36,2020-09-07,2020-09-11,Monday,2020-09-07,Dessert,,1.4,ACFG,"""Rehrucken"""
 2020,36,2020-09-07,2020-09-11,Tuesday,2020-09-08,Soups,,1.15,ACGL,beef broth/garnish
 2020,36,2020-09-07,2020-09-11,Tuesday,2020-09-08,Soups,,1.15,A,minestrone
 2020,36,2020-09-07,2020-09-11,Tuesday,2020-09-08,Menus,vegetarian,4.2,AG,unripe spelt grain risotto/spring vegetables
@@ -1579,8 +1579,8 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,37,2020-09-14,2020-09-18,Friday,2020-09-18,Dessert,,1.4,ACFGH,nut nougat cake
 2020,38,2020-09-21,2020-09-25,Monday,2020-09-21,Soups,,1.15,ACGL,beef broth/garnish
 2020,38,2020-09-21,2020-09-25,Monday,2020-09-21,Soups,,1.15,AG,cream of mushroom soup
-2020,38,2020-09-21,2020-09-25,Monday,2020-09-21,Menus,home-style cooking,4.2,GM,"""Käsekrainer""/french fries/onion mustard"
-2020,38,2020-09-21,2020-09-25,Monday,2020-09-21,Menus,vegetarian,5.3,G,"oven-roasted/pumpkin wedges/vegetable ""Gröstl""/feta cheese"
+2020,38,2020-09-21,2020-09-25,Monday,2020-09-21,Menus,home-style cooking,4.2,GM,"""Kasekrainer""/french fries/onion mustard"
+2020,38,2020-09-21,2020-09-25,Monday,2020-09-21,Menus,vegetarian,5.3,G,"oven-roasted/pumpkin wedges/vegetable ""Grostl""/feta cheese"
 2020,38,2020-09-21,2020-09-25,Monday,2020-09-21,Menus,fish & seafood,6.3,AD,Fishegetablecurry/Bulgur
 2020,38,2020-09-21,2020-09-25,Monday,2020-09-21,Dessert,,1.4,ACGH,"""Linzerschnitte"""
 2020,38,2020-09-21,2020-09-25,Tuesday,2020-09-22,Soups,,1.15,ACGL,beef broth/garnish
@@ -1607,17 +1607,17 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,38,2020-09-21,2020-09-25,Friday,2020-09-25,Menus,sweet dishes,5.3,ACG,"semolina ""Schmarren"""
 2020,38,2020-09-21,2020-09-25,Friday,2020-09-25,Menus,fish & seafood,5.3,ACFGLMR,calamari fritti/garlic sauce
 2020,38,2020-09-21,2020-09-25,Friday,2020-09-25,Menus,international,6.3,G,turkey steak/zaziki/rosemary potatoes
-2020,38,2020-09-21,2020-09-25,Friday,2020-09-25,Dessert,,1.4,ACFGH,"""Esterházyschnitte"""
+2020,38,2020-09-21,2020-09-25,Friday,2020-09-25,Dessert,,1.4,ACFGH,"""Esterhazyschnitte"""
 2020,39,2020-09-28,2020-10-02,Monday,2020-09-28,Soups,,1.15,ACGL,beef broth/garnish
 2020,39,2020-09-28,2020-10-02,Monday,2020-09-28,Soups,,1.15,AG,cream of zucchini soup
-2020,39,2020-09-28,2020-10-02,Monday,2020-09-28,Menus,home-style cooking,4.2,AO,"""Bauerngröstl""/horseradish"
+2020,39,2020-09-28,2020-10-02,Monday,2020-09-28,Menus,home-style cooking,4.2,AO,"""Bauerngrostl""/horseradish"
 2020,39,2020-09-28,2020-10-02,Monday,2020-09-28,Menus,vegetarian,5.3,AO,red lentil tajine/sweet potatoes/pita bread
 2020,39,2020-09-28,2020-10-02,Monday,2020-09-28,Menus,fish & seafood,6.3,ADG,roasted hake/vegetable quinoa pan/avocado cream
 2020,39,2020-09-28,2020-10-02,Monday,2020-09-28,Dessert,,1.4,ACFGH,brownie
 2020,39,2020-09-28,2020-10-02,Tuesday,2020-09-29,Soups,,1.15,ACGL,beef broth/garnish
 2020,39,2020-09-28,2020-10-02,Tuesday,2020-09-29,Soups,,1.15,A,cream of pumpkin and/carrot soup
 2020,39,2020-09-28,2020-10-02,Tuesday,2020-09-29,Menus,vegetarian,4.2,AF,whole wheat macaroni/tofu bolognese
-2020,39,2020-09-28,2020-10-02,Tuesday,2020-09-29,Menus,home-style cooking,5.3,AG,"roasted ""Leberkäse""/mashed potatoes/peas"
+2020,39,2020-09-28,2020-10-02,Tuesday,2020-09-29,Menus,home-style cooking,5.3,AG,"roasted ""Leberkase""/mashed potatoes/peas"
 2020,39,2020-09-28,2020-10-02,Tuesday,2020-09-29,Menus,international,6.3,,roasted chicken breast/oven vegetables/rice
 2020,39,2020-09-28,2020-10-02,Tuesday,2020-09-29,Dessert,,1.4,ACGHP,nut strudel
 2020,39,2020-09-28,2020-10-02,Wednesday,2020-09-30,Soups,,1.15,ACGL,beef broth/garnish
@@ -1630,7 +1630,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,39,2020-09-28,2020-10-02,Thursday,2020-10-01,Soups,,1.15,AG,caraway cream soup
 2020,39,2020-09-28,2020-10-02,Thursday,2020-10-01,Menus,home-style cooking,4.2,AGL,lasagne/tomato sauce
 2020,39,2020-09-28,2020-10-02,Thursday,2020-10-01,Menus,vegetarian,5.3,AF,soya ragout/vegetables/rice
-2020,39,2020-09-28,2020-10-02,Thursday,2020-10-01,Menus,international,6.3,G,"grilled chicken leg/potato mushroom ""Gröstl""/garlic dip"
+2020,39,2020-09-28,2020-10-02,Thursday,2020-10-01,Menus,international,6.3,G,"grilled chicken leg/potato mushroom ""Grostl""/garlic dip"
 2020,39,2020-09-28,2020-10-02,Thursday,2020-10-01,Dessert,,1.4,AFH,vegan carrot muffin
 2020,39,2020-09-28,2020-10-02,Friday,2020-10-02,Soups,,1.15,ACGL,beef broth/garnish
 2020,39,2020-09-28,2020-10-02,Friday,2020-10-02,Soups,,1.15,AG,cream of leek soup
@@ -1646,14 +1646,14 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,40,2020-10-05,2020-10-09,Monday,2020-10-05,Menus,fish & seafood,6.3,AD,grilled trout fillet/parsley potatoes/vegetables
 2020,40,2020-10-05,2020-10-09,Monday,2020-10-05,Dessert,,1.4,ACFGH,"""Mozartschnitte"""
 2020,40,2020-10-05,2020-10-09,Tuesday,2020-10-06,Soups,,1.15,ACGL,beef broth/garnish
-2020,40,2020-10-05,2020-10-09,Tuesday,2020-10-06,Soups,,1.15,A,cream of bell pepper soup
+2020,40,2020-10-05,2020-10-09,Tuesday,2020-10-06,Soups,,1.15,A,cream of bellpepper soup
 2020,40,2020-10-05,2020-10-09,Tuesday,2020-10-06,Menus,vegetarian,4.2,A,ginger coconut curry/green beans/couscous
 2020,40,2020-10-05,2020-10-09,Tuesday,2020-10-06,Menus,home-style cooking,5.3,AM,veal sausage/mustard/prezel
 2020,40,2020-10-05,2020-10-09,Tuesday,2020-10-06,Menus,international,6.3,,pork steak/polenta /carrots with spring onions
 2020,40,2020-10-05,2020-10-09,Tuesday,2020-10-06,Dessert,,1.4,ACG,latte macchiato cake
 2020,40,2020-10-05,2020-10-09,Wednesday,2020-10-07,Soups,,1.15,ACGL,beef broth/garnish
 2020,40,2020-10-05,2020-10-09,Wednesday,2020-10-07,Soups,,1.15,AG,cream of vegetable soup
-2020,40,2020-10-05,2020-10-09,Wednesday,2020-10-07,Menus,vegetarian,4.2,A,bell pepper with/tender wheat vegetable filling/tomato sauce
+2020,40,2020-10-05,2020-10-09,Wednesday,2020-10-07,Menus,vegetarian,4.2,A,bellpepper with/tender wheat vegetable filling/tomato sauce
 2020,40,2020-10-05,2020-10-09,Wednesday,2020-10-07,Menus,home-style cooking,5.3,ACM,breaded fried/chicken schnitzel/potato cucumber salad
 2020,40,2020-10-05,2020-10-09,Wednesday,2020-10-07,Menus,asia,6.3,A,Kra pao gai/turkey/oyster mushrooms/coriander rice
 2020,40,2020-10-05,2020-10-09,Wednesday,2020-10-07,Dessert,,1.4,ACG,curd cream cake
@@ -1690,23 +1690,23 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,41,2020-10-12,2020-10-16,Wednesday,2020-10-14,Dessert,,1.4,ACGH,"""Punschschnitte"""
 2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Soups,,1.15,L,clear vegetable soup
 2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Soups,,1.15,AGL,cream of celery soup
-2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Menus,ethno food,4.2,FL,"""Acht Schätze""/rice"
+2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Menus,ethno food,4.2,FL,"""Acht Schatze""/rice"
 2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Menus,vegetarian,5.3,G,potato pizza/leaf salad/garlic dip
 2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Menus,international,6.3,AGLO,venison ragout/blackberry sauce/polenta
 2020,41,2020-10-12,2020-10-16,Thursday,2020-10-15,Dessert,,1.4,ACFGH,"""Mozartschnitte"""
 2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Soups,,1.15,ACGL,beef broth/garnish
 2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Soups,,1.15,AGL,cream of vegetable soup
-2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,vegetarian,4.2,AFG,"""Kärntner Kasnudeln""/Carinthian filled pasta/butter/chive"
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,vegetarian,4.2,AFG,"""Karntner Kasnudeln""/Carinthian filled pasta/butter/chive"
 2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,sweet dishes,5.3,ACG,apricot pancake
 2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,fish & seafood,5.3,ACDG,crusted hake/parsley potatoes
-2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,international,6.3,AGL,"boiled beef/green beans with dill/""Rösti"" potatoes"
+2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Menus,international,6.3,AGL,"boiled beef/green beans with dill/""Rosti"" potatoes"
 2020,41,2020-10-12,2020-10-16,Friday,2020-10-16,Dessert,,1.4,ACF,chocolate muffin
 2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Soups,,1.15,ACGL,beef broth/garnish
 2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Soups,,1.15,AGO,Tyrolean wine soup
 2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Menus,home-style cooking,4.2,ACG,gratinated/farfalle with ham/herb dip/leaf salad
 2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Menus,vegetarian,5.3,A,mango curry/herb bulgur
 2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Menus,fish & seafood,6.3,D,grilled fish fillet/pumpkin/rosemary potatoes
-2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Dessert,,1.4,ACFG,"""Rehrücken"""
+2020,42,2020-10-19,2020-10-23,Monday,2020-10-19,Dessert,,1.4,ACFG,"""Rehrucken"""
 2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Soups,,1.15,ACGL,beef broth/garnish
 2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Soups,,1.15,A,cream of tomato soup
 2020,42,2020-10-19,2020-10-23,Tuesday,2020-10-20,Menus,vegetarian,4.2,AG,baked potato/ratatouille/sour cream
@@ -1721,7 +1721,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,42,2020-10-19,2020-10-23,Wednesday,2020-10-21,Dessert,,1.4,ACG,yogurt cake
 2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Soups,,1.15,L,clear vegetable soup
 2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Soups,,1.15,AF,cream of curryvegetable soup
-2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Menus,home-style cooking,4.2,ACG,"""Wildschönauer Ofenspeise""/dark bread/bacon/hard cheese"
+2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Menus,home-style cooking,4.2,ACG,"""Wildschonauer Ofenspeise""/dark bread/bacon/hard cheese"
 2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Menus,vegetarian,5.3,A,falafel/colorful salad/tomato salsa
 2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Menus,international,6.3,CG,grilled chicken fillet/pumpkin risotto/spinach
 2020,42,2020-10-19,2020-10-23,Thursday,2020-10-22,Dessert,,1.4,ACGH,"""Kardinalschnitte"""
@@ -1759,7 +1759,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,43,2020-10-26,2020-10-30,Friday,2020-10-30,Dessert,,1.4,ACFGH,nut nougat cake
 2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Soups,,1.15,ACGL,beef broth/garnish
 2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Soups,,1.15,AG,Styrian bread soup
-2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Menus,home-style cooking,4.2,AG,"chicken fillet/bacon leek sauce/""Rösti"" potatoes"
+2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Menus,home-style cooking,4.2,AG,"chicken fillet/bacon leek sauce/""Rosti"" potatoes"
 2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Menus,vegetarian,5.3,CGO,mushroom risotto/rocket/grana
 2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Menus,fish & seafood,6.3,ADG,coalfish fillet/oven vegetables/potatoes/tomato spring onion salsa
 2020,44,2020-11-02,2020-11-06,Monday,2020-11-02,Dessert,,1.4,ACGH,"""Linzerschnitte"""
@@ -1778,7 +1778,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Soups,,1.15,L,clear vegetable soup
 2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Soups,,1.15,AG,cream of leek soup
 2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Menus,home-style cooking,4.2,ACF,sweet and sour pork/vegetable noodles
-2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Menus,vegetarian,5.3,GL,"oven-roasted /pumpkin wedges/vegetable ""Gröstl""/feta cheese"
+2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Menus,vegetarian,5.3,GL,"oven-roasted /pumpkin wedges/vegetable ""Grostl""/feta cheese"
 2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Menus,international,6.3,AC,beef goulash/home made spaetzle
 2020,44,2020-11-02,2020-11-06,Thursday,2020-11-05,Dessert,,1.4,ACFG,coffee cream roulade
 2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Soups,,1.15,ACGL,beef broth/garnish
@@ -1787,7 +1787,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,sweet dishes,5.3,ACG,apricot dumpling
 2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,fish & seafood,5.3,ACDFGL,fish and chips/garlic sauce
 2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Menus,international,6.3,AG,veal roast/polenta/Brussels sprouts
-2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Dessert,,1.4,ACFGH,"""Esterházy cake"""
+2020,44,2020-11-02,2020-11-06,Friday,2020-11-06,Dessert,,1.4,ACFGH,"""Esterhazy cake"""
 2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Soups,,1.15,ACGL,beef broth/garnish
 2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Soups,,1.15,A,cream of pumpkin soup
 2020,45,2020-11-09,2020-11-13,Monday,2020-11-09,Menus,home-style cooking,4.2,ACFM,cevapcici/french fries/onion mustard
@@ -1809,7 +1809,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Soups,,1.15,L,clear vegetable soup
 2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Soups,,1.15,A,cream of tomato soup
 2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Menus,home-style cooking,4.2,ACGO,"""Holzhackernockerl""/horseradish"
-2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Menus,vegetarian,5.3,,pumpkin with/safron coconut sauce/wild rice
+2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Menus,vegetarian,5.3,,pumpkin with/saffron coconut sauce/wild rice
 2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Menus,asia,6.3,ACF,Chicken Wok/Eggnoodles with vegetable
 2020,45,2020-11-09,2020-11-13,Thursday,2020-11-12,Dessert,,1.4,AFH,vegan carrot muffin
 2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Soups,,1.15,ACGL,beef broth/garnish
@@ -1817,11 +1817,11 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,vegetarian,4.2,ACG,canneloni with spinach/tomato-eggplant sauce/parmesan cheese
 2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,sweet dishes,5.3,ACG,yeast dumplings
 2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,fish & seafood,5.3,ACDGM,breaded fried codfish fillet/potato salad
-2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,international,6.3,AGL,boiled beef/dill beans/potatoe rösti
+2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Menus,international,6.3,AGL,boiled beef/dill beans/potato rosti
 2020,45,2020-11-09,2020-11-13,Friday,2020-11-13,Dessert,,1.4,ACFGH,"""Dobosschnitte"""
 2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Soups,,1.15,ACGL,beef broth/garnish
 2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Soups,,1.15,AG,cream of corn soup
-2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Menus,home-style cooking,4.2,GM,"""Berner Würstel""/french fries/onion mustard"
+2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Menus,home-style cooking,4.2,GM,"""Berner Wurstel""/french fries/onion mustard"
 2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Menus,vegetarian,5.3,AFL,spaghetti/spicy tofu bolognese
 2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Menus,fish & seafood,6.3,,
 2020,46,2020-11-16,2020-11-20,Monday,2020-11-16,Dessert,,1.4,ACG,poppy seed strudel
@@ -1839,7 +1839,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,46,2020-11-16,2020-11-20,Wednesday,2020-11-18,Dessert,,1.4,ACG,curd cream cake
 2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Soups,,1.15,L,clear vegetable soup
 2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Soups,,1.15,AG,cream of broccoli soup
-2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Menus,home-style cooking,4.2,ACGO,"""Bauerngröstl""/horseradish"
+2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Menus,home-style cooking,4.2,ACGO,"""Bauerngrostl""/horseradish"
 2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Menus,vegetarian,5.3,AG,polenta cakes/Greek vegetables/feta cheese
 2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Menus,international,6.3,,
 2020,46,2020-11-16,2020-11-20,Thursday,2020-11-19,Dessert,,1.4,ACG,apricot cake
@@ -1872,7 +1872,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,47,2020-11-23,2020-11-27,Thursday,2020-11-26,Soups,,1.15,AG,cream of chicken soup
 2020,47,2020-11-23,2020-11-27,Thursday,2020-11-26,Menus,home-style cooking,4.2,,
 2020,47,2020-11-23,2020-11-27,Thursday,2020-11-26,Menus,vegetarian,5.3,AGO,"bulgur casserole/spinach, dates/dried apricots/mint dip"
-2020,47,2020-11-23,2020-11-27,Thursday,2020-11-26,Menus,international,6.3,ACGLMO,venison ragout/brussel sprouts/potatoe noodles
+2020,47,2020-11-23,2020-11-27,Thursday,2020-11-26,Menus,international,6.3,ACGLMO,venison ragout/brussel sprouts/potato noodles
 2020,47,2020-11-23,2020-11-27,Thursday,2020-11-26,Dessert,,1.4,ACG,chestnut cake
 2020,47,2020-11-23,2020-11-27,Friday,2020-11-27,Soups,,1.15,ACGL,beef broth/garnish
 2020,47,2020-11-23,2020-11-27,Friday,2020-11-27,Soups,,1.15,AG,cream of zucchini soup
@@ -1886,7 +1886,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Menus,home-style cooking,4.2,ACG,turkey rice stew/parmesan cheese
 2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Menus,vegetarian,5.3,ACGO,cheese dumpling/cabbage salad
 2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Menus,fish & seafood,6.3,,
-2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Dessert,,1.4,ACGH,"""Rehrücken"""
+2020,48,2020-11-30,2020-12-04,Monday,2020-11-30,Dessert,,1.4,ACGH,"""Rehrucken"""
 2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Soups,,1.15,ACGL,beef broth/garnish
 2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Soups,,1.15,A,cream of tomato soup
 2020,48,2020-11-30,2020-12-04,Tuesday,2020-12-01,Menus,vegetarian,4.2,,vegetable curry/with apple/basmati rice
@@ -1926,7 +1926,7 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,49,2020-12-07,2020-12-11,Wednesday,2020-12-09,Dessert,,1.4,ACFG,blueberry muffin
 2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Soups,,1.15,L,clear vegetable soup
 2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Soups,,1.15,AGL,creamed celery soup
-2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Menus,home-style cooking,4.2,GM,"""Berner Würstel""/french fries/onion mustard"
+2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Menus,home-style cooking,4.2,GM,"""Berner Wurstel""/french fries/onion mustard"
 2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Menus,vegetarian,5.3,AGMO,Indian lentil dhal/cucumber ginger yogurt/pita bread
 2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Menus,,6.3,,
 2020,49,2020-12-07,2020-12-11,Thursday,2020-12-10,Dessert,,1.4,ACG,raspberry cake
@@ -1936,3 +1936,21 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Menus,,5.3,,
 2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Menus,international,6.3,,pork fillet/pilaw rice/Brussels sprouts
 2020,49,2020-12-07,2020-12-11,Friday,2020-12-11,Dessert,,1.4,ACFGH,nut nougat cake
+2020,51,2020-12-21,2020-12-25,Monday,2020-12-21,Soups,,1.15,ACGL,beef broth/garnish
+2020,51,2020-12-21,2020-12-25,Monday,2020-12-21,Soups,,1.15,AG,creamed garlic soup
+2020,51,2020-12-21,2020-12-25,Monday,2020-12-21,Menus,home-style cooking,4.2,ACFM,cevapcici/french fries/onion mustard
+2020,51,2020-12-21,2020-12-25,Monday,2020-12-21,Menus,vegetarian,5.3,CGO,mushroom risotto/rocket/parmesan cheese
+2020,51,2020-12-21,2020-12-25,Monday,2020-12-21,Menus,fish & seafood,6.3,,
+2020,51,2020-12-21,2020-12-25,Monday,2020-12-21,Dessert,,1.4,ACFGH,brownie
+2020,51,2020-12-21,2020-12-25,Tuesday,2020-12-22,Soups,,1.15,ACGL,beef broth/garnish
+2020,51,2020-12-21,2020-12-25,Tuesday,2020-12-22,Soups,,1.15,A,cream of tomato soup
+2020,51,2020-12-21,2020-12-25,Tuesday,2020-12-22,Menus,vegetarian,4.2,AGLO,vegetable croquettes/lentil salad/herb dip
+2020,51,2020-12-21,2020-12-25,Tuesday,2020-12-22,Menus,home-style cooking,5.3,,
+2020,51,2020-12-21,2020-12-25,Tuesday,2020-12-22,Menus,international,6.3,AC,roast wild boar /red cabbage/potato dumpling
+2020,51,2020-12-21,2020-12-25,Tuesday,2020-12-22,Dessert,,1.4,ACFGHP,nut strudel
+2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Soups,,1.15,ACGL,beef broth/garnish
+2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Soups,,1.15,AG,cream of broccoli soup
+2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Menus,vegetarian,4.2,ACG,spinach canneloni/tomato ragout
+2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Menus,home-style cooking,5.3,ACM,breaded fried pork schnitzel/potato salad with/lamb's lettuce
+2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Menus,asia,6.3,,
+2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Dessert,,1.4,ACG,pear cake
