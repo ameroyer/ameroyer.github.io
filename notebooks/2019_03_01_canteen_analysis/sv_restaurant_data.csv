@@ -1954,3 +1954,21 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Menus,home-style cooking,5.3,ACM,breaded fried pork schnitzel/potato salad with/lamb's lettuce
 2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Menus,asia,6.3,,
 2020,51,2020-12-21,2020-12-25,Wednesday,2020-12-23,Dessert,,1.4,ACG,pear cake
+2020,0,2020-12-28,2021-01-01,Monday,2020-12-28,Soups,,1.15,ACGL,beef broth/garnish
+2020,0,2020-12-28,2021-01-01,Monday,2020-12-28,Soups,,1.15,AG,cream of leek soup
+2020,0,2020-12-28,2021-01-01,Monday,2020-12-28,Menus,home-style cooking,4.2,G,chicken Wings/Dukatenchips/Cocktailsauce
+2020,0,2020-12-28,2021-01-01,Monday,2020-12-28,Menus,vegetarian,5.3,ACL,pasta/vegetable bolognese
+2020,0,2020-12-28,2021-01-01,Monday,2020-12-28,Menus,,6.3,,
+2020,0,2020-12-28,2021-01-01,Monday,2020-12-28,Dessert,,1.4,ABC,poppy seed strudel
+2020,0,2020-12-28,2021-01-01,Tuesday,2020-12-29,Soups,,1.15,ACGL,beef broth/garnish
+2020,0,2020-12-28,2021-01-01,Tuesday,2020-12-29,Soups,,1.15,AL,minestrone
+2020,0,2020-12-28,2021-01-01,Tuesday,2020-12-29,Menus,vegetarian,4.2,ACG,spinach pancakes/salad/yogurt dip
+2020,0,2020-12-28,2021-01-01,Tuesday,2020-12-29,Menus,home-style cooking,5.3,G,turkey steak/zaziki/herb rice
+2020,0,2020-12-28,2021-01-01,Tuesday,2020-12-29,Menus,,6.3,,
+2020,0,2020-12-28,2021-01-01,Tuesday,2020-12-29,Dessert,,1.4,ACG,latte macchiato cake
+2020,0,2020-12-28,2021-01-01,Wednesday,2020-12-30,Soups,,1.15,ACGL,beef broth/garnish
+2020,0,2020-12-28,2021-01-01,Wednesday,2020-12-30,Soups,,1.15,AG,cream of vegetable soup
+2020,0,2020-12-28,2021-01-01,Wednesday,2020-12-30,Menus,vegetarian,4.2,AG,falafel/tomato-eggplant stew/herbdip
+2020,0,2020-12-28,2021-01-01,Wednesday,2020-12-30,Menus,home-style cooking,5.3,AC,bread frieded /chicken schnitzel/rice with peas
+2020,0,2020-12-28,2021-01-01,Wednesday,2020-12-30,Menus,,6.3,,
+2020,0,2020-12-28,2021-01-01,Wednesday,2020-12-30,Dessert,,1.4,ACG,cream cheese cake
