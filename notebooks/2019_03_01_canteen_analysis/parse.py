@@ -16,7 +16,7 @@ def is_adjective(expr):
 
 
 def correct(s):
-    """Minor manual replacements"""
+    """Minor manual replacements of common typos"""
     return s.replace(
         ',', " and").replace(
         '-', ' ').replace(        
