@@ -157,11 +157,13 @@
     }
   }
 }
+
 .secondary-icons > li {
     display: inline-block;
     /* You can also add some margins here to make it look prettier */
-    zoom:1;
-    *display:inline;
+    zoom: 1;
+    *display: inline;
+    font-size: $type-size-5;
 }
 
 .author__urls {
@@ -238,7 +240,7 @@
 
     &:hover {
       text-decoration: underline;
-      color: $link-color-hover
+      opacity: 0.5;
     }
   }
 }

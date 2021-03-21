@@ -33,15 +33,15 @@
       {% endif %}
     </u>
 
-    <ul class="author__urls secondary-icons social-icons">
+    <ul class="author__urls social-icons secondary-icons" >
       {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
+        <li><a href="mailto:{{ author.email }}" title="Email"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a></li>
       {% endif %}
       {% if author.github %}
-        <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+        <li><a href="https://github.com/{{ author.github }}" title="Github"><i class="fab fa-github" aria-hidden="true"></i></a></li> <!-- Github -->
       {% endif %}
       {% if author.googlescholar %}
-        <li><a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+        <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar" title="Google Scholar"></i></a></li> <!-- Google Scholar -->
       {% endif %}
       {% if author.keybase %}
         <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
@@ -110,13 +110,13 @@
         <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
       {% endif %}
       {% if author.orcid %}
-        <li><a href="{{ author.orcid }}"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
+        <li><a href="{{ author.orcid }}" title="OrcID"><i class="ai ai-orcid-square ai-fw"></i></a></li><!-- ORCID -->
       {% endif %}
       {% if author.linkedin %}
-        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i></a></li><!-- LinkedIn -->
       {% endif %}
       {% if author.kaggle %}
-        <li><a href="https://www.kaggle.com/{{ author.kaggle }}"><i class="fa fa-trophy" aria-hidden="true"></i> Kaggle</a></li>
+        <li><a href="https://www.kaggle.com/{{ author.kaggle }}"><i class="fab fa-kaggle" aria-hidden="true"></i></a></li> <!-- Kaggle -->
       {% endif %}
       {% if author.impactstory %}
         <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i> Impactstory</a></li>
