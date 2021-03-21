@@ -6,6 +6,7 @@ paperurl: 'https://arxiv.org/abs/1705.04258'
 year: 2017
 authors: '<span class="first_author">Amélie Royer</span>, <span class="first_author">Alexander Kolesnikov</span> and Christoph Lampert'
 venue: 'British Machine Vision Conference (BMVC)'
+teaser: 'thumbs/pub/pic_thumb.png'
 ---
 
 Classifiers for object categorization are usually evaluated by their accuracy on a set of i.i.d. test examples. This provides us with an estimate of the expected error when applying the classifiers to a single new image. In real application, however, classifiers are rarely only used for a single image and then discarded. Instead, they are applied sequentially to many images, and these are typically not i.i.d. samples from a fixed data distribution, but they carry dependencies and their class distribution varies over time.

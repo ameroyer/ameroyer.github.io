@@ -14,7 +14,7 @@ redirect_from:
 
 ## <i class="fa fa-graduation-cap"></i> Education
 
-| 2015 - 2020   | **PhD student at [IST Austria](ist.ac.at)** <br> *Institute of Science and Technology Austria, Klosterneuburg, Austria*  |
+| 2015 - 2020   | **PhD student at [IST Austria](https://ist.ac.at)** <br> *Institute of Science and Technology Austria, Klosterneuburg, Austria*  |
 |---|---|
 | 2013 - 2015  | **Masters in Computer science at ENS Rennes** <br> In conjunction with studies at Irisa / University of Rennes 1.  <br> *Rennes, France* |
 | 2012 - 2013  |  **Bachelors in Computer science at ENS Rennes**  <br> **Bachelors in Mathematics at ENS Rennes** <br> In conjunction with studies at University of Rennes 1.  <br> *Rennes, France* |

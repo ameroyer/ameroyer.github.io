@@ -6,6 +6,7 @@ paperurl: 'http://openaccess.thecvf.com/content_WACV_2020/papers/Royer_A_Flexibl
 year: 2020
 authors: '<span class="first_author">Amélie Royer</span> and Christoph Lampert'
 venue: 'Winter Conference on Applications of Computer Vision (WACV)'
+teaser: 'thumbs/pub/flextuning_thumb.png'
 ---
 
 Fine-tuning is a popular way of exploiting knowledge contained in a pre-trained convolutional network for a new visual recognition task. However, the orthogonal setting of transferring knowledge from a pretrained network to a vi- sually different yet semantically close source is rarely considered: This commonly happens with real-life data, which is not necessarily as clean as the training source (noise, geometric transformations, different modalities, etc.).
