@@ -1,7 +1,7 @@
 ---
 title: "Multiple-Environment Markov Decision Processes: Efficient Analysis and Applications"
 collection: publications
-permalink: /publication/2020-icaps
+relid: 2020-icaps
 paperurl: 'http://pub.ist.ac.at/~aroyer/research.html#'
 year: 2020
 authors: 'Krishnendu Chatterjee, Martin Chmelík, <span class="first_author">Deep Karkhanis</span>, Petr Novotný and <span class="first_author">Amélie Royer</span>'

@@ -1,7 +1,7 @@
 ---
 title: "A Flexible Selection Scheme for Minimum-Effort Transfer Learning"
 collection: publications
-permalink: /publication/2020-wacv-flextuning
+relid: 2020-wacv-flextuning
 paperurl: 'http://openaccess.thecvf.com/content_WACV_2020/papers/Royer_A_Flexible_Selection_Scheme_for_Minimum-Effort_Transfer_Learning_WACV_2020_paper.pdf'
 year: 2020
 authors: '<span class="first_author">Amélie Royer</span> and Christoph Lampert'

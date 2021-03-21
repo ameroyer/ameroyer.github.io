@@ -1,7 +1,7 @@
 ---
 title: "Audio Word Similarity for Clustering with zero Resources based on iterative HMM Classification"
 collection: publications
-permalink: /publication/2016-icassp
+relid: 2016-icassp
 paperurl: 'https://hal-imt.archives-ouvertes.fr/hal-01336100/'
 year: 2016
 authors: '<span class="first_author">Amélie Royer</span>, Guillaume Gravier, Vincent Claveau'

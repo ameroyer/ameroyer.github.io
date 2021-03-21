@@ -1,7 +1,7 @@
 ---
 title: "Classifier Adaptation at Prediction Time"
 collection: publications
-permalink: /publication/2015-cvpr
+relid: 2015-cvpr
 paperurl: 'http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Royer_Classifier_Adaptation_at_2015_CVPR_paper.pdf'
 year: 2015
 authors: '<span class="first_author">Amélie Royer</span> and Christoph Lampert'

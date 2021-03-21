@@ -1,7 +1,7 @@
 ---
 title: "Probabilistic Image Colorization"
 collection: publications
-permalink: /publication/2017-bmvc
+relid: 2017-bmvc
 paperurl: 'https://arxiv.org/abs/1705.04258'
 year: 2017
 authors: '<span class="first_author">Amélie Royer</span>, <span class="first_author">Alexander Kolesnikov</span> and Christoph Lampert'
