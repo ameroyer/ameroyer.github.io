@@ -1,0 +1,14 @@
+---
+layout: archive
+title: "Portfolio"
+permalink: /portfolio/
+author_profile: true
+---
+
+{% include base_path %}
+
+<h1 class="page__title">Portfolio</h1>
+
+{% for post in site.portfolio %}
+  {% include archive-single-portfolio.html %}
+{% endfor %}

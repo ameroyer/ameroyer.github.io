@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "InfoVAE: Balancing Learning and Inference in Variational Autoencoders"
+date:   2019-05-02 10:59:24 +0200
+tags: [representation learning, aaai, 2017]
+categories:  [Representation Learning]
+author: Zhao et al, AAAI 2019, <a href='https://arxiv.org/pdf/1706.02262.pdf' target='_blank'>[link]</a>
+thumb: /images/thumbs/infovae.png
+year: 2019
+---
+
+
+<div class="summary">
+Two known shortcomings of <code>VAE</code>s are that <b>(i)</b> The variational bound (ELBO) can lead to poor approximation of the true likelihood and inaccurate models and <b>(ii)</b> the model can ignore the learned latent representation when the decoder is too powerful. In this work, the author propose to tackle these problems by adding an explicit <b>mutual information</b> term to the standard <code>VAE</code> objective.
+<ul>
+<li><span class="procons">Pros (+):</span> Well justified, fast implementation trick, semi-supervised setting.</li>
+<li><span class="procons">Cons (-):</span> requires explicit knowledge of the sensitive attribute.</li>
+</ul>
+</div>
+
+
+<h3 class="section theory"> InfoVAE </h3>
+ Intuitively, the `InfoVAE` objective can be seen as a variant of the standard `VAE` objective with two main modifications **(i)** an additional term that strives to maximize the mutual information between the input $$x$$ and latent $$z$$, to force the model to make use of the latent representation, and **(ii)** a weighting between the reconstruction and latent loss term to better balance their contribution (similar to $$\beta$$-`VAE` <span class="citations">[1]</span>)
+
+$$
+ \begin{align}
+ \mathcal{L}_{\text{InfoVAE}} &= \mathbb{E}_{x \sim p_{\mathcal D}} \mathbb{E}_{z \sim q(\cdot | x)}(\log p_{\theta}(x | z)) \\
+ & - (1 - \alpha) \mathbb{E}_{x \sim p_{\mathcal D}} D_{\text{KL}} (q_{\phi}(z | x) \| p(z))\\
+ & - (\lambda + \alpha - 1) D_{\text{KL}}(q_{\phi}(z) \| p(z))
+ \end{align}
+ $$
+
+ The first two terms correspond to a weighted variant of the ELBO, while the *last term adds a constraint on the latent codes distribution*. Since estimating $$q_{\phi}(z)$$ would require marginalizing $$q_{\phi}(z | x)$$ over all $$x$$, it is instead approximated by sampling (first $$x$$ then $$z$$, from the encoder distribution).
+ Furthermore, the authors show that the objective is still valid when replacing these last terms by any other hard divergence. In particular, this makes it a generalization of Adversarial Auto-encoders (`AAE`) <span class="citations">[2]</span>, which uses the Jensen Divergence (approximated by an adversary).
+
+---
+
+
+<h3 class="section experiments"> Experiments </h3>
+
+ The authors experiment with three different divergences: Jensen ($$\simeq$$ `AAE`), Stein Variational Gradient and Maximum-Mean Discrepancy. Results seem to indicate that `InfoVAE` leads to more principled latent representations, and *better balance between reconstruction and latent space usage*. As such, reconstructions might not look as crisp than ones from vanilla `VAE` but generated samples are of better quality (better generalization, also can be seen in semi-supervised task that make use of the representation)
+
+
+---
+
+<h3 class="section references"> References </h3>
+*  <span class="citations">[1]</span> $$\beta$$-VAE: Learning basic visual concepts with a constrained variational framework, <i>Higgins et al, ICLR 2017</i>
+* <span class="citations">[2]</span> Adversarial Autoencoders, <i>Mahkzani et al, ICLR 2016</i>

@@ -1,0 +1,79 @@
+---
+---
+@import "vendor/breakpoint/breakpoint"; // media query mixins
+@import "variables";
+
+h2 {
+  padding-top: 20px
+}
+
+h2 i {
+  margin-right: 20px;
+}
+
+h2:after {
+    content: ' ';
+    display: block;
+    border: 1px solid $text-color;
+}
+
+thead {
+  background: none;
+  border: none;
+}
+
+th, td {
+  font-weight: normal;
+  vertical-align: middle;
+  border: none;
+  padding: 5px;
+}
+
+table td:last-child, td:first-child {
+  vertical-align: top;
+}
+
+table th:last-child, th:first-child {
+  vertical-align: top;
+}
+
+table td:first-child, th:first-child{
+    display: block;
+    float: left;
+    margin-right: 45px;
+    padding-top: 12px;
+    color: #66add6;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 150px;
+}
+
+table {
+    width: 90%;
+    border: none;
+    margin-left : 50px;
+    font-size: $type-size-5;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td.empty {
+    width: 25px;
+}
+
+table i {
+  color: #ff0000;
+}
+
+table img {
+  height: auto;
+  width: 60%;
+  vertical-align: middle;
+}
+
+.pub_title {
+  text-decoration: underline
+}

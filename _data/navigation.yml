@@ -1,0 +1,26 @@
+# main links links
+main:
+  - title: "About"
+    id: "home"
+    url: /
+    symbol: "fa-home"
+
+  - title: "CV"
+    id: "cv"
+    url: /cv/
+    symbol: "fa-user"
+
+  - title: "Publications"
+    id: "pub"
+    url: /publications/
+    symbol: "fa-graduation-cap"
+
+  - title: "Portfolio"
+    id: "portfolio"
+    url: /portfolio/
+    symbol: "fa-code-fork"
+
+  - title: "Reading Notes"
+    id: "blog"
+    url: /year-archive/
+    symbol: "fa-book"
