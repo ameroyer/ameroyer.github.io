@@ -32,25 +32,24 @@ redirect_from:
 | 2014  | ![2014_internship_thumb](/images/thumbs/pub/Stage_2014_thumb.jpg) | [**Internship at IST Austria**](/files/Stage_2014_Rapport_Royer.pdf) <br> 🇦🇹  *Vienna, Austria* <br> <u>Topic:</u> Adapting pre-trained classifiers to unknown test labels distribution on-the-fly, advised by *Christoph Lampert* |
 | 2013  | ![2013_internship_thumb](/images/thumbs/pub/Stage_2013_thumb.png) |  [**Internship at Inria Rennes**](/files/Stage_2013_Rapport_Royer.pdf)  <br> 🇫🇷 *Rennes, France* <br> <u>Topic:</u> Video retrieval using circular Fourier transforms, advised by *Hervé Jégou* and *Teddy Furon*  |
 
-
-## <i class="fa fa-magic" aria-hidden="true"></i> Skills
-
-* **Languages**
-  * 🇫🇷 French (*native speaker*)
-  * 🇬🇧 English (*fluent*) <br>&#160;&#160;&#160;&#160;<small>FCE/B2 2010, TOEIC (990/990) 2013</small>
-  * 🇩🇪 German (*advanced*) <br>&#160;&#160;&#160;&#160;<small>ZD/B1 2008, ZMP/C1 2010
-</small>
-* **Coding**
-  * `Python`, `C++/C`, `OCaml`
-  * Deep Learning: `Tensorflow`, `Jax`, `Keras`, `Pytorch`
-* **Others**
-  * <i class="fa fa-code-fork" aria-hidden="true"></i> Version Controlling: `Git`
-  * <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editing: `Emacs`, `LateX`
-  * <i class="fa fa-picture-o" aria-hidden="true"></i> Image editing : `Gimp`, `Inkscape`
-
 ## <i class="fa fa-paperclip" aria-hidden="true"></i> Publications
 
   {% assign sorted = site.publications | sort: 'date' | reverse %}
   <ul class="short_publications_list">{% for post in sorted %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+
+## <i class="fa fa-magic" aria-hidden="true"></i> Skills
+
+  * **Languages**
+    * 🇫🇷 French (*native speaker*)
+    * 🇬🇧 English (*fluent*) <br>&#160;&#160;&#160;&#160;<small>FCE/B2 2010, TOEIC (990/990) 2013</small>
+    * 🇩🇪 German (*advanced*) <br>&#160;&#160;&#160;&#160;<small>ZD/B1 2008, ZMP/C1 2010
+  </small>
+  * **Coding**
+    * `Python`, `C++/C`, `OCaml`
+    * Deep Learning: `Tensorflow`, `Jax`, `Keras`, `Pytorch`
+  * **Others**
+    * <i class="fa fa-code-fork" aria-hidden="true"></i> Version Controlling: `Git`
+    * <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editing: `Emacs`, `LateX`
+    * <i class="fa fa-picture-o" aria-hidden="true"></i> Image editing : `Gimp`, `Inkscape`
