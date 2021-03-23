@@ -28,7 +28,7 @@
 
   <td class ="archive__item-description">
     <h2 class="archive__item-title" itemprop="headline">
-      <a id ="{{ post.relid }}">{{ title }}</a>
+      <a id ="{{ post.relid }}" class="rel_link">{{ title }}</a>
     </h2>
 
     {% if post.read_time %}
@@ -57,13 +57,14 @@
         {% endif %}
 
 
-    <label for="toggle-abstract-{{ post.relid }}">Show Abstract</label>
     <input type="checkbox" id="toggle-abstract-{{ post.relid }}" class="abstract">
+    <label for="toggle-abstract-{{ post.relid }}" class="toggle"><span></span>Show Abstract</label>
     <div class="abstract">{{ post.content }}</div>
 
     {% if post.bibtex %}
-      <label for="toggle-bibtex-{{ post.relid }}">Show Bibtex</label>
-      <input type="checkbox" id="toggle-bibtex-{{ post.relid }}" class="bibtex">
+    <br>
+    <input type="checkbox" id="toggle-bibtex-{{ post.relid }}" class="bibtex">
+      <label for="toggle-bibtex-{{ post.relid }}" class="toggle"><span></span>Show Bibtex</label>
       <div class="bibtex">{{ post.bibtex }}</div>
     {% endif %}
 

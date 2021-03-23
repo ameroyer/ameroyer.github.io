@@ -75,7 +75,7 @@ td.archive__item-teaser {
   text-align: center;
   vertical-align: top;
   img {
-    width: 70%;
+    width: 75%;
   }
 }
 
@@ -83,6 +83,14 @@ td.archive__item-description {
   border: 0;
   width: 85%;
   vertical-align: top;
+}
+
+a.rel_link {
+  color: $text-color;
+}
+
+a.rel_link:hover {
+  color: $text-color;
 }
 
 /*
@@ -306,30 +314,85 @@ font-size: 10px
   padding-right: 5px
 }
 
-input[type=checkbox] {
-}
 
-label {
-  -webkit-appearance: push-button;
-  -moz-appearance: button;
-  display: inline-block;
-  margin: 0;
-  cursor: pointer;
-}
-
-/* Default State */
+/* Abstract and Bibtex hidden divs*/
 div.abstract, div.bibtex {
-   background: green;
-   display: none;
+  display: none;
+  margin-top: 10px;
+  border-left: 6px solid $border-color;
+  font-size: $type-size-5;
+  padding: 0 0 0 10px;
 }
 
-/* Toggled State */
-input[type=checkbox].abstract:checked + div {
-   background: yellow;
+input[type=checkbox]:checked + label + div {
    display: block
 }
 
-input[type=checkbox].bibtex:checked + div {
-   background: red;
-   display: block
+/* Toggled Style */
+.toggle {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+}
+.toggle:before {
+  content: "";
+  position: relative;
+  top: 3px;
+  left: 3px;
+  width: 32px;
+  height: 12px;
+  display: inline-block;
+  background: #9A9999;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  margin-right: 15px;
+}
+.toggle span {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 15px;
+  display: block;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
+  transition: all 0.2s ease;
+}
+.toggle span:before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: -18px;
+  width: 56px;
+  height: 56px;
+  background: $link-color-visited;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 1;
+  pointer-events: none;
+}
+
+input[type=checkbox] {
+  display: none
+}
+
+input[type=checkbox]:checked + .toggle:before {
+  background: mix(#fff, $link-color, 75%);
+}
+
+input[type=checkbox]:checked + .toggle span {
+  background: $link-color;
+  transform: translateX(20px);
+  transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
+  box-shadow: 0 3px 8px $link-color-visited;
+}
+
+input[type=checkbox]:checked + .toggle span:before {
+  transform: scale(1);
+  opacity: 0;
+  transition: all 0.4s ease;
 }
