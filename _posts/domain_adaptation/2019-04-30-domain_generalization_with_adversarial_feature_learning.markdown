@@ -1,21 +1,22 @@
 ---
-layout: post
-title:  "Domain Generalization with Adversarial Feature Learning"
-date:   2019-04-30 8:59:24 +0200
-tags: [domain adaptation, domain generalization, cvpr, 2018]
-categories:  [Domain Adaptation]
-author: Li et al, CVPR 2018, <a href='http://openaccess.thecvf.com/content_cvpr_2018/papers/Li_Domain_Generalization_With_CVPR_2018_paper.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/dgwafl.png
+title: "Domain Generalization with Adversarial Feature Learning"
+date: 2019-04-30 8:59:24 +0200
+tags: [domain adaptation, domain generalization]
+categories: [Domain Adaptation]
+author: Li et al.
+venue: CVPR 2018
+url: 'http://openaccess.thecvf.com/content_cvpr_2018/papers/Li_Domain_Generalization_With_CVPR_2018_paper.pdf'
+thumb: /images/thumbs/notes/dgwafl.png
 year: 2018
 ---
 
-
 <div class="summary">
-In this paper, the authors tackle the problem of <b>Domain Generalization</b>: Given multiple source domains, the goal is to learn a joint aligned feature representation, hoping it would generalize to a new <b>unseen target</b> domain. This is closely related to the <b>Domain Adaptation</b> task, with the difference that no target data (even unlabeled) is available at training time. Most approaches rely on the idea of aligning the source domains distributions in a shared space. In this work, the authors propose to additionally match the source distributions to a known <b>prior distribution</b>.
-<ul>
-<li><span class="procons">Pros (+):</span> Extension of <code>MMD</code>-matching techniques to <b>domain generalization</b>: No target data available, so instead align all domains to a <b>prior distribution</b></li>
-<li><span class="procons">Cons (-):</span> Potentially lacking comparison to some baselines (deep, adversarial).</li>
-</ul>
+  In this paper, the authors tackle the problem of <b>Domain Generalization</b>: Given multiple source domains, the goal is to learn a joint aligned feature representation, hoping it would generalize to a new <b>unseen target</b> domain. This is closely related to the <b>Domain Adaptation</b> task, with the difference that no target data (even unlabeled) is available at training time. Most approaches rely on the idea of aligning the source domains distributions in a shared space. In this work, the authors propose to additionally match the source distributions to a known <b>prior distribution</b>.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Extension of <code>MMD</code>-matching techniques to <b>domain generalization</b>: No target data available, so instead align all domains to a <b>prior distribution</b></li>
+    <li><span class="procons">Cons (-):</span> Potentially lacking comparison to some baselines (deep, adversarial).</li>
+  </ul>
 </div>
 
 

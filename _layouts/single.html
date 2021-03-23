@@ -18,6 +18,29 @@ layout: default
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <div style="padding-left: 30px; padding-right: 55px">
+  <div style="text-align: right; width:70%; float:right">
+    {{ page.date | date: "%-d %B %Y" }}
+
+    <h1>{{ page.title }}</h1>
+
+    <p class="view"> {{ page.author | default: site.author }}
+
+      {% if page.tags %}
+      <br>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em>
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="postthumb">
+    <img src="{{ page.thumb | relative_url}}">
+  </div>
+
+  <div style="clear: both; padding-top: 25px">
+    {{content}}
+  </div>
+</div>
+
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}

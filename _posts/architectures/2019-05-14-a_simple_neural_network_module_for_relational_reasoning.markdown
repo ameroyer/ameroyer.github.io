@@ -1,22 +1,22 @@
 ---
-layout: post
-title:  "A simple Neural Network Module for Relational Reasoning"
-date:   2019-05-14 08:59:24 +0200
-tags: [architectures, neurips, 2017]
-categories:  [Architectures]
-author: Santoro et al, NeurIPS 2017, <a href='https://arxiv.org/abs/1706.01427' target='_blank'>[link]</a>
-thumb: /images/thumbs/asnnmfrr.png
+title: "A simple Neural Network Module for Relational Reasoning"
+date: 2019-05-14 08:59:24 +0200
+tags: [architectures]
+categories: [Architectures]
+author: Santoro et al.
+venue: NeurIPS 2017
+url: 'https://arxiv.org/abs/1706.01427'
+thumb: /images/thumbs/notes/asnnmfrr.png
 year: 2017
 ---
 
-
 <div class="summary">
+  The authors propose a <b>relation module</b> to equip <code>CNN</code> architectures with notion of relational reasoning, particularly useful for tasks such as visual question answering, dynamics understanding etc.
 
-The authors propose a <b>relation module</b> to equip <code>CNN</code> architectures with notion of relational reasoning, particularly useful for tasks such as visual question answering, dynamics understanding etc.
-<ul>
-<li><span class="procons">Pros (+):</span> Simple architecture, relies on small and flexible modules.</li>
-<li><span class="procons">Cons (-):</span>  Still a black-box module, hard to quantify how much "reasoning" happens.</li>
-</ul>
+  <ul>
+    <li><span class="procons">Pros (+):</span> Simple architecture, relies on small and flexible modules.</li>
+    <li><span class="procons">Cons (-):</span>  Still a black-box module, hard to quantify how much "reasoning" happens.</li>
+  </ul>
 </div>
 
 

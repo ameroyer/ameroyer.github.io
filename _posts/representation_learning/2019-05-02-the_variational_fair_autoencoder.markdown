@@ -1,22 +1,22 @@
 ---
-layout: post
-title:  "The Variational Fair Autoencoder"
-date:   2019-05-02 10:59:24 +0200
-tags: [representation learning, iclr, 2016]
-categories:  [Representation Learning]
-author: Louizos et al, ICLR 2016, <a href='https://arxiv.org/pdf/1511.00830.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/vfae.png
+title: "The Variational Fair Autoencoder"
+date: 2019-05-02 10:59:24 +0200
+tags: [representation learning]
+categories: [Representation Learning]
+author: Louizos et al.
+venue: ICLR 2016
+url: 'https://arxiv.org/pdf/1511.00830.pdf'
+thumb: /images/thumbs/notes/vfae.png
 year: 2016
 ---
 
-
-
 <div class="summary">
-The goal of this work is to propose a variational autoencoder based model that learns latent representations which are independent from some sensitive knowledge  present in the data, while retaining enough information to solve the task at hand, e.g. classification. This independence constraint is incorporated via  loss term based on Maximum Mean Discrepancy.
-<ul>
-<li><span class="procons">Pros (+):</span> Well justified, fast implementation trick, semi-supervised setting.</li>
-<li><span class="procons">Cons (-):</span> requires explicit knowledge of the sensitive attribute.</li>
-</ul>
+  The goal of this work is to propose a variational autoencoder based model that learns latent representations which are independent from some sensitive knowledge  present in the data, while retaining enough information to solve the task at hand, e.g. classification. This independence constraint is incorporated via  loss term based on Maximum Mean Discrepancy.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Well justified, fast implementation trick, semi-supervised setting.</li>
+    <li><span class="procons">Cons (-):</span> requires explicit knowledge of the sensitive attribute.</li>
+  </ul>
 </div>
 
 

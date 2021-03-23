@@ -1,22 +1,23 @@
 ---
-layout: post
 title: "Measuring Abstract Reasoning in Neural Networks"
 date: 2019-04-26 14:59:24 +0200
 tags: [visual reasoning, 2018, icml]
 categories: [Visual Reasoning]
-author: Barrett et al., ICML 2018, <a href='https://arxiv.org/pdf/1807.04225.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/marinn.png
+author: Barrett et al.
+venue: ICML 2018
+url: 'https://arxiv.org/pdf/1807.04225.pdf'
+thumb: /images/thumbs/notes/marinn.png
 year: 2018
 ---
 
 
 <div class="summary">
-The authors introduce a new visual analogy dataset with the aim to analyze the <b>reasoning abilities of ConvNets</b> on higher abstract reasoning tasks such as small <b>IQ tests</b>.
+  The authors introduce a new visual analogy dataset with the aim to analyze the <b>reasoning abilities of ConvNets</b> on higher abstract reasoning tasks such as small <b>IQ tests</b>.
 
-<ul>
-<li><span class="procons">Pros (+):</span> Introduces a new dataset for abstract reasoning and different evaluation procedures, considers a large range of baselines.</li>
-<li><span class="procons">Cons (-):</span> The Relation Network considers only pairwise interactions, might be too specific for general abstraction. Also implicit model, hard to interpret in terms of reasoning.</li>
-</ul>
+  <ul>
+    <li><span class="procons">Pros (+):</span> Introduces a new dataset for abstract reasoning and different evaluation procedures, considers a large range of baselines.</li>
+    <li><span class="procons">Cons (-):</span> The Relation Network considers only pairwise interactions, might be too specific for general abstraction. Also implicit model, hard to interpret in terms of reasoning.</li>
+  </ul>
 </div>
 
 

@@ -1,21 +1,22 @@
 ---
-layout: post
 title: "Deep Visual Analogy Making"
 date: 2019-05-06 12:40:24 +0200
-tags: [visual reasoning, neurips, 2015]
+tags: [visual reasoning]
 categories: [Visual Reasoning]
-author: Reed et al., NeurIPS 2015, <a href='https://papers.nips.cc/paper/5845-deep-visual-analogy-making.pdf'>[link]</a>
-thumb: /images/thumbs/dvam.png
+author: Reed et al.
+venue: NeurIPS 2015
+url: 'https://papers.nips.cc/paper/5845-deep-visual-analogy-making.pdf'
+thumb: /images/thumbs/notes/dvam.png
 year: 2015
 ---
 
-
 <div class="summary">
-In this paper, the authors propose to learn <b>visual analogies</b> akin to the semantic and synctatic analogies naturally emerging in the <code>Word2Vec</code> embedding <span class="citations">[1]</span>: More specifically hey tackle the joint task of inferring a transformation from a given (source, target) pair, and applying the same relation to a new source image.
-<ul>
-<li><span class="procons">Pros (+):</span> Intuitive formulation; Introduces two datasets for the visual analogy task.</li>
-<li><span class="procons">Cons (-):</span>  Only consider "local" changes, i.e. geometric transformations or single attribute modifications, and rather clean images (e.g., no background).</li>
-</ul>
+  In this paper, the authors propose to learn <b>visual analogies</b> akin to the semantic and synctatic analogies naturally emerging in the <code>Word2Vec</code> embedding <span class="citations">[1]</span>: More specifically hey tackle the joint task of inferring a transformation from a given (source, target) pair, and applying the same relation to a new source image.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Intuitive formulation; Introduces two datasets for the visual analogy task.</li>
+    <li><span class="procons">Cons (-):</span>  Only consider "local" changes, i.e. geometric transformations or single attribute modifications, and rather clean images (e.g., no background).</li>
+  </ul>
 </div>
 
 

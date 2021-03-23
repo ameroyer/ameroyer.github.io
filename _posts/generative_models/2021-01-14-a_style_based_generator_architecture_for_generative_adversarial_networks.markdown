@@ -1,20 +1,22 @@
 ---
-title:  "A Style-Based Generator Architecture for Generative Adversarial Networks"
-date:   2021-01-14 14:59:24 +0200
-tags: [generative models, cvpr, 2019]
-categories:  [Generative Models]
-author: Karras et al, CVPR 2019, <a href='https://arxiv.org/abs/1812.04948' target='_blank'>[link]</a>
-thumb: /images/thumbs/todo.png
+title: "A Style-Based Generator Architecture for Generative Adversarial Networks"
+date: 2021-01-14 14:59:24 +0200
+tags: [generative models]
+categories: [Generative Models]
+author: Karras et al.
+venue: CVPR 2019
+url: 'https://arxiv.org/abs/1812.04948'
+thumb: /images/thumbs/notes/todo.png
 year: 2019
 ---
 
-
 <div class="summary">
-In this work, the authors propose <code>VQ-VAE</code>, a variant of the Variational Autoencoder (<code>VAE</code>) framework with a discrete latent space, using ideas from vector quantization. The two main motivations are <b>(i)</b> discrete variables are potentially better fit to capture the structure of data such as text and <b>(ii)</b> to prevent the posterior collapse in <code>VAE</code>s that leads to latent variables being ignored when the decoder is too powerful.
-<ul>
-<li><span class="procons">Pros (+):</span> Simple method to incorporate a discretized latent space in VAEs.</li>
-<li><span class="procons">Cons (-):</span> Paragraph about the learned prior is not very clear, and does not have corresponding ablation experiments to evalute its importance.</li>
-</ul>
+  In this work, the authors propose <code>VQ-VAE</code>, a variant of the Variational Autoencoder (<code>VAE</code>) framework with a discrete latent space, using ideas from vector quantization. The two main motivations are <b>(i)</b> discrete variables are potentially better fit to capture the structure of data such as text and <b>(ii)</b> to prevent the posterior collapse in <code>VAE</code>s that leads to latent variables being ignored when the decoder is too powerful.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Simple method to incorporate a discretized latent space in VAEs.</li>
+    <li><span class="procons">Cons (-):</span> Paragraph about the learned prior is not very clear, and does not have corresponding ablation experiments to evalute its importance.</li>
+  </ul>
 </div>
 
 

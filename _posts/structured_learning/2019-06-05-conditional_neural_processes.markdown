@@ -1,21 +1,22 @@
 ---
-layout: post
-title:  "Conditional Neural Processes"
-date:   2019-05-06 14:00:00 +0200
+title: "Conditional Neural Processes"
+date: 2019-05-06 14:00:00 +0200
 tags: [structured learning, graphical models, icml, 2018]
 categories:  [Structured Learning]
-author: Garnelo et al, ICML 2018, <a href='https://arxiv.org/abs/1807.01613' target='_blank'>[link]</a>
-thumb: /images/thumbs/cnp.png
+author: Garnelo et al.
+venue: ICML 2018
+url: 'https://arxiv.org/abs/1807.01613'
+thumb: /images/thumbs/notes/cnp.png
 year: 2018
 ---
 
-
 <div class="summary">
-<b>Gaussian Processes</b> are models that consider a <b>family of functions</b> (typically under a Gaussian distribution) and aim to quickly fit one of these functions at test time based on some observations. In that sense there are orthogonal to Neural Networks which instead aim to learn one function based on a large training set and hoping it generalizes well on any new unseen test input. This work is an attempt at bridging both approaches.
-<ul>
-<li><span class="procons">Pros (+):</span> Novel and well justified, wide range of applications.</li>
-<li><span class="procons">Cons (-):</span> Not clear how easy the method is to put in practice, e.g. dependency to initialization.</li>
-</ul>
+  <b>Gaussian Processes</b> are models that consider a <b>family of functions</b> (typically under a Gaussian distribution) and aim to quickly fit one of these functions at test time based on some observations. In that sense there are orthogonal to Neural Networks which instead aim to learn one function based on a large training set and hoping it generalizes well on any new unseen test input. This work is an attempt at bridging both approaches.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Novel and well justified, wide range of applications.</li>
+    <li><span class="procons">Cons (-):</span> Not clear how easy the method is to put in practice, e.g. dependency to initialization.</li>
+  </ul>
 </div>
 
 

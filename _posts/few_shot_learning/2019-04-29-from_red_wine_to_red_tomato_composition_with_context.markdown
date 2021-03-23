@@ -1,22 +1,22 @@
 ---
-layout: post
-title:  "From Red Wine to Red Tomato: Composition with Context"
-date:   2019-04-29 10:59:24 +0200
-tags: [few-shot learning, cvpr, 2017]
+title: "From Red Wine to Red Tomato: Composition with Context"
+date: 2019-04-29 10:59:24 +0200
+tags: [few-shot learning]
 categories:  [Few-Shot Learning]
-author: Misra et al, CVPR 2017, <a href='http://openaccess.thecvf.com/content_cvpr_2017/papers/Misra_From_Red_Wine_CVPR_2017_paper.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/frwtrt.png
+author: Misra et al.
+venue: CVPR 2017
+url: 'http://openaccess.thecvf.com/content_cvpr_2017/papers/Misra_From_Red_Wine_CVPR_2017_paper.pdf'
+thumb: /images/thumbs/notes/frwtrt.png
 year: 2017
 ---
 
-
-
 <div class="summary">
-In this paper, the authors tackle the problem of learning classifiers of visual concepts that can also adapt to new concept compositions at test time. The main difficulty is that visual concept can different depending on the <b>context</b>, i.e., depending on the concepts they are combined with. For instance the red in "<span style="color: tomato">red tomato</span>" is different from the one in "<span style="color:darkred">red wine</span>". This work emphasizes the notion of visual concepts as composition units, rather than the usual paradigm of directly learning from large exhaustive datasets.
-<ul>
-<li><span class="procons">Pros (+):</span> Purely visual (no extra linguistic/semantic source).</li>
-<li><span class="procons">Cons (-):</span> Results are only reported on unseen combinations, hard to judge the base performance of the model.</li>
-</ul>
+  In this paper, the authors tackle the problem of learning classifiers of visual concepts that can also adapt to new concept compositions at test time. The main difficulty is that visual concept can different depending on the <b>context</b>, i.e., depending on the concepts they are combined with. For instance the red in "<span style="color: tomato">red tomato</span>" is different from the one in "<span style="color:darkred">red wine</span>". This work emphasizes the notion of visual concepts as composition units, rather than the usual paradigm of directly learning from large exhaustive datasets.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Purely visual (no extra linguistic/semantic source).</li>
+    <li><span class="procons">Cons (-):</span> Results are only reported on unseen combinations, hard to judge the base performance of the model.</li>
+  </ul>
 </div>
 
 

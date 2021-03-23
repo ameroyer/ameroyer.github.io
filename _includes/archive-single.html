@@ -46,7 +46,7 @@
         {% if post.collection == 'teaching' %}
           <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}.</p>
         {% elsif post.collection == 'publications' %}
-          <p style="margin: 0; padding: 0" class="icon_links"><span style="margin-right: 10px;">in <i>{{ post.venue }}</i>, {{ post.year | default: "1900" }}</span>
+          <p style="margin: 0; padding: 0"><span style="margin-right: 10px;">in <i>{{ post.venue }}</i>, {{ post.year | default: "1900" }}</span>
           {% if post.paperurl %}
             <a href="{{ post.paperurl }}" target="_blank" title="Download Paper"><i class="fas fa-file-pdf"></i></a>
           {% endif %}
@@ -60,8 +60,10 @@
             <a href="{{ post.poster }}" target="_blank" title="Download Poster"><i class="fas fa-thumbtack"></i></a>
           {% endif %}
           </p>
-        {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+        {% elsif post.collection == 'posts' %}
+         <p style="margin: 0; padding: 0"><span style="margin-right: 10px;"><i>{{ post.author }}</i>, in {{ post.venue }}</span><a href="{{ post.url}}" class="icon_links" target="_blank"><i class="fas fa-file-pdf"></i></a></p>
+         <p class="post_tags"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Post published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+         <p class="post_tags"><strong><i class="fas fa-tags"></i> Tags:</strong> {{ post.tags | join: ", " }}</p>
         {% endif %}
 
     {% if post.collection == 'publications' %}
@@ -75,6 +77,8 @@
         <label for="toggle-bibtex-{{ post.relid }}" class="toggle"><span></span>Show citation</label>
         <div class="bibtex">{{ post.bibtex }}</div>
       {% endif %}
+    {% elsif post.collection == 'posts' %}
+      <p>{{ post.excerpt | strip_html }}</p>
     {% endif %}
 
   </td>

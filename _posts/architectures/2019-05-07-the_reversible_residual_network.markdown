@@ -1,25 +1,23 @@
 ---
-layout: post
-title:  "The Reversible Residual Network: Backpropagation Without Storing Activations"
-date:   2019-05-07 08:59:24 +0200
-tags: [architectures, reversible networks, neurips, 2017]
-categories:  [Architectures]
-author: Gomez et al, NeurIPS 2017, <a href='https://papers.nips.cc/paper/6816-the-reversible-residual-network-backpropagation-without-storing-activations.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/revnet.png
+title: "The Reversible Residual Network: Backpropagation Without Storing Activations"
+date: 2019-05-07 08:59:24 +0200
+tags: [architectures, reversible networks]
+categories: [Architectures]
+author: Gomez et al.
+venue: NeurIPS 2017
+url: 'https://papers.nips.cc/paper/6816-the-reversible-residual-network-backpropagation-without-storing-activations.pdf'
+thumb: /images/thumbs/notes/revnet.png
 year: 2017
 ---
 
-
-
 <div class="summary">
+  Residual Networks (<code>ResNet</code>) <span class="citations">[3]</span> have greatly advanced the state-of-the-art in Deep Learning by making  it possible to train much deeper networks via the addition of skip connections. However, in order to compute gradients during the backpropagation pass, all the units' activations have to be stored during the feed-forward pass, leading to high memory requirements for these very deep networks.
+  Instead, the authors propose a <b>reversible architecture</b> in which activations at one layer can be computed from the ones of the next. Leveraging this invertibility property, they design  a more efficient implementation of backpropagation, effectively trading compute power for memory storage.
 
-Residual Networks (<code>ResNet</code>) <span class="citations">[3]</span> have greatly advanced the state-of-the-art in Deep Learning by making  it possible to train much deeper networks via the addition of skip connections. However, in order to compute gradients during the backpropagation pass, all the units' activations have to be stored during the feed-forward pass, leading to high memory requirements for these very deep networks.
-
-Instead, the authors propose a <b>reversible architecture</b> in which activations at one layer can be computed from the ones of the next. Leveraging this invertibility property, they design  a more efficient implementation of backpropagation, effectively trading compute power for memory storage.
-<ul>
-<li><span class="procons">Pros (+):</span> The change does not negatively impact model accuracy (for equivalent number of model parameters) and it only requires a small change in the backpropagation algorithm.</li>
-<li><span class="procons">Cons (-):</span>  Increased number of parameters, not fully reversible (see <code>i-RevNets</code> <span class="citations">[4]</span>)</li>
-</ul>
+  <ul>
+    <li><span class="procons">Pros (+):</span> The change does not negatively impact model accuracy (for equivalent number of model parameters) and it only requires a small change in the backpropagation algorithm.</li>
+    <li><span class="procons">Cons (-):</span>  Increased number of parameters, not fully reversible (see <code>i-RevNets</code> <span class="citations">[4]</span>)</li>
+  </ul>
 </div>
 
 

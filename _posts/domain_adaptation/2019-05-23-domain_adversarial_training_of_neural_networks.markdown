@@ -1,20 +1,22 @@
 ---
-layout: post
-title:  "Domain Adversarial Training of Neural Networks"
-date:   2019-05-23 10:59:24 +0200
-tags: [domain adaptation, representation learning, adversarial, icml, jmlr, 2016]
+title: "Domain Adversarial Training of Neural Networks"
+date: 2019-05-23 10:59:24 +0200
+tags: [domain adaptation, representation learning, adversarial]
 categories:  [Domain Adaptation]
-author: Ganin et al, JMLR 2016, <a href='https://arxiv.org/pdf/1505.07818.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/dann.png
+author: Ganin et al.
+venue: JMLR 2016
+url: 'https://arxiv.org/pdf/1505.07818.pdf'
+thumb: /images/thumbs/notes/dann.png
 year: 2016
 ---
 
 <div class="summary">
-In this article, the authors tackle the problem of <b>unsupervised domain adaptation</b>: Given labeled samples from a source distribution `\mathcal D_S` and unlabeled samples from target distribution `\mathcal D_T`, the goal is to learn a function that solves the task for both the source and target domains. In particular, the proposed model is trained on <b>both</b> source and target data jointly, and aims to directly learn an <b>aligned representation</b> of the domains, while retaining meaningful information with respect to the source labels.
-<ul>
-<li><span class="procons">Pros (+):</span> Theoretical justification, simple model, easy to implement.</li>
-<li><span class="procons">Cons (-):</span> Some training instability in practice.</li>
-</ul>
+  In this article, the authors tackle the problem of <b>unsupervised domain adaptation</b>: Given labeled samples from a source distribution `\mathcal D_S` and unlabeled samples from target distribution `\mathcal D_T`, the goal is to learn a function that solves the task for both the source and target domains. In particular, the proposed model is trained on <b>both</b> source and target data jointly, and aims to directly learn an <b>aligned representation</b> of the domains, while retaining meaningful information with respect to the source labels.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Theoretical justification, simple model, easy to implement.</li>
+    <li><span class="procons">Cons (-):</span> Some training instability in practice.</li>
+  </ul>
 </div>
 
 

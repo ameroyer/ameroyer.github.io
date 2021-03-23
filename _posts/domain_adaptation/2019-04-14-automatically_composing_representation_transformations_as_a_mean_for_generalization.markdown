@@ -1,22 +1,23 @@
 ---
-layout: post
-title:  "Automatically Composing Representation Transformations as a Mean for Generalization"
-date:   2019-05-14 8:59:24 +0200
-tags: [domain generalization, iclr, 2019]
-categories:  [Domain Adaptation]
-author: Chang et al, ICLR 2019, <a href='https://openreview.net/pdf?id=B1ffQnRcKX' target='_blank'>[link]</a>
-thumb: /images/thumbs/acrtaamfg.png
+title: "Automatically Composing Representation Transformations as a Mean for Generalization"
+date: 2019-05-14 8:59:24 +0200
+tags: [domain generalization]
+categories: [Domain Adaptation]
+author: Chang et al.
+venue: ICLR 2019
+url: 'https://openreview.net/pdf?id=B1ffQnRcKX'
+thumb: /images/thumbs/notes/acrtaamfg.png
 year: 2019
 ---
 
-
 <div class="summary">
-The authors focus on solving <b>recursive</b> tasks which can be decomposed into a sequence of simpler algorithmic procedures (e.g., arithmetic problems, geometric transformations). The main difficulties of this  approach are <b>(i)</b> how to actually decompose the task into simpler blocks and <b>(ii)</b> how to extrapolate to more complex problems from learning on simpler individual tasks.
-The authors propose the <b>compositional recursive learner</b> (<code>CRL</code>) to learn at the same time both the structure of the task and its components.
-<ul>
-<li><span class="procons">Pros (+):</span> This problem is well motivated, and seems a very promising direction, for learning domain-agnostic components.</li>
-<li><span class="procons">Cons (-):</span> The actual implementation description lacks crucial details and I am not sure how easy it would be to reimplement.</li>
-</ul>
+  The authors focus on solving <b>recursive</b> tasks which can be decomposed into a sequence of simpler algorithmic procedures (e.g., arithmetic problems, geometric transformations). The main difficulties of this  approach are <b>(i)</b> how to actually decompose the task into simpler blocks and <b>(ii)</b> how to extrapolate to more complex problems from learning on simpler individual tasks.
+  The authors propose the <b>compositional recursive learner</b> (<code>CRL</code>) to learn at the same time both the structure of the task and its components.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> This problem is well motivated, and seems a very promising direction, for learning domain-agnostic components.</li>
+    <li><span class="procons">Cons (-):</span> The actual implementation description lacks crucial details and I am not sure how easy it would be to reimplement.</li>
+  </ul>
 </div>
 
 

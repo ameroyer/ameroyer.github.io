@@ -1,21 +1,22 @@
 ---
-layout: post
-title:  "Do Deep Generative Models Know what they don't Know ?"
-date:   2019-05-06 10:59:24 +0200
-tags: [adversarial examples, robustness, generative models, iclr, 2019]
-categories:  [Adversarial Examples]
-author: Nalisnick et al, ICLR 2019, <a href='https://arxiv.org/pdf/1810.09136.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/ddgmkwtdk.png
+title: "Do Deep Generative Models Know what they don't Know ?"
+date: 2019-05-06 10:59:24 +0200
+tags: [adversarial examples, robustness, generative models]
+categories: [Adversarial Examples]
+author: Nalisnick et al.
+venue: ICLR 2019
+url: 'https://arxiv.org/pdf/1810.09136.pdf'
+thumb: /images/thumbs/notes/ddgmkwtdk.png
 year: 2019
 ---
 
-
 <div class="summary">
-CNNs' prediction landscapes are known to be very sensitive to adversarial examples, which are small perturbations of an image, indistinguishable to the human eye, that lead to wrong predictions with high confidence. On the other hand, <b>probabilistic generative models</b> such as <code>PixelCNN</code>s and <code>VAE</code>s are trained to model a distribution over the input images, thus could be used to <b>detect out-of-distribution</b> inputs by estimating their likelihood under the data distribution. This paper provides interesting results showing that distributions learned by generative models are not robust enough yet for such purposes.
-<ul>
-<li><span class="procons">Pros (+):</span> Convincing experiments on multiple generative models, detailed analysis in the invertible flow case.</li>
-<li><span class="procons">Cons (-):</span> It would be interesting to have further results for different classes of domain shifts to observe if this is rather a property of the model or of the input data. In particular results on actually detecting adversarial examples</li>
-</ul>
+  CNNs' prediction landscapes are known to be very sensitive to adversarial examples, which are small perturbations of an image, indistinguishable to the human eye, that lead to wrong predictions with high confidence. On the other hand, <b>probabilistic generative models</b> such as <code>PixelCNN</code>s and <code>VAE</code>s are trained to model a distribution over the input images, thus could be used to <b>detect out-of-distribution</b> inputs by estimating their likelihood under the data distribution. This paper provides interesting results showing that distributions learned by generative models are not robust enough yet for such purposes.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Convincing experiments on multiple generative models, detailed analysis in the invertible flow case.</li>
+    <li><span class="procons">Cons (-):</span> It would be interesting to have further results for different classes of domain shifts to observe if this is rather a property of the model or of the input data. In particular results on actually detecting adversarial examples</li>
+  </ul>
 </div>
 
 

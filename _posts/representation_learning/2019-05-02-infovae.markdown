@@ -1,21 +1,22 @@
 ---
-layout: post
-title:  "InfoVAE: Balancing Learning and Inference in Variational Autoencoders"
-date:   2019-05-02 10:59:24 +0200
-tags: [representation learning, aaai, 2017]
-categories:  [Representation Learning]
-author: Zhao et al, AAAI 2019, <a href='https://arxiv.org/pdf/1706.02262.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/infovae.png
+title: "InfoVAE: Balancing Learning and Inference in Variational Autoencoders"
+date: 2019-05-02 10:59:24 +0200
+tags: [representation learning]
+categories: [Representation Learning]
+author: Zhao et al.
+venue: AAAI 2019
+url: 'https://arxiv.org/pdf/1706.02262.pdf'
+thumb: /images/thumbs/notes/infovae.png
 year: 2019
 ---
 
-
 <div class="summary">
-Two known shortcomings of <code>VAE</code>s are that <b>(i)</b> The variational bound (ELBO) can lead to poor approximation of the true likelihood and inaccurate models and <b>(ii)</b> the model can ignore the learned latent representation when the decoder is too powerful. In this work, the author propose to tackle these problems by adding an explicit <b>mutual information</b> term to the standard <code>VAE</code> objective.
-<ul>
-<li><span class="procons">Pros (+):</span> Well justified, fast implementation trick, semi-supervised setting.</li>
-<li><span class="procons">Cons (-):</span> requires explicit knowledge of the sensitive attribute.</li>
-</ul>
+  Two known shortcomings of <code>VAE</code>s are that <b>(i)</b> The variational bound (ELBO) can lead to poor approximation of the true likelihood and inaccurate models and <b>(ii)</b> the model can ignore the learned latent representation when the decoder is too powerful. In this work, the author propose to tackle these problems by adding an explicit <b>mutual information</b> term to the standard <code>VAE</code> objective.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Well justified, fast implementation trick, semi-supervised setting.</li>
+    <li><span class="procons">Cons (-):</span> requires explicit knowledge of the sensitive attribute.</li>
+  </ul>
 </div>
 
 

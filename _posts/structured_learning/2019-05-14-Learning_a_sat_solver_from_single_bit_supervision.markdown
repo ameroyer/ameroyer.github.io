@@ -1,23 +1,22 @@
 ---
-layout: post
-title:  "Learning a SAT Solver from Single-Bit Supervision"
-date:   2019-05-14 08:59:24 +0200
-tags: [structured learning, logics, graphical models, iclr, 2019]
-categories:  [Structured learning]
-author: Selsam et al., ICLR 2019, <a href='https://arxiv.org/pdf/1802.03685.pdf' target='_blank'>[link]</a>
-thumb: /images/thumbs/lasswsbs.png
+title: "Learning a SAT Solver from Single-Bit Supervision"
+date: 2019-05-14 08:59:24 +0200
+tags: [structured learning, logics, graphical models]
+categories: [Structured learning]
+author: Selsam et al.
+venue: ICLR 2019
+url: 'https://arxiv.org/pdf/1802.03685.pdf'
+thumb: /images/thumbs/notes/lasswsbs.png
 year: 2019
 ---
 
-
-
 <div class="summary">
+  The goal is to solve <code>SAT</code> problems with weak supervision: In that case, a model is trained only to predict the <b>satisfiability</b> of a formula in conjunctive normal form. As a byproduct, if the formula is satisfiable, an actual satisfying assignment can be worked out from the network's activations in most cases.
 
-The goal is to solve <code>SAT</code> problems with weak supervision: In that case, a model is trained only to predict the <b>satisfiability</b> of a formula in conjunctive normal form. As a byproduct, if the formula is satisfiable, an actual satisfying assignment can be worked out from the network's activations in most cases.
-<ul>
-<li><span class="procons">Pros (+):</span> No need for extensive annotation, seems to extrapolate nicely to harder problems by increasing the number message passing iterations.</li>
-<li><span class="procons">Cons (-):</span>  Limited practical applicability since it is outperformed by classical <code>SAT</code> solvers.</li>
-</ul>
+  <ul>
+    <li><span class="procons">Pros (+):</span> No need for extensive annotation, seems to extrapolate nicely to harder problems by increasing the number message passing iterations.</li>
+    <li><span class="procons">Cons (-):</span>  Limited practical applicability since it is outperformed by classical <code>SAT</code> solvers.</li>
+  </ul>
 </div>
 
 

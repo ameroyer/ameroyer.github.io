@@ -1,21 +1,22 @@
 ---
-layout: post
-title:  "Neural Discrete Representation Learning"
-date:   2019-04-29 14:59:24 +0200
-tags: [generative models, neurips, 2017]
+title: "Neural Discrete Representation Learning"
+date: 2019-04-29 14:59:24 +0200
+tags: [generative models, VAE, image compression]
 categories:  [Generative Models]
-author: Van den Oord et al, NeurIPS 2017, <a href='https://arxiv.org/abs/1711.00937' target='_blank'>[link]</a>
-thumb: /images/thumbs/vqvae.png
+author: Van den Oord et al.
+venue: NeurIPS 2017,
+url: 'https://arxiv.org/abs/1711.00937'
+thumb: /images/thumbs/notes/vqvae.png
 year: 2017
 ---
 
-
 <div class="summary">
-In this work, the authors propose <code>VQ-VAE</code>, a variant of the Variational Autoencoder (<code>VAE</code>) framework with a discrete latent space, using ideas from vector quantization. The two main motivations are <b>(i)</b> discrete variables are potentially better fit to capture the structure of data such as text and <b>(ii)</b> to prevent the posterior collapse in <code>VAE</code>s that leads to latent variables being ignored when the decoder is too powerful.
-<ul>
-<li><span class="procons">Pros (+):</span> Simple method to incorporate a discretized latent space in VAEs.</li>
-<li><span class="procons">Cons (-):</span> Paragraph about the learned prior is not very clear, and does not have corresponding ablation experiments to evalute its importance.</li>
-</ul>
+  In this work, the authors propose <code>VQ-VAE</code>, a variant of the Variational Autoencoder (<code>VAE</code>) framework with a discrete latent space, using ideas from vector quantization. The two main motivations are <b>(i)</b> discrete variables are potentially better fit to capture the structure of data such as text and <b>(ii)</b> to prevent the posterior collapse in <code>VAE</code>s that leads to latent variables being ignored when the decoder is too powerful.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> Simple method to incorporate a discretized latent space in VAEs.</li>
+    <li><span class="procons">Cons (-):</span> Paragraph about the learned prior is not very clear, and does not have corresponding ablation experiments to evalute its importance.</li>
+  </ul>
 </div>
 
 
@@ -52,22 +53,22 @@ encoder to change its output, which could alter the configuration, hence the cod
 </div>
 
 #### Training Objective
-As we mentioned previously, the $$\mathcal{L}_{\text{ELBO}}$$ objective reduces to the *reconstruction loss* and is used to learn the encoder and decoder parameters.  However the mapping from $$z_e$$ to $$z_q$$ is not straight-forward differentiable (Equation **(1)**). 
+As we mentioned previously, the $$\mathcal{L}_{\text{ELBO}}$$ objective reduces to the *reconstruction loss* and is used to learn the encoder and decoder parameters.  However the mapping from $$z_e$$ to $$z_q$$ is not straight-forward differentiable (Equation **(1)**).
 To palliate this, the authors use a *straight-through estimator*, meaning the gradients from the decoder input $$z_q(x)$$ (quantized) are directly copied to the encoder output $$z_e(x)$$ (continuous).
-However, this means that the latent codes that intervene in the mapping from $$z_e$$ to $$z_q$$ do not receive gradient updates that way. 
+However, this means that the latent codes that intervene in the mapping from $$z_e$$ to $$z_q$$ do not receive gradient updates that way.
 
 Hence in order to train the discrete embedding space, the authors propose to use *Vector Quantization* (`VQ`), a dictionary learning technique, which uses mean squared error to make the latent code closer to the continuous vector it was matched to:
 
 $$
 \begin{align}
-\mathcal{L}_{\text{VQ-VAE}}(x) = -  \log p(x | z_q(x)) + \| \overline{z_e(x)} - e \|^2 + \beta  \| z_e(x) - \bar{e} \|^2 
+\mathcal{L}_{\text{VQ-VAE}}(x) = -  \log p(x | z_q(x)) + \| \overline{z_e(x)} - e \|^2 + \beta  \| z_e(x) - \bar{e} \|^2
 \end{align}
 $$
 
-where $$x \mapsto  \overline{x}$$ denotes the `stop gradient` operator. The first term is the reconstruction loss stemming from the ELBO, the second term is the vector quantization contribution. Finally, the last  term is a *commitment loss* to control  the volume of the latent space by forcing the encoder to "commit" to the latent code it matched with, and not grow its output space unbounded. 
+where $$x \mapsto  \overline{x}$$ denotes the `stop gradient` operator. The first term is the reconstruction loss stemming from the ELBO, the second term is the vector quantization contribution. Finally, the last  term is a *commitment loss* to control  the volume of the latent space by forcing the encoder to "commit" to the latent code it matched with, and not grow its output space unbounded.
 
 #### Learned Prior
-A second contribution of this work consists in *learning the prior distribution*. As mentioned, during the training phase, the prior $$p(z)$$ is a uniform categorical distribution. After the training is done, we fit an *autoregressive distribution* over the space of latent codes. This is in particular enabled by the fact that the latent space is discrete. 
+A second contribution of this work consists in *learning the prior distribution*. As mentioned, during the training phase, the prior $$p(z)$$ is a uniform categorical distribution. After the training is done, we fit an *autoregressive distribution* over the space of latent codes. This is in particular enabled by the fact that the latent space is discrete.
 
 **Note:** It is not clear to me if the autoregressive model is trained on latent codes sampled from the prior $$z \sim p(z)$$ or from the encoder distribution $$x \sim \mathcal{D};\ z \sim q(z\ \vert\ x)$$
 
@@ -75,7 +76,7 @@ A second contribution of this work consists in *learning the prior distribution*
 
 <h3 class="section experiments"> Experiments </h3>
 
-The proposed model is mostly  compared to the standard continuous `VAE` framework. It seems to achieve similar log-likelihood and sample quality, while taking advantage of the discrete latent space. In particular 
+The proposed model is mostly  compared to the standard continuous `VAE` framework. It seems to achieve similar log-likelihood and sample quality, while taking advantage of the discrete latent space. In particular
 For ImageNet for instance, they consider $$K = 512$$ latent codes with dimensions $$1$$. The output of the fully-convolutional encoder $$z_e$$ is a feature map of size $$32 \times 32 \times 1$$ which is then quantized *pixel-wise*. Interestingly, the model still performs well when using a powerful decoder (here, PixelCNN <span class="citations">[2]</span>) which seems to indicate it does not suffer from *posterior collapse* as strongly as the standard continuous `VAE`.
 
 A second set of experiments tackles the problem of audio modeling. The performance of the model are once again satisfying. Furthermore, it does seem like the discrete latent space actually captures relevant characteristics of the input data structure, although this is a purely qualitative observation.

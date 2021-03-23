@@ -409,3 +409,83 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+
+.summary {
+    background-color: #fcfcfc;
+    margin-bottom: 45px;
+    padding: 10px;
+    border: #eaeaea solid;
+    border-left: 15px  #eaeaea solid;
+}
+
+.summary ul {
+    margin-bottom: 0;
+    margin-top: 10px
+}
+
+.summary .procons, .citations {
+    color: $link-color-hover;
+    font-weight: bold
+}
+
+
+p:before {
+    content: "\00a0";
+    padding-right: 5px;
+}
+
+.figure {
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 42px;
+    color: #444444;
+    text-align: center;
+}
+
+h3.section:before{
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-right: 6px;
+    vertical-align: middle;
+}
+
+h3.references:before{
+    content: "\f02d";
+}
+
+h3.experiments:before{
+    content: "\f492";
+}
+
+h3.dataset:before{
+    content: "\f03e";
+}
+
+h3.theory:before{
+    content: "\f51c";
+}
+
+h3.proposed:before{
+    content: "\f0eb";
+}
+
+h3.sota:before{
+    content: "\f1da";
+}
+
+h3.followup:before{
+    content: "\f04e";
+}
+
+.postthumb {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.postthumb img {
+    width: 100%;
+    height: 100%;
+}

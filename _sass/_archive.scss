@@ -30,7 +30,7 @@
 .archive__subtitle {
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
+  font-size: $type-size-3;
   color: mix(#fff, $gray, 25%);
   border-bottom: 1px solid $border-color;
 
@@ -310,11 +310,6 @@ font-size: 10px
   }
 }
 
-.icon_links a {
-  padding-right: 5px
-}
-
-
 /* Abstract and Bibtex hidden divs*/
 div.abstract, div.bibtex {
   display: none;
@@ -395,4 +390,10 @@ input[type=checkbox]:checked + .toggle span:before {
   transform: scale(1);
   opacity: 0;
   transition: all 0.4s ease;
+}
+
+.post_tags {
+  font-size: $type-size-6;
+  margin: 0;
+  padding: 0 0 0 20px;
 }

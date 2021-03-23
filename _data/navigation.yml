@@ -22,5 +22,5 @@ main:
 
   - title: "Reading Notes"
     id: "blog"
-    url: /year-archive/
+    url: /categories/
     symbol: "fa-book"

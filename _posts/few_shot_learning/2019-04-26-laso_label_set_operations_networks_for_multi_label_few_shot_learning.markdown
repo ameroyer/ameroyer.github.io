@@ -1,21 +1,22 @@
 ---
-layout: post
-title:  "LaSO: Label-Set Operations Networks for Multi-label Few-Shot Learning"
-date:   2019-04-26 14:59:24 +0200
-tags: [few-shot learning, cvpr, 2019]
+title: "LaSO: Label-Set Operations Networks for Multi-label Few-Shot Learning"
+date: 2019-04-26 14:59:24 +0200
+tags: [few-shot learning]
 categories:  [Few-Shot Learning]
-author: Alfassy et al., CVPR 2019, <a href='https://arxiv.org/abs/1902.09811' target='_blank'>[link]</a>
-thumb: /images/thumbs/laso.png
+author: Alfassy et al.
+venue: CVPR 2019
+url: 'https://arxiv.org/abs/1902.09811'
+thumb: /images/thumbs/notes/laso.png
 year: 2019
 ---
 
-
 <div class="summary">
-In this paper, the authors tackle the problem of "multi-label few-shot learning", in which a multi-label classifier is trained with <b>few samples</b> of each object category, and is applied on images that contain potentially <b>new combinations</b> of the categories of interest. The key idea of the paper is to synthesize new samples at the <b>feature-level</b> by mirroring set operations (union, intersection, subtraction), hoping to the train/test distribution shift and improve the model's generalization abilities.
-<ul>
-<li><span class="procons">Pros (+):</span> The proposed objective is intuitive and can be seen as a regularization of the feature space to respect specific set operations; also introduces a benchmark for the proposed problem.</li>
-<li><span class="procons">Cons (-):</span> hard to interpret results (lack of ablation experiments). In particular, there are two different potential train/test shifts which are never distinguished: new unseen classes <b>and</b> new unseen combinations of already seen classes.</li>
-</ul>
+  In this paper, the authors tackle the problem of "multi-label few-shot learning", in which a multi-label classifier is trained with <b>few samples</b> of each object category, and is applied on images that contain potentially <b>new combinations</b> of the categories of interest. The key idea of the paper is to synthesize new samples at the <b>feature-level</b> by mirroring set operations (union, intersection, subtraction), hoping to the train/test distribution shift and improve the model's generalization abilities.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span> The proposed objective is intuitive and can be seen as a regularization of the feature space to respect specific set operations; also introduces a benchmark for the proposed problem.</li>
+    <li><span class="procons">Cons (-):</span> hard to interpret results (lack of ablation experiments). In particular, there are two different potential train/test shifts which are never distinguished: new unseen classes <b>and</b> new unseen combinations of already seen classes.</li>
+  </ul>
 </div>
 
 

@@ -1,23 +1,23 @@
 ---
-layout: post
-title:  "Gradient Reversal Against Discrimination"
-date:   2019-04-26 14:59:24 +0200
-tags: [representation learning, dsaa, 2018]
+title: "Gradient Reversal Against Discrimination"
+date: 2019-04-26 14:59:24 +0200
+tags: [representation learning]
 categories:  [Representation Learning]
-author: E. Raff and J. Sylvester, DSAA 2018, <a href='https://arxiv.org/abs/1807.00392' target='_blank'>[link]</a>
-thumb: /images/thumbs/grad.png
+author: E. Raff and J. Sylvester
+venue: DSAA 2018
+url: 'https://arxiv.org/abs/1807.00392'
+thumb: /images/thumbs/notes/grad.png
 year: 2018
 ---
 
-
 <div class="summary">
+  In this work, the authors tackle the problem of learning <b>fair representations</b>, i.e. representations that should be insensitive to some given sensitive attribute, while retaining enough information to solve the task at hand.
+  Given some input data `x` and attribute `a_p`, the task is to predict label `y` from `x` while making the attribute `a_p` <b>protected</b>, in other words, such that predictions are invariant to changes in `a_p`.
 
-<ul>
-In this work, the authors tackle the problem of learning <b>fair representations</b>, i.e. representations that should be insensitive to some given sensitive attribute, while retaining enough information to solve the task at hand.
-Given some input data `x` and attribute `a_p`, the task is to predict label `y` from `x` while making the attribute `a_p` <b>protected</b>, in other words, such that predictions are invariant to changes in `a_p`.
-<li><span class="procons">Pros (+):</span> Simple and intuitive idea, easy to train, naturally extend to protecting multiple attributes.</li>
-<li><span class="procons">Cons (-):</span> Comparison to baselines could be more detailed / comprehensive, in particular the comparison to <code>ALFR</code> <span class="citations">[4]</span> which also relies on adversarial training.</li>
-</ul>
+  <ul>
+    <li><span class="procons">Pros (+):</span> Simple and intuitive idea, easy to train, naturally extend to protecting multiple attributes.</li>
+    <li><span class="procons">Cons (-):</span> Comparison to baselines could be more detailed / comprehensive, in particular the comparison to <code>ALFR</code> <span class="citations">[4]</span> which also relies on adversarial training.</li>
+  </ul>
 </div>
 
 

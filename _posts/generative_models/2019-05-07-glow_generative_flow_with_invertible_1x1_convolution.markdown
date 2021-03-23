@@ -1,21 +1,22 @@
 ---
-layout: post
-title:  "Glow: Generative Flow with Invertible 1×1 Convolutions"
-date:   2019-05-07 14:59:24 +0200
-tags: [generative models, reversible networks, neurips, 2018]
-categories:  [Generative Models]
-author: D. Kingma and P. Dhariwal, NeurIPS 2018, <a href='https://arxiv.org/abs/1807.03039' target='_blank'>[link]</a>
-thumb: /images/thumbs/glow.png
+title: "Glow: Generative Flow with Invertible 1×1 Convolutions"
+date: 2019-05-07 14:59:24 +0200
+tags: [generative models, reversible networks]
+categories: [Generative Models]
+author: D. Kingma and P. Dhariwal
+venue: NeurIPS 2018
+url: 'https://arxiv.org/abs/1807.03039'
+thumb: /images/thumbs/notes/glow.png
 year: 2018
 ---
 
-
 <div class="summary">
-Invertible flow based generative models such as <span class="citations">[2, 3]</span> have several advantages including exact likelihood inference process (unlike <code>VAE</code>s or <code>GAN</code>s) and easily parallelizable training and inference (unlike the sequential generative process in auto-regressive models). This paper proposes a new, more flexible, form of <b>invertible flow</b> for generative models, which builds on <span class="citations">[3]</span>.
-<ul>
-<li><span class="procons">Pros (+):</span>  Very clear presentation, promising results both quantitative and qualitative.</li>
-<li><span class="procons">Cons (-):</span> One of the disadvantages of the models seem to be a large number of parameters, it would be interesting to have a more detailed report on training time. Also a comparison to <span class="citations">[5]</span> (a variant of <code>PixelCNN</code> that allows for faster parallelized sample generation) would be nice.</li>
-</ul>
+  Invertible flow based generative models such as <span class="citations">[2, 3]</span> have several advantages including exact likelihood inference process (unlike <code>VAE</code>s or <code>GAN</code>s) and easily parallelizable training and inference (unlike the sequential generative process in auto-regressive models). This paper proposes a new, more flexible, form of <b>invertible flow</b> for generative models, which builds on <span class="citations">[3]</span>.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span>  Very clear presentation, promising results both quantitative and qualitative.</li>
+    <li><span class="procons">Cons (-):</span> One of the disadvantages of the models seem to be a large number of parameters, it would be interesting to have a more detailed report on training time. Also a comparison to <span class="citations">[5]</span> (a variant of <code>PixelCNN</code> that allows for faster parallelized sample generation) would be nice.</li>
+  </ul>
 </div>
 
 

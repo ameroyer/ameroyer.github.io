@@ -1,21 +1,22 @@
 ---
-layout: post
-title:  "Deep Image Prior"
-date:   2019-05-14 14:59:24 +0200
-tags: [image analysis, generative models, cvpr, 2018]
+title: "Deep Image Prior"
+date: 2019-05-14 14:59:24 +0200
+tags: [image analysis, generative models]
 categories:  [Image Analsys]
-author: Ulyanov et al, CVPR 2018, <a href='https://dmitryulyanov.github.io/deep_image_prior' target='_blank'>[link]</a>
-thumb: /images/thumbs/dip.png
+author: Ulyanov et al.
+venue: CVPR 2018
+url: 'https://dmitryulyanov.github.io/deep_image_prior'
+thumb: /images/thumbs/notes/dip.png
 year: 2018
 ---
 
-
 <div class="summary">
-Deep Neural Networks are widely used in image generation tasks for capturing a general prior on natural images from a large set of observations. However, this paper shows that the <b>structure of the network itself is able to capture a good prior</b>, at least for local cues of image statistics. More precisely, a randomly initialized convolutional neural network can be a good handcrafted prior for low-level tasks such as denoising, inpainting.
-<ul>
-<li><span class="procons">Pros (+):</span>  Interesting results, with connections to Style Transfer and Network inverson.</li>
-<li><span class="procons">Cons (-):</span> Seems like the results might depend a lot on parameter initialization, learning rate etc.</li>
-</ul>
+  Deep Neural Networks are widely used in image generation tasks for capturing a general prior on natural images from a large set of observations. However, this paper shows that the <b>structure of the network itself is able to capture a good prior</b>, at least for local cues of image statistics. More precisely, a randomly initialized convolutional neural network can be a good handcrafted prior for low-level tasks such as denoising, inpainting.
+
+  <ul>
+    <li><span class="procons">Pros (+):</span>  Interesting results, with connections to Style Transfer and Network inverson.</li>
+    <li><span class="procons">Cons (-):</span> Seems like the results might depend a lot on parameter initialization, learning rate etc.</li>
+  </ul>
 </div>
 
 
