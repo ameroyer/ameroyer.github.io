@@ -13,28 +13,22 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-
-<div class="archive__item-teaser">
-  {% if post.teaser %}
-    <img src=
-    {% if teaser contains "://" %}
-    "{{ teaser }}"
-    {% else %}
-    "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-    {% endif %}
-    alt="">
-  {% endif %}
-</div>
-
-<div class ="archive__item-description">
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+<tr class="archive__item list__item">
+  <td class="archive__item-teaser">
+    {% if post.teaser %}
+      <img src=
+      {% if teaser contains "://" %}
+      "{{ teaser }}"
       {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink" id="{{ post.relid }}">{{ title }}</a>
+      "{{ teaser | prepend: "/images/" | prepend: base_path }}"
       {% endif %}
+      alt="">
+    {% endif %}
+  </td>
+
+  <td class ="archive__item-description">
+    <h2 class="archive__item-title" itemprop="headline">
+      {{ title }}
     </h2>
 
     {% if post.read_time %}
@@ -42,25 +36,36 @@
     {% endif %}
 
         {% if post.collection == 'teaching' %}
-          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+          <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}.</p>
         {% elsif post.collection == 'publications' %}
-          <p>in <i>{{ post.venue }}</i>, {{ post.year | default: "1900" }} </p>
+          <p style="margin: 0; padding: 0" class="icon_links"><span style="margin-right: 10px;">in <i>{{ post.venue }}</i>, {{ post.year | default: "1900" }}</span>
+          {% if post.paperurl %}
+            <a href="{{ post.paperurl }}" target="_blank" title="Download Paper"><i class="fas fa-file-pdf"></i></a>
+          {% endif %}
+          {% if post.repository %}
+            <a href="{{ post.repository }}" target="_blank" title="Download Code"><i class="fas fa-download"></i></a>
+          {% endif %}
+          {% if post.talk %}
+            <a href="{{ post.talk }}" target="_blank" title="Download Slides"><i class="fas fa-chalkboard"></i></a>
+          {% endif %}
+          {% if post.poster %}
+            <a href="{{ post.poster }}" target="_blank" title="Download Poster"><i class="fas fa-thumbtack"></i></a>
+          {% endif %}
+          </p>
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
 
-    <label for="toggle-{{ post.relid }}">Show Abstract</label>
-    <input type="checkbox" id="{{ post.relid }}">
+
+    <label for="toggle-abstract-{{ post.relid }}">Show Abstract</label>
+    <input type="checkbox" id="toggle-abstract-{{ post.relid }}" class="abstract">
     <div class="abstract">{{ post.content }}</div>
 
-    {% if post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }} </p>
-    {% elsif post.paperurl %}
-      <p>Download <a href=" {{ post.paperurl }} "><u>here</u></a></p>
+    {% if post.bibtex %}
+      <label for="toggle-bibtex-{{ post.relid }}">Show Bibtex</label>
+      <input type="checkbox" id="toggle-bibtex-{{ post.relid }}" class="bibtex">
+      <div class="bibtex">{{ post.bibtex }}</div>
     {% endif %}
-</div>
 
-  </article>
-</div>
+  </td>
+</tr>
