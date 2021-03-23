@@ -28,7 +28,7 @@
 
   <td class ="archive__item-description">
     <h2 class="archive__item-title" itemprop="headline">
-      {{ title }}
+      <a id ="{{ post.relid }}">{{ title }}</a>
     </h2>
 
     {% if post.read_time %}
@@ -45,8 +45,8 @@
           {% if post.repository %}
             <a href="{{ post.repository }}" target="_blank" title="Download Code"><i class="fas fa-download"></i></a>
           {% endif %}
-          {% if post.talk %}
-            <a href="{{ post.talk }}" target="_blank" title="Download Slides"><i class="fas fa-chalkboard"></i></a>
+          {% if post.slides %}
+            <a href="{{ post.slides }}" target="_blank" title="Download Slides"><i class="fas fa-chalkboard"></i></a>
           {% endif %}
           {% if post.poster %}
             <a href="{{ post.poster }}" target="_blank" title="Download Poster"><i class="fas fa-thumbtack"></i></a>

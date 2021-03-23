@@ -11,10 +11,10 @@ venue: 'Conference on Computer Vision and Pattern Recognition (CVPR)'
 teaser: 'thumbs/pub/Stage_2014_thumb.jpg'
 bibtex: |
   @InProceedings{Royer_2015_CVPR,
-  <br>author = {Royer, Am\'{e}lie and Lampert, Christoph H.},
-  <br>title = {Classifier Adaptation at Prediction Time},
-  <br>booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
-  <br>year = {2015}
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;author = {Royer, Am\'{e}lie and Lampert, Christoph H.},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;title = {Classifier Adaptation at Prediction Time},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;year = {2015}
   <br>}
 ---
 

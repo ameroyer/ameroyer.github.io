@@ -10,11 +10,11 @@ venue: 'International Conference on Acoustics, Speech and Signal Processing (ICA
 teaser: 'thumbs/pub/sic_thumb.png'
 bibtex: |
   @InProceedings{Royer_2016_ICAPS,
-  <br>author = {Royer, Am\'{e}lie, Gravier, Guillaume and Claveau, Vincent},
-  <br>title = {Audio word similarity for clustering with zero resources based on iterative HMM classification},
-  <br>booktitle = {International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  <br>month = {March},
-  <br>year = {2016}
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;author = {Royer, Am\'{e}lie, Gravier, Guillaume and Claveau, Vincent},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;title = {Audio word similarity for clustering with zero resources based on iterative HMM classification},
+  <br>&nbsp;&nbsp;&nbsp;booktitle = {International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;month = {March},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;year = {2016}
   <br>}
 ---
 

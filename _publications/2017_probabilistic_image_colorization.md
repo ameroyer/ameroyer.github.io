@@ -10,11 +10,11 @@ authors: '<span class="first_author">Amélie Royer</span>, <span class="first_au
 venue: 'British Machine Vision Conference (BMVC)'
 teaser: 'thumbs/pub/pic_thumb.png'
 bibtex: |
-  @InProceedings{ Royer_2017_BMVC,
-  <br>author = {Royer, Am\'{e}lie, Kolesnikov, Alexander and Lampert, Christoph H.},
-  <br>title = {Probabilistic Image Colorization},
-  <br>booktitle = {British Machine Vision Conference (BMVC)},
-  <br>year = {2017}
+  @InProceedings{Royer_2017_BMVC,
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;author = {Royer, Am\'{e}lie, Kolesnikov, Alexander and Lampert, Christoph H.},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;title = {Probabilistic Image Colorization},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {British Machine Vision Conference (BMVC)},
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;year = {2017}
   <br>}
 ---
 
