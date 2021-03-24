@@ -4,7 +4,7 @@ date: 2019-04-26 14:59:24 +0200
 tags: [visual reasoning, 2018, icml]
 categories: [Visual Reasoning]
 author: Barrett et al.
-venue: ICML 2018
+venue: ICML
 url: 'https://arxiv.org/pdf/1807.04225.pdf'
 thumb: /images/thumbs/notes/marinn.png
 year: 2018

@@ -4,7 +4,7 @@ date: 2019-05-07 14:59:24 +0200
 tags: [generative models, reversible networks]
 categories: [Generative Models]
 author: D. Kingma and P. Dhariwal
-venue: NeurIPS 2018
+venue: NeurIPS
 url: 'https://arxiv.org/abs/1807.03039'
 thumb: /images/thumbs/notes/glow.png
 year: 2018

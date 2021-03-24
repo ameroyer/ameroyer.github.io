@@ -4,7 +4,7 @@ date: 2019-05-06 10:59:24 +0200
 tags: [adversarial examples, robustness, generative models]
 categories: [Adversarial Examples]
 author: Nalisnick et al.
-venue: ICLR 2019
+venue: ICLR
 url: 'https://arxiv.org/pdf/1810.09136.pdf'
 thumb: /images/thumbs/notes/ddgmkwtdk.png
 year: 2019
@@ -14,8 +14,8 @@ year: 2019
   CNNs' prediction landscapes are known to be very sensitive to adversarial examples, which are small perturbations of an image, indistinguishable to the human eye, that lead to wrong predictions with high confidence. On the other hand, <b>probabilistic generative models</b> such as <code>PixelCNN</code>s and <code>VAE</code>s are trained to model a distribution over the input images, thus could be used to <b>detect out-of-distribution</b> inputs by estimating their likelihood under the data distribution. This paper provides interesting results showing that distributions learned by generative models are not robust enough yet for such purposes.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Convincing experiments on multiple generative models, detailed analysis in the invertible flow case.</li>
-    <li><span class="procons">Cons (-):</span> It would be interesting to have further results for different classes of domain shifts to observe if this is rather a property of the model or of the input data. In particular results on actually detecting adversarial examples</li>
+    <li><span class="pros">Pros (+):</span> Convincing experiments on multiple generative models, detailed analysis in the invertible flow case.</li>
+    <li><span class="cons">Cons (-):</span> It would be interesting to have further results for different classes of domain shifts to observe if this is rather a property of the model or of the input data. In particular results on actually detecting adversarial examples</li>
   </ul>
 </div>
 
@@ -27,7 +27,7 @@ Three classes of generative models are considered in this paper:
   * <b>Latent variable</b> models such as `VAE` <span class="citations">[2]</span>
   * Generative models with **invertible flows** <span class="citations">[3]</span>, in particular `GLOW` <span class="citations">[4]</span>.
 
-The  first experiment the authors propose is to train a generative model $$G$$ on input data $$\mathcal X$$ and use it to evaluate the likelihood on both the training domain $$\mathcal X$$ and a different domain $$\tilde{\mathcal X}$$. Their first negative result is showing that ***a model trained on the CIFAR-10 dataset yields a higher likelihood when evaluated on the SVHN test dataset than on the CIFAR-10 test (or even train) split***. Interestingly, the  converse, when training on SVHN and evaluating on CIFAR, is not true. This result was consistently observed for various architectures including <span class="citations">[1]</span>, <span class="citations">[2]</span> and <span class="citations">[4]</span>, although it is of lesser effect in the `PixelCNN` case. Numerical results for the `GLOW` model are reported in **Figure 1**.
+The  first experiment the authors propose is to train a generative model $$G$$ on input data $$\mathcal X$$ and use it to evaluate the likelihood on both the training domain $$\mathcal X$$ and a different domain $$\tilde{\mathcal X}$$. Their first negative result is showing that *a model trained on the CIFAR-10 dataset yields a higher likelihood when evaluated on the SVHN test dataset than on the CIFAR-10 test (or even train) split*. Interestingly, the  converse, when training on SVHN and evaluating on CIFAR, is not true. This result was consistently observed for various architectures including <span class="citations">[1]</span>, <span class="citations">[2]</span> and <span class="citations">[4]</span>, although it is of lesser effect in the `PixelCNN` case. Numerical results for the `GLOW` model are reported in **Figure 1**.
 
 <div class="figure">
 <img src="{{ site.baseurl }}/images/posts/glow_likelihoods.png">

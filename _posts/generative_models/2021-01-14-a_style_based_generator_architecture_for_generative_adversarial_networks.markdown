@@ -4,7 +4,7 @@ date: 2021-01-14 14:59:24 +0200
 tags: [generative models]
 categories: [Generative Models]
 author: Karras et al.
-venue: CVPR 2019
+venue: CVPR
 url: 'https://arxiv.org/abs/1812.04948'
 thumb: /images/thumbs/notes/todo.png
 year: 2019

@@ -4,7 +4,7 @@ date: 2019-05-14 08:59:24 +0200
 tags: [structured learning, logics, graphical models]
 categories: [Structured learning]
 author: Selsam et al.
-venue: ICLR 2019
+venue: ICLR
 url: 'https://arxiv.org/pdf/1802.03685.pdf'
 thumb: /images/thumbs/notes/lasswsbs.png
 year: 2019

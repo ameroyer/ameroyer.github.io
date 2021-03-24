@@ -4,7 +4,7 @@ date: 2019-05-02 10:59:24 +0200
 tags: [representation learning]
 categories: [Representation Learning]
 author: Zhao et al.
-venue: AAAI 2019
+venue: AAAI
 url: 'https://arxiv.org/pdf/1706.02262.pdf'
 thumb: /images/thumbs/notes/infovae.png
 year: 2019

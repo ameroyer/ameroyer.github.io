@@ -2,9 +2,9 @@
 title: "Deep Image Prior"
 date: 2019-05-14 14:59:24 +0200
 tags: [image analysis, generative models]
-categories:  [Image Analsys]
+categories: [Image Analsys]
 author: Ulyanov et al.
-venue: CVPR 2018
+venue: CVPR
 url: 'https://dmitryulyanov.github.io/deep_image_prior'
 thumb: /images/thumbs/notes/dip.png
 year: 2018

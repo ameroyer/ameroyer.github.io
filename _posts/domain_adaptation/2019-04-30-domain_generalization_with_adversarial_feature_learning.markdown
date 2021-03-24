@@ -4,7 +4,7 @@ date: 2019-04-30 8:59:24 +0200
 tags: [domain adaptation, domain generalization]
 categories: [Domain Adaptation]
 author: Li et al.
-venue: CVPR 2018
+venue: CVPR
 url: 'http://openaccess.thecvf.com/content_cvpr_2018/papers/Li_Domain_Generalization_With_CVPR_2018_paper.pdf'
 thumb: /images/thumbs/notes/dgwafl.png
 year: 2018

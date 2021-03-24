@@ -61,9 +61,9 @@
           {% endif %}
           </p>
         {% elsif post.collection == 'posts' %}
-         <p style="margin: 0; padding: 0"><span style="margin-right: 10px;"><i>{{ post.author }}</i>, in {{ post.venue }}</span><a href="{{ post.url}}" class="icon_links" target="_blank"><i class="fas fa-file-pdf"></i></a></p>
-         <p class="post_tags"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Post published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-         <p class="post_tags"><strong><i class="fas fa-tags"></i> Tags:</strong> {{ post.tags | join: ", " }}</p>
+          <span style="margin-right: 10px;"><i>{{ post.author }}</i>, in {{ post.venue }} {{ post.year }}</span><a href="{{ post.url}}" target="_blank"><i class="fas fa-file-pdf"></i></a>
+          <p class="post_tags"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Post published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+          <p class="post_tags"><strong><i class="fas fa-tags"></i> Tags:</strong> {{ post.tags | join: ", " }}</p>
         {% endif %}
 
     {% if post.collection == 'publications' %}
@@ -78,7 +78,7 @@
         <div class="bibtex">{{ post.bibtex }}</div>
       {% endif %}
     {% elsif post.collection == 'posts' %}
-      <p>{{ post.excerpt | strip_html }}</p>
+      <p style="font-size: 1em">{{ post.excerpt | strip_html }}</p>
     {% endif %}
 
   </td>

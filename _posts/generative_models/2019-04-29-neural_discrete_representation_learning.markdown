@@ -4,7 +4,7 @@ date: 2019-04-29 14:59:24 +0200
 tags: [generative models, VAE, image compression]
 categories:  [Generative Models]
 author: Van den Oord et al.
-venue: NeurIPS 2017,
+venue: NeurIPS
 url: 'https://arxiv.org/abs/1711.00937'
 thumb: /images/thumbs/notes/vqvae.png
 year: 2017

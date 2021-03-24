@@ -4,7 +4,7 @@ date: 2019-05-14 08:59:24 +0200
 tags: [architectures]
 categories: [Architectures]
 author: Santoro et al.
-venue: NeurIPS 2017
+venue: NeurIPS
 url: 'https://arxiv.org/abs/1706.01427'
 thumb: /images/thumbs/notes/asnnmfrr.png
 year: 2017

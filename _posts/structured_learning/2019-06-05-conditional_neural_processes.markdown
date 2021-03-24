@@ -4,7 +4,7 @@ date: 2019-05-06 14:00:00 +0200
 tags: [structured learning, graphical models, icml, 2018]
 categories:  [Structured Learning]
 author: Garnelo et al.
-venue: ICML 2018
+venue: ICML
 url: 'https://arxiv.org/abs/1807.01613'
 thumb: /images/thumbs/notes/cnp.png
 year: 2018

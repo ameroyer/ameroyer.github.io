@@ -2,9 +2,9 @@
 title: "Gradient Reversal Against Discrimination"
 date: 2019-04-26 14:59:24 +0200
 tags: [representation learning]
-categories:  [Representation Learning]
+categories: [Representation Learning]
 author: E. Raff and J. Sylvester
-venue: DSAA 2018
+venue: DSAA
 url: 'https://arxiv.org/abs/1807.00392'
 thumb: /images/thumbs/notes/grad.png
 year: 2018
