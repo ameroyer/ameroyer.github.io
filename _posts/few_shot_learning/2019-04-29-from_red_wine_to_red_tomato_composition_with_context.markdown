@@ -14,13 +14,13 @@ year: 2017
   In this paper, the authors tackle the problem of learning classifiers of visual concepts that can also adapt to new concept compositions at test time. The main difficulty is that visual concept can different depending on the <b>context</b>, i.e., depending on the concepts they are combined with. For instance the red in "<span style="color: tomato">red tomato</span>" is different from the one in "<span style="color:darkred">red wine</span>". This work emphasizes the notion of visual concepts as composition units, rather than the usual paradigm of directly learning from large exhaustive datasets.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Purely visual (no extra linguistic/semantic source).</li>
-    <li><span class="procons">Cons (-):</span> Results are only reported on unseen combinations, hard to judge the base performance of the model.</li>
+    <li><span class="pros">Pros (+):</span> Purely visual (no extra linguistic/semantic source).</li>
+    <li><span class="cons">Cons (-):</span> Results are only reported on unseen combinations, hard to judge the base performance of the model.</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> Proposed model</h3>
+<h2 class="section proposed"> Proposed model</h2>
 The main idea of the proposed method is to learn how to composite visual concepts (here: object categories and attributes) at the *feature-level*. Each visual concept $$c$$ is represented by a linear classifier $$\phi_c: x \mapsto\ x \cdot w_c$$ that has been trained to recognize it. The model then learns to compose such linear classifier by feeding them to a *Transformation Network*, $$T$$, which in turn outputs another classifier, which should capture the composition of the two input concepts.
 
 <div class="figure">
@@ -42,7 +42,7 @@ where $$\ell$$ is a standard binary classification loss (here, cross-entropy). $
 
 ---
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
 The feature extractor used in the experiments is a `VGG-M-1024` network *pretrained on ImageNet*. It is kept fixed and not re-trained, only the Transformation Network and linear classifiers are. Experiments are performed on the *MITStates* dataset and evaluated in terms of predicting (top-k accuracy and mAP) the presence or absence of unseen combinations of (object, attribute) pairs. The model is compared against the following baselines, using the same pre-trained backbone feature extractor:
 
@@ -56,6 +56,6 @@ Interestingly the **Individual-Obj** baseline that considers only the object cat
 
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
   * <span class="citations">[1]</span> Predicting Deep Zero-shot Convolutional Neural Networks using Textual Descriptions, <i>Ba et al, CVPR, 2015</i>
   * <span class="citations">[2]</span> Zero-Shot Learning using purely Textual Descriptions, <i>Everingham et al, ICCV 2013</i>

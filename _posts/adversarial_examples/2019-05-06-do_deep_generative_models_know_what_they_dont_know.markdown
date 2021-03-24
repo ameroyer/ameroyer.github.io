@@ -20,7 +20,7 @@ year: 2019
 </div>
 
 
-<h3 class="section proposed"> Methodology </h3>
+<h2 class="section proposed"> Methodology </h2>
 
 Three classes of generative models are considered in this paper:
   * <b>Auto-regressive</b> models such as `PixelCNN` <span class="citations">[1]</span>
@@ -39,7 +39,7 @@ Intuitively, this observation reflects the fact that both datasets contain natur
 
 ---
 
-<h3 class="section theory"> Analysis in the Invertible Flow Models Case </h3>
+<h2 class="section theory"> Analysis in the Invertible Flow Models Case </h2>
 
 The authors further study this phenomenon in the invertible flow models case as they provide a more rigorous analytical framework (e.g., exact likelihood estimation unlike VAEs which only provide a bound on the true likelihood).
 
@@ -68,7 +68,7 @@ Secondly, they try to directly analyze the difference in likelihood between two 
 
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
   * <span class="citations">[1]</span> Conditional Image Generation with PixelCNN Decoders, <i>van den Oord et al, NeurIPS 2016</i>
   * <span class="citations">[2]</span> Auto-Encoding Variational Bayes, <i>Kingma and Welling, ICLR 2013</i>
   * <span class="citations">[3]</span> Density estimation using Real NVP, <i>Dinh et al., ICLR 2015</i>

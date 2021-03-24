@@ -14,14 +14,14 @@ year: 2018
   Invertible flow based generative models such as <span class="citations">[2, 3]</span> have several advantages including exact likelihood inference process (unlike <code>VAE</code>s or <code>GAN</code>s) and easily parallelizable training and inference (unlike the sequential generative process in auto-regressive models). This paper proposes a new, more flexible, form of <b>invertible flow</b> for generative models, which builds on <span class="citations">[3]</span>.
 
   <ul>
-    <li><span class="procons">Pros (+):</span>  Very clear presentation, promising results both quantitative and qualitative.</li>
-    <li><span class="procons">Cons (-):</span> One of the disadvantages of the models seem to be a large number of parameters, it would be interesting to have a more detailed report on training time. Also a comparison to <span class="citations">[5]</span> (a variant of <code>PixelCNN</code> that allows for faster parallelized sample generation) would be nice.</li>
+    <li><span class="pros">Pros (+):</span>  Very clear presentation, promising results both quantitative and qualitative.</li>
+    <li><span class="cons">Cons (-):</span> One of the disadvantages of the models seem to be a large number of parameters, it would be interesting to have a more detailed report on training time. Also a comparison to <span class="citations">[5]</span> (a variant of <code>PixelCNN</code> that allows for faster parallelized sample generation) would be nice.</li>
   </ul>
 </div>
 
 
 
-<h3 class="section theory"> Invertible flow-Based Generative Models  </h3>
+<h2 class="section theory"> Invertible flow-Based Generative Models  </h2>
 
 Given input data $$x$$, invertible  flow-based generative models are built as two steps processes that generate data from an intermediate latent representation $$z$$:
 
@@ -47,9 +47,9 @@ In order to efficiently estimate the likelihood, the functions $$g_1, \dots g_n$
 
 ---
 
-<h3 class="section proposed"> Proposed Flow Construction: GLOW</h3>
+<h2 class="section proposed"> Proposed Flow Construction: GLOW</h2>
 
-#### Flow step
+### Flow step
 Each flow step function $$g_i$$ is a sequence of three operations as follows. Given an input tensor of dimensions $$h \times w \times c$$:
 
 | Step Description | Functional Form of flow $$g_i$$ | Inverse  Function of the flow, $$g_i^{-1}$$| Log-determinant Expression|
@@ -69,7 +69,7 @@ The rescaled $$x_a$$ is the actual transformed output of the layer, however $$x_
 Finally, note that the previous 1x1 convolution can be seen as a generalized *permutation of the input channels*, and guarantees that different channels combinations are seen during the `split` operation.
 
 
-#### General Pipeline
+### General Pipeline
 These operations are then combined in a *multi-scale architecture* as described in <span class="citations">[3]</span>, which in particular relies on a *squeezing* operation to trade of spatial resolution for number of output channels.
 Given an input tensor of size $$s \times s \times c$$, the squeezing operator takes blocks of size $$2 \times 2 \times c$$ and flatten them to size $$1 \times 1 \times 4c$$, which can easily be inverted by reshaping.
 The final pipeline consists in $$L$$ levels that operate on different scales: each level is composed of $$K$$ flow steps and a final squeezing operation.
@@ -88,21 +88,21 @@ In summary, the *main differences* with <span class="citations">[3]</span> are:
 ---
 
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
-#### Implementation
+### Implementation
 In practice, the authors implement `NN` as a convolutional neural network of depth 3 in the `ACL`; which means that each flow step contains 4 convolutions in total. They also use $$K = 32$$ flow steps in each level. Finally the number of levels $$L$$ is 3 for small-scale experiments (32x32 images) and 6 for large scale (256x256 ImageNet images).
 In particular this means that the model contains *a lot of parameters* ($$L \times K \times 4$$ convolutions) which might be a practical disadvantage compared to other method that produce samples of similar quality, e.g. `GAN`s. However, contrary to these models, `GLOW` provides *exact likelihood inference*.
 
 
-#### Results
+### Results
 `GLOW` outperforms `RealNVP` <span class="citations">[3]</span> in terms of data likelihood, as evaluated on standard benchmarks (ImageNet, CIFAR-10, LSUN). In particular, the 1x1 convolutions performs better than other more specific permutations operations, and only introduces a small computational overhead.
 
 Qualitatively, the samples are of great quality and the model  seems to scale well with higher resolution. However this greatly increases the *memory requirements*. Leveraging the model's invertibility to avoid storing activations during the feed-forward pass such as in <span class="citations">[4]</span>  could be used to (partially) palliate the problem.
 
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
 
   * <span class="citations">[1]</span>  Variational inference with normalizing flows, <i>Rezende and Mohamed, ICML 2015</i>
   * <span class="citations">[2]</span> NICE: Non-linear Independent Components Estimation, <i>Dinh et al., ICLR 2015</i>

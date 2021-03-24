@@ -14,13 +14,13 @@ year: 2016
   The goal of this work is to propose a variational autoencoder based model that learns latent representations which are independent from some sensitive knowledge  present in the data, while retaining enough information to solve the task at hand, e.g. classification. This independence constraint is incorporated via  loss term based on Maximum Mean Discrepancy.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Well justified, fast implementation trick, semi-supervised setting.</li>
-    <li><span class="procons">Cons (-):</span> requires explicit knowledge of the sensitive attribute.</li>
+    <li><span class="pros">Pros (+):</span> Well justified, fast implementation trick, semi-supervised setting.</li>
+    <li><span class="cons">Cons (-):</span> requires explicit knowledge of the sensitive attribute.</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> Proposed </h3>
+<h2 class="section proposed"> Proposed </h2>
 Given input data $$x$$, the goal is to learn a representation of $$x$$, that factorizes out *nuisance* or *sensitive* variables, $$s$$, while retaining task-relevant content $$z$$. Working in the `VAE` (Variational Autoencoder) framework, this is modeled as a generative process:
 
 $$
@@ -33,7 +33,7 @@ $$
 where the prior on latent $$z$$ is explicitly made invariant to the variables to filter out, $$s$$. Introducing decoder $$q_{\phi}: x, s \mapsto z$$, this model can be trained using the standard variational lower bound objective ($$\mathcal{L}_{\text{ELBO}}$$) <span class="citations">[1]</span>.
 
 
-#### Semi-supervised model
+### Semi-supervised model
 In order to make the learned representations relevant to a specific task, the authors propose to incorporate label knowledge during the feature learning stage. This is particularly useful if the task target label $$y$$ is correlated with the sensitive information $$s$$, otherwise unsupervised learning could yield random representations in order to get rid of $$s$$ only. In practice, this is done by considering *two distinct independent sources of information* for the latent: $$y$$, the label for data point $$x$$ (categorical variable in the classification scenario) and a continuous variable $$c$$ that contains the remaining data variations which do not depend on $$y$$ (nor $$s$$). This yields the following generative process:
 
 
@@ -57,7 +57,7 @@ $$
 
 In the *semi-supervised* scenario, the label *y* can be missing for some of the samples. In which case, the ELBO can once again be extended to consider $$y$$ as another latent variable with encoder $$q_{\phi}(y\ \vert\ z)$$ and prior $$p(y)$$.
 
-#### MMD objective
+### MMD objective
 
 So far, the model incorporates explicit statistical independence between the *sensitive* variables to protect, $$s$$ and the latent information to capture from the input data, $$z$$. The authors additionally propose to regularize the marginal posterior $$q_{\phi}(z\ \vert\ s)$$ using the Maximum Mean Discrepancy <span class="citations">[2]</span>: The `MMD` is a distance between probability distributions that compare *mean statistics*, and is often combined with the kernel trick for efficient computation.
 we want the latent representation to not learn any information about $$s$$: This constraint can be enforced by making the distributions $$p(z\ \vert\ s = 0)$$ and $$p(z\ \vert\ s = 1)$$ close to one another, as measured by their `MMD`. This introduces a second loss term to minimize, $$\mathcal{L}_{MMD}$$.
@@ -77,7 +77,7 @@ where the last line is the result of the *kernel trick* and $$k: x, y \mapsto <\
 ---
 
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
 The authors consider *three* experimental scenarios to test the proposed Variational Fair Autoencoder (`VFAE`):
 
@@ -90,11 +90,9 @@ The models are evaluated on ***(i)*** their performance on the target task and *
 On the **Fairness** task, the proposed method seems to be better at ignoring the sensitive information, although its trade-of between accuracy and fairness is not always the best. The main baseline is the model presented in <span class="citations">[3]</span>, which also exploits a moment matching penalty term, although a simpler one, and does not use the `VAE` framework.
 In the **Domain Adaptation** task, the authors mostly compare to the `DANN` <span class="citations">[4]</span> which proposes a simple adversarial training technique to align different domain representations. The `VFAE` results are on-par, or even slightly better in most scenarios.
 
-
-
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
 * <span class="citations">[1]</span> Autoencoding Variational Bayes, <i>Kingma and Welling, ICLR 2014</i>
 * <span class="citations">[2]</span> A Kernel Method for the Two-Sample-Problem, <i>Gretton et al, NeurIPS 2006</i>
 * <span class="citations">[3]</span> Learning Fair Representations, <i>Zemel et al, ICML 2013</i>

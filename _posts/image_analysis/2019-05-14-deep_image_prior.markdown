@@ -14,14 +14,14 @@ year: 2018
   Deep Neural Networks are widely used in image generation tasks for capturing a general prior on natural images from a large set of observations. However, this paper shows that the <b>structure of the network itself is able to capture a good prior</b>, at least for local cues of image statistics. More precisely, a randomly initialized convolutional neural network can be a good handcrafted prior for low-level tasks such as denoising, inpainting.
 
   <ul>
-    <li><span class="procons">Pros (+):</span>  Interesting results, with connections to Style Transfer and Network inverson.</li>
-    <li><span class="procons">Cons (-):</span> Seems like the results might depend a lot on parameter initialization, learning rate etc.</li>
+    <li><span class="pros">Pros (+):</span>  Interesting results, with connections to Style Transfer and Network inverson.</li>
+    <li><span class="cons">Cons (-):</span> Seems like the results might depend a lot on parameter initialization, learning rate etc.</li>
   </ul>
 </div>
 
 
 
-<h3 class="section theory"> Background  </h3>
+<h2 class="section theory"> Background  </h2>
 
 Given a random noise vector $$z$$ and conditioned on an image $$x_0$$, the goal of *conditional image generation* is to generate image $$x = f_{\theta}(z; x_0)$$ (where the random nature of $$z$$ provides a sampling strategy for $$x$$); for instance, the task of generating a  high quality image $$x$$ from its lower resolution counterpart $$x_0$$.
 
@@ -37,7 +37,7 @@ where $$E$$ is a cost function and $$R$$ is a *prior on the output space* acting
 
 ---
 
-<h3 class="section proposed">Deep Image Prior</h3>
+<h2 class="section proposed">Deep Image Prior</h2>
 In this paper, the goal is to replace $$R$$ by an *implicit prior captured by the neural network*, relatively to input noise $$z$$. In other words
 
 $$
@@ -72,7 +72,7 @@ To quantify this effect, the authors perform a reconstruction experiment (i.e., 
 ---
 
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 The experiments focus on three *image analysis tasks*:
   * **Image denoising** ($$E(x, x_0) = \|x - x_0\|$$), based on the previous observation that the model converges  more easily to natural-looking images than noisy ones.
   * **Super Resolution** ($$E(x, x_0) = \| \mbox{downscale}(x) - x_0 \|$$), to upscale the resolution of input image $$x_0$$
@@ -90,7 +90,7 @@ Additionally, the authors test the proposed prior for diagnosing neural networks
 
 
 
-<h3 class="section followup">Closely related (follow-up work)</h3>
+<h2 class="section followup">Closely related (follow-up work)</h2>
 
 <h4 style="margin-bottom: 0px">Deep Decoder: Concise Image Representations from Untrained Non-Convolutional Networks</h4>
 <p style="text-align: right"><small>Heckel and Hand, <a href="https://arxiv.org/abs/1810.03982">[link]</a></small></p>
@@ -103,6 +103,6 @@ Additionally, the authors test the proposed prior for diagnosing neural networks
 
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
   * <span class="citations">[1]</span> An introduction to Total Variation for Image Analysis, <i>Chambolle et al., Technical Report, 2009</i>
   * <span class="citations">[2]</span> U-Net: Convolutional Networks for Biomedical Image Segmentation, <i>Ronneberger et al.,  MICCAI 2015</i>

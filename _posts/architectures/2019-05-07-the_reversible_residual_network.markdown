@@ -15,15 +15,15 @@ year: 2017
   Instead, the authors propose a <b>reversible architecture</b> in which activations at one layer can be computed from the ones of the next. Leveraging this invertibility property, they design  a more efficient implementation of backpropagation, effectively trading compute power for memory storage.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> The change does not negatively impact model accuracy (for equivalent number of model parameters) and it only requires a small change in the backpropagation algorithm.</li>
-    <li><span class="procons">Cons (-):</span>  Increased number of parameters, not fully reversible (see <code>i-RevNets</code> <span class="citations">[4]</span>)</li>
+    <li><span class="pros">Pros (+):</span> The change does not negatively impact model accuracy (for equivalent number of model parameters) and it only requires a small change in the backpropagation algorithm.</li>
+    <li><span class="cons">Cons (-):</span>  Increased number of parameters, not fully reversible (see <code>i-RevNets</code> <span class="citations">[4]</span>)</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> Proposed Architecture</h3>
+<h2 class="section proposed"> Proposed Architecture</h2>
 
-#### RevNet
+### RevNet
 This paper proposes to incorporate idea from previous reversible architectures, such as `NICE` <span class="citations">[1]</span>, into a standard `ResNet`. The resulting model is called `RevNet` and is composed of reversible blocks, inspired from *additive coupling* <span class="citations">[1, 2]</span>:
 
 <center>
@@ -56,7 +56,7 @@ where $$\mathcal F$$ and $$\mathcal G$$ are residual functions, composed of sequ
 
 Similarly to `ResNet`, the final `RevNet` architecture is composed of these invertible residual blocks, as well as non-reversible subsampling operations (e.g., pooling) for which activations have to be stored. However the number of such operations is much smaller than the number of residual blocks in a typical `ResNet` architecture.
 
-#### Backpropagation
+### Backpropagation
 The backpropagation algorithm is derived from the chain rule and is used to compute the total gradients of the loss with respect to the parameters  in a neural network: given a loss function $$L$$, we want to compute *the gradients of $$L$$ with respect to the parameters of each layer*, indexed by $$n \in [1, N]$$, i.e., the quantities $$ \overline{\theta_{n}} = \partial L /\ \partial \theta_n$$ (where $$\forall x, \bar{x} = \partial L / \partial x$$).
 We roughly summarize the algorithm in the left column of **Table 1**: In order to compute the gradients for the $$n$$-th block, backpropagation requires the input and output activation of this block, $$y_{n - 1}$$ and $$y_{n}$$, which have been stored, and the derivative of the loss respectively to the output, $$\overline{y_{n}}$$, which has been computed in the backpropagation iteration of the upper layer; Hence the name *backpropagation*.
 
@@ -136,14 +136,14 @@ y_{n - 1, 1} &=  y_{n, 1} - \mathcal{F}(y_{n - 1, 2})\\
 
 
 
-#### Computational Efficiency
+### Computational Efficiency
 `RevNet`s *trade off memory requirements*, by avoiding storing activations, against computations. Compared to other methods that focus on improving memory requirements in deep networks, `RevNet` provides the best trade-off: no activations have to be stored, the spatial complexity is $$O(1).$$ For the computation complexity, it is linear in the number of layers, i.e. $$O(L)$$.
 One disadvantage is that `RevNet`s introduces *additional parameters*, as each block is composed of two residuals, $$\mathcal F$$ and $$\mathcal G$$, and their number of channels is also halved as the input is first split into two.
 
 
 ---
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
 In the experiments section, the author compare `ResNet` architectures to their `RevNets` "counterparts": they build a `RevNet` with roughly the same number of parameters by halving the number of residual units and doubling the number of channels.
 
@@ -152,7 +152,7 @@ To summarize, reversible networks seems like a very promising direction to effic
 
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
   * <span class="citations">[1]</span> NICE: Non-linear Independent Components Estimation, <i>Dinh et al., ICLR 2015</i>
   * <span class="citations">[2]</span> Density estimation using Real NVP, Dinh et al., <i>ICLR 2017</i>
   * <span class="citations">[3]</span> Deep Residual Learning for Image Recognition, <i>He et al., CVPR 2016</i>

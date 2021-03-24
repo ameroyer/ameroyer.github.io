@@ -14,13 +14,13 @@ year: 2017
   In this work, the authors propose <code>VQ-VAE</code>, a variant of the Variational Autoencoder (<code>VAE</code>) framework with a discrete latent space, using ideas from vector quantization. The two main motivations are <b>(i)</b> discrete variables are potentially better fit to capture the structure of data such as text and <b>(ii)</b> to prevent the posterior collapse in <code>VAE</code>s that leads to latent variables being ignored when the decoder is too powerful.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Simple method to incorporate a discretized latent space in VAEs.</li>
-    <li><span class="procons">Cons (-):</span> Paragraph about the learned prior is not very clear, and does not have corresponding ablation experiments to evalute its importance.</li>
+    <li><span class="pros">Pros (+):</span> Simple method to incorporate a discretized latent space in VAEs.</li>
+    <li><span class="cons">Cons (-):</span> Paragraph about the learned prior is not very clear, and does not have corresponding ablation experiments to evalute its importance.</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> Proposed </h3>
+<h2 class="section proposed"> Proposed </h2>
 
 ### Discrete latent space
 
@@ -52,7 +52,7 @@ In practice, the authors use a categorical *uniform prior* for the latent codes,
 encoder to change its output, which could alter the configuration, hence the code assignment, in the next forward pass.</p>
 </div>
 
-#### Training Objective
+### Training Objective
 As we mentioned previously, the $$\mathcal{L}_{\text{ELBO}}$$ objective reduces to the *reconstruction loss* and is used to learn the encoder and decoder parameters.  However the mapping from $$z_e$$ to $$z_q$$ is not straight-forward differentiable (Equation **(1)**).
 To palliate this, the authors use a *straight-through estimator*, meaning the gradients from the decoder input $$z_q(x)$$ (quantized) are directly copied to the encoder output $$z_e(x)$$ (continuous).
 However, this means that the latent codes that intervene in the mapping from $$z_e$$ to $$z_q$$ do not receive gradient updates that way.
@@ -67,14 +67,14 @@ $$
 
 where $$x \mapsto  \overline{x}$$ denotes the `stop gradient` operator. The first term is the reconstruction loss stemming from the ELBO, the second term is the vector quantization contribution. Finally, the last  term is a *commitment loss* to control  the volume of the latent space by forcing the encoder to "commit" to the latent code it matched with, and not grow its output space unbounded.
 
-#### Learned Prior
+### Learned Prior
 A second contribution of this work consists in *learning the prior distribution*. As mentioned, during the training phase, the prior $$p(z)$$ is a uniform categorical distribution. After the training is done, we fit an *autoregressive distribution* over the space of latent codes. This is in particular enabled by the fact that the latent space is discrete.
 
 **Note:** It is not clear to me if the autoregressive model is trained on latent codes sampled from the prior $$z \sim p(z)$$ or from the encoder distribution $$x \sim \mathcal{D};\ z \sim q(z\ \vert\ x)$$
 
 ---
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
 The proposed model is mostly  compared to the standard continuous `VAE` framework. It seems to achieve similar log-likelihood and sample quality, while taking advantage of the discrete latent space. In particular
 For ImageNet for instance, they consider $$K = 512$$ latent codes with dimensions $$1$$. The output of the fully-convolutional encoder $$z_e$$ is a feature map of size $$32 \times 32 \times 1$$ which is then quantized *pixel-wise*. Interestingly, the model still performs well when using a powerful decoder (here, PixelCNN <span class="citations">[2]</span>) which seems to indicate it does not suffer from *posterior collapse* as strongly as the standard continuous `VAE`.
@@ -83,6 +83,6 @@ A second set of experiments tackles the problem of audio modeling. The performan
 
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
 * <span class="citations">[1]</span> Autoencoding Variational Bayes, <i>Kingma and Welling, ICLR 2014</i>
 * <span class="citations">[2]</span> Pixel Recurrent Neural Networks, <i>van den Oord et al, arXiv 2016</i>

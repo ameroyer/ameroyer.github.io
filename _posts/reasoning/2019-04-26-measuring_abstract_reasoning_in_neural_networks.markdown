@@ -1,7 +1,7 @@
 ---
 title: "Measuring Abstract Reasoning in Neural Networks"
 date: 2019-04-26 14:59:24 +0200
-tags: [visual reasoning, 2018, icml]
+tags: [visual reasoning]
 categories: [Visual Reasoning]
 author: Barrett et al.
 venue: ICML
@@ -10,18 +10,17 @@ thumb: /images/thumbs/notes/marinn.png
 year: 2018
 ---
 
-
 <div class="summary">
   The authors introduce a new visual analogy dataset with the aim to analyze the <b>reasoning abilities of ConvNets</b> on higher abstract reasoning tasks such as small <b>IQ tests</b>.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Introduces a new dataset for abstract reasoning and different evaluation procedures, considers a large range of baselines.</li>
-    <li><span class="procons">Cons (-):</span> The Relation Network considers only pairwise interactions, might be too specific for general abstraction. Also implicit model, hard to interpret in terms of reasoning.</li>
+    <li><span class="pros">Pros (+):</span> Introduces a new dataset for abstract reasoning and different evaluation procedures, considers a large range of baselines.</li>
+    <li><span class="cons">Cons (-):</span> The Relation Network considers only pairwise interactions, might be too specific for general abstraction. Also implicit model, hard to interpret in terms of reasoning.</li>
   </ul>
 </div>
 
 
-<h3 class="section dataset"> Dataset </h3>
+<h2 class="section dataset"> Dataset </h2>
 
 This paper introduces  the *Procedurally Generated Matrices* (PGM) dataset. It is based on *Raven’s Progressive Matrices (RPM)* introduced by psychologist John Raven in 1936. Given an incomplete *3x3* matrix (missing the bottom right panel), the goal is to complete the matrix with an image picked *out of 8 candidates*. Typically, several candidates are plausible but the subject has to select the one with the strongest justification.
 
@@ -31,7 +30,7 @@ This paper introduces  the *Procedurally Generated Matrices* (PGM) dataset. It i
 <p><b>Figure:</b>  An example of PGM (<b>left</b>)) and depiction of relation types (<b>right</b>)</p>
 </div>
 
-#### Construction
+### Construction
 
 A PGM is defined as a set of triples $$(r, o, a)$$, each encoding a particular relation. For instance (`progression`, `lines`, `number`) means that the PGM contains a progression relation on the number of lines. In practice, the PGM dataset only contains *1 to 4* relations per PGM. The construction primitives are as follows:
 
@@ -44,7 +43,7 @@ Note that some relations are hard to define (for instance progression on shape p
 The attributes which are not involved in any of the relations of the PGM are called the *nuisance attributes*. They are chosen either as a fixed value for all images in the sequence, or randomly assigned (*distracting setting*).
 
 
-#### Evaluation Setting
+### Evaluation Setting
 The authors consider 8 generalization settings to evaluate on:
 
 * `Neutral`:  Standard random train/test split, no constraint on the relations
@@ -60,7 +59,7 @@ The authors consider 8 generalization settings to evaluate on:
 
 ---
 
-<h3 class="section sota"> Baselines </h3>
+<h2 class="section sota"> Baselines </h2>
 
 The main contributions of the paper are to introduce the PGM dataset and evaluate several standard deep architectures on it:
 
@@ -86,20 +85,20 @@ Additionally, they consider a semi-supervised variant where the model tries to a
 
 ---
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
-#### Overall results
+### Overall results
 
 The CNN-based  models perform consistently badly, while `LSTM` provides an improvement but a small one. The Wild ResNet provides further improvement over `ResNet`, which shows that using a panel scoring structure is more beneficial than direct classification of the correct candidate. Finally `WReN` *outperforms all other baselines*, which could be expected as it makes use of pairwise interactions across panels. The main benefit of the method is its simplicity (**Note:** it could be interesting to compare again other sequential architecture on `ResNet`).
 
-#### Different evaluation procedure
+### Different evaluation procedure
 
 While the `WReN` achieves satisfying accuracy on the `neutral` and `interpolation` splits (~ 60%), as one would expect this does not hold for the more challenging settings, e.g. it significantly drops to 17% on the `extrapolation` setting.
 
 More generally, it seems that the model *has troubles generalizing* when some attributes are never seen during the training, (e.g., `extrapolation` or `attr.rels` settings) which seems to indicate the model probably more easily picks visual properties rather than  high-level abstract reasoning ones.
 
 
-#### Detailed results
+### Detailed results
 The authors also report results broken down by number of relations per matrix, relation types and attribute types(when only one relation). As one would expect, one-relation are the easiest to solve, but, interestingly, it is slightly easier to solve three-relations matrices than four-relations one, which might be because it determines a more precise answer.
 
 As for relations, `XOR` and `progression` are the hardest to solve although the model still performs decently well on those (50%).
@@ -107,7 +106,7 @@ As for relations, `XOR` and `progression` are the hardest to solve although the 
 
 ---
 
-<h3 class="section followup">Closely related work</h3>
+<h2 class="section followup">Closely related work</h2>
 
 <h4 style="margin-bottom: 0px"> Improving Generalization for Abstract Reasoning Tasks Using Disentangled Feature Representations  <span class="citations">[4]</span></h4>
 <p style="text-align: left">Steenbrugge et al., <a href="https://arxiv.org/abs/1811.04784">[link]</a></p>
@@ -176,7 +175,7 @@ $$
 
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
 * <span class="citations">[1]</span> A simple neural network module for relational reasoning, <i>Santoro et al., NeurIPS 2017</i>
 * <span class="citations">[2]</span> What one intelligence test measures: a theoretical account of the processing in the raven progressive matrices test, <i>Carpenter et al</i>
 * <span class="citations">[3]</span> IQ of Neural Networks, <i> Hoshen and Werman, arXiv 2017</i>

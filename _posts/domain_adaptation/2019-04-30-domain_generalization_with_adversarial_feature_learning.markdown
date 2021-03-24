@@ -14,18 +14,18 @@ year: 2018
   In this paper, the authors tackle the problem of <b>Domain Generalization</b>: Given multiple source domains, the goal is to learn a joint aligned feature representation, hoping it would generalize to a new <b>unseen target</b> domain. This is closely related to the <b>Domain Adaptation</b> task, with the difference that no target data (even unlabeled) is available at training time. Most approaches rely on the idea of aligning the source domains distributions in a shared space. In this work, the authors propose to additionally match the source distributions to a known <b>prior distribution</b>.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Extension of <code>MMD</code>-matching techniques to <b>domain generalization</b>: No target data available, so instead align all domains to a <b>prior distribution</b></li>
-    <li><span class="procons">Cons (-):</span> Potentially lacking comparison to some baselines (deep, adversarial).</li>
+    <li><span class="pros">Pros (+):</span> Extension of <code>MMD</code>-matching techniques to <b>domain generalization</b>: No target data available, so instead align all domains to a <b>prior distribution</b></li>
+    <li><span class="cons">Cons (-):</span> Potentially lacking comparison to some baselines (deep, adversarial).</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> Proposed model: MMD-AAE</h3>
+<h2 class="section proposed"> Proposed model: MMD-AAE</h2>
 
 The goal of domain generalization is to find a common *domain-invariant feature space* underlying the source and (unseen) target spaces, under the assumption that such a space exists.
 To learn such space, the authors propose a variant of <span class="citations">[1]</span>, whose goal is to minimize the variance between the different source domains distributions using *Maximum Mean Discrepancy*. Additionally, the source distributions are aligned with a fixed *prior distribution*, with the hope that this reduces the risk of overfitting to the seen domains.
 
-#### Adversarial Auto-encoder
+### Adversarial Auto-encoder
 The proposed model, `MMD-AAE` (Maximum Mean Discrepancy Adversarial Auto-encoder) consists in an *encoder* $$Q: x \mapsto h$$, that maps inputs to latent codes, and a decoder $$P: h \mapsto x$$. These are equipped with a standard autoencoding loss to make the model learn meaningful embeddings
 
 $$
@@ -42,7 +42,7 @@ $$
 \end{align}
 $$
 
-#### MMD Regularization
+### MMD Regularization
 On top of the `AAE` objective, the authors propose to regularize the feature space using `MMD`, extended to the multi-domain setting. They key idea of the maximum mean discrepancy (`MMD`) is to compare two distributions $$\mathcal P$$ and $$\mathcal Q$$ using their *mean statistics* rather than density estimators:
 
 $$
@@ -96,32 +96,30 @@ $$
 
 where $$k$$ is the kernel function associated to feature map $$\phi$$. Experiments are conducted with various Gaussian RBF priors.
 
-#### Semi-supervised MMD-AAE
+### Semi-supervised MMD-AAE
 
 Finally, the model should learn a representation that is also adequate for the task at hand (here, classification). This is done by adding a *classifier* (two fully connected layers) on top of the representation minimizing a standard cross entropy loss term, $$\mathcal{L}_{\text{err}}$$ between the input image label and the model output.
 
 ---
 
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
-#### Implementation
+### Implementation
 
 The `MMD` functional space uses the `RBF` (Gaussian) kernel.
 The final objective is the weighted sum of the four aforementioned loss terms ($$\mathcal{L}_{\text{AE}}, \mathcal{L}_{\text{GAN}}, \mathcal{L}_{\text{MMD}}$$ and $$\mathcal{L}_{\text{err}}$$).
 The model is trained similarly to `GAN`s: The discriminator and generator (auto-encoder) parameters are updated in *two alternating optimization steps*.
 
-#### Experiments
+### Experiments
 
 The method is evaluated on various classification tasks (digit, object and action recognition) in settings where the domains differ by small geometric changes (e.g., change of pose). They also compare to a large range of baselines, although none of them seem to have an adversarially learned representation space (maybe <span class="citations">[3]</span> would have been a good additional baseline).
 
 Additionally, ablation experiments show that the three terms $$\mathcal{L}_{\text{GAN}}$$, $$\mathcal{L}_{\text{MMD}}$$ and $$\mathcal{L}_{\text{err}}$$ all have a positive effect on the final effect, even when taken individually.
 
-
-
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
 * <span class="citations">[1]</span> Adversarial Autoencoders, <i>Makhzani et al., ICLR Workshop, 2016</i>
 * <span class="citations">[2]</span> Domain Generalization via Invariant Feature Representation, <i>Muandet et al., ICML 2013</i>
 * <span class="citations">[3]</span> Domain-Adversarial Training of Neural Networks, <i>Ganin et al., JMLR 2016</i>

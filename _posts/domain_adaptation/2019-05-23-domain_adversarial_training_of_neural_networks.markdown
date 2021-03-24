@@ -14,13 +14,13 @@ year: 2016
   In this article, the authors tackle the problem of <b>unsupervised domain adaptation</b>: Given labeled samples from a source distribution `\mathcal D_S` and unlabeled samples from target distribution `\mathcal D_T`, the goal is to learn a function that solves the task for both the source and target domains. In particular, the proposed model is trained on <b>both</b> source and target data jointly, and aims to directly learn an <b>aligned representation</b> of the domains, while retaining meaningful information with respect to the source labels.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Theoretical justification, simple model, easy to implement.</li>
-    <li><span class="procons">Cons (-):</span> Some training instability in practice.</li>
+    <li><span class="pros">Pros (+):</span> Theoretical justification, simple model, easy to implement.</li>
+    <li><span class="cons">Cons (-):</span> Some training instability in practice.</li>
   </ul>
 </div>
 
 
-<h3 class="section theory"> Generalized Bound on the Expected Risk </h3>
+<h2 class="section theory"> Generalized Bound on the Expected Risk </h2>
 Several theoretical studies of the domain adaptation problem have proposed upper bounds of the *risk on the target domain*, involving the risk on the source domain and a notion of *distance* between the source and target distribution, $$\mathcal D_S$$ and $$\mathcal D_T$$. Here, the authors specifically consider the work of <span class="citations">[1]</span>. First, they define the $$\mathcal H$$-divergence:
 
 $$
@@ -54,7 +54,7 @@ The rest of the paper directly stems from this intuition: in order to minimize t
 
 ---
 
-<h3 class="section proposed"> Proposed </h3>
+<h2 class="section proposed"> Proposed </h2>
 The goal of the model is to learn a classifier $$\phi$$, which can be decomposed as $$\phi = G_y \circ G_f$$, where $$G_f$$ is a feature extractor and $$G_y$$ a small classifier on top that outputs the target label.  This architecture is trained with a standard classification objective to *minimize*:
 
 $$
@@ -81,7 +81,7 @@ E(\theta_f, \theta_y, \theta_d) &= \mathcal{L}_y(\theta_f, \theta_y)  - \lambda 
 \end{align}
 $$
 
-#### Gradient Reversal Layer
+### Gradient Reversal Layer
 
 Applying standard gradient descent, the `DANN` objective leads to the following gradient update rules:
 
@@ -117,9 +117,9 @@ the gradient by a certain negative constant during backpropagation. </p>
 ---
 
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
-#### Datasets
+### Datasets
 The paper presents extensive results on the following settings:
  * **Toy dataset**: A toy example based on the *two half-moons dataset*, where the source domains consists in the standard binary classification tasks with the two half-moons, and the target is the same, but with a 30 degrees rotation. They compare the `DANN` to a `NN` model which has the same architecture but without the `GRL`: in other words, the baseline directly minimizes both the task and domain classification losses.
  * **Sentiment Analysis**: These experiments are performed on the *Amazon reviews dataset* which contains product reviews from four different domains (hence 12 different source to target scenarios) which have to be classified as either positive or negative reviews.
@@ -127,11 +127,11 @@ The paper presents extensive results on the following settings:
 * **Person Re-identification**: The task of person identification across various visual domains.
 
 
-#### Validation
+### Validation
 Setting hyperparameters is a difficult problem, as we cannot directly evaluate the model on the target domain (no labeled data available). Instead of standard cross-validation, the authors use *reverse validation* based on a technique introduced in <span class="citations">[3]</span>: First, the (labeled) source set $$S$$ and (unlabeled) target set $$T$$ are each *split into a training and validation set*, $$S'$$ and $$S_V$$ (resp. $$T'$$ and $$T_V$$).
 Using these splits, a model $$\eta$$ is trained on $$S'\rightarrow T'$$. Then a second model $$\eta_r$$ is trained for the *reverse direction* on the set $$\{ (x, \eta(x)),\ x \in T'\} \rightarrow S'$$. This reverse classifier $$\eta_r$$ is then finally evaluated on the labeled validation set $$S_V$$, and this accuracy is used as a validation score.
 
-#### Conclusions
+### Conclusions
 In general, the proposed method seems to perform very well for aligning the source and target domains in an *unsupervised domain adaptation* framework. Its main advantage is its *simplicity*, both in terms of theoretical motivation and  implementation. In fact, the `GRL` is easily implemented in standard Deep Learning frameworks and can be added to any architectures.
 
 The main shortcomings of the method are that **(i)** all experiments deal with only two sources and extensions *to multiple domains* might require some tweaks (e.g., considering the sum of pairwise discrepancies as an upper-bound) and **(ii)** in practice, training can become *unstable* due to the adversary training scheme; In particular, the experiment sections show that some stability tricks have to be used during training, such as using momentum or slowly increasing the contribution of the domain classification branch.
@@ -144,14 +144,14 @@ The main shortcomings of the method are that **(i)** all experiments deal with o
 </div>
 ---
 
-<h3 class="section followup">Closely related</h3>
+<h2 class="section followup">Closely related</h2>
 <h4 style="margin-bottom: 0px"> Conditional Adversarial Domain Adaptation.</h4>
 <p style="text-align: right"><small>Long et al, NeurIPS 2018<a href="https://arxiv.org/abs/1705.10667">[link]</a></small></p>
 > In this work, the  authors propose to for Domain Adversarial Networks. More specifically, the domain classifier is conditioned on the input's class: However, since  part of the samples are unlabeled,  the conditioning uses the *output of the target classifier branch* as a proxy for the class information. Instead of simply concatenating the feature input with the condition, the authors consider a  *multilinear conditioning* technique which relies on the *cross-covariance* operator. Another related paper is <span class="citations">[4]</span>. It also uses the multi-class information of the input domain, although in a simpler way.
 
 ---
 
-<h3 class="section references"> References </h3>
+<h2 class="section references"> References </h2>
 * <span class="citations">[1]</span> Analysis of representations for Domain Adaptation, <i>Ben-David et al, NeurIPS 2006</i>
 * <span class="citations">[2]</span> Adapting visual category models to new domains, <i>Saenko et al, ECCV 2010</i>
 * <span class="citations">[3]</span> Person re-identification via structured prediction, <i>Zhang and Saligrama, arXiv 2014</i>

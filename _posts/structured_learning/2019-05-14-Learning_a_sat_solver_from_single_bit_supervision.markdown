@@ -14,15 +14,15 @@ year: 2019
   The goal is to solve <code>SAT</code> problems with weak supervision: In that case, a model is trained only to predict the <b>satisfiability</b> of a formula in conjunctive normal form. As a byproduct, if the formula is satisfiable, an actual satisfying assignment can be worked out from the network's activations in most cases.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> No need for extensive annotation, seems to extrapolate nicely to harder problems by increasing the number message passing iterations.</li>
-    <li><span class="procons">Cons (-):</span>  Limited practical applicability since it is outperformed by classical <code>SAT</code> solvers.</li>
+    <li><span class="pros">Pros (+):</span> No need for extensive annotation, seems to extrapolate nicely to harder problems by increasing the number message passing iterations.</li>
+    <li><span class="cons">Cons (-):</span>  Limited practical applicability since it is outperformed by classical <code>SAT</code> solvers.</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> Model: NeuroSAT</h3>
+<h2 class="section proposed"> Model: NeuroSAT</h2>
 
-#### Input
+### Input
  We consider boolean logic formulas in their *conjunctive normal form* (CNF), i.e. each input formula is represented as a conjunction ($$\land$$) of *clauses*, which are themselves disjunctions ($$\lor$$) of literals (positive or negative instances of variables). The goal is to learn a classifier to predict whether such a formula is satisfiable.
 
  A first problem is how to encode the input formula in such a way that it preserves the CNF invariances (invariance to negating a literal in all clauses, invariance to permutations in $$\lor$$ and $$\land$$ etc.). The authors use a standard  *undirected graph representation* where:
@@ -32,7 +32,7 @@ year: 2019
 The graph relations are encoded as an *adjacency matrix*, $$A$$, with as many rows as there are literals and as many columns as there are clauses. Note that this structure *does not constrain the vertices ordering*, and does not make any preferential treatment between positive or negative literals. However it still has some caveats, which can be avoided by pre-processing the formula. For instance when there are disconnected components in the graph, the averaging decision rule (see next paragraph) can lead to false positives.
 
 
-#### Message-passing model
+### Message-passing model
 In a high-level view, the model keeps track of an embedding for each litteral and each clause ($$L^t$$ and $$C^t$$), updated via *message-passing on the graph*, and combined via a Multi Layer Perceptron (`MLP`) to output the  model prediction of the formula's satisfiability. Then the model updates are as follow:
 
 $$
@@ -55,11 +55,11 @@ y^t &= \mbox{mean}(L^t_{\mbox{vote}})
 $$
 
 
-#### Building the training set
+### Building the training set
 The training set is built such that for any satisfiable training formula $$S$$, it also includes an unsatisfiable counterpart $$S'$$ which differs from $$S$$ *only by negating one litteral in one clause*. These carefully curated samples should constrain the model to pick up substantial characteristics of the formula. In practice, the model is trained on formulas containing up to *40 variables*, and on average *200 clauses*. At this size, the SAT problem can still be solved by state-of-the-art solvers (yielding the supervision required to solve the model) but are large enough they prove challenging for Machine Learning models.
 
 
-#### Inferring the SAT assignment
+### Inferring the SAT assignment
 
 When a formula is satisfiable, one often also wants to know a *valuation* (variable assignment) that satisfies it.
 Recall that $$L^t_{\mbox{vote}}$$ encodes a "vote" for every literal and its negative counterpart. Qualitative experiments show that those scores cannot be directly used for inferring the variable assignment, however they do induce a nice clustering of the variables (once the message passing has converged). Hence an assignment can be found as follows:
@@ -75,20 +75,16 @@ Recall that $$L^t_{\mbox{vote}}$$ encodes a "vote" for every literal and its neg
 
 ---
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
 In practice, the `NeuroSAT` model is trained with embeddings of dimension 128 and 26 message passing iterations. The `MLP` architectures are very standard: 3 layers followed by ReLU activations. The final model obtains 85% accuracy in predicting a formula's satisfiability on the test set.
 
 It also can generalize to *larger problems*, although it requires to increase the number of message passing iterations. However the classification performance significantly decreases (e.g. 25% for 200 variables) and the number of iterations *linearly scales* with the number of variables (at least in the paper experiments).
 
-
-
 <div class="figure">
 <img style="width:30%" src="{{ site.baseurl }}/images/posts/neurosat1.png"> <img style="width:69%" src="{{ site.baseurl }}/images/posts/neurosat2.png">
 <p><b>Figure:</b> <b>(left)</b> Success rate of a <code>NeuroSAT</code> model trained on 40 variables for test set involving formulas with up to 200 variables, as a function of the number of message-passing iterations. <b>(right)</b> The sequence of literal votes across message-passing iterations on a satisfiable formula. The vote matrix is reshaped such that each row contains the votes for a literal and its negated counterpart. For several iterations, most literals vote unsat with low confidence (<span style="color: lightblue">light blue</span>). After a few iterations, there is a phase transition and all literals vote sat with very high confidence (<span style="color: red">dark red</span>), until convergence. </p>
 </div>
-
-
 
 Interestingly, the model generalizes well to other classes of problems that  were *reduced to `SAT`* (using `SAT`'s NP-completitude), although they have different structure than the random formulas generated for training, which seems to show that the model does learn some general characteristics of boolean formulas.
 

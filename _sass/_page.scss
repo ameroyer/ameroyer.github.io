@@ -435,11 +435,6 @@
 }
 
 /* Reading notes content */
-p:before {
-    content: "\00a0";
-    padding-right: 5px;
-}
-
 .figure {
     width: 88%;
     margin-left: auto;
@@ -449,38 +444,38 @@ p:before {
     text-align: center;
 }
 
-h3.section:before{
+h2.section:before{
     font-family: "Font Awesome 5 Free";
     display: inline-block;
     padding-right: 6px;
     vertical-align: middle;
 }
 
-h3.references:before{
+h2.references:before{
     content: "\f02d";
 }
 
-h3.experiments:before{
+h2.experiments:before{
     content: "\f492";
 }
 
-h3.dataset:before{
+h2.dataset:before{
     content: "\f03e";
 }
 
-h3.theory:before{
+h2.theory:before{
     content: "\f51c";
 }
 
-h3.proposed:before{
+h2.proposed:before{
     content: "\f0eb";
 }
 
-h3.sota:before{
+h2.sota:before{
     content: "\f1da";
 }
 
-h3.followup:before{
+h2.followup:before{
     content: "\f04e";
 }
 
@@ -509,7 +504,7 @@ h1 {
   font-size: $type-size-2;
 }
 
-h1, h3, h4 {
+h1, h2, h3 {
     color: $link-color
 }
 

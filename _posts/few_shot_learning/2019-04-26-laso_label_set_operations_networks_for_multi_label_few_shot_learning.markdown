@@ -14,13 +14,13 @@ year: 2019
   In this paper, the authors tackle the problem of "multi-label few-shot learning", in which a multi-label classifier is trained with <b>few samples</b> of each object category, and is applied on images that contain potentially <b>new combinations</b> of the categories of interest. The key idea of the paper is to synthesize new samples at the <b>feature-level</b> by mirroring set operations (union, intersection, subtraction), hoping to the train/test distribution shift and improve the model's generalization abilities.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> The proposed objective is intuitive and can be seen as a regularization of the feature space to respect specific set operations; also introduces a benchmark for the proposed problem.</li>
-    <li><span class="procons">Cons (-):</span> hard to interpret results (lack of ablation experiments). In particular, there are two different potential train/test shifts which are never distinguished: new unseen classes <b>and</b> new unseen combinations of already seen classes.</li>
+    <li><span class="pros">Pros (+):</span> The proposed objective is intuitive and can be seen as a regularization of the feature space to respect specific set operations; also introduces a benchmark for the proposed problem.</li>
+    <li><span class="cons">Cons (-):</span> hard to interpret results (lack of ablation experiments). In particular, there are two different potential train/test shifts which are never distinguished: new unseen classes <b>and</b> new unseen combinations of already seen classes.</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> The LaSO Objective</h3>
+<h2 class="section proposed"> The LaSO Objective</h2>
 The proposed method consists in manipulating the *semantic content* of the training images at the feature-level to generate new combinations of semantic labels, in particular relying on known set operations: union ($$\cup$$), intersection ($$\cap$$) and set subtraction ($$\setminus$$). Interestingly, operations such as $$\cap$$ and $$\setminus$$ could additionally shine new light on *implicit semantic information*: For instance, in a task of animal classification, the operation `zebra` $$\setminus$$ `horse` describes the attribute `striped`, which is not one of the original classes of interest, but a meaningful semantic attribute.
 
 
@@ -30,7 +30,7 @@ The proposed method consists in manipulating the *semantic content* of the train
 </div>
 
 
-#### Semantic Losses
+### Semantic Losses
 The label set operations are performed at the *feature-level*, which in particular allows for using pre-trained feature representations, but makes the example generation process less interpretable, since we do not visualize the actual samples. Given images $$x \in \mathcal X$$, their corresponding labels set $$L(x)$$, and a feature extractor $$\phi: \mathcal X \rightarrow \mathcal F$$, we train three neural networks $$M_{\theta}^{\cap}, M_{\theta}^{\cup}, M_{\theta}^{\setminus}$$ to capture label sets operations at the feature-level:
 
 $$
@@ -50,7 +50,7 @@ $$
 $$
 
 
-#### Regularization
+### Regularization
 Finally, the model contains *regularization losses* that enforces known constraints of set operations, e.g.symmetry constraints for the intersection and union operations in the mappers $$M_\theta^\cap, M_\theta^\cup$$ and $$M_\theta^\setminus$$:
 
 $$
@@ -68,7 +68,7 @@ $$
 </div>
 
 
-#### Note: Analytic variant
+### Note: Analytic variant
 One suggested variant is, instead of learning the label-set operator as neural networks, to define them *analytically*. The authors propose to use the same standard formalism for set operations but on the feature representations:
 
 $$
@@ -83,7 +83,7 @@ However, in practice this performs generally much worse than learning the transf
 
 ---
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
 Each LaSO network is a 3 or 4 layers standard *Multi-Layer Perceptron*. The training is done in two steps: First, the feature extractor is  *pretrained and fixed* (ResNet-34 or Inception v3 architecture), and then both the feature extractor and the LaSO model are jointly trained. The authors consider two experimental settings:
 

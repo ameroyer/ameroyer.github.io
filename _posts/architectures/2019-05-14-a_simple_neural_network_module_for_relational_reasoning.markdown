@@ -14,13 +14,13 @@ year: 2017
   The authors propose a <b>relation module</b> to equip <code>CNN</code> architectures with notion of relational reasoning, particularly useful for tasks such as visual question answering, dynamics understanding etc.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Simple architecture, relies on small and flexible modules.</li>
-    <li><span class="procons">Cons (-):</span>  Still a black-box module, hard to quantify how much "reasoning" happens.</li>
+    <li><span class="pros">Pros (+):</span> Simple architecture, relies on small and flexible modules.</li>
+    <li><span class="cons">Cons (-):</span>  Still a black-box module, hard to quantify how much "reasoning" happens.</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> Proposed Model</h3>
+<h2 class="section proposed"> Proposed Model</h2>
 
 The main idea of *Relation Networks* (`RN`) is to constrain the functional form of convolutional neural networks as to explicitly learn relations between entities, rather than hoping for this property to emerge in the representation during training. Formally, let $$O$$ be a set of objects of interest $$O = \{o_1 \dots o_n\}$$; The Relation Network is trained to learn a representation that considers all *pairwise relations* across the objects:
 
@@ -46,12 +46,12 @@ The *objects* are the basic elements of the relational process we want to model.
 
 ---
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 The main evaluation is done on the `CLEVR` dataset <span class="citations">[2]</span>.  The main message seems to be that the proposed module  is very simple and yet often improves the model accuracy when added to various architectures (`CNN`, `CNN + LSTM` etc.) introduced in <span class="citations">[1]</span>. The main baseline they compare to (and outperform) is *Spatial Attention* (`SA`) which is another simple method to integrate some form of relational reasoning in a neural architecture.
 
   ---
 
- <h3 class="section followup">Closely related</h3>
+ <h2 class="section followup">Closely related</h2>
 
 
 <h4 style="margin-bottom: 0px"> Recurrent Relational Neural Networks <span class="citations">[3]</span></h4>
@@ -93,11 +93,11 @@ MLRN(O) &= f_{\phi}(\sum_{i, j} h^T_{i, j})
 \end{align}
 $$
 
-> It is not clear while this model would be equivalent to explicitly considering higher-level relations (as it is rather  combining pairwise terms for a *finite number of steps*). According to the experiments it seems that indeed this architecture could be better fitted for the studied tasks (e.g. over  the Relation Network or Recurrent Relation Network) but it also makes the model even harder to interpret.
+> It is not clear why this model would be equivalent to explicitly considering higher-level relations (as it is rather  combining pairwise terms for a *finite number of steps*). According to the experiments it seems that indeed this architecture could be better fitted for the studied tasks (e.g. over  the Relation Network or Recurrent Relation Network) but it also makes the model even harder to interpret.
 
 ---
 
-<h3 class="section references">References</h3>
+<h2 class="section references">References</h2>
 * <span class="citations">[1]</span> Inferring and executing programs for visual reasoning, <i>Johnson et al, ICCV 2017</i>
 * <span class="citations">[2]</span> CLEVR: A Diagnostic Dataset for Compositional Language and Elementary Visual Reasoning, <i>Johnson et al, CVPR 1017</i>
 * <span class="citations">[3]</span> Recurrent Relational Neural Networks, <i>Palm et al, NeurIPS 2018</i>

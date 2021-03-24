@@ -14,20 +14,20 @@ year: 2015
   In this paper, the authors propose to learn <b>visual analogies</b> akin to the semantic and synctatic analogies naturally emerging in the <code>Word2Vec</code> embedding <span class="citations">[1]</span>: More specifically hey tackle the joint task of inferring a transformation from a given (source, target) pair, and applying the same relation to a new source image.
 
   <ul>
-    <li><span class="procons">Pros (+):</span> Intuitive formulation; Introduces two datasets for the visual analogy task.</li>
-    <li><span class="procons">Cons (-):</span>  Only consider "local" changes, i.e. geometric transformations or single attribute modifications, and rather clean images (e.g., no background).</li>
+    <li><span class="pros">Pros (+):</span> Intuitive formulation; Introduces two datasets for the visual analogy task.</li>
+    <li><span class="cons">Cons (-):</span>  Only consider "local" changes, i.e. geometric transformations or single attribute modifications, and rather clean images (e.g., no background).</li>
   </ul>
 </div>
 
 
-<h3 class="section proposed"> Proposed Model</h3>
+<h2 class="section proposed"> Proposed Model</h2>
 
 **Definition:** <i>Informally, a visual analogy, denoted by "**a:b :: c:d**", means that the entity **a** is to **b** what the entity **c** is to **d**. This paper focuses on the problem of generating image **d** after inferring the relation **a:b** and given a source image **c**.</I>
 
 The authors propose to use an encoder-decoder based model for generation and to model analogies as *simple transformations of the latent space*, for instance addition between vectors, as was the case in words embeddings such as `GloVe` <span class="citations">[2]</span> or `Word2Vec` <span class="citations">[1]</span>.
 
 
-#### Learning to generate analogies via manipulation of the embedding space
+### Learning to generate analogies via manipulation of the embedding space
 **Additive objective.** Let $$f$$ denote the encoder that maps images to the latent space $$\mathbb{R}^K$$ and $$g$$ the decoder. The first, most straightforward, objective the authors consider is to model analogies as additions in the latent space:
 
 $$
@@ -64,7 +64,7 @@ where `MLP` is a Multi Layer Perceptron. The $$[ \cdot; \cdot]$$ operator denote
 <p><b>Figure:</b>  Illustration of the network structure for analogy making. The top portion shows the encoder, transformation module, and decoder. The botton portion illustrates each of the transformation variants. We share weights with all three encoder networks shown on the top left</p>
 </div>
 
-#### Regularizing the latent space
+### Regularizing the latent space
 
  While the previous losses acted at the pixel-level to match the decoded image with the target image **D**, the authors introduce an additional regularization loss that additionally matches the analogy *at the feature level* with the source analogy **a:b**. Formally, each objective can be written in the form $$\| d - g(f(c) + T(f(b) - f(a), f(c)))\|^2$$ and the corresponding regularization loss term is defined as:
 
@@ -77,7 +77,7 @@ where `MLP` is a Multi Layer Perceptron. The $$[ \cdot; \cdot]$$ operator denote
  Where $$T$$ is defined accordingly to match the chosen embedding, $$\mathcal L_{\mbox{add}}$$, $$\mathcal L_{\mbox{mult}}$$ or $$\mathcal L_{\mbox{deep}}$$. For intance, $$T: (x, y) \mapsto x$$ in the additive variant.
 
 
-#### Disentangling the feature space
+### Disentangling the feature space
 The authors consider another solution to the visual analogy problem, in which they aim to learn a disentangled *feature space* that can be freely manipulated by smoothly modifying the appropriate latent variables, rather than learning a specific operation.
 
 In that setting, the problem is slightly different, as we require additional supervision to control the different factors of variation. It is denoted as **(a, b):s :: c**: given two input images **a** and **b**, and a boolean mask **s** on the latent space, retrieve image **c** which matches the features of **a** according to the pattern of **s**, and the features of **b** on the remaining latent variables.
@@ -96,7 +96,7 @@ $$
 ---
 
 
-<h3 class="section experiments"> Experiments </h3>
+<h2 class="section experiments"> Experiments </h2>
 
  The authors consider three main experimental settings:
   * **Synthetic experiments on geometric shapes.** The dataset consists in 48 × 48 images scaled to [0, 1] with 4 shapes, 8 colors, 4 scales, 5 row and column positions, and 24 rotation angles. No disentangling training was performed in this setting.
@@ -119,7 +119,7 @@ Disentanglement methods usually outperforms the other baselines, especially in *
 ---
 
 
-<h3 class="section followup"> Closely Related</h3>
+<h2 class="section followup"> Closely Related</h2>
 
 <h4 style="margin-bottom: 0px"> Visalogy: Answering Visual Analogy Questions <span class="citations">[3]</span></h4>
 <p style="text-align: left">Sadeghi et al., <a href="https://arxiv.org/pdf/1510.08973.pdf">[link]</a></p>
@@ -142,7 +142,7 @@ $$
 ---
 
 
-<h3 class="section references"> References</h3>
+<h2 class="section references"> References</h2>
    * <span class="citations">[1]</span> Distributed representations of words and phrases and their compositionality, <i>Mikolov et al., NIPS 2013</i>
    * <span class="citations">[2]</span> GloVe: Global Vectors for Word Representation, <i>Pennington et al., EMNLP 2014</i>
    * <span class="citations">[3]</span> Visalogy: Answering Visual Analogy Questions, <i>Sadeghi et al., NeurIPS 2015</i>
