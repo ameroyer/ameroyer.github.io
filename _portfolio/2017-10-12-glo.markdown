@@ -1,11 +1,8 @@
 ---
-layout: post
-title:  "generative latent optimization"
-date:   2017-10-12 10:00:00 +0200
+title: "generative latent optimization"
+date: 2017-10-12 10:00:00 +0200
 tags: generative, tensorflow
-categories: projects
-thumb: /images/thumbs/glo.jpg
-description: "This post contains an introduction and Tensorflow implementation of the Generative Latent Optimization (GLO) model."
+thumb: /images/thumbs/portfolio/glo.jpg
 ---
 
 This is a Tensorflow implementation of the Generative Latent Optimization (GLO) model as introduced in <a href="https://arxiv.org/abs/1707.05776" target="_blank"><i>Optimizing the Latent Space of Generative Networks</i>, P. Bojanowski, A. Joulin, D. Lopez-Paz, A. Szlam, ICLR 2017</a>.

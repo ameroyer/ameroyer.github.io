@@ -35,9 +35,11 @@ redirect_from:
 ## <i class="fa fa-paperclip" aria-hidden="true"></i> Publications
 
   {% assign sorted = site.publications | sort: 'date' | reverse %}
-  <ul class="short_publications_list">{% for post in sorted %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  <ul class="short_publications_list">
+    {% for post in sorted %}
+      {% include archive-single-cv.html %}
+      {% endfor %}
+  </ul>
 
 ## <i class="fa fa-magic" aria-hidden="true"></i> Skills
 

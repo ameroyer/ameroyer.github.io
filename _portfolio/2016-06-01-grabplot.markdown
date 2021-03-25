@@ -1,14 +1,9 @@
 ---
-layout: post
-title:  "grabplot: interactive plotting with matplotlib"
-date:   2016-06-01 10:00:00 +0200
-categories: projects
+title: "grabplot: interactive plotting with matplotlib"
+date: 2016-06-01 10:00:00 +0200
 tags: python, snippet
-thumb: /images/thumbs/grabplot.png
-description: "Grabplot is an interactive tool for plotting simple shapes on the integer lattices using a matplotlib backend. The resulting figure can be saved as a .poly file and fed to Triangulation softwares such as Triangle"
+thumb: /images/thumbs/portfolio/grabplot.png
 ---
-
-
 
 Grabplot is an interactive tool for plotting simple shapes on the integer lattices using a <span class="inline-code">matplotlib</span> backend. The resulting figure can be saved as a `.poly` file and fed to Triangulation softwares such as [Triangle](https://www.cs.cmu.edu/~quake/triangle.html).
 
@@ -23,7 +18,6 @@ Grabplot is an interactive tool for plotting simple shapes on the integer lattic
 
 
 ![demo](/notebooks/2016_06_01 Grabplot/intro.png)
-
 
 
 The interactive <span class="inline-code">matplotlib</span> figure has the following functionalities:

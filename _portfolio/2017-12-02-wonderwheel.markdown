@@ -1,14 +1,9 @@
 ---
-layout: post
-title:  "wonderwheel"
-date:   2017-12-02 10:00:00 +0200
+title: "wonderwheel"
+date: 2017-12-02 10:00:00 +0200
 tags: visualization, css
-categories: projects
-thumb: /images/thumbs/wonderwheel.png
-description: "Wonderwheel is a small data visualization project for representing images color distributions."
+thumb: /images/thumbs/portfolio/wonderwheel.png
 ---
-
-
 
 Wonderwheel is a small data visualization project for representing images color distributions.
  More specifically, an image is represented as <span class="keyword">three separate hue histograms</span> for visually black pixels, visually white pixel, and the rest (perceived color information).

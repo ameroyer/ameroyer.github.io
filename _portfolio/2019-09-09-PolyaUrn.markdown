@@ -1,14 +1,11 @@
 ---
-layout: post
-title:  "The Pólya Urn"
-date:   2019-09-09 18:00:00 +0200
+title: "The Pólya Urn"
+date: 2019-09-09 18:00:00 +0200
 tags: idyll, statistics, maths
-categories: projects
-thumb: /images/thumbs/polya.png
-description: "An interactive study of the Pólya Urn statistical model writen with the Idyll markup language"
+thumb: /images/thumbs/portfolio/polya.png
 ---
 
-This interactive post was written with the [Idyll](https://idyll-lang.org/) markup language. 
+This interactive post was written with the [Idyll](https://idyll-lang.org/) markup language.
 
 Markup sources for this blog post can be found [here](https://github.com/ameroyer/ameroyer.github.io/blob/master/notebooks/2019_09_10_polya/index.idyll).
 
@@ -18,7 +15,7 @@ Markup sources for this blog post can be found [here](https://github.com/ameroye
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-	
+
 	<!-- Primary Meta Tags -->
 <title>An interactive study of the Pólya urn model</title>
 <meta name="title" content="An interactive study of the Pólya urn model">

@@ -20,7 +20,8 @@ layout: default
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.collection == 'posts' %}
       <div style="padding-left: 30px; padding-right: 55px">
-        <div style="text-align: right; width:70%; float:right">
+
+        <div class="postheader">
           <p class="post_tags"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Post published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
           {% if page.tags %}
             <p class="post_tags"><strong><i class="fas fa-tags"></i> Tags:</strong> {{ page.tags | join: ", " }}</p>
@@ -33,7 +34,7 @@ layout: default
           <img src="{{ page.thumb | relative_url}}">
         </div>
 
-        <div style="clear: both; padding-top: 25px">
+        <div class="postcontent">
           {{content}}
         </div>
 

@@ -410,109 +410,124 @@
   text-transform: uppercase;
 }
 
-/* Reading notes summar ydiv */
-.summary {
-    background-color: #fcfcfc;
-    margin-bottom: 45px;
-    padding: 10px;
-    border: #eaeaea solid;
-    border-left: 15px  #eaeaea solid;
-}
+/*
+   Individual pages for blog posts, portfolio items, etc
+   ========================================================================== */
 
-.summary ul {
-    margin-bottom: 0;
-    margin-top: 10px
-}
-
-.summary .pros {
-    color: $success-color;
-    font-weight: bold
-}
-
-.summary .cons {
-    color: $danger-color ;
-    font-weight: bold
-}
-
-/* Reading notes content */
-.figure {
-    width: 88%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 42px;
-    color: #444444;
-    text-align: center;
-}
-
-h2.section:before{
-    font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    padding-right: 6px;
-    vertical-align: middle;
-}
-
-h2.references:before{
-    content: "\f02d";
-}
-
-h2.experiments:before{
-    content: "\f492";
-}
-
-h2.dataset:before{
-    content: "\f03e";
-}
-
-h2.theory:before{
-    content: "\f51c";
-}
-
-h2.proposed:before{
-    content: "\f0eb";
-}
-
-h2.sota:before{
-    content: "\f1da";
-}
-
-h2.followup:before{
-    content: "\f04e";
-}
-
-/* Reading notes header */
+ /* Reading notes header */
 .postthumb {
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
+   width: 200px;
+   height: 200px;
+   border: 1px solid black;
 }
 
 .postthumb img {
-    width: 100%;
-    height: 100%;
+   width: 100%;
+   height: 100%;
 }
 
-p.view {
-    color: $link-color;
-    text-align: right;
-    margin: 15px 0 0 0;
-    padding: 0;
-    line-height:20px
+.postheader {
+  text-align: right;
+  width:70%;
+  float:right}
+
+.postheader h1 {
+ margin: 0;
+ font-size: $type-size-2;
+ color: $link-color;
 }
 
-h1 {
-  margin: 0;
-  font-size: $type-size-2;
+.postheader p.view {
+   color: $link-color;
+   text-align: right;
+   margin: 15px 0 0 0;
+   padding: 0;
+   line-height:20px
 }
 
-h1, h2, h3 {
-    color: $link-color
-}
+/* Reading notes summar ydiv */
+.postcontent {
+  clear: both;
+  padding-top: 25px;
+  
+  .summary {
+      background-color: #fcfcfc;
+      margin-bottom: 45px;
+      padding: 10px;
+      border: #eaeaea solid;
+      border-left: 15px  #eaeaea solid;
+  }
 
-em {
-    color: $dribbble-color;
-    font-style: normal;
+  .summary ul {
+      margin-bottom: 0;
+      margin-top: 10px
+  }
+
+  .summary .pros {
+      color: $success-color;
+      font-weight: bold
+  }
+
+  .summary .cons {
+      color: $danger-color ;
+      font-weight: bold
+  }
+
+  /* Reading notes content */
+  .figure {
+      width: 88%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 42px;
+      color: #444444;
+      text-align: center;
+  }
+
+  h2.section:before{
+      font-family: "Font Awesome 5 Free";
+      display: inline-block;
+      padding-right: 6px;
+      vertical-align: middle;
+  }
+
+  h2.references:before{
+      content: "\f02d";
+  }
+
+  h2.experiments:before{
+      content: "\f492";
+  }
+
+  h2.dataset:before{
+      content: "\f03e";
+  }
+
+  h2.theory:before{
+      content: "\f51c";
+  }
+
+  h2.proposed:before{
+      content: "\f0eb";
+  }
+
+  h2.sota:before{
+      content: "\f1da";
+  }
+
+  h2.followup:before{
+      content: "\f04e";
+  }
+
+  h2, h3 {
+      color: $link-color
+  }
+
+  em {
+      color: $dribbble-color;
+      font-style: normal;
+  }
+   .citations {
+     font-weight: 550;
+     color: $link-color-visited
+   }
 }
- .citations {
-   font-weight: 550;
-   color: $link-color-visited
- }

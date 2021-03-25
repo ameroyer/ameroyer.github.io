@@ -1,11 +1,8 @@
 ---
-layout: post
-title:  "variational auto-encoders"
-date:   2017-10-01 10:00:00 +0200
+title: "variational auto-encoders"
+date: 2017-10-01 10:00:00 +0200
 tags: generative, tensorflow
-categories: projects
-thumb: /images/thumbs/vae.jpg
-description: "This post presents a simple introduction and Tensorflow implementation of the Variational Auto-encoder model (VAE)."
+thumb: /images/thumbs/portfolio/vae.jpg
 ---
 
 This post presents a simple Tensorflow implementation of the Variational Auto-encoder model (VAE) introduced in <a href="https://arxiv.org/abs/1312.6114" target="_blank"><i>Auto-Encoding Variational Bayes</i>, D. Kingma, M. Welling, ICLR 2017</a>, that I will apply to the <a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA</a> faces dataset here.
