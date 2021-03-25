@@ -5,10 +5,11 @@ title: "Posts by Category"
 author_profile: true
 ---
 
-<h1 class="page__title">Reading Notes</h1>
-
 {% include base_path %}
 {% include group-by-array collection=site.posts field="categories" %}
+
+<h1 class="page__title">Reading Notes</h1>
+<div class="subtitle">Some of my reading notes for recent and old research papers, tentatively sorted by fields</div>
 
 {% for category in group_names %}
   {% assign posts = group_items[forloop.index0] %}

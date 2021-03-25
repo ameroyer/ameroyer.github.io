@@ -11,6 +11,8 @@ redirect_from:
 {% include base_path %}
 
 <h1 class="page__title"><a href="/files/Royer_Amelie_CV.pdf" title="Download as PDF" target="_blank"><i class="fas fa-file-pdf fa-lg"></i></a> Resume</h1>
+<div class="subtitle">Born in Reims, France, on September 26th, 1993
+<p>Currently a PhD student at IST Austria</div>
 
 ## <i class="fa fa-graduation-cap"></i> Education
 

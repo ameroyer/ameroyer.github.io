@@ -1,8 +1,8 @@
 ---
-title: "wonderwheel"
+title: "Wonderwheel"
 date: 2017-12-02 10:00:00 +0200
 tags: visualization, css
-thumb: /images/thumbs/portfolio/wonderwheel.png
+thumb: /wonderwheel.png
 ---
 
 Wonderwheel is a small data visualization project for representing images color distributions.

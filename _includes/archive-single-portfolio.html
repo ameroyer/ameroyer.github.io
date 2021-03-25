@@ -1,7 +1,7 @@
 {% include base_path %}
 
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% if post.thumb %}
+  {% capture teaser %}{{ post.thumb }}{% endcapture %}
 {% else %}
   {% assign teaser = site.teaser %}
 {% endif %}
@@ -12,15 +12,16 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "grid" }}__item">
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
+    {% if teaser %}
       <div class="archive__item-teaser">
         <img src=
           {% if teaser contains "://" %}
             "{{ teaser }}"
           {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+            "{{ teaser | prepend: "/images/thumbs/portfolio/" | prepend: base_path }}"
           {% endif %}
           alt="">
       </div>
