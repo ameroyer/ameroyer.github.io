@@ -89,7 +89,7 @@
       text-decoration: underline;
 
       img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+        opacity: 0.5;
       }
     }
   }
@@ -445,20 +445,20 @@
    line-height:20px
 }
 
-/* Reading notes summar ydiv */
-.pros {
-    color: $success-color;
-    font-weight: bold
-}
-
-.cons {
-    color: $danger-color ;
-    font-weight: bold
-}
-
+/* Styling for reading notes and notebooks */
 .postcontent {
   clear: both;
   padding-top: 25px;
+
+  .pros {
+      color: $success-color;
+      font-weight: bold
+  }
+
+  .cons {
+      color: $danger-color ;
+      font-weight: bold
+  }
 
   .summary {
       background-color: #fcfcfc;

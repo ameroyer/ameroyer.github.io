@@ -17,13 +17,13 @@
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if teaser %}
       <div class="archive__item-teaser">
-        <img src=
+        <a href="{{ post.link }}"><img style="border: 1px solid black;" src=
           {% if teaser contains "://" %}
             "{{ teaser }}"
           {% else %}
-            "{{ teaser | prepend: "/images/thumbs/portfolio/" | prepend: base_path }}"
+            "{{ teaser | prepend: base_path }}"
           {% endif %}
-          alt="">
+          alt=""></a>
       </div>
     {% endif %}
 
@@ -49,7 +49,7 @@
     {% endif %}
 
     <div class="archive__item-excerpt">
-      <p>{{ post.excerpt | truncate: 100 | markdownify | remove: '<p>' | remove: '</p>' }}...<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p>
+      <p>{{ post.excerpt | truncate: 150 | markdownify | remove: '<p>' | remove: '</p>' }}</p>
     </div>
 
     {% if post.citation and post.paperurl %}

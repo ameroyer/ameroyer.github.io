@@ -1,8 +1,8 @@
 ---
 title: "Mesh Generation with Alpha Complexes"
 date: 2018-03-01 10:00:00 +0200
-tags: topology, meshing
-thumb: alphacomplexes.png
+languages: [python, maths]
+thumb: /images/thumbs/portfolio/alphacomplexes.png
 ---
 
 This post is a short introduction and Python implementation of the Delaunay and Alpha Complexes triangulation in 2D. For additional reference, see for instance <a href="https://www.amazon.com/Computational-Topology-Introduction-Herbert-Edelsbrunner/dp/0821849255" target="_blank">Computational Topology: An Introduction, H. Edelsbrunner and J. Harer</a>, Chapter 3, Section 4.

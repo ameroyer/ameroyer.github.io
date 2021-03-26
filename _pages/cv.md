@@ -53,8 +53,8 @@ redirect_from:
 
   * **Languages**
     * 🇫🇷 French (*native speaker*)
-    * 🇬🇧 English (*fluent*) <br>&#160;&#160;&#160;&#160;<small>FCE/B2 2010, TOEIC (990/990) 2013</small>
-    * 🇩🇪 German (*advanced*) <br>&#160;&#160;&#160;&#160;<small>ZD/B1 2008, ZMP/C1 2010
+    * 🇬🇧 English (*fluent*) <br>&#160;&#160;&#160;&#160;<small>FCE/B2 in 2010, TOEIC (990/990) in 2013</small>
+    * 🇩🇪 German (*advanced*) <br>&#160;&#160;&#160;&#160;<small>ZD/B1 in 2008, ZMP/C1 in 2010
   </small>
   * **Coding**
     * `Python`, `C++/C`, `OCaml`

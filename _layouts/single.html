@@ -18,15 +18,17 @@ layout: default
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if page.collection == 'posts' %}
+    {% if page.collection == 'posts' or page.collection == 'portfolio'%}
       <div style="padding-left: 30px; padding-right: 55px">
 
         <div class="postheader">
           <p class="post_tags"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Post published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-          {% if page.tags %}
+          {% if page.collection == 'posts' %}
             <p class="post_tags"><strong><i class="fas fa-tags"></i> Tags:</strong> {{ page.tags | join: ", " }}</p>
+            <p class="view"><span style="margin-right: 10px;">{{ page.author }}, {{ page.venue }}, {{ page.year }}</span><a href="{{ post.url}}" target="_blank"><i class="fas fa-file-pdf"></i></a></p>
+          {% else %}
+            (TODO) Portfolio header
           {% endif %}
-          <p class="view"><span style="margin-right: 10px;">{{ page.author }}, {{ page.venue }}, {{ page.year }}</span><a href="{{ post.url}}" target="_blank"><i class="fas fa-file-pdf"></i></a></p>
           <h1>{{ page.title }}</h1>
         </div>
 

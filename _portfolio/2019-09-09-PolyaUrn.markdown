@@ -1,8 +1,8 @@
 ---
 title: "The Pólya Urn"
 date: 2019-09-09 18:00:00 +0200
-tags: idyll, statistics, maths
-thumb: polya.png
+languages: [idyll, maths]
+thumb: /images/thumbs/portfolio/polya.png
 ---
 
 This interactive post was written with the [Idyll](https://idyll-lang.org/) markup language.
