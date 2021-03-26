@@ -10,9 +10,12 @@ redirect_from:
 
 {% include base_path %}
 
-<h1 class="page__title"><a href="/files/Royer_Amelie_CV.pdf" title="Download as PDF" target="_blank"><i class="fas fa-file-pdf fa-lg"></i></a> Resume</h1>
-<div class="subtitle">Born in Reims, France, on September 26th, 1993
-<p>Currently a PhD student at IST Austria</div>
+<h1 class="page__title"><a href="/files/Royer_Amelie_CV.pdf" title="Download as PDF" target="_blank"><i class="fas fa-file-pdf fa-lg"></i></a> Resume
+<div class="subtitle">
+  Born in Reims, France, on September 26th, 1993
+  <br>Currently a PhD student at IST Austria
+</div>
+</h1>
 
 ## <i class="fa fa-graduation-cap"></i> Education
 
@@ -36,12 +39,15 @@ redirect_from:
 
 ## <i class="fa fa-paperclip" aria-hidden="true"></i> Publications
 
-  {% assign sorted = site.publications | sort: 'date' | reverse %}
-  <ul class="short_publications_list">
+{% assign years = site.publications | group_by: "year" | sort: "name" | reverse %}
+<ul class="short_publications_list">
+  {% for y in years %}
+    {% assign sorted = y.items | sort: "venue" | reverse %}
     {% for post in sorted %}
       {% include archive-single-cv.html %}
-      {% endfor %}
-  </ul>
+    {% endfor %}
+  {% endfor %}
+</ul>
 
 ## <i class="fa fa-magic" aria-hidden="true"></i> Skills
 

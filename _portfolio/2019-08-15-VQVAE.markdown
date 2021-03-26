@@ -1,18 +1,18 @@
 ---
 title: "VQ-VAE"
 date: 2019-08-20 18:00:00 +0200
-tags: deep learning, generative, keras
+tags: [deep learning, generative, keras]
 thumb: vqvae.png
 ---
 
 This notebook contains a Keras / Tensorflow implementation of the **VQ-VAE** model, which was introduced in [Neural Discrete Representation Learning (van den Oord et al, NeurIPS 2017)](https://arxiv.org/abs/1711.00937). This is a generative model based on Variational Auto Encoders (**VAE**) which aims to make the latent space discrete using Vector Quantization (**VQ**) techniques. This implementation trains a VQ-VAE based on simple convolutional blocks (no auto-regressive decoder), and a PixelCNN categorical prior as described in the paper. The current code was tested on MNIST. This project is also hosted as a [Kaggle notebook](https://www.kaggle.com/ameroyer/keras-vq-vae-for-image-generation).
 
-**Pros (+):**
+<span class="pros">Pros (+)</span>
   * Simple method and training objective
   * "Proper" Discrete latent space. This is a promising property to model data that is inherently discrete, e.g. text.
 
 
-**Cons (-):**
+  <span class="cons">Cons (-)</span>
   * Loses the "easy latent sampling" property from VAEs. Two-stage training required to learn a fitting categorical prior.
   * The training objective does not correspond to a bound on the log-likelihood anymore.
 
@@ -172,7 +172,7 @@ def latent_loss(dummy_ground_truth, outputs):
 We can now train the model on the MNIST dataset:
 
 <div style="text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 30px">
-<img src="/images/posts/vqvae_training.png">
+<img src="/images/posts/vqvae/vqvae_training.png">
 <p><b>Figure 1</b>: Training the VQ-VAE on the MNIST dataset</p>
 </div>
 
@@ -180,7 +180,7 @@ Once training is done, we can also visualize some of the results, such as recons
 
 
 <div style="text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 30px">
-<img src="/images/posts/vqvae_reconstructions.png">
+<img src="/images/posts/vqvae/vqvae_reconstructions.png">
 <p><b>Figure 2</b>: Reconstructions on the test set. The image reads row-wise such that every pair contains the original image (left) and its reconstruction (right) with the mean squared error distance to the original.</p>
 </div>
 
@@ -193,7 +193,7 @@ However, the codes for our dataset have no guarantee to lie uniformly on that sp
 
 
 <div style="text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 30px">
-<img src="/images/posts/vqvae_generations.png">
+<img src="/images/posts/vqvae/vqvae_generations.png">
 <p><b>Figure 3</b>: Generating samples from the uniform latent prior assumed during training</p>
 </div>
 
@@ -282,7 +282,7 @@ def gated_masked_conv2d(v_stack_in, h_stack_in, out_dim, kernel, mask='b', resid
 In order to train the prior, we're going to encode every training image to obtain their discrete representation as indices in the latent codebook. This is also a good opportunity to *visualize the discrete representations learned by the encoder*. Here we can notice some interesting features, such as: all the black/background pixels are mapped to the same codeword, and the same for dense/white pixels (e.g., the ones at the center of a number)
 
 <div style="text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 30px">
-<img src="/images/posts/vqvae_codes.png">
+<img src="/images/posts/vqvae/vqvae_codes.png">
 <p><b>Figure 4</b>: Visualizing categorical codes learned by the VQ-VAE encoder</p>
 </div>
 
@@ -290,7 +290,7 @@ Equipped with the Masked gated convolutions and the training set, we can finally
 
 
 <div style="text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 30px">
-<img src="/images/posts/vqvae_prior_training.png">
+<img src="/images/posts/vqvae/vqvae_prior_training.png">
 <p><b>Figure 5</b>: Training the VQ-VAE PixelCNN prior</p>
 </div>
 
@@ -298,7 +298,7 @@ Once again, we can check the model ability to *reconstruct* discrete latent code
 
 
 <div style="text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 30px">
-<img src="/images/posts/vqvae_prior_reconstructions.png">
+<img src="/images/posts/vqvae/vqvae_prior_reconstructions.png">
 <p><b>Figure 6</b>: Training the VQ-VAE PixelCNN prior</p>
 </div>
 
@@ -306,6 +306,6 @@ More importantly, let's have a look at images *generated* by sampling from the p
 
 
 <div style="text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 30px">
-<img src="/images/posts/vqvae_final.png">
+<img src="/images/posts/vqvae/vqvae_final.png">
 <p><b>Figure 7</b>: Generating samples from the learned PixelCNN prior</p>
 </div>

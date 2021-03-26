@@ -51,6 +51,7 @@
   }
 }
 
+
 /* remove border*/
 .page__content {
 
@@ -97,64 +98,6 @@ a.rel_link:hover {
    List view
    ========================================================================== */
 
-// main page: post describtion
-.portfolio_item img {
-  border: 1px solid black;
-}
-
-.portfolio_item .textbox {
-  height: 300px;
-  width:500px;
-  background-color: rgba(255, 255, 255, 0.8);
-  position:relative;
-  top:-150px;
-  visibility: visible;}
-
-.portfolio_item .title {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
-  bottom:150px;
-  padding-left:15px;
-  padding-right:15px;
-}
-
-.portfolio_item .text {
-padding:10px;
-visibility: hidden;
-transform: translateY(0);
-transition: 0s;
-}
-
-.portfolio_item:hover .text {
-visibility:visible;
-opacity: 1;
-transform: translateY(-15px);
-transition: 1.2s;
-}
-
-.portfolio_item:hover .textbox {
-visibility:visible;
-opacity: 1;
-}
-
-.portfolio_item .post-link {
-line-height:0.7em;
-color: "red";
-font-size:20px;
-font-variant: small-caps;
-font-weight: bold;
-}
-
-.post-meta, .post-main a{
-color: "red";
-font-weight: bold;
-font-size: 10px
-}
-
-/*
-   List view
-   ========================================================================== */
-
 .list__item {
   @include breakpoint($medium) {
     padding-right: $right-sidebar-width-narrow;
@@ -173,7 +116,6 @@ font-size: 10px
   }
 }
 
-
 /*
    Grid view
    ========================================================================== */
@@ -191,14 +133,18 @@ font-size: 10px
   }
 
   .archive__item-excerpt {
+    font-size: $type-size-6;
     display: none;
+  }
+
+  .archive__item-teaser, .archive__item-teaser img {
+    width: 100%;
+    height: auto;
+    border: 1px
   }
 
   @include breakpoint($small) {
     @include gallery(5 of 10);
-    .archive__item-teaser {
-      max-height: 200px;
-    }
   }
 
   @include breakpoint($medium) {
@@ -206,13 +152,8 @@ font-size: 10px
     margin-right: 0; /* reset before mixin does its thing*/
     @include gallery(2.5 of 10);
 
-    .archive__item-teaser {
-      max-height: 120px;
-    }
-
     .archive__item-excerpt {
       display: block;
-      font-size: $type-size-6;
     }
   }
 }
@@ -398,13 +339,11 @@ input[type=checkbox]:checked + .toggle span:before {
   padding: 0 0 0 8px;
 }
 
-.portfolio__header:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.portfolio__header {
-    padding: span(1 of 10);
-    background-color: red;
+.subtitle {
+  border-left: 3px solid $light-gray;
+  color: $light-gray;
+  padding: 0 0 0 8px;
+  margin: 12px 0 0 0;
+  font-size: $type-size-8;
+  font-weight: normal
 }

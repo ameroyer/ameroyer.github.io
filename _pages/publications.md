@@ -13,7 +13,11 @@ author_profile: true
 {% include base_path %}
 
 <table style="border: 0; border-collapse: separate; border-spacing: 0 25px;">
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+  {% assign years = site.publications | group_by: "year" | sort: "name" | reverse %}
+  {% for y in years %}
+    {% assign sorted = y.items | sort: "venue" | reverse %}
+    {% for post in sorted %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
 </table>
