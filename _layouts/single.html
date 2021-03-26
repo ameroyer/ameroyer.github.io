@@ -40,9 +40,9 @@ layout: default
           {% if page.kaggle %}
             <a href="{{ page.kaggle }}" target="_blank" class="external"><i class="fab fa-kaggle"></i> View on Kaggle</a>
           {% elsif page.colab %}
-            <a href="{{ page.kaggle }}" target="_blank"><img src="/images/icons/colab.svg" style="height: 18px"> View notebook on Colab</a>
+            <a href="{{ page.colab }}" target="_blank" class="external"><img src="/images/icons/colab.svg" style="height: 18px"> View notebook on Colab</a>
           {% elsif page.download %}
-            <a href="{{ page.kaggle }}" target="_blank"><i class="fas fa-download"></i> Download notebook</a>
+            <a href="{{ page.download }}" target="_blank" class="external"><i class="fas fa-download"></i> Download notebook</a>
           {% endif %}
         </div>
 
