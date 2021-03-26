@@ -3,6 +3,7 @@ title: "Wonderwheel"
 date: 2017-12-02 10:00:00 +0200
 languages: [html5, css3]
 thumb: /images/thumbs/portfolio/wonderwheel.png
+download: "https://github.com/ameroyer/ameroyer.github.io/blob/website_v1/notebooks/2017_12_02_wonderwheel/wonderwheel.ipynb"
 ---
 
 Wonderwheel is a small data visualization project for representing images color distributions.
@@ -12,15 +13,7 @@ Finally, I generate the histogram at different stages of blurriness of the image
 <link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image2.css">
 <link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image3.css">
 
-<div style="width:10%; float:right">
-<table border="1" cellpadding="6" align="right">
-<tr>
-<td><a style="color:#5E412F" href="/notebooks/2017_12_02_wonderwheel/wonderwheel.ipynb">Download .ipynb notebook</a></td>
-</tr>
-</table>
-</div>
-
-<div style="width:444px; height:444px; position:relative; top:10px; left:0px; float:left">
+<div style="width:444px; height:444px; position:relative; top:10px; left:0px;">
     <img style="border-radius: 50%; border: 0; top: 122px; left:122px; height: 200px; width:200px; position:relative" src="/notebooks/2017_12_02_wonderwheel/images/image2.jpeg">
 
        <div class ="frame">
