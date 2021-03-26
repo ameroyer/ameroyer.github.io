@@ -531,3 +531,29 @@
      color: $link-color-visited
    }
 }
+
+a.external {
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+
+a.external::after{
+  content: "";
+  background: $link-color;
+  width: calc(100% + 12px);
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  bottom: -2px;
+  left: -6px;
+	transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+a.external:hover {
+  color: white
+}
+
+a.external:hover::after{
+	height: calc(100% + 4px)
+}

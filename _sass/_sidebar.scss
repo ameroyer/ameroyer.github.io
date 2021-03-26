@@ -229,18 +229,27 @@
   }
 
   a {
+    width: 25px;
     display: block;
-    margin-bottom: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    color: inherit;
-    font-size: $type-size-5;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-      opacity: 0.5;
-    }
+    text-align: center;
+    position: relative;
+    color: $text-color;
   }
+
+  a::after{
+    content: "";
+    background: $lighter-gray;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: 0;
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+  	transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+
+  a:hover::after{
+  	height: calc(100% + 4px)
+  }
+
 }

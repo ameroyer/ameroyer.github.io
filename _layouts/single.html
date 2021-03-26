@@ -25,11 +25,25 @@ layout: default
           <p class="post_tags"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Post published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
           {% if page.collection == 'posts' %}
             <p class="post_tags"><strong><i class="fas fa-tags"></i> Tags:</strong> {{ page.tags | join: ", " }}</p>
-            <p class="view"><span style="margin-right: 10px;">{{ page.author }}, {{ page.venue }}, {{ page.year }}</span><a href="{{ post.url}}" target="_blank"><i class="fas fa-file-pdf"></i></a></p>
+            <p class="view"><a href="{{ post.url}}" target="_blank" class="external"><span style="margin-right: 10px;">{{ page.author }}, {{ page.venue }}, {{ page.year }}</span><i class="fas fa-file-pdf"></i></a></p>
           {% else %}
-            (TODO) Portfolio header
+            {% if page.languages %}
+              <p class="post_tags"><strong>Tools:</strong>
+              {% for name in page.languages %}
+                <img src="/images/icons/{{ name }}.svg" title="{{ name }}" style="height: 15px; display: inline-block">
+              {% endfor %}
+              </p>
+            {% endif %}
+            <p class="view"></p>
           {% endif %}
           <h1>{{ page.title }}</h1>
+          {% if page.kaggle %}
+            <a href="{{ page.kaggle }}" target="_blank" class="external"><i class="fab fa-kaggle"></i> View on Kaggle</a>
+          {% elsif page.colab %}
+            <a href="{{ page.kaggle }}" target="_blank"><img src="/images/icons/colab.svg" style="height: 18px"> View notebook on Colab</a>
+          {% elsif page.download %}
+            <a href="{{ page.kaggle }}" target="_blank"><i class="fas fa-download"></i> Download notebook</a>
+          {% endif %}
         </div>
 
         <div class="postthumb">

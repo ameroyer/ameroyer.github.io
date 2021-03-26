@@ -2,6 +2,7 @@
 title: "Mesh Generation with Alpha Complexes"
 date: 2018-03-01 10:00:00 +0200
 languages: [python, maths]
+colab: "https://colab.research.google.com/github/ameroyer/ameroyer.github.io/blob/master/notebooks/2016_08_01_AlphaComplexes/alpha_complexes.ipynb"
 thumb: /images/thumbs/portfolio/alphacomplexes.png
 ---
 
@@ -17,15 +18,7 @@ In this post, I will focus on the 2D case for simplicity and introduce <span cla
 We will see that Alpha Complexes are a subset of the Delaunay Triangulation and that they are able to preserve topological information from the initial shape: Contrary to the Delaunay triangulation, it can generates meshes with holes thanks to a <span class="keyword">radius constraint</span>.
 
 
-<div style="width:20%; float:right">
-<table border="1" cellpadding="6" align="right">
-<tr>
-<td><a style="color:#5E412F" href="/notebooks/2016_08_01_AlphaComplexes/alpha_complexes.ipynb">Download .ipynb notebook</a></td>
-<td><a style="color:#5E412F" href="/notebooks/2016_08_01_AlphaComplexes/resources.zip">Download resources.zip</a></td>
-</tr>
-</table>
-</div>
-<div style="text-align:center; width:75%">
+<div style="text-align:center">
 <img src="/notebooks/2016_08_01_AlphaComplexes/animation2.gif" width="45%"><img src="/notebooks/2016_08_01_AlphaComplexes/intro.png" width="45%">
 </div>
 

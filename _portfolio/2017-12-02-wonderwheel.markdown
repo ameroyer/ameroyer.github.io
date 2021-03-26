@@ -1,7 +1,7 @@
 ---
 title: "Wonderwheel"
 date: 2017-12-02 10:00:00 +0200
-languages: [html, css]
+languages: [html5, css3]
 thumb: /images/thumbs/portfolio/wonderwheel.png
 ---
 
