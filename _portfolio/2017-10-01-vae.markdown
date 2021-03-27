@@ -2,27 +2,20 @@
 title: "Variational Auto-encoders"
 date: 2017-10-01 10:00:00 +0200
 languages: [python, tensorflow]
+download: "/notebooks/2017_10_1_VAE/vae.ipynb"
 thumb: /images/thumbs/portfolio/vae.jpg
 ---
 
-This post presents a simple Tensorflow implementation of the Variational Auto-encoder model (VAE) introduced in <a href="https://arxiv.org/abs/1312.6114" target="_blank"><i>Auto-Encoding Variational Bayes</i>, D. Kingma, M. Welling, ICLR 2017</a>, that I will apply to the <a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA</a> faces dataset here.
+This post presents a short introduction and Tensorflow v1 (graph-based) implementation of the Variational Auto-encoder model (VAE) introduced in <a href="https://arxiv.org/abs/1312.6114" target="_blank"><i>Auto-Encoding Variational Bayes</i>, D. Kingma, M. Welling, ICLR 2017</a>, with experiments on the <a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA</a> faces dataset.
 
 
-### <i class="fa fa-edit"></i> Model
+## <i class="fa fa-edit"></i> Model
 
 Variational Auto-encoders (VAE) are <span class="keyword">probabilistic generative models</span> relying on a simple latent representation that captures the input data intrinsic properties. Given latent code $$z$$ sampled from a prior distribution <span>$$p_{\theta}(z)$$</span>, we generate a sample $$x$$ from the conditional <span>$$p_{\theta}(x\ |\ z)$$</span>. The goal is to learn the parameters of this generative model as well as how to map data points to latent codes.
 
 In many cases however, the posterior distribution <span>$$p_{\theta}(z\ |\ x)$$</span> is intractable. It is instead approximated by a parametric model <span>$$q_{\phi}(z\ |\ x)$$</span>, where $$\phi$$ are called the variational parameters (see the graphical model below). In the following, we will drop the $$\theta$$ and $$\phi$$ notations for simplicity.
 
 
-
-<div style="width:20%; float:right">
-<table border="1" cellpadding="6" align="right">
-<tr>
-<td><a style="color:#5E412F" href="/notebooks/2017_10_1_VAE/vae.ipynb">Download .ipynb notebook</a></td>
-</tr>
-</table>
-</div>
 <div style="width:80%; text-align:center; margin-bottom:25px">
 <img src='/notebooks/2017_10_1_VAE/autoencoder.png' style="width:25%">
 <img src='/notebooks/2017_10_1_VAE/sampled_grid_60001.jpg' style="width:35%">
@@ -32,7 +25,7 @@ In many cases however, the posterior distribution <span>$$p_{\theta}(z\ |\ x)$$<
 To summarize, a VAE is composed from an <span class="keyword">encoder</span> <span>$$q(z\ |\ x)$$</span>, which maps an input $$x$$  to a latent representation $$z$$, typically of much lower dimension, and a <span class="keyword">decoder</span> <span>$$p(x\ |\ z)$$</span> that generates sample $$x$$ from a latent code $$z$$. Both of these mappings are parametrized as neural networks in practice, and our goal is to find their optimal parameters by maximizing the data likelihood, $$p(x)$$.
 
 
-#### Training objective
+### Training objective
 
 As the likelihood is intractable, we indeed derive the following <span class="keyword">variational lower bound</span> (also known as $${\mathcal L}_{ELBO}$$) on the  data log-likelihood:
 
@@ -49,7 +42,7 @@ The model is trained by minimizing  $${\mathcal L}_{ELBO}$$; The right term is t
 Finally, note that this bound is optimal when the encoder perfectly approximates the true posterior, i.e., <span>$$\mbox{KL}(q(z\ |\ x)\ \|\ p(z\ |\ x)) = 0$$</span>.
 
 
-#### Parametrization
+### Parametrization
 
 The vanilla VAE is parametrized with <span class="keyword">Gaussian</span> function as follows:
 
@@ -57,9 +50,9 @@ The vanilla VAE is parametrized with <span class="keyword">Gaussian</span> funct
   *  <span>$$q(z\ |\ x) = \mathcal{N}(z\ |\ \mu_q(x), \sigma_q(x))$$</span> is a Gaussian with diagonal covariance, where $$\mu_q$$ and $$\sigma_q$$ are output by the encoder network.
   * <span>$$p(x\ |\ z) = \mathcal{N}(x\ |\ \mu_p(z), \sigma_p)$$</span> is a Gaussian with diagonal covariance, where $$\mu_p$$ is the reconstruction output by the decoder network and $$\sigma_p \in \mathbb{R}$$ is an hyperparameter.
 
-### <i class="fa fa-wrench"></i> Implementation
+## <i class="fa fa-wrench"></i> Implementation
 
-#### Inputs pipeline
+### Inputs pipeline
 First, we define the input loading queue which reads images from a given list of filenames and feeds them through an optional preprocessing function. I use Tensorflow queues utilities rather than placeholder so all input-related operations are built in the static graph directly.
 
 The <span class="inline-code">get_inputs_queue</span> function returns a queue whose elements are input dictionary with key "image": A 4D Tensor of size  <span class="inline-code">(batch_size, height, width, num_channels)</span> representing the inputs.
@@ -107,7 +100,7 @@ if size is not None and size > 0:
     inputs['image'] = tf.image.resize_images(inputs['image'], (size, size))
 ```
 
-#### Architecture
+### Architecture
 For the feed-forward network, I use a rather simple convolutional architecture with ReLU activations, batch normalization layers and max-pooling.
 More specifically, the encoder is described and implemented as follow
 
@@ -182,7 +175,7 @@ with tf.variable_scope('decoder', reuse=reuse):
 	    activation_fn=tf.nn.tanh, normalizer_fn=None, scope='deconv_out')
 ```
 
-#### Loss function
+### Loss function
 Now that we have the main architecture, we need to define the training loss function. In our particular setting, the $${\mathcal L}_{ELBO}$$ can be simplified as follows.
 
 First, $$\sigma_p$$ is taken as a constant in $$\mathbb{R}$$. This means we can simplify the reconstruction loss term in $${\mathcal L}_{ELBO}$$:
@@ -243,7 +236,7 @@ def get_latent_loss(z_mean, z_log_var, weight=1.0):
 ```
 
 
-#### Training
+### Training
 
 Now we're ready for training. We will use the default Adam optimizer.
 In the original notebook, I additionally define a few utilities function for Tensorboard summaries. The main VAE summaries contain the image reconstructions, sample generations and scalar summary for losses.
@@ -323,7 +316,7 @@ with tf.Graph().as_default():
         print('\nInterrupted at step %d' % global_step_)
 ```
 
-#### Results
+### Results
 After training the model for some time on the <span class="keyword">CelebA</span> dataset, I obtain the following results (reconstructions, samples and interpolation).
 ![png](/notebooks/2017_10_1_VAE/output_13_1.png)
 

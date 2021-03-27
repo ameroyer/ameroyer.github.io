@@ -3,7 +3,7 @@ title: "Wonderwheel"
 date: 2017-12-02 10:00:00 +0200
 languages: [html5, css3]
 thumb: /images/thumbs/portfolio/wonderwheel.png
-download: "https://github.com/ameroyer/ameroyer.github.io/blob/website_v1/notebooks/2017_12_02_wonderwheel/wonderwheel.ipynb"
+download: "/notebooks/2017_12_02_wonderwheel/wonderwheel.ipynb"
 ---
 
 Wonderwheel is a small data visualization project for representing images color distributions.
@@ -504,7 +504,7 @@ Finally, I generate the histogram at different stages of blurriness of the image
 
 
 
-### <i class="fa fa-wrench"></i> Computing the histograms
+## <i class="fa fa-wrench"></i> Computing the histograms
 The first step is to extract black, white and color pixels from the image. I first map the input image to the HSV (Hue Saturation Value) domain.
 
 ```python
@@ -553,7 +553,7 @@ data['colors'].append(color)
 
 
 
-### <i class="fa fa-paint-brush"></i> Visualization
+## <i class="fa fa-paint-brush"></i> Visualization
 Finally, I added a small animation component for the visualization.
 
 First I generate a color histogram for a given image  at different stage of blurriness (Gaussian filter with decreasing variance); The intuition is that the most important or salient colors will be present at a high-level while details will start appearing at fine-grained resolution.

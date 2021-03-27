@@ -20,7 +20,7 @@ This notebook contains a Keras / Tensorflow implementation of the **VQ-VAE** mod
 
 
 
-### <i class="fa fa-edit"></i> Vector-Quantized Latent Space
+## <i class="fa fa-edit"></i> Vector-Quantized Latent Space
 
 The first step is to build the main VQ-VAE model. It consists of a standard encoder-decoder architecture with convolutional blocks. The main novelty lies in the intermediate *Vector Quantizer* layer (**VQ**) that takes care of building a *discrete* latent space.
 
@@ -142,7 +142,7 @@ vq_vae, vq_vae_sampler, encoder, decoder, codes_sampler, get_vq_vae_codebook = b
 vq_vae.summary()
 ```
 
-### <i class="fa fa-wrench"></i> Training the model
+## <i class="fa fa-wrench"></i> Training the model
 
 All is left now is to train the model: The training objective contains the *reconstruction loss* (here, we use mean squared error), the KL divergence term on the latent codebook (ignored because it is constant as we assume a uniform prior during training), and two *vector quantization losses* which guarantee that **(i)** the outputs of the encoder stay close to the codebook entries they are matched to and **(ii)** that the codebook does not grow too much relatively to the space of the encoder outputs.
 
@@ -198,7 +198,7 @@ However, the codes for our dataset have no guarantee to lie uniformly on that sp
 <p><b>Figure 3</b>: Generating samples from the uniform latent prior assumed during training</p>
 </div>
 
-#### PixelCNN
+### PixelCNN
 
 To solve the problem and sample likely codes from the latent space, the authors propose to learn a *powerful categorical prior* over the latent codes from the training images using a **PixelCNN**. PixelCNN is a fully probabilistic autoregressive generative model that generates images (or here, feature maps) pixel by pixel, conditioned on the previously generated pixels. The main drawback of such models is that the sampling process is rather slow.
 However, since here we are only generating small `SIZE` x `SIZE` maps, the overhead is not too bad.
@@ -278,7 +278,7 @@ def gated_masked_conv2d(v_stack_in, h_stack_in, out_dim, kernel, mask='b', resid
     return v_stack_out, h_stack_out
 ```
 
-#### Training the prior
+### Training the prior
 
 In order to train the prior, we're going to encode every training image to obtain their discrete representation as indices in the latent codebook. This is also a good opportunity to *visualize the discrete representations learned by the encoder*. Here we can notice some interesting features, such as: all the black/background pixels are mapped to the same codeword, and the same for dense/white pixels (e.g., the ones at the center of a number)
 
