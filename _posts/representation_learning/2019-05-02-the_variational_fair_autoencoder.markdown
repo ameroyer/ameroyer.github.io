@@ -5,7 +5,7 @@ tags: [representation learning]
 categories: [Representation Learning]
 author: Louizos et al.
 venue: ICLR
-url: 'https://arxiv.org/pdf/1511.00830.pdf'
+paperurl: 'https://arxiv.org/pdf/1511.00830.pdf'
 thumb: /images/thumbs/notes/vfae.png
 year: 2016
 ---

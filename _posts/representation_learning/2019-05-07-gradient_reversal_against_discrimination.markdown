@@ -5,7 +5,7 @@ tags: [representation learning]
 categories: [Representation Learning]
 author: E. Raff and J. Sylvester
 venue: DSAA
-url: 'https://arxiv.org/abs/1807.00392'
+paperurl: 'https://arxiv.org/abs/1807.00392'
 thumb: /images/thumbs/notes/grad.png
 year: 2018
 ---

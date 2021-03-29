@@ -5,7 +5,7 @@ tags: [image analysis, generative models]
 categories: [Image Analsys]
 author: Ulyanov et al.
 venue: CVPR
-url: 'https://dmitryulyanov.github.io/deep_image_prior'
+paperurl: 'https://dmitryulyanov.github.io/deep_image_prior'
 thumb: /images/thumbs/notes/dip.png
 year: 2018
 ---

@@ -5,7 +5,7 @@ tags: [domain adaptation, domain generalization]
 categories: [Domain Adaptation]
 author: Li et al.
 venue: CVPR
-url: 'http://openaccess.thecvf.com/content_cvpr_2018/papers/Li_Domain_Generalization_With_CVPR_2018_paper.pdf'
+paperurl: 'http://openaccess.thecvf.com/content_cvpr_2018/papers/Li_Domain_Generalization_With_CVPR_2018_paper.pdf'
 thumb: /images/thumbs/notes/dgwafl.png
 year: 2018
 ---

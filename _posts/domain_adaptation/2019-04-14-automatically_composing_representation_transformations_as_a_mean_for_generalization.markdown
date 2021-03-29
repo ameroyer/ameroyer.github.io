@@ -5,7 +5,7 @@ tags: [domain generalization]
 categories: [Domain Adaptation]
 author: Chang et al.
 venue: ICLR
-url: 'https://openreview.net/pdf?id=B1ffQnRcKX'
+paperurl: 'https://openreview.net/pdf?id=B1ffQnRcKX'
 thumb: /images/thumbs/notes/acrtaamfg.png
 year: 2019
 ---

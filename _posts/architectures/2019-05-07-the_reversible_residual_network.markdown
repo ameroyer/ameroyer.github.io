@@ -5,7 +5,7 @@ tags: [architectures, reversible networks]
 categories: [Architectures]
 author: Gomez et al.
 venue: NeurIPS
-url: 'https://papers.nips.cc/paper/6816-the-reversible-residual-network-backpropagation-without-storing-activations.pdf'
+paperurl: 'https://papers.nips.cc/paper/6816-the-reversible-residual-network-backpropagation-without-storing-activations.pdf'
 thumb: /images/thumbs/notes/revnet.png
 year: 2017
 ---

@@ -5,7 +5,7 @@ tags: [few-shot learning]
 categories:  [Few-Shot Learning]
 author: Misra et al.
 venue: CVPR
-url: 'http://openaccess.thecvf.com/content_cvpr_2017/papers/Misra_From_Red_Wine_CVPR_2017_paper.pdf'
+paperurl: 'http://openaccess.thecvf.com/content_cvpr_2017/papers/Misra_From_Red_Wine_CVPR_2017_paper.pdf'
 thumb: /images/thumbs/notes/frwtrt.png
 year: 2017
 ---

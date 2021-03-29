@@ -5,7 +5,7 @@ tags: [visual reasoning]
 categories: [Visual Reasoning]
 author: Mao et al.
 venue: ICLR
-url: 'https://openreview.net/pdf?id=rJgMlhRctm'
+paperurl: 'https://openreview.net/pdf?id=rJgMlhRctm'
 thumb: /images/thumbs/notes/tnscl.png
 year: 2019
 ---

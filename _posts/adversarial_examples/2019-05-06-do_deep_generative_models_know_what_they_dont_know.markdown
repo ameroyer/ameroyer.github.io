@@ -5,7 +5,7 @@ tags: [adversarial examples, robustness, generative models]
 categories: [Adversarial Examples]
 author: Nalisnick et al.
 venue: ICLR
-url: 'https://arxiv.org/pdf/1810.09136.pdf'
+paperurl: 'https://arxiv.org/pdf/1810.09136.pdf'
 thumb: /images/thumbs/notes/ddgmkwtdk.png
 year: 2019
 ---

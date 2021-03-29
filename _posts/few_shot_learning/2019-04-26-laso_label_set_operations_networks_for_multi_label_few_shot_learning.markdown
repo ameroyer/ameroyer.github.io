@@ -5,7 +5,7 @@ tags: [few-shot learning]
 categories:  [Few-Shot Learning]
 author: Alfassy et al.
 venue: CVPR
-url: 'https://arxiv.org/abs/1902.09811'
+paperurl: 'https://arxiv.org/abs/1902.09811'
 thumb: /images/thumbs/notes/laso.png
 year: 2019
 ---

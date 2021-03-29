@@ -5,7 +5,7 @@ tags: [domain adaptation, representation learning, adversarial]
 categories:  [Domain Adaptation]
 author: Ganin et al.
 venue: JMLR
-url: 'https://arxiv.org/pdf/1505.07818.pdf'
+paperurl: 'https://arxiv.org/pdf/1505.07818.pdf'
 thumb: /images/thumbs/notes/dann.png
 year: 2016
 ---

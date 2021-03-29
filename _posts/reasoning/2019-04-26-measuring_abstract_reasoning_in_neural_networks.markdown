@@ -5,7 +5,7 @@ tags: [visual reasoning]
 categories: [Visual Reasoning]
 author: Barrett et al.
 venue: ICML
-url: 'https://arxiv.org/pdf/1807.04225.pdf'
+paperurl: 'https://arxiv.org/pdf/1807.04225.pdf'
 thumb: /images/thumbs/notes/marinn.png
 year: 2018
 ---

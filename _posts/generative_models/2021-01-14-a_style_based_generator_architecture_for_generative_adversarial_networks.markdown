@@ -5,7 +5,7 @@ tags: [generative models]
 categories: [Generative Models]
 author: Karras et al.
 venue: CVPR
-url: 'https://arxiv.org/abs/1812.04948'
+paperurl: 'https://arxiv.org/abs/1812.04948'
 thumb: /images/thumbs/notes/todo.png
 year: 2019
 ---

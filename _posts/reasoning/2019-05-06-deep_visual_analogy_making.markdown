@@ -5,7 +5,7 @@ tags: [visual reasoning]
 categories: [Visual Reasoning]
 author: Reed et al.
 venue: NeurIPS
-url: 'https://papers.nips.cc/paper/5845-deep-visual-analogy-making.pdf'
+paperurl: 'https://papers.nips.cc/paper/5845-deep-visual-analogy-making.pdf'
 thumb: /images/thumbs/notes/dvam.png
 year: 2015
 ---

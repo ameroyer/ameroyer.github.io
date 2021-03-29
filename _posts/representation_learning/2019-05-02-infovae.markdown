@@ -5,7 +5,7 @@ tags: [representation learning]
 categories: [Representation Learning]
 author: Zhao et al.
 venue: AAAI
-url: 'https://arxiv.org/pdf/1706.02262.pdf'
+paperurl: 'https://arxiv.org/pdf/1706.02262.pdf'
 thumb: /images/thumbs/notes/infovae.png
 year: 2019
 ---
