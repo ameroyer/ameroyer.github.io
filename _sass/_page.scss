@@ -547,7 +547,7 @@ a.external::after{
   z-index: -1;
   bottom: -2px;
   left: -6px;
-	transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 a.external:hover {
@@ -555,5 +555,46 @@ a.external:hover {
 }
 
 a.external:hover::after{
-	height: calc(100% + 4px)
+  height: calc(100% + 4px)
 }
+
+
+img.long_result {  
+  display: none;
+}
+
+label.long_result {
+  display: block;
+  width: 100%;
+  padding: 1px;
+  color: $link-color;
+  transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  border: 1px solid transparent;
+  
+  &:hover {
+    border: 1px solid $link-color-visited;
+  }
+}
+
+label.long_result:before {
+  content: "\25be";
+  margin-right: 20px;
+  margin-left: 5px;
+  font-size: $type-size-4;
+  color: $link-color;
+}
+
+input[type=checkbox]:checked + label {
+  background-color: $link-color;
+  color: white;
+}
+
+input[type=checkbox]:checked + label.long_result:before {
+  content: "\25b4";
+  color: white;
+}
+
+input[type=checkbox]:checked + label +  img {
+  display: block;
+}
+
