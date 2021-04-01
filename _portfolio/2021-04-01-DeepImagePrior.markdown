@@ -9,14 +9,11 @@ thumb: /images/thumbs/portfolio/deepimageprior.png
 This notebook discusses/summarizes the [Deep Image Prior](https://ameroyer.github.io/image%20analsys/deep_image_prior/) and a closely related follow-up work, [the deep decoder](https://arxiv.org/abs/1810.03982), in `Tensorflow 2`/`keras`. This is an updated and simplified version of a `tf v1` code repository I uploaded some time ago [on github](https://github.com/ameroyer/tf_deep_decoder). For a more complete review of the paper, see also the [reading notes](https://ameroyer.github.io/image%20analsys/deep_image_prior/).
 
 <span class="pros">Pros (+)</span>
-  * Simple method and training objective
-  * "Proper" Discrete latent space. This is a promising property to model data that is inherently discrete, e.g. text.
+  * Single-image method, no need for pre-training
+  * Learned prior rather than handcrafted
 
-
-  <span class="cons">Cons (-)</span>
-  * Loses the "easy latent sampling" property from VAEs. Two-stage training required to learn a fitting categorical prior.
-  * The training objective does not correspond to a bound on the log-likelihood anymore.
-
+<span class="cons">Cons (-)</span>
+  * Over parametrized architecture (somewhat adressed by the Deep Decoder follow-up)
 
 
 
