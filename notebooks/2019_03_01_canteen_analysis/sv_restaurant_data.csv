@@ -2094,3 +2094,34 @@ year,week,start_date,end_date,day,date,category,subcategory,price,allergens,name
 2021,12,2021-03-22,2021-03-26,Friday,2021-03-26,Menus,vegetarian,4.2,ACG,farfalle with /cabbage and vegetables/chive sauce
 2021,12,2021-03-22,2021-03-26,Friday,2021-03-26,Menus,international,6.3,ACLO,boar roast/red cabbage/potato dumpling
 2021,12,2021-03-22,2021-03-26,Friday,2021-03-26,Dessert,,1.4,ACFG,chocolate cake
+2021,28,2021-07-12,2021-07-16,Monday,2021-07-12,Soups,,1.15,ACGL,beef broth/garnish
+2021,28,2021-07-12,2021-07-16,Monday,2021-07-12,Soups,,1.15,G,mushroom soup
+2021,28,2021-07-12,2021-07-16,Monday,2021-07-12,Menus,home-style cooking,4.2,ACGO,pork ragout/Zurich style/rotini pasta
+2021,28,2021-07-12,2021-07-16,Monday,2021-07-12,Menus,vegetarian,5.3,AGLO,vegetable croquettes/lentil salad/herb dip
+2021,28,2021-07-12,2021-07-16,Monday,2021-07-12,Menus,fish & seafood,6.3,DL,steamed catfish fillet/root vegetables/chive potatoes
+2021,28,2021-07-12,2021-07-16,Monday,2021-07-12,Dessert,,1.4,ACG,cream cake
+2021,28,2021-07-12,2021-07-16,Tuesday,2021-07-13,Soups,,1.15,ACGL,beef broth/garnish
+2021,28,2021-07-12,2021-07-16,Tuesday,2021-07-13,Soups,,1.15,,minestrone
+2021,28,2021-07-12,2021-07-16,Tuesday,2021-07-13,Menus,vegetarian,4.2,ACG,gnocchi /leek fresh cheese sauce
+2021,28,2021-07-12,2021-07-16,Tuesday,2021-07-13,Menus,home-style cooking,5.3,,grilled chicken /rice with peas
+2021,28,2021-07-12,2021-07-16,Tuesday,2021-07-13,Menus,international,6.3,AC,beefballs/curry sauce/vegetables/herb bulgur
+2021,28,2021-07-12,2021-07-16,Tuesday,2021-07-13,Dessert,,1.4,ACFG,pear chocolate cake
+2021,28,2021-07-12,2021-07-16,Wednesday,2021-07-14,Soups,,1.15,ACGL,beef broth/garnish
+2021,28,2021-07-12,2021-07-16,Wednesday,2021-07-14,Soups,,1.15,GL,cream of celery soup
+2021,28,2021-07-12,2021-07-16,Wednesday,2021-07-14,Menus,vegetarian,4.2,ACGO,carrot spelt risotto/pumpkin seed pesto/grana cheese
+2021,28,2021-07-12,2021-07-16,Wednesday,2021-07-14,Menus,home-style cooking,5.3,AC,breaded fried/turkey schnitzel/parsley potatoes
+2021,28,2021-07-12,2021-07-16,Wednesday,2021-07-14,Menus,asia,6.3,AEF,chicken satay/vegetable rice/peanut sauce
+2021,28,2021-07-12,2021-07-16,Wednesday,2021-07-14,Dessert,,1.4,ACG,strawberry cake
+2021,28,2021-07-12,2021-07-16,Thursday,2021-07-15,Soups,,1.15,L,clear vegetable soup
+2021,28,2021-07-12,2021-07-16,Thursday,2021-07-15,Soups,,1.15,G,creamed basil soup
+2021,28,2021-07-12,2021-07-16,Thursday,2021-07-15,Menus,home-style cooking,4.2,AN,chili con carne/bread roll
+2021,28,2021-07-12,2021-07-16,Thursday,2021-07-15,Menus,vegetarian,5.3,ACG,vegetable lasagne/tomato basil ragout
+2021,28,2021-07-12,2021-07-16,Thursday,2021-07-15,Menus,international,6.3,CGM,spare ribs/potato chips/garlic dip
+2021,28,2021-07-12,2021-07-16,Thursday,2021-07-15,Dessert,,1.4,ACFG,coffee cream roulade
+2021,28,2021-07-12,2021-07-16,Friday,2021-07-16,Soups,,1.15,ACGL,beef broth/garnish
+2021,28,2021-07-12,2021-07-16,Friday,2021-07-16,Soups,,1.15,G,cream of leek soup
+2021,28,2021-07-12,2021-07-16,Friday,2021-07-16,Menus,vegetarian,4.2,G,"filled jacket potato/spinach, feta cheese/leaf salad, dip sauce"
+2021,28,2021-07-12,2021-07-16,Friday,2021-07-16,Menus,sweet dishes,5.3,ACG,strawberry dumplings
+2021,28,2021-07-12,2021-07-16,Friday,2021-07-16,Menus,fish & seafood,5.3,ACDGM,breaded fried coalfish fillet/potato salad
+2021,28,2021-07-12,2021-07-16,Friday,2021-07-16,Menus,international,6.3,G,turkey steak/zaziki/rosemary potatoes
+2021,28,2021-07-12,2021-07-16,Friday,2021-07-16,Dessert,,1.4,ACFGH,"""Esterházyschnitte"""

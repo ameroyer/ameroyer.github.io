@@ -56,7 +56,7 @@ Each flow step function $$g_i$$ is a sequence of three operations as follows. Gi
 | ------- | ------------------- | --------------------------- | ------------ | --------------------------- |
 | **ActNorm**  <br> $$s: [c,]$$ <br> $$b: [c,]$$ | $$y = \sigma\odot x + \mu$$ | $$x = (y - \mu) / \sigma$$ | $$hw\ \mbox{sum} \log(\vert\sigma\vert)$$ |
 | **1x1 conv** <br> $$W: [c,c]$$  | $$y = Wx$$ | $$x = W^{-1}y$$ | $$h w \log \vert \det (W) \vert$$ |
-| **Affine Coupling** <br> **(ACL)** [2] |  $$x_a,\ x_b = \mbox{split}(x)$$ <br> $$(\log \sigma, \mu) = \mbox{NN}(x_b)$$ <br> $$y_a = \sigma \odot x_a + \mu$$ <br> $$y = \mbox{concat}(y_a, x_b)$$|    $$y_a,\ y_b = \mbox{split}(y)$$ <br> $$(\log \sigma, \mu) = \mbox{NN}(x_b)$$ <br> $$x_a = (y_a - \mu) / \sigma$$  <br> $$x = \mbox{concat}(x_a, y_b)$$|$$\mbox{sum} (\log \vert\sigma\vert)$$ |
+| **Affine Coupling** <br> **(ACL)** [2] |  $$x_a,\ x_b = \mbox{split}(x)$$ <br> $$(\log \sigma, \mu) = \mbox{NN}(x_b)$$ <br> $$y_a = \sigma \odot x_a + \mu$$ <br> $$y = \mbox{concat}(y_a, x_b)$$|    $$y_a,\ y_b = \mbox{split}(y)$$ <br> $$(\log \sigma, \mu) = \mbox{NN}(y_b)$$ <br> $$x_a = (y_a - \mu) / \sigma$$  <br> $$x = \mbox{concat}(x_a, y_b)$$|$$\mbox{sum} (\log \vert\sigma\vert)$$ |
 
 
 <br>

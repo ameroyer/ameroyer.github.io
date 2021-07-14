@@ -11,10 +11,6 @@ redirect_from:
 {% include base_path %}
 
 <h1 class="page__title"><a href="/files/Royer_Amelie_CV.pdf" title="Download as PDF" target="_blank"><i class="fas fa-file-pdf fa-lg"></i></a> Resume
-<div class="subtitle">
-  Born in Reims, France, on September 26th, 1993
-  <br>Currently a PhD student at IST Austria
-</div>
 </h1>
 
 ## <i class="fa fa-graduation-cap"></i> Education
@@ -30,6 +26,8 @@ redirect_from:
 
 ## <i class="fas fa-briefcase"></i> Work experience
 
+| 2021-today |  | **Deep Learning Research Engineer** <br> 🇳🇱  *Amsterdam, The Netherlands*  <br> Qualcomm Research |
+|---|---|
 | 2020  | ![2020_internship_thumb](/images/thumbs/pub/Stage_2015_thumb.png) | **Research internship at Google Brain Zürich** <br> 🇨🇭  *5 months, Zürich, Switzerland*  <br> <u>Topic:</u> Working on large neural networks compression via knowledge distillation, advised by *Lucas Beyer* and *Alexander Kolesnikov* |
 |---|---|
 | 2017  | ![2017_internship_thumb](/images/thumbs/pub/Stage_2017_thumb.png) | [**Research internship at Google Brain London**](https://arxiv.org/abs/1711.05139) <br> 🇬🇧  *London, United Kingdom* <br> <u>Topic:</u> Unsupervised image-to-image translation combining GANs and domain adaptation techniques, advised by *Konstantinos Bousmalis*, *Stephan Gouws* and *Fred Bertsch* |
