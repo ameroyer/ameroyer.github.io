@@ -4,6 +4,7 @@ date: 2021-04-12 18:00:00 +0200
 kaggle: "https://www.kaggle.com/ameroyer/introduction-to-glow-generative-model-in-jax"
 languages: [python, jax]
 thumb: /images/thumbs/portfolio/glow.png
+twitter_summary: A Jax implementation of the Glow generative model, following the original paper from DP. Kingma and P. Dhariwal
 ---
 
 This notebook discusses/summarizes the [Glow generative model](https://arxiv.org/abs/1807.03039). For a more complete review of the paper, see also the [reading notes](https://ameroyer.github.io/generative%20models/glow_generative_flow_with_invertible_1x1_convolution/).
