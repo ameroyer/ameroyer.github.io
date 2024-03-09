@@ -1,6 +1,5 @@
 
-[See live on ameroyer.github.io](ameroyer.github.io)
+[Live at ameroyer.github.io](https://ameroyer.github.io/)
 
-This webpage contains some research paper reading notes, code snippets and other small projects I have worked on, etc. The template is based on [academicpages](academicpages.github.io)
+My personal webpage containing my CV, publications as well as some blog posts and research papers reading notes. It is based on the [academicpages](academicpages.github.io) template.
 
-`Main keywords:`` Computer Vision, Data Visualization, Deep Learning, Machine Learning, Python, Tensorflow,
