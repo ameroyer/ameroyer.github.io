@@ -7,6 +7,7 @@ repository: 'https://github.com/ameroyer/ReCA'
 slides: 'https://www.youtube.com/watch?v=cpx67Zy8k2g'
 poster: '/files/posters/paper_104_poster.pdf'
 year: 2020
+selected: false
 authors: 'Krishnendu Chatterjee, Martin Chmelík, <span class="first_author">Deep Karkhanis</span>, Petr Novotný and <span class="first_author">Amélie Royer</span>'
 venue: 'International Conference on Automated Planning and Scheduling (ICAPS)'
 teaser: 'thumbs/pub/memdp_thumb.png'

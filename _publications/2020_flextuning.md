@@ -7,6 +7,7 @@ repository: 'https://github.com/ameroyer/Flextuning'
 slides: '/files/slides/[2020]WACV-Flextuning.pdf'
 poster: '/files/posters/poster_flextuning.pdf'
 year: 2020
+selected: false
 authors: '<span class="first_author">Amélie Royer</span> and Christoph Lampert'
 venue: 'Winter Conference on Applications of Computer Vision (WACV)'
 teaser: 'thumbs/pub/flextuning_thumb.png'

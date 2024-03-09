@@ -37,7 +37,9 @@ layout: default
             <p class="view"></p>
           {% endif %}
           <h1>{{ page.title }}</h1>
-          {% if page.kaggle %}
+          {% if page.github %}
+            <a href="{{ page.github }}" target="_blank" class="external"><i class="fab fa-github"></i> View on Github</a>
+          {% elsif page.kaggle %}
             <a href="{{ page.kaggle }}" target="_blank" class="external"><i class="fab fa-kaggle"></i> View on Kaggle</a>
           {% elsif page.colab %}
             <a href="{{ page.colab }}" target="_blank" class="external"><img src="/images/icons/colab.svg" style="height: 18px"> View notebook on Colab</a>

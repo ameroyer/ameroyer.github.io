@@ -6,6 +6,7 @@ paperurl: 'http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Roye
 repository: 'files/code/Classifier_Adaptation_At_Prediction_Time_src.zip'
 poster: 'files/posters/2015_cvpr.pdf'
 year: 2015
+selected: true
 authors: '<span class="first_author">Amélie Royer</span> and Christoph Lampert'
 venue: 'Conference on Computer Vision and Pattern Recognition (CVPR)'
 teaser: 'thumbs/pub/Stage_2014_thumb.jpg'

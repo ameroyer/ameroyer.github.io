@@ -5,6 +5,7 @@ relid: 2016-icassp
 paperurl: 'https://hal-imt.archives-ouvertes.fr/hal-01336100/'
 repository: 'https://github.com/ameroyer/SIC'
 year: 2016
+selected: false
 authors: '<span class="first_author">Amélie Royer</span>, Guillaume Gravier, Vincent Claveau'
 venue: 'International Conference on Acoustics, Speech and Signal Processing (ICASSP)'
 teaser: 'thumbs/pub/sic_thumb.png'
