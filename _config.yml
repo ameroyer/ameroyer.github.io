@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Amélie Royer"
   avatar           : "profile.png"
-  bio              : "Deep Learning Researcher at Qualcomm"
-  location         : "🌷 The Netherlands"
+  bio              : "Research Scientist at Kyutai"
+  location         : "🥐 Paris, France"
   employer         :
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=P9-oT8AAAAAJ"
-  email            : "aroyer@qti.qualcomm.com"
+  email            : "amelie@kyutai.org"
   researchgate     :
   uri              :
   bitbucket        :
@@ -103,7 +103,7 @@ author:
   impactstory      :
   lastfm           :
   linkedin         : "https://www.linkedin.com/in/amélie-royer-aa4582168/"
-  orcid            : 
+  orcid            :
   pinterest        :
   soundcloud       :
   stackoverflow    :

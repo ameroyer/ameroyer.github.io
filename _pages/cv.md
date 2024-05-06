@@ -16,8 +16,9 @@ redirect_from:
 
 ## <i class="fas fa-briefcase"></i> Work
 
-| 2021 - today | **Deep Learning Research Engineer** <br> Qualcomm AI Research <br> 🇳🇱  *Amsterdam, The Netherlands*   |
+| 2024 - today | **Deep Learning Research Engineer** <br> Kyutai Labs <br> 🇫🇷  *Paris, France*   |
 |---|---|
+| 2021 - 2024 | **Deep Learning Research Engineer** <br> Qualcomm AI Research <br> 🇳🇱  *Amsterdam, The Netherlands*   |
 | &nbsp;  | &nbsp;  |
 
 
