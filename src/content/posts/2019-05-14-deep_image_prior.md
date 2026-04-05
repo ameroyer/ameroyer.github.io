@@ -21,7 +21,7 @@ year: 2018
 
 
 
-<h2 class="section theory"> Background  </h2>
+## <i class="fas fa-atom"></i> Background
 
 Given a random noise vector $$z$$ and conditioned on an image $$x_0$$, the goal of *conditional image generation* is to generate image $$x = f_{\theta}(z; x_0)$$ (where the random nature of $$z$$ provides a sampling strategy for $$x$$); for instance, the task of generating a  high quality image $$x$$ from its lower resolution counterpart $$x_0$$.
 
@@ -35,9 +35,9 @@ $$
 
 where $$E$$ is a cost function and $$R$$ is a *prior on the output space* acting as a regularizer. $$R$$ is often a hand-crafted prior, for instance a smoothness constraint like Total Variation <span class="citations">[1]</span>, or, for more recent techniques, it can be implemented with adversarial training (e.g.,` GAN`s).
 
----
 
-<h2 class="section proposed">Deep Image Prior</h2>
+
+## <i class="fas fa-lightbulb"></i> Deep Image Prior
 In this paper, the goal is to replace $$R$$ by an *implicit prior captured by the neural network*, relatively to input noise $$z$$. In other words
 
 $$
@@ -69,10 +69,10 @@ To quantify this effect, the authors perform a reconstruction experiment (i.e., 
 
 
 
----
 
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 The experiments focus on three *image analysis tasks*:
   * **Image denoising** ($$E(x, x_0) = \|x - x_0\|$$), based on the previous observation that the model converges  more easily to natural-looking images than noisy ones.
   * **Super Resolution** ($$E(x, x_0) = \| \mbox{downscale}(x) - x_0 \|$$), to upscale the resolution of input image $$x_0$$
@@ -90,9 +90,9 @@ Additionally, the authors test the proposed prior for diagnosing neural networks
 
 
 
-<h2 class="section followup">Closely related (follow-up work)</h2>
+## <i class="fas fa-step-forward"></i> Closely related (follow-up work)
 
-<h4 style="margin-bottom: 0px">Deep Decoder: Concise Image Representations from Untrained Non-Convolutional Networks</h4>
+#### Deep Decoder: Concise Image Representations from Untrained Non-Convolutional Networks
 <p style="text-align: right"><small>Heckel and Hand, <a href="https://arxiv.org/abs/1810.03982">[link]</a></small></p>
 
 
@@ -101,8 +101,8 @@ Additionally, the authors test the proposed prior for diagnosing neural networks
 
 > The deep decoder architecture combines standard blocks include linear combination of channels (convolutions ), ReLU, batch-normalization and upscaling. Note that since here we have a special case of batch size 1,  the Batch Norm operator essentially normalizes the activation channel-wise. In particular, the paper contains a nice *theoretical justification for the denoising case*, in which they show that the model can only fit a certain amount of noise, which explains why it would converge to more natural-looking images, although it only applies to small networks (1 layer ? possibly generalizable to multi-layer and no batch-norm)
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
   * <span class="citations">[1]</span> An introduction to Total Variation for Image Analysis, <i>Chambolle et al., Technical Report, 2009</i>
   * <span class="citations">[2]</span> U-Net: Convolutional Networks for Biomedical Image Segmentation, <i>Ronneberger et al.,  MICCAI 2015</i>

@@ -20,7 +20,7 @@ year: 2019
 </div>
 
 
-<h2 class="section proposed"> Model: NeuroSAT</h2>
+## <i class="fas fa-lightbulb"></i> Model: NeuroSAT
 
 ### Input
  We consider boolean logic formulas in their *conjunctive normal form* (CNF), i.e. each input formula is represented as a conjunction ($$\land$$) of *clauses*, which are themselves disjunctions ($$\lor$$) of literals (positive or negative instances of variables). The goal is to learn a classifier to predict whether such a formula is satisfiable.
@@ -73,9 +73,9 @@ Recall that $$L^t_{\mbox{vote}}$$ encodes a "vote" for every literal and its neg
 
  In practice, this method retrieves a satistifiability assignment for over 70% of the satisfiable test formulas.
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 In practice, the `NeuroSAT` model is trained with embeddings of dimension 128 and 26 message passing iterations. The `MLP` architectures are very standard: 3 layers followed by ReLU activations. The final model obtains 85% accuracy in predicting a formula's satisfiability on the test set.
 

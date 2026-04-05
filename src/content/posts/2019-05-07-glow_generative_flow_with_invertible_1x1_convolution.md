@@ -21,7 +21,7 @@ year: 2018
 
 
 
-<h2 class="section theory"> Invertible flow-Based Generative Models  </h2>
+## <i class="fas fa-atom"></i> Invertible flow-Based Generative Models
 
 Given input data $$x$$, invertible  flow-based generative models are built as two steps processes that generate data from an intermediate latent representation $$z$$:
 
@@ -45,9 +45,9 @@ $$
 where $$\forall i \in [1; n],\ g_{\leq i} = g_i \circ \dots g_1$$ In particular, this means $$g_{\leq n}(x) = z$$ and $$g_0(x) = x$$. $$p_\theta(z)$$ is usually chosen as a simple density such as a unit Gaussian distribution, $$p_\theta(z) = \mathcal N(z; 0, \mathbf{I})$$.
 In order to efficiently estimate the likelihood, the functions $$g_1, \dots g_n$$ are usually chosen such that the *log-determinant of the Jacobian*, $$\log\ \left\vert \det \left( \frac{g_{\leq i}}{g_{\leq i - 1}}  \right) \right\vert$$, is easily computed, for instance by choosing transformation such that the Jacobian is a triangular matrix.
 
----
 
-<h2 class="section proposed"> Proposed Flow Construction: GLOW</h2>
+
+## <i class="fas fa-lightbulb"></i> Proposed Flow Construction: GLOW
 
 ### Flow step
 Each flow step function $$g_i$$ is a sequence of three operations as follows. Given an input tensor of dimensions $$h \times w \times c$$:
@@ -85,10 +85,10 @@ In summary, the *main differences* with <span class="citations">[3]</span> are:
   * Only channel-wise splitting is considered in the Affine Coupling Layer, while <span class="citations">[3]</span>  also considered a binary spatial checkerboard pattern to split the input tensor in two.
 
 
----
 
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 ### Implementation
 In practice, the authors implement `NN` as a convolutional neural network of depth 3 in the `ACL`; which means that each flow step contains 4 convolutions in total. They also use $$K = 32$$ flow steps in each level. Finally the number of levels $$L$$ is 3 for small-scale experiments (32x32 images) and 6 for large scale (256x256 ImageNet images).
@@ -100,9 +100,9 @@ In particular this means that the model contains *a lot of parameters* ($$L \tim
 
 Qualitatively, the samples are of great quality and the model  seems to scale well with higher resolution. However this greatly increases the *memory requirements*. Leveraging the model's invertibility to avoid storing activations during the feed-forward pass such as in <span class="citations">[4]</span>  could be used to (partially) palliate the problem.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
 
   * <span class="citations">[1]</span>  Variational inference with normalizing flows, <i>Rezende and Mohamed, ICML 2015</i>
   * <span class="citations">[2]</span> NICE: Non-linear Independent Components Estimation, <i>Dinh et al., ICLR 2015</i>

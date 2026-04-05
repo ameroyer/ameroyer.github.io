@@ -20,7 +20,7 @@ year: 2018
 </div>
 
 
-<h2 class="section proposed"> Proposed model: MMD-AAE</h2>
+## <i class="fas fa-lightbulb"></i> Proposed model: MMD-AAE
 
 The goal of domain generalization is to find a common *domain-invariant feature space* underlying the source and (unseen) target spaces, under the assumption that such a space exists.
 To learn such space, the authors propose a variant of <span class="citations">[1]</span>, whose goal is to minimize the variance between the different source domains distributions using *Maximum Mean Discrepancy*. Additionally, the source distributions are aligned with a fixed *prior distribution*, with the hope that this reduces the risk of overfitting to the seen domains.
@@ -100,10 +100,10 @@ where $$k$$ is the kernel function associated to feature map $$\phi$$. Experimen
 
 Finally, the model should learn a representation that is also adequate for the task at hand (here, classification). This is done by adding a *classifier* (two fully connected layers) on top of the representation minimizing a standard cross entropy loss term, $$\mathcal{L}_{\text{err}}$$ between the input image label and the model output.
 
----
 
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 ### Implementation
 
@@ -117,9 +117,9 @@ The method is evaluated on various classification tasks (digit, object and actio
 
 Additionally, ablation experiments show that the three terms $$\mathcal{L}_{\text{GAN}}$$, $$\mathcal{L}_{\text{MMD}}$$ and $$\mathcal{L}_{\text{err}}$$ all have a positive effect on the final effect, even when taken individually.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
 * <span class="citations">[1]</span> Adversarial Autoencoders, <i>Makhzani et al., ICLR Workshop, 2016</i>
 * <span class="citations">[2]</span> Domain Generalization via Invariant Feature Representation, <i>Muandet et al., ICML 2013</i>
 * <span class="citations">[3]</span> Domain-Adversarial Training of Neural Networks, <i>Ganin et al., JMLR 2016</i>

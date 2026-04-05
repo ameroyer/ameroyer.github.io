@@ -20,7 +20,7 @@ year: 2017
 </div>
 
 
-<h2 class="section proposed"> Proposed Model</h2>
+## <i class="fas fa-lightbulb"></i> Proposed Model
 
 The main idea of *Relation Networks* (`RN`) is to constrain the functional form of convolutional neural networks as to explicitly learn relations between entities, rather than hoping for this property to emerge in the representation during training. Formally, let $$O$$ be a set of objects of interest $$O = \{o_1 \dots o_n\}$$; The Relation Network is trained to learn a representation that considers all *pairwise relations* across the objects:
 
@@ -44,17 +44,18 @@ The *objects* are the basic elements of the relational process we want to model.
 </div>
 
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 The main evaluation is done on the `CLEVR` dataset <span class="citations">[2]</span>.  The main message seems to be that the proposed module  is very simple and yet often improves the model accuracy when added to various architectures (`CNN`, `CNN + LSTM` etc.) introduced in <span class="citations">[1]</span>. The main baseline they compare to (and outperform) is *Spatial Attention* (`SA`) which is another simple method to integrate some form of relational reasoning in a neural architecture.
 
   ---
 
- <h2 class="section followup">Closely related</h2>
+ ## Closely related
+{: .section .followup}
 
 
-<h4 style="margin-bottom: 0px"> Recurrent Relational Neural Networks <span class="citations">[3]</span></h4>
+#### Recurrent Relational Neural Networks <span class="citations">[3]</span>
 <p style="text-align: left">Palm et al, <a href="https://arxiv.org/pdf/1711.08028.pdf">[link]</a></p>
 
 > This paper builds on the Relation Network architecture and propose to explore  *more complex relational structures*,  defined as a graph, using a *message passing* approach: Formally, we are given a graph with vertices $$\mathcal V = \{v_i\}$$ and edges $$\mathcal E = \{e_{i, j}\}$$. By abuse of notation, $$v_i$$ also denotes the embedding for vertex $$i$$ (e.g. obtained via a CNN) and $$e_{i, j}$$  is 1 where  $$i$$ and $$j$$ are linked, 0 otherwise. To each node we associate a *hidden state* $$h_i^t$$ at iteration $$t$$, which will be updated via message passing. After a few iterations, the resulting state is passed through a `MLP`  $$r$$ to output the result (either for each node or for the whole graph):
@@ -80,7 +81,7 @@ The main evaluation is done on the `CLEVR` dataset <span class="citations">[2]</
 
 
 
-<h4 style="margin-bottom: 0px; margin-top:50px"> Multi-Layer Relation Neural Networks <span class="citations">[4]</span></h4>
+#### Multi-Layer Relation Neural Networks <span class="citations">[4]</span>
 <p style="text-align: left">Jahrens and Martinetz, <a href="https://arxiv.org/pdf/1811.01838.pdf">[link]</a></p>
 
 > This paper presents a very simple trick to make Relation Network consider higher order relations than pairwise, while retaining some efficiency. Essentially the model can be written as follow:
@@ -95,9 +96,9 @@ $$
 
 > It is not clear why this model would be equivalent to explicitly considering higher-level relations (as it is rather  combining pairwise terms for a *finite number of steps*). According to the experiments it seems that indeed this architecture could be better fitted for the studied tasks (e.g. over  the Relation Network or Recurrent Relation Network) but it also makes the model even harder to interpret.
 
----
 
-<h2 class="section references">References</h2>
+
+## <i class="fas fa-book"></i> References
 * <span class="citations">[1]</span> Inferring and executing programs for visual reasoning, <i>Johnson et al, ICCV 2017</i>
 * <span class="citations">[2]</span> CLEVR: A Diagnostic Dataset for Compositional Language and Elementary Visual Reasoning, <i>Johnson et al, CVPR 1017</i>
 * <span class="citations">[3]</span> Recurrent Relational Neural Networks, <i>Palm et al, NeurIPS 2018</i>

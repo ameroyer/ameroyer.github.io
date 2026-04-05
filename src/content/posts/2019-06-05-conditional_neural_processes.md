@@ -20,7 +20,7 @@ year: 2018
 </div>
 
 
-<h2 class="section proposed"> Proposed Model</h2>
+## <i class="fas fa-lightbulb"></i> Proposed Model
 
 ### Statistical Background
   In the Conditional Neural Processes (`CNP`) setting, we are given $$n$$ labeled points, called *observations* $$O = \{(x_i, y_i)\}_{i=1^n}$$, and another set of $$m$$ unlabeled ***targets*** $$T = \{x_i\}_{i=n + 1}^{n + m}$$.We assume
@@ -67,9 +67,9 @@ $$
 
 The mode scales with $$O(n + m)$$, i.e., linear time, which is much better than the cubic rate of Gaussian Processes.
 
----
 
-<h2 class="section experiments"> Experiments and Applications </h2>
+
+## <i class="fas fa-microscope"></i> Experiments and Applications
 
 
  * **1D regression:** We generate a  dataset that consist of functions generated from a GP with an exponential kernel.  At every training step we sample a curve from the GP ($$f \sim P$$), select a subset of $$n$$ points $$(x_i, y_i)$$ as observations, and a subset of points $$(x_t, y_t)$$ as target points. The output distribution on the target labels is parameterized as a Gaussian whose mean and variance are output by $$g$$.

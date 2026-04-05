@@ -20,7 +20,7 @@ year: 2016
 </div>
 
 
-<h2 class="section theory"> Generalized Bound on the Expected Risk </h2>
+## <i class="fas fa-atom"></i> Generalized Bound on the Expected Risk
 Several theoretical studies of the domain adaptation problem have proposed upper bounds of the *risk on the target domain*, involving the risk on the source domain and a notion of *distance* between the source and target distribution, $$\mathcal D_S$$ and $$\mathcal D_T$$. Here, the authors specifically consider the work of <span class="citations">[1]</span>. First, they define the $$\mathcal H$$-divergence:
 
 $$
@@ -52,9 +52,9 @@ where $$\mbox{VC}$$ designates the *Vapnik–Chervonenkis* dimensions and $$n$$ 
 The rest of the paper directly stems from this intuition: in order to minimize the *target risk* the proposed *Domain Adversarial Neural Network* (`DANN`) aims to build an "<i>internal representation that contains no discriminative information about the origin of the input (source or target), while preserving a low risk on the source (labeled) examples</i>".
 
 
----
 
-<h2 class="section proposed"> Proposed </h2>
+
+## <i class="fas fa-lightbulb"></i> Proposed
 The goal of the model is to learn a classifier $$\phi$$, which can be decomposed as $$\phi = G_y \circ G_f$$, where $$G_f$$ is a feature extractor and $$G_y$$ a small classifier on top that outputs the target label.  This architecture is trained with a standard classification objective to *minimize*:
 
 $$
@@ -114,10 +114,10 @@ Unsupervised domain adaptation is achieved by adding a <span style="color: fuchs
 the gradient by a certain negative constant during backpropagation. </p>
 </div>
 
----
 
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 ### Datasets
 The paper presents extensive results on the following settings:
@@ -142,16 +142,16 @@ The main shortcomings of the method are that **(i)** all experiments deal with o
 <img src="/images/posts/dann_mnist_embeddings.png">
 <p><b>Figure:</b> <code>t-SNE</code> projections of the embeddings for the <span style="color: blue">source</span> (MNIST) and <span style="color: red">target</span> (SVHN) datasets without (<b>left</b>) and with (<b>right</b>) <code>DANN</code> adaptation. </p>
 </div>
----
 
-<h2 class="section followup">Closely related</h2>
-<h4 style="margin-bottom: 0px"> Conditional Adversarial Domain Adaptation.</h4>
+
+## <i class="fas fa-step-forward"></i> Closely related
+#### Conditional Adversarial Domain Adaptation.
 <p style="text-align: right"><small>Long et al, NeurIPS 2018<a href="https://arxiv.org/abs/1705.10667">[link]</a></small></p>
 > In this work, the  authors propose to for Domain Adversarial Networks. More specifically, the domain classifier is conditioned on the input's class: However, since  part of the samples are unlabeled,  the conditioning uses the *output of the target classifier branch* as a proxy for the class information. Instead of simply concatenating the feature input with the condition, the authors consider a  *multilinear conditioning* technique which relies on the *cross-covariance* operator. Another related paper is <span class="citations">[4]</span>. It also uses the multi-class information of the input domain, although in a simpler way.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
 * <span class="citations">[1]</span> Analysis of representations for Domain Adaptation, <i>Ben-David et al, NeurIPS 2006</i>
 * <span class="citations">[2]</span> Adapting visual category models to new domains, <i>Saenko et al, ECCV 2010</i>
 * <span class="citations">[3]</span> Person re-identification via structured prediction, <i>Zhang and Saligrama, arXiv 2014</i>

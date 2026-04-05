@@ -21,7 +21,7 @@ year: 2019
 </div>
 
 
-<h2 class="section proposed"> Proposed model</h2>
+## <i class="fas fa-lightbulb"></i> Proposed model
 
 ### Problem definition
 A *problem* $$P_i$$ is defined as a transformation $$x_i : t_x \mapsto y_i : t_y$$, where $$t_x$$ and $$t_y$$  are the respective types of $$x$$ and $$y$$. However since we only consider recursive problem here, then $$t_x = t_y$$.
@@ -44,9 +44,9 @@ structure of a program customized for its problem, and this program can be viewe
 <b>(right)</b> A series of computations in the program is equivalent to a traversal through a Meta-MDP, where module
 can be reused across different stages of computation, allowing for recursive computation.</p>
 </div>
----
 
-<h2 class="section experiments"> Experiments</h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 ### Multilingual Arithmetic
 The learner will aim to solve recursive arithmetic expressions  across 6  languages: `English`, `Numerals`, `PigLatin`, `Reversed-English`, `Spanish`. The input is a tuple $$(x^s, t_y)$$, where $$x$$ is the arithmetic expression expressed in source language $$s$$, and $$t_y$$ is the output language.
@@ -66,7 +66,7 @@ Interestingly the `CRL` results usually have a much bigger *variance* which woul
 This time the functional units are composed of three specialized *Spatial Transformer Networks* <span class="citations">[1]</span> to learn rotation, scale and translation, and an identity function. Overall this setting does not yield very good quantitative results.
 More precisely, one of the main challenges, since we are acting on a visual domain, is to *deduce the structure of the task from information which lacks clear structure* (pixel matrices). Additionally the fact that all inputs and outputs have the same domain (images) and that only a sparse reward is available make it more difficult for the controller to distinguish between functionalities, i.e., it could collapse to using only one transformer.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
 * <span class="citations">[1]</span> Spatial Transformer Networks, <i>Jaderberg  et al., NeurIPS 2016</i>

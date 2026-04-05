@@ -20,7 +20,7 @@ year: 2019
 </div>
 
 
-<h2 class="section proposed"> The LaSO Objective</h2>
+## <i class="fas fa-lightbulb"></i> The LaSO Objective
 The proposed method consists in manipulating the *semantic content* of the training images at the feature-level to generate new combinations of semantic labels, in particular relying on known set operations: union ($$\cup$$), intersection ($$\cap$$) and set subtraction ($$\setminus$$). Interestingly, operations such as $$\cap$$ and $$\setminus$$ could additionally shine new light on *implicit semantic information*: For instance, in a task of animal classification, the operation `zebra` $$\setminus$$ `horse` describes the attribute `striped`, which is not one of the original classes of interest, but a meaningful semantic attribute.
 
 
@@ -81,9 +81,9 @@ $$
 
 However, in practice this performs generally much worse than learning the transformation (except in the case of the union operator, where it reaches similar performance).
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 Each LaSO network is a 3 or 4 layers standard *Multi-Layer Perceptron*. The training is done in two steps: First, the feature extractor is  *pretrained and fixed* (ResNet-34 or Inception v3 architecture), and then both the feature extractor and the LaSO model are jointly trained. The authors consider two experimental settings:
 

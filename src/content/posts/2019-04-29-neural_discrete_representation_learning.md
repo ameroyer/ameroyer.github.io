@@ -19,7 +19,7 @@ year: 2017
   </ul>
 </div>
 
-<h2 class="section proposed"> Proposed </h2>
+## <i class="fas fa-lightbulb"></i> Proposed
 
 ### Discrete latent space
 
@@ -72,17 +72,17 @@ A second contribution of this work consists in _learning the prior distribution_
 
 **Note:** It is not clear to me if the autoregressive model is trained on latent codes sampled from the prior $$z \sim p(z)$$ or from the encoder distribution $$x \sim \mathcal{D};\ z \sim q(z\ \vert\ x)$$
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 The proposed model is mostly compared to the standard continuous `VAE` framework. It seems to achieve similar log-likelihood and sample quality, while taking advantage of the discrete latent space. In particular
 For ImageNet for instance, they consider $$K = 512$$ latent codes with dimensions $$1$$. The output of the fully-convolutional encoder $$z_e$$ is a feature map of size $$32 \times 32 \times 1$$ which is then quantized _pixel-wise_. Interestingly, the model still performs well when using a powerful decoder (here, PixelCNN <span class="citations">[2]</span>) which seems to indicate it does not suffer from _posterior collapse_ as strongly as the standard continuous `VAE`.
 
 A second set of experiments tackles the problem of audio modeling. The performance of the model are once again satisfying. Furthermore, it does seem like the discrete latent space actually captures relevant characteristics of the input data structure, although this is a purely qualitative observation.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
 * <span class="citations">[1]</span> Autoencoding Variational Bayes, <i>Kingma and Welling, ICLR 2014</i>
 * <span class="citations">[2]</span> Pixel Recurrent Neural Networks, <i>van den Oord et al, arXiv 2016</i>

@@ -20,7 +20,7 @@ year: 2019
 </div>
 
 
-<h2 class="section proposed"> Methodology </h2>
+## <i class="fas fa-lightbulb"></i> Methodology
 
 Three classes of generative models are considered in this paper:
   * <b>Auto-regressive</b> models such as `PixelCNN` <span class="citations">[1]</span>
@@ -37,9 +37,9 @@ from <code>GLOW</code> on MNIST, FashionMNIST, SVHN, CIFAR-10..</p>
 
 Intuitively, this observation reflects the fact that both datasets contain natural images and that CIFAR-10 is strictly more diverse than SVHN in terms of semantic content, i.e., SVHN is *"included"* in and *"easier to explain"* than CIFAR. Nonetheless, these datasets vastly differ in appearance, and this result is *counter-intuitive* as it goes against the idea that generative models can reliably be used to detect out-of-distribution samples. Furthermore, this observation also confirms the general idea that higher likelihoods does not necessarily coincide with better generated samples <span class="citations">[5]</span>.
 
----
 
-<h2 class="section theory"> Analysis in the Invertible Flow Models Case </h2>
+
+## <i class="fas fa-atom"></i> Analysis in the Invertible Flow Models Case
 
 The authors further study this phenomenon in the invertible flow models case as they provide a more rigorous analytical framework (e.g., exact likelihood estimation unlike VAEs which only provide a bound on the true likelihood).
 
@@ -66,9 +66,9 @@ Interestingly this esults seems quite robust: The authors also performed experim
 
 Secondly, they try to directly analyze the difference in likelihood between two domains $$\mathcal X$$ and $$\tilde{\mathcal X}$$; which can be done by a *second-order expansion* of the log-likelihood locally around the expectation of the distribution (assuming $$\mathbb{E} (\mathcal X) \sim \mathbb{E}(\tilde{\mathcal X})$$). For the constant volume `GLOW` module, the final analytical formula indeed confirms that the log-likelihood of SVHN should be higher than CIFAR's even theoretically: In some sense, SVHN is *included* in CIFAR (under the model distribution) and has lower variance, which explains the higher likelihood.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
   * <span class="citations">[1]</span> Conditional Image Generation with PixelCNN Decoders, <i>van den Oord et al, NeurIPS 2016</i>
   * <span class="citations">[2]</span> Auto-Encoding Variational Bayes, <i>Kingma and Welling, ICLR 2013</i>
   * <span class="citations">[3]</span> Density estimation using Real NVP, <i>Dinh et al., ICLR 2015</i>

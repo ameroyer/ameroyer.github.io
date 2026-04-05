@@ -20,7 +20,7 @@ year: 2017
 </div>
 
 
-<h2 class="section proposed"> Proposed model</h2>
+## <i class="fas fa-lightbulb"></i> Proposed model
 The main idea of the proposed method is to learn how to composite visual concepts (here: object categories and attributes) at the *feature-level*. Each visual concept $$c$$ is represented by a linear classifier $$\phi_c: x \mapsto\ x \cdot w_c$$ that has been trained to recognize it. The model then learns to compose such linear classifier by feeding them to a *Transformation Network*, $$T$$, which in turn outputs another classifier, which should capture the composition of the two input concepts.
 
 <div class="figure">
@@ -40,9 +40,9 @@ $$
 where $$\ell$$ is a standard binary classification loss (here, cross-entropy). $$y$$ is the label of the image $$x$$ for the considered task and should be 1 if and only if the image contains the complex context $$(a, b)$$.
 
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 The feature extractor used in the experiments is a `VGG-M-1024` network *pretrained on ImageNet*. It is kept fixed and not re-trained, only the Transformation Network and linear classifiers are. Experiments are performed on the *MITStates* dataset and evaluated in terms of predicting (top-k accuracy and mAP) the presence or absence of unseen combinations of (object, attribute) pairs. The model is compared against the following baselines, using the same pre-trained backbone feature extractor:
 
@@ -54,8 +54,8 @@ The feature extractor used in the experiments is a `VGG-M-1024` network *pretrai
 
 Interestingly the **Individual-Obj** baseline that considers only the object category performs quite well in terms of average precision. This suggest the object category is more significant than the attribute prediction. Finally, the proposed model outperforms the baselines but still produces poor overall performance in terms of classification accuracy, so *it is not clear how much is really due to generalization to new concept combinations*. Ablation and qualitative experiments do show that the model learns some meaningful information about composition, however the gain seems to depend a lot on the actual object and attribute combined.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
   * <span class="citations">[1]</span> Predicting Deep Zero-shot Convolutional Neural Networks using Textual Descriptions, <i>Ba et al, CVPR, 2015</i>
   * <span class="citations">[2]</span> Zero-Shot Learning using purely Textual Descriptions, <i>Everingham et al, ICCV 2013</i>

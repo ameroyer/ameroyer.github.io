@@ -21,7 +21,7 @@ year: 2017
 </div>
 
 
-<h2 class="section proposed"> Proposed Architecture</h2>
+## <i class="fas fa-lightbulb"></i> Proposed Architecture
 
 ### RevNet
 This paper proposes to incorporate idea from previous reversible architectures, such as `NICE` <span class="citations">[1]</span>, into a standard `ResNet`. The resulting model is called `RevNet` and is composed of reversible blocks, inspired from *additive coupling* <span class="citations">[1, 2]</span>:
@@ -141,18 +141,18 @@ y_{n - 1, 1} &=  y_{n, 1} - \mathcal{F}(y_{n - 1, 2})\\
 One disadvantage is that `RevNet`s introduces *additional parameters*, as each block is composed of two residuals, $$\mathcal F$$ and $$\mathcal G$$, and their number of channels is also halved as the input is first split into two.
 
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 In the experiments section, the author compare `ResNet` architectures to their `RevNets` "counterparts": they build a `RevNet` with roughly the same number of parameters by halving the number of residual units and doubling the number of channels.
 
 Interestingly, `RevNets` achieve *similar performances* to their `ResNet` counterparts, both in terms of final accuracy, and in terms of training dynamics. The authors also analyze the impact of floating errors that might occur when reconstructing activations rather than storing them, however it appears these errors are of small magnitude and do not seem to negatively impact the model.
 To summarize, reversible networks seems like a very promising direction to efficiently train very deep networks with memory budget constraints.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
   * <span class="citations">[1]</span> NICE: Non-linear Independent Components Estimation, <i>Dinh et al., ICLR 2015</i>
   * <span class="citations">[2]</span> Density estimation using Real NVP, Dinh et al., <i>ICLR 2017</i>
   * <span class="citations">[3]</span> Deep Residual Learning for Image Recognition, <i>He et al., CVPR 2016</i>

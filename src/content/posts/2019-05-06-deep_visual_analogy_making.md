@@ -20,7 +20,7 @@ year: 2015
 </div>
 
 
-<h2 class="section proposed"> Proposed Model</h2>
+## <i class="fas fa-lightbulb"></i> Proposed Model
 
 **Definition:** <i>Informally, a visual analogy, denoted by "**a:b :: c:d**", means that the entity **a** is to **b** what the entity **c** is to **d**. This paper focuses on the problem of generating image **d** after inferring the relation **a:b** and given a source image **c**.</I>
 
@@ -93,10 +93,10 @@ $$
  In other words the decoder tries to match **c**  by exploiting  separate and disentangled information from **a** and **b**. Contrary to the previous analogy objectives, only three images are needed, but it also requires *extra supervision* in the form of the switch vector **s** which can be hard to obtain.
 
 
----
 
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
  The authors consider three main experimental settings:
   * **Synthetic experiments on geometric shapes.** The dataset consists in 48 × 48 images scaled to [0, 1] with 4 shapes, 8 colors, 4 scales, 5 row and column positions, and 24 rotation angles. No disentangling training was performed in this setting.
@@ -116,12 +116,12 @@ Disentanglement methods usually outperforms the other baselines, especially in *
 </div>
 
 
----
 
 
-<h2 class="section followup"> Closely Related</h2>
 
-<h4 style="margin-bottom: 0px"> Visalogy: Answering Visual Analogy Questions <span class="citations">[3]</span></h4>
+## <i class="fas fa-step-forward"></i> Closely Related
+
+#### Visalogy: Answering Visual Analogy Questions <span class="citations">[3]</span>
 <p style="text-align: left">Sadeghi et al., <a href="https://arxiv.org/pdf/1510.08973.pdf">[link]</a></p>
 
 > In this paper, the authors tackle the visual analogy problem in natural images by learning a joint embedding on relation and visual appearances using a *Siamese architecture*. The main idea is to learn an embedding space where the analogy transformation can be modeled by *simple latent vector transformations*. The model consists in a Siamese quadruple architecture, where the four heads correspond to the three context images and the candidate image for the visual analogy task respectively They do consider a *restrained set of analogies*, in particular those based on attributes or actions of animals or geometric view point changes. Given analogy problem $$I_1 : I_2 :: I_3 : I_4$$ with label $$y$$ (1 if $$I_4$$ fits the analogy, 0 otherwise), the model is trained with the following objective
@@ -139,10 +139,10 @@ $$
 > The evaluation is done with *image retrieval metrics*. They also consider generalization scenarios: For instance removing the analogy $$white \rightarrow black$$ during training, but keeping e.g. $$white \rightarrow red$$ and $$green \rightarrow black$$.  There is a lack of details about the missing pairs to really get a full idea of the generalization ability of the model (i.e. if an analogy is missing from the training set, does that mean its reverse also is ? or does "analogy" refers to the high-level relation or is it instantiated relatively to the category too ?).
 
 
----
 
 
-<h2 class="section references"> References</h2>
+
+## <i class="fas fa-book"></i> References
    * <span class="citations">[1]</span> Distributed representations of words and phrases and their compositionality, <i>Mikolov et al., NIPS 2013</i>
    * <span class="citations">[2]</span> GloVe: Global Vectors for Word Representation, <i>Pennington et al., EMNLP 2014</i>
    * <span class="citations">[3]</span> Visalogy: Answering Visual Analogy Questions, <i>Sadeghi et al., NeurIPS 2015</i>

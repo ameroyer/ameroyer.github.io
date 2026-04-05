@@ -20,7 +20,7 @@ year: 2019
 </div>
 
 
-<h2 class="section proposed"> The Neuro-Symbolic Concept Learner</h2>
+## <i class="fas fa-lightbulb"></i> The Neuro-Symbolic Concept Learner
 
 
 <div class="figure">
@@ -45,9 +45,9 @@ Additionally, the model is trained using *curriculum learning*:
 
    The training is done end-to-end, where the training objective consists in maximizing the right answer after executing the program (parsed question) on the visual representations (outputs of the perception modules and concept quantization).
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 The model performs as well as existing baselines. More importantly, they also perform generalization experiments:
 

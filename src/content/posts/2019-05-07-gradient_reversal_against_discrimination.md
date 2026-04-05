@@ -21,7 +21,7 @@ year: 2018
 </div>
 
 
-<h2 class="section proposed"> The GRAD model</h2>
+## <i class="fas fa-lightbulb"></i> The GRAD model
 
 ### Domain adversarial networks
  The proposed model builds on the *Domain Adversarial Network* (`DANN`) <span class="citations">[1]</span>, originally introduced for unsupervised domain adaptation. Given some labeled data $$(x, y) \sim \mathcal X \times \mathcal Y$$, and some unlabeled data $$\tilde x \sim  \tilde{\mathcal X}$$, the goal is to learn a network that solves both classification tasks $$\mathcal X \rightarrow \mathcal Y$$ and $$\tilde{\mathcal X} \rightarrow \mathcal Y$$ while learning a shared representation between $$\mathcal X$$ and $$\tilde{\mathcal X}$$.
@@ -52,28 +52,28 @@ On the other hand, one could directly learn a classification network $$G_y \circ
 ### GRAD-auto
 The authors also consider a variant of the described model where the target branch $$G_t$$ instead solves the autoencoding/reconstruction task. The features learned by the encoder $$G_f$$ can then later be used as entry point of a smaller network for classification or any other task.
 
----
 
 
-<h2 class="section sota"> Baselines </h2>
+
+## <i class="fas fa-history"></i> Baselines
 
  * **`Vanilla`**: A `CNN` trained without the protected attribute protection branch
  * **`LFR`** <span class="citations">[2]</span>: A classifier with an intermediate latent code $$Z \in \{1 \dots K\}$$ is trained with an objective that combines a classification loss (the model should accurately classify $x$), a reconstruction loss (the learned representation should encode enough information about the input to reconstruct it accurately) and a parity loss (estimate the probability $$P(Z=z \vert x)$$ for both populations with $$a_p = 1$$ and $$a_p = -1$$ and strive to make them equal)
  * **`VFA`** <span class="citations">[3]</span>: A `VAE` where the protected attribute $$a_p$$ is factorized out of the latent code $z$, and additional invariance is imposed via a `MMD` objective which tries to match the moments of the posterior distributions $$q(z \vert a_p = -1)$$ and $$q(z \vert a_p = 1)$$.
  * **`ALFR`** <span class="citations">[4]</span> : As in `LFR`, this paper proposes a model trained with a reconstruction loss and a classification loss. Additionally, they propose to quantify the dependence between the learned representation and the protected attribute by adding an adversary classifier that tries to extract the attribute value from the representation, formulated and trained as in the Generative Adversarial Network (`GAN`) setting.
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 `GRAD` always reaches *highest consistency* compared to baselines. For the other metrics, the results are more mitigated, although it usually achieves best or second best results. It is also not clear how to choose between `GRAD-pred` and `GRAD-auto` as there does not seem to be a clear winner, although `GRAD-pred` is a more intuitive solution when supervision is available, as it directly solves the classification task.
 
 Authors also report a small experiment showing that *protecting several attributes at once* can be more beneficial than protecting a single attribute. This can be expected as some attributes are highly correlated or interact in meaningful way.
 In particular, protecting several attributes at once can easily be done in the `GRAD` framework by making the attribute prediction branch multi-class for instance: however it is not clear in the paper how it is actually done in practice, nor whether the same  idea could also be integrated in the baselines for further comparison.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
    * <span class="citations">[1]</span> Domain-Adversarial Training of Neural Networks, <i>Ganin et al, JMRL 2016</i>
    * <span class="citations">[2]</span> Learning Fair Representations,  <i>Zemel et al, ICML 2013</i>
    * <span class="citations">[3]</span> The Variational Fair Autoencoder, <i>Louizos et al, ICLR 2016</i>

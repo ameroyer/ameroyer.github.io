@@ -20,7 +20,7 @@ year: 2016
 </div>
 
 
-<h2 class="section proposed"> Proposed </h2>
+## <i class="fas fa-lightbulb"></i> Proposed
 Given input data $$x$$, the goal is to learn a representation of $$x$$, that factorizes out *nuisance* or *sensitive* variables, $$s$$, while retaining task-relevant content $$z$$. Working in the `VAE` (Variational Autoencoder) framework, this is modeled as a generative process:
 
 $$
@@ -74,10 +74,10 @@ $$
 
 where the last line is the result of the *kernel trick* and $$k: x, y \mapsto <\phi(x), \phi(y) >$$ is an arbitrary kernel function. In practice, the MMD loss term is computed over each batch: A naive implementation would  require computing the full kernel matrix of $$k(x_i, x_j)$$ for each pair of samples in the batch, where each scalar product requires $$K^2$$ operations, where $$K$$ is the dimensionality of $$x$$. Instead, following <span class="citations">[6]</span>, they use *Random Kitchen Sinks* <span class="citations">[5]</span>  which is a low-rank method that allows to compute the MMD loss more efficiently.
 
----
 
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 The authors consider *three* experimental scenarios to test the proposed Variational Fair Autoencoder (`VFAE`):
 
@@ -90,9 +90,9 @@ The models are evaluated on ***(i)*** their performance on the target task and *
 On the **Fairness** task, the proposed method seems to be better at ignoring the sensitive information, although its trade-of between accuracy and fairness is not always the best. The main baseline is the model presented in <span class="citations">[3]</span>, which also exploits a moment matching penalty term, although a simpler one, and does not use the `VAE` framework.
 In the **Domain Adaptation** task, the authors mostly compare to the `DANN` <span class="citations">[4]</span> which proposes a simple adversarial training technique to align different domain representations. The `VFAE` results are on-par, or even slightly better in most scenarios.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
 * <span class="citations">[1]</span> Autoencoding Variational Bayes, <i>Kingma and Welling, ICLR 2014</i>
 * <span class="citations">[2]</span> A Kernel Method for the Two-Sample-Problem, <i>Gretton et al, NeurIPS 2006</i>
 * <span class="citations">[3]</span> Learning Fair Representations, <i>Zemel et al, ICML 2013</i>

@@ -20,7 +20,7 @@ year: 2018
 </div>
 
 
-<h2 class="section dataset"> Dataset </h2>
+## <i class="fas fa-images"></i> Dataset
 
 This paper introduces  the *Procedurally Generated Matrices* (PGM) dataset. It is based on *Raven’s Progressive Matrices (RPM)* introduced by psychologist John Raven in 1936. Given an incomplete *3x3* matrix (missing the bottom right panel), the goal is to complete the matrix with an image picked *out of 8 candidates*. Typically, several candidates are plausible but the subject has to select the one with the strongest justification.
 
@@ -57,9 +57,9 @@ The authors consider 8 generalization settings to evaluate on:
   * `pairs of triples`. Same as before but considering pairs of triples this time and only generating PGM with at least two relations: in that way, some relation interactions will have never been seen on training time.
   * `pairs of attributes`. Same as before but at the attribute level
 
----
 
-<h2 class="section sota"> Baselines </h2>
+
+## <i class="fas fa-history"></i> Baselines
 
 The main contributions of the paper are to introduce the PGM dataset and evaluate several standard deep architectures on it:
 
@@ -83,9 +83,9 @@ $$
 
 Additionally, they consider a semi-supervised variant where the model tries to additionally predict the relations  underlying the PGM (encoded as a one-hot vector) as a *meta-target*. The total loss is a weighted average between the candidate classification loss term and the meta-target regression loss term.
 
----
 
-<h2 class="section experiments"> Experiments </h2>
+
+## <i class="fas fa-microscope"></i> Experiments
 
 ### Overall results
 
@@ -104,11 +104,11 @@ The authors also report results broken down by number of relations per matrix, r
 As for relations, `XOR` and `progression` are the hardest to solve although the model still performs decently well on those (50%).
 
 
----
 
-<h2 class="section followup">Closely related work</h2>
 
-<h4 style="margin-bottom: 0px"> Improving Generalization for Abstract Reasoning Tasks Using Disentangled Feature Representations  <span class="citations">[4]</span></h4>
+## <i class="fas fa-step-forward"></i> Closely related work
+
+#### Improving Generalization for Abstract Reasoning Tasks Using Disentangled Feature Representations  <span class="citations">[4]</span>
 <p style="text-align: left">Steenbrugge et al., <a href="https://arxiv.org/abs/1811.04784">[link]</a></p>
 
 > The main observation is that the previously proposed model seems to *disregard high-level abstract relations* (e.g. considering the poor accuracy on the extrapolation set). this paper proposes to improve the encoding step by embedding the panel in a *"disentangled"* space using a $$\beta$$-VAE.
@@ -118,7 +118,7 @@ As for relations, `XOR` and `progression` are the hardest to solve although the 
 > The model yields some improvement, especially on the more challenging settings (roughly 5% at best). They however omit results in the extrapolation regime.
 
 
-<h4 style="margin-bottom: 0px"> RAVEN: A Dataset for Relational and Analogical Visual rEasoNing <span class="citations">[5]</span></h4>
+#### RAVEN: A Dataset for Relational and Analogical Visual rEasoNing <span class="citations">[5]</span>
 <p style="text-align: left">Zhang et al., <a href="https://arxiv.org/pdf/1903.02741.pdf">[link]</a></p>
 
 >This paper is conceptually very similar to " Measuring abstract reasoning in neural networks", they also propose a new dataset for visual reasoning based on *Raven matrices** and evaluate several baselines in various testing settings.
@@ -173,9 +173,9 @@ $$
    * **(iii)** Much more strange is that the authors report a *significant decrease in accuracy* when using auxillary training. More specifically, it does not impact the `WReN` results, but the accuracy of the `ResNet` + `DRT` model drops from 60%s to 21%, which is extremely counter-intuitive.
    * **(iv)** Finally, they do some generalization experiments, but only on *different layouts*, e.g. train on images with `Center` layout and test on `3x3 grid`. But again, this seems to test more the capacity of the encoder to adapt to several visual domain shifts, rather than the ability to generalize to *new relations*.
 
----
 
-<h2 class="section references"> References </h2>
+
+## <i class="fas fa-book"></i> References
 * <span class="citations">[1]</span> A simple neural network module for relational reasoning, <i>Santoro et al., NeurIPS 2017</i>
 * <span class="citations">[2]</span> What one intelligence test measures: a theoretical account of the processing in the raven progressive matrices test, <i>Carpenter et al</i>
 * <span class="citations">[3]</span> IQ of Neural Networks, <i> Hoshen and Werman, arXiv 2017</i>
