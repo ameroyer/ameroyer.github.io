@@ -362,14 +362,37 @@ main {
 }
 .post-content h1, .post-content h2, .post-content h3,
 .post-content h4, .post-content h5, .post-content h6 {
-  color: #ede9f8;
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
-.post-content h1 { font-size: 2rem; }
-.post-content h2 { font-size: 1.5rem; }
-.post-content h3 { font-size: 1.25rem; }
+.post-content h1 {
+  font-size: 2rem;
+  color: #ede9f8;
+}
+/* H2 — section header: pink accent bar + tinted background */
+.post-content h2 {
+  font-size: 1.3rem;
+  color: #FF4D6B;
+  padding: 0.4rem 0.85rem;
+  border-left: 3px solid #FF4D6B;
+  background: rgba(255, 77, 107, 0.07);
+  border-radius: 0 6px 6px 0;
+  letter-spacing: 0.01em;
+}
+/* H3 — subsection: subtle left rule */
+.post-content h3 {
+  font-size: 1.1rem;
+  color: #ff8099;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(255, 77, 107, 0.35);
+}
+/* H4 — lighter label */
+.post-content h4 {
+  font-size: 1rem;
+  color: #cdc8e0;
+  font-weight: 600;
+}
 .post-content p { margin-bottom: 1.25rem; }
 .post-content a {
   color: #7ec8f0;
@@ -392,6 +415,41 @@ main {
   border-radius: 8px;
   margin: 1.5rem auto;
   display: block;
+}
+/* Figure block with caption */
+.post-content .figure {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 92%;
+}
+.post-content .figure img {
+  margin: 0 auto 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.post-content .figure p {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  color: #9e99b0;
+  font-style: italic;
+  text-align: left;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.post-content .figure p b {
+  color: #cdc8e0;
+  font-style: normal;
+}
+/* Italic emphasis — stand out from body text */
+.post-content em {
+  color: #ff8099;
+  font-style: italic;
+}
+/* Citation markers */
+.post-content .citations {
+  font-weight: 600;
+  color: #7ec8f0;
+  font-size: 0.85em;
 }
 .post-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
 .post-content th {
