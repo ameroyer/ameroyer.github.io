@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Group by category (for the optional filtered view)
+const byCategory: Record<string, typeof sortedPosts> = {};
+for (const post of sortedPosts) {
+  const cats = Array.isArray(post.data.categories) ? post.data.categories : post.data.category ? [post.data.category] : [];
+  const cat = cats[0] || 'Uncategorized';
+  if (!byCategory[cat]) byCategory[cat] = [];
+  byCategory[cat].push(post);
+}
+
+const categories = Object.keys(byCategory).sort();
+---
+
+<BaseLayout
+  title="Reading Notes"
+  description="Reading notes on machine learning papers by Amélie Royer."
+  accentColor="notes"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="reveal">
+      <SectionHeader
+        title="Reading Notes"
+        color="notes"
+        icon="📚"
+        subtitle="Paper summaries and thoughts on machine learning research"
+      />
+    </div>
+
+    <!-- Stats + view toggle -->
+    <div class="flex flex-wrap items-center gap-3 mb-10 reveal reveal-delay-1">
+      <span class="tag tag-notes px-4 py-2 rounded-lg text-sm font-semibold">
+        {sortedPosts.length} papers
+      </span>
+      <span class="tag tag-notes px-4 py-2 rounded-lg text-sm font-semibold">
+        {categories.length} categories
+      </span>
+      <div class="flex-1"></div>
+      <!-- View toggle buttons -->
+      <div class="flex gap-2">
+        <button
+          id="btn-all"
+          class="notes-view-btn notes-view-btn-active text-xs px-3 py-1.5 rounded-full font-medium transition-all"
+          onclick="setView('all')"
+        >
+          All papers
+        </button>
+        <button
+          id="btn-category"
+          class="notes-view-btn text-xs px-3 py-1.5 rounded-full font-medium transition-all"
+          onclick="setView('category')"
+        >
+          By category
+        </button>
+      </div>
+    </div>
+
+    <!-- All-papers view (default) -->
+    <div id="view-all" class="reveal reveal-delay-2">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {sortedPosts.map((post) => (
+          <PostCard
+            title={post.data.title}
+            date={post.data.date}
+            tags={post.data.tags}
+            categories={Array.isArray(post.data.categories) ? post.data.categories : post.data.category ? [post.data.category] : []}
+            author={post.data.author}
+            venue={post.data.venue}
+            year={post.data.year}
+            thumb={post.data.thumb}
+            slug={post.slug}
+          />
+        ))}
+      </div>
+    </div>
+
+    <!-- Category view (hidden by default) -->
+    <div id="view-category" class="hidden">
+      {categories.map((cat, ci) => (
+        <div class={`mb-12 reveal reveal-delay-${Math.min(ci + 1, 4)}`}>
+          <!-- Category header -->
+          <div class="flex items-center gap-3 mb-5">
+            <h2 class="text-base font-bold gradient-notes">{cat}</h2>
+            <div class="flex-1" style="height: 1px; background: rgba(255,77,107,0.2);"></div>
+            <span class="tag tag-notes text-xs">{byCategory[cat].length}</span>
+          </div>
+
+          <!-- Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {byCategory[cat].map((post) => (
+              <PostCard
+                title={post.data.title}
+                date={post.data.date}
+                tags={post.data.tags}
+                categories={Array.isArray(post.data.categories) ? post.data.categories : post.data.category ? [post.data.category] : []}
+                author={post.data.author}
+                venue={post.data.venue}
+                year={post.data.year}
+                thumb={post.data.thumb}
+                slug={post.slug}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .notes-view-btn {
+    background: rgba(255, 77, 107, 0.08);
+    color: #9090a0;
+    border: 1px solid rgba(255, 77, 107, 0.15);
+  }
+  .notes-view-btn:hover {
+    color: #FF7A8A;
+    border-color: rgba(255, 77, 107, 0.35);
+  }
+  .notes-view-btn-active {
+    background: rgba(255, 77, 107, 0.18);
+    color: #FF7A8A;
+    border-color: rgba(255, 77, 107, 0.4);
+  }
+</style>
+
+<script>
+  function setView(view: string) {
+    const viewAll = document.getElementById('view-all');
+    const viewCategory = document.getElementById('view-category');
+    const btnAll = document.getElementById('btn-all');
+    const btnCategory = document.getElementById('btn-category');
+
+    if (view === 'all') {
+      viewAll?.classList.remove('hidden');
+      viewCategory?.classList.add('hidden');
+      btnAll?.classList.add('notes-view-btn-active');
+      btnCategory?.classList.remove('notes-view-btn-active');
+    } else {
+      viewAll?.classList.add('hidden');
+      viewCategory?.classList.remove('hidden');
+      btnAll?.classList.remove('notes-view-btn-active');
+      btnCategory?.classList.add('notes-view-btn-active');
+    }
+  }
+
+  // Expose globally for onclick handlers
+  (window as any).setView = setView;
+</script>

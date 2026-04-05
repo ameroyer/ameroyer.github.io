@@ -1,0 +1,155 @@
+---
+const pathname = Astro.url.pathname;
+
+const navItems = [
+  {
+    href: '/',
+    label: 'About',
+    bmClass: 'bm-home',
+    colorHex: '#4FA8E0',
+    // fa-home equivalent
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>`,
+  },
+  {
+    href: '/cv',
+    label: 'CV',
+    bmClass: 'bm-cv',
+    colorHex: '#7EC832',
+    // fa-user equivalent
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>`,
+  },
+  {
+    href: '/publications',
+    label: 'Papers',
+    bmClass: 'bm-pub',
+    colorHex: '#FF8A00',
+    // fa-graduation-cap equivalent
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>`,
+  },
+  {
+    href: '/portfolio',
+    label: 'Portfolio',
+    bmClass: 'bm-port',
+    colorHex: '#B47FFF',
+    // Laptop / code screen
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/><path d="M6 14l2-2-2-2 1.4-1.4L10 12l-2.6 2.6L6 14zm4 0h6v-2h-6v2z"/></svg>`,
+  },
+  {
+    href: '/notes',
+    label: 'Notes',
+    bmClass: 'bm-notes',
+    colorHex: '#FF4D6B',
+    // Sheet of paper with lines
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>`,
+  },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/') return pathname === '/' || pathname === '';
+  return pathname.startsWith(href);
+}
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50"
+  style="background: #1a1625; border-bottom: 1px solid rgba(255,255,255,0.06); box-shadow: 0 2px 16px rgba(0,0,0,0.35); overflow: visible;"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6" style="position: relative; height: 56px; display: flex; align-items: stretch; justify-content: space-between;">
+
+    <!-- Logo -->
+    <a
+      href="/"
+      class="flex items-center font-semibold text-base tracking-tight transition-opacity hover:opacity-60 shrink-0"
+      style="color: #ede9f8;"
+    >
+      Amélie Royer
+    </a>
+
+    <!-- Hover label — appears on bookmark hover, fades in/out -->
+    <div
+      id="nav-hover-label"
+      class="hidden md:flex items-center"
+      style="
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0; bottom: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.18s ease;
+      "
+      aria-hidden="true"
+    >
+      <span
+        id="nav-hover-text"
+        style="font-size: 1.3rem; font-weight: 700; font-variant: small-caps; letter-spacing: 0.06em; transition: color 0.18s;"
+      ></span>
+    </div>
+
+    <!-- Desktop bookmark tabs — equal width, icon only, extend above header to prevent gap -->
+    <nav class="hidden md:flex items-stretch gap-0.5" style="align-items: stretch;">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`nav-bookmark ${item.bmClass}${isActive(item.href) ? ' active' : ''}`}
+          data-label={item.label}
+          data-color={item.colorHex}
+          title={item.label}
+        >
+          <!-- ::before covers the gap on translateY via CSS -->
+          <Fragment set:html={item.icon} />
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden flex flex-col justify-center gap-1.5 p-2 rounded self-center"
+      aria-label="Toggle menu"
+    >
+      <span class="w-5 h-0.5 block rounded" style="background: #ede9f8;"></span>
+      <span class="w-5 h-0.5 block rounded" style="background: #ede9f8;"></span>
+      <span class="w-5 h-0.5 block rounded" style="background: #ede9f8;"></span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="mobile-menu md:hidden">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class={`bm-mobile-item ${item.bmClass}`}
+      >
+        <Fragment set:html={item.icon} />
+        {item.label}
+      </a>
+    ))}
+  </div>
+</header>
+
+<script>
+  // Mobile toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('open'));
+
+  // Bookmark hover label
+  const bookmarks = document.querySelectorAll<HTMLElement>('.nav-bookmark');
+  const labelWrap = document.getElementById('nav-hover-label') as HTMLElement | null;
+  const labelText = document.getElementById('nav-hover-text') as HTMLElement | null;
+
+  bookmarks.forEach((bm) => {
+    bm.addEventListener('mouseenter', () => {
+      if (labelText) {
+        labelText.textContent = bm.dataset.label ?? '';
+        labelText.style.color = bm.dataset.color ?? '#1e1b2e';
+      }
+      if (labelWrap) labelWrap.style.opacity = '1';
+    });
+    bm.addEventListener('mouseleave', () => {
+      if (labelWrap) labelWrap.style.opacity = '0';
+    });
+  });
+</script>

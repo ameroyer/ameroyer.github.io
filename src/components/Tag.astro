@@ -1,0 +1,9 @@
+---
+interface Props {
+  label: string;
+  variant?: 'home' | 'cv' | 'pub' | 'port' | 'notes' | 'default';
+}
+
+const { label, variant = 'default' } = Astro.props;
+---
+<span class={`tag tag-${variant}`}>{label}</span>

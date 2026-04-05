@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PortfolioCard from '../../components/PortfolioCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPortfolio = await getCollection('portfolio');
+const sortedPortfolio = allPortfolio.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout
+  title="Portfolio"
+  description="Portfolio of coding projects and implementations by Amélie Royer."
+  accentColor="port"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="reveal">
+      <SectionHeader
+        title="Portfolio"
+        color="port"
+        icon="💻"
+        subtitle="Coding projects, implementations, and experiments"
+      />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sortedPortfolio.map((item, i) => (
+        <div class={`reveal reveal-delay-${Math.min((i % 3) + 1, 4)}`}>
+          <PortfolioCard
+            title={item.data.title}
+            date={item.data.date}
+            languages={item.data.languages}
+            thumb={item.data.thumb}
+            twitter_summary={item.data.twitter_summary}
+            github={item.data.github}
+            kaggle={item.data.kaggle}
+            colab={item.data.colab}
+            slug={item.slug}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

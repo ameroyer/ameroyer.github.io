@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPublications = await getCollection('publications');
+const sortedPubs = allPublications.sort((a, b) => b.data.year - a.data.year);
+
+// Group by year
+const byYear: Record<number, typeof sortedPubs> = {};
+for (const pub of sortedPubs) {
+  const y = pub.data.year;
+  if (!byYear[y]) byYear[y] = [];
+  byYear[y].push(pub);
+}
+const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+---
+
+<BaseLayout
+  title="Publications"
+  description="Research publications by Amélie Royer in machine learning, computer vision, and AI."
+  accentColor="pub"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <div class="reveal">
+      <SectionHeader
+        title="Publications"
+        color="pub"
+        icon="📄"
+        subtitle="Research papers in machine learning and computer vision"
+      />
+    </div>
+
+    {years.map((year, yi) => (
+      <div class={`mb-12 reveal reveal-delay-${Math.min(yi + 1, 4)}`}>
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="gradient-pub">{year}</span>
+        </h2>
+        <div class="flex flex-col gap-4">
+          {byYear[year].map((pub) => (
+            <PublicationCard
+              title={pub.data.title}
+              authors={pub.data.authors}
+              venue={pub.data.venue}
+              year={pub.data.year}
+              selected={pub.data.selected}
+              paperurl={pub.data.paperurl}
+              slides={pub.data.slides}
+              poster={pub.data.poster}
+              teaser={pub.data.teaser}
+              slug={pub.slug}
+            />
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</BaseLayout>

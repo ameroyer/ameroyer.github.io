@@ -1,0 +1,50 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  accentColor?: 'home' | 'cv' | 'pub' | 'port' | 'notes';
+  backHref?: string;
+  backLabel?: string;
+}
+
+const {
+  title,
+  description,
+  accentColor = 'port',
+  backHref = '/',
+  backLabel = 'Back',
+} = Astro.props;
+
+const accentColors: Record<string, string> = {
+  home: '#4FA8E0',
+  cv: '#7EC832',
+  pub: '#FF8A00',
+  port: '#B47FFF',
+  notes: '#FF4D6B',
+};
+
+const color = accentColors[accentColor];
+---
+
+<BaseLayout title={title} description={description} accentColor={accentColor}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <!-- Back link -->
+    <a
+      href={backHref}
+      class="inline-flex items-center gap-2 text-sm mb-8 transition-colors hover:text-white"
+      style={`color: ${color};`}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      {backLabel}
+    </a>
+
+    <!-- Content -->
+    <article class="post-content">
+      <slot />
+    </article>
+  </div>
+</BaseLayout>

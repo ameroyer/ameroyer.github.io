@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+  color: 'home' | 'cv' | 'pub' | 'port' | 'notes';
+  icon?: string;
+  subtitle?: string;
+}
+
+const { title, color, icon, subtitle } = Astro.props;
+
+const colorClasses: Record<string, string> = {
+  home: 'gradient-home',
+  cv: 'gradient-cv',
+  pub: 'gradient-pub',
+  port: 'gradient-port',
+  notes: 'gradient-notes',
+};
+
+const underlineColors: Record<string, string> = {
+  home: '#4FA8E0',
+  cv: '#7EC832',
+  pub: '#FF8A00',
+  port: '#B47FFF',
+  notes: '#FF4D6B',
+};
+---
+
+<div class="section-header mb-8">
+  <div class="flex items-center gap-3">
+    {icon && <span class="text-2xl">{icon}</span>}
+    <h2 class={`text-3xl font-bold ${colorClasses[color]}`}>{title}</h2>
+  </div>
+  {subtitle && <p class="mt-2 text-sm" style="color: #9090a0;">{subtitle}</p>}
+  <div
+    class="section-underline mt-3 h-0.5 rounded-full"
+    style={`background: linear-gradient(to right, ${underlineColors[color]}, transparent); width: 0; transition: width 0.8s ease;`}
+  ></div>
+</div>
+
+<script>
+  // Animate the underline when it enters the viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const underline = entry.target.querySelector('.section-underline') as HTMLElement;
+        if (underline) {
+          underline.style.width = '120px';
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.section-header').forEach((el) => observer.observe(el));
+</script>

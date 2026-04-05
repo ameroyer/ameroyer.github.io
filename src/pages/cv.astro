@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPublications = await getCollection('publications');
+const selectedPubs = allPublications
+  .filter((p) => p.data.selected)
+  .sort((a, b) => b.data.year - a.data.year);
+---
+
+<BaseLayout
+  title="CV"
+  description="Curriculum Vitae of Amélie Royer — Research Scientist in machine learning and computer vision."
+  accentColor="cv"
+>
+<div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+
+  <!-- Header -->
+  <div class="flex items-start justify-between flex-wrap gap-4 mb-12 reveal">
+    <SectionHeader title="Curriculum Vitae" color="cv" icon="📋" />
+    <a
+      href="/files/Royer_Amelie_CV.pdf"
+      target="_blank" rel="noopener"
+      class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all hover:opacity-80"
+      style="background: rgba(126,200,50,0.15); color: #9ee84a; border: 1px solid rgba(126,200,50,0.25);"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download PDF
+    </a>
+  </div>
+
+  <!-- ── Work ─────────────────────────────── -->
+  <section class="mb-12 reveal reveal-delay-1">
+    <h2 class="cv-section-title">
+      <span class="cv-dot" style="background:#9ee84a;"></span>
+      Work
+    </h2>
+
+    <div class="cv-row">
+      <div class="cv-date">2024 – now</div>
+      <div class="cv-content">
+        <div class="cv-title">Research Scientist</div>
+        <div class="cv-org">Kyutai Labs <span class="cv-loc">· Paris, France 🇫🇷</span></div>
+        <p class="cv-desc">Open Science AI lab — working on speech and multimodal foundation models.</p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2021 – 2024</div>
+      <div class="cv-content">
+        <div class="cv-title">Deep Learning Research Engineer</div>
+        <div class="cv-org">Qualcomm AI Research <span class="cv-loc">· Amsterdam, Netherlands 🇳🇱</span></div>
+        <p class="cv-desc">Neural network efficiency — conditional compute, dynamic sparsity, mixture-of-experts. Publications at NeurIPS, CVPR, ICCV.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Education ─────────────────────────── -->
+  <section class="mb-12 reveal reveal-delay-2">
+    <h2 class="cv-section-title">
+      <span class="cv-dot" style="background:#9ee84a;"></span>
+      Education
+    </h2>
+
+    <div class="cv-row">
+      <div class="cv-date">2015 – 2020</div>
+      <div class="cv-content">
+        <div class="cv-title">PhD — Machine Learning &amp; Computer Vision</div>
+        <div class="cv-org">IST Austria <span class="cv-loc">· Klosterneuburg, Austria 🇦🇹</span></div>
+        <p class="cv-desc">Supervised by Prof. Christoph Lampert. Domain adaptation, object detection, transfer learning.</p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2012 – 2015</div>
+      <div class="cv-content">
+        <div class="cv-title">Masters + Bachelors in Computer Science</div>
+        <div class="cv-org">ENS Rennes <span class="cv-loc">· Rennes, France 🇫🇷</span></div>
+        <p class="cv-desc">Specialization in Machine Learning and Computer Science.</p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2010 – 2012</div>
+      <div class="cv-content">
+        <div class="cv-title">CPGE (MPSI-MP*)</div>
+        <div class="cv-org">Lycée Clémenceau <span class="cv-loc">· Reims, France 🇫🇷</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Internships ───────────────────────── -->
+  <section class="mb-12 reveal reveal-delay-3">
+    <h2 class="cv-section-title">
+      <span class="cv-dot" style="background:#9ee84a;"></span>
+      Research Internships
+    </h2>
+
+    <div class="cv-row">
+      <div class="cv-date">2020</div>
+      <div class="cv-content">
+        <div class="cv-title">Google Brain <span class="cv-loc">· Zürich, Switzerland 🇨🇭</span></div>
+        <p class="cv-desc">Knowledge distillation for large neural networks.
+          <a href="https://arxiv.org/abs/2106.05237" target="_blank" rel="noopener" class="cv-link">arxiv:2106.05237 →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2017</div>
+      <div class="cv-content">
+        <div class="cv-title">Google Brain <span class="cv-loc">· London, UK 🇬🇧</span></div>
+        <p class="cv-desc">Unsupervised image-to-image translation, GANs and domain adaptation.
+          <a href="https://arxiv.org/abs/1711.05139" target="_blank" rel="noopener" class="cv-link">arxiv:1711.05139 →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2015</div>
+      <div class="cv-content">
+        <div class="cv-title">Inria Rennes <span class="cv-loc">· Rennes, France 🇫🇷</span></div>
+        <p class="cv-desc">Unsupervised clustering for text and audio.</p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2014</div>
+      <div class="cv-content">
+        <div class="cv-title">IST Austria <span class="cv-loc">· Klosterneuburg, Austria 🇦🇹</span></div>
+        <p class="cv-desc">Adapting pre-trained classifiers to unknown test distributions.</p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2013</div>
+      <div class="cv-content">
+        <div class="cv-title">Inria Rennes <span class="cv-loc">· Rennes, France 🇫🇷</span></div>
+        <p class="cv-desc">Video retrieval using circular Fourier transforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Selected Publications ─────────────── -->
+  <section class="mb-12 reveal reveal-delay-4">
+    <h2 class="cv-section-title">
+      <span class="cv-dot" style="background:#FF8A00;"></span>
+      Selected Publications
+    </h2>
+    <div class="flex flex-col gap-4">
+      {selectedPubs.map((pub) => (
+        <PublicationCard
+          title={pub.data.title}
+          authors={pub.data.authors}
+          venue={pub.data.venue}
+          year={pub.data.year}
+          selected={pub.data.selected}
+          paperurl={pub.data.paperurl}
+          slides={pub.data.slides}
+          poster={pub.data.poster}
+          teaser={pub.data.teaser}
+          slug={pub.slug}
+        />
+      ))}
+    </div>
+    <div class="mt-4">
+      <a href="/publications" class="text-sm font-medium hover:underline" style="color: #ffaa44;">
+        View all publications →
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Skills ─────────────────────────────── -->
+  <section class="mb-12 reveal">
+    <h2 class="cv-section-title">
+      <span class="cv-dot" style="background:#9ee84a;"></span>
+      Skills
+    </h2>
+
+    <div class="flex flex-col gap-4">
+      <div class="cv-skill-row">
+        <span class="cv-skill-label">Programming</span>
+        <div class="flex flex-wrap gap-2">
+          {['Python', 'C++', 'OCaml', 'C'].map((s) => <span class="skill-badge">{s}</span>)}
+        </div>
+      </div>
+      <div class="cv-skill-row">
+        <span class="cv-skill-label">Deep Learning</span>
+        <div class="flex flex-wrap gap-2">
+          {['PyTorch', 'TensorFlow', 'JAX', 'Keras'].map((s) => <span class="skill-badge">{s}</span>)}
+        </div>
+      </div>
+      <div class="cv-skill-row">
+        <span class="cv-skill-label">Tools</span>
+        <div class="flex flex-wrap gap-2">
+          {['matplotlib', 'streamlit', 'LaTeX', 'git'].map((s) => <span class="skill-badge">{s}</span>)}
+        </div>
+      </div>
+      <div class="cv-skill-row">
+        <span class="cv-skill-label">Languages</span>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge">French 🇫🇷 <span style="opacity:0.55; font-size:0.75em;">(native)</span></span>
+          <span class="skill-badge">English 🇬🇧 <span style="opacity:0.55; font-size:0.75em;">(fluent)</span></span>
+          <span class="skill-badge">German 🇩🇪 <span style="opacity:0.55; font-size:0.75em;">(advanced)</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</BaseLayout>
