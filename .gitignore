@@ -8,4 +8,27 @@ notebooks/2016_08_01_AlphaComplexes/*.jpg
 notebooks/2017_12_02_wonderwheel/images
 notebooks/2017_12_02_wonderwheel/html
 
+# Astro build output
+dist/
+.output/
+
+# Astro generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS
+.DS_Store
+
 
