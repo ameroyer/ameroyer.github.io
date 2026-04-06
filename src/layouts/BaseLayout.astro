@@ -59,6 +59,13 @@ const fullTitle = title === "Amélie Royer" ? title : `${title} — Amélie Roye
   />
 
   <title>{fullTitle}</title>
+  <!-- Prevent flash of wrong theme -->
+  <script is:inline>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.classList.add('light');
+    })();
+  </script>
 </head>
 <body>
   <Navigation />

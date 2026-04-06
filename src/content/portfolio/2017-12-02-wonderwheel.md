@@ -14,7 +14,8 @@ Finally, I generate the histogram at different stages of blurriness of the image
 <link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image2.css">
 <link rel="stylesheet" href="/notebooks/2017_12_02_wonderwheel/html/image3.css">
 
-<div style="width:444px; height:444px; position:relative; top:10px; left:0px;">
+<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:flex-start; margin:20px 0;">
+<div style="width:444px; height:444px; position:relative; top:10px; left:0px; flex-shrink:0;">
     <img style="border-radius: 50%; border: 0; top: 122px; left:122px; height: 200px; width:200px; position:relative" src="/notebooks/2017_12_02_wonderwheel/images/image2.jpeg">
 
        <div class ="frame">
@@ -259,7 +260,7 @@ Finally, I generate the histogram at different stages of blurriness of the image
 </div>
 
 
-<div style="width:444px; height:444px; margin-bottom:25px; margin-left:50%; top:10px; position:relative">
+<div style="width:444px; height:444px; margin-bottom:25px; top:10px; position:relative; flex-shrink:0;">
     <img style="border-radius: 50%; border: 0; top: 122px; left:122px; height: 200px; width:200px; position:relative" src="/notebooks/2017_12_02_wonderwheel/images/image3.jpeg">
 
 <div class ="frame">
@@ -500,6 +501,7 @@ Finally, I generate the histogram at different stages of blurriness of the image
    <div class="bar2_" id="bar2_39_black"></div>
    <div class="bar2_" id="bar2_39_white"></div>
    <div class="bar2_" id="bar2_39_color"></div>
+</div>
 </div>
 </div>
 

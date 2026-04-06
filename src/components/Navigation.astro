@@ -87,21 +87,44 @@ function isActive(href: string): boolean {
       ></span>
     </div>
 
-    <!-- Desktop bookmark tabs — equal width, icon only, extend above header to prevent gap -->
-    <nav class="hidden md:flex items-stretch gap-0.5" style="align-items: stretch;">
-      {navItems.map((item) => (
-        <a
-          href={item.href}
-          class={`nav-bookmark ${item.bmClass}${isActive(item.href) ? ' active' : ''}`}
-          data-label={item.label}
-          data-color={item.colorHex}
-          title={item.label}
-        >
-          <!-- ::before covers the gap on translateY via CSS -->
-          <Fragment set:html={item.icon} />
-        </a>
-      ))}
-    </nav>
+    <!-- Right side: bookmark tabs + theme toggle (desktop) -->
+    <div class="hidden md:flex items-stretch gap-0" style="align-items: stretch;">
+      <!-- Desktop bookmark tabs — equal width, icon only, extend above header to prevent gap -->
+      <nav class="flex items-stretch gap-0.5" style="align-items: stretch;">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`nav-bookmark ${item.bmClass}${isActive(item.href) ? ' active' : ''}`}
+            data-label={item.label}
+            data-color={item.colorHex}
+            title={item.label}
+          >
+            <!-- ::before covers the gap on translateY via CSS -->
+            <Fragment set:html={item.icon} />
+          </a>
+        ))}
+      </nav>
+
+      <!-- Theme toggle -->
+      <button id="theme-toggle" class="theme-toggle self-center ml-3" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+        <!-- Moon icon (shown in light mode to switch to dark) -->
+        <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <!-- Sun icon (shown in dark mode to switch to light) -->
+        <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+    </div>
 
     <!-- Mobile hamburger -->
     <button
@@ -151,5 +174,26 @@ function isActive(href: string): boolean {
     bm.addEventListener('mouseleave', () => {
       if (labelWrap) labelWrap.style.opacity = '0';
     });
+  });
+
+  // Theme toggle
+  function applyTheme(isLight: boolean) {
+    document.documentElement.classList.toggle('light', isLight);
+    const sunIcon = document.getElementById('theme-icon-sun');
+    const moonIcon = document.getElementById('theme-icon-moon');
+    if (sunIcon) sunIcon.style.display = isLight ? 'none' : 'block';
+    if (moonIcon) moonIcon.style.display = isLight ? 'block' : 'none';
+  }
+
+  // Apply saved theme on load
+  const savedTheme = localStorage.getItem('theme');
+  const isLight = savedTheme === 'light';
+  applyTheme(isLight);
+
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle?.addEventListener('click', () => {
+    const nowLight = !document.documentElement.classList.contains('light');
+    applyTheme(nowLight);
+    localStorage.setItem('theme', nowLight ? 'light' : 'dark');
   });
 </script>
