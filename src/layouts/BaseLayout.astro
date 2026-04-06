@@ -59,13 +59,6 @@ const fullTitle = title === "Amélie Royer" ? title : `${title} — Amélie Roye
   />
 
   <title>{fullTitle}</title>
-
-  <!-- Protect navigation from page-specific stylesheets (e.g. idyll_styles.css on the Polya page) -->
-  <style is:global>
-    #site-header button { display: inline-flex !important; margin: 0 !important; }
-    #site-header svg { overflow: visible !important; }
-  </style>
-
   <!-- Prevent flash of wrong theme -->
   <script is:inline>
     (function() {
