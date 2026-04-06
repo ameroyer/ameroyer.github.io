@@ -393,7 +393,7 @@ img {
   border-style: none;
 }
 
-svg:not(:root) {
+.post-content svg:not(:root) {
   overflow: hidden;
 }
 
@@ -969,7 +969,7 @@ hr {
   padding-top: 0;
 }
 
-button {
+.post-content button {
   display: block;
   margin: 1em auto;
 }

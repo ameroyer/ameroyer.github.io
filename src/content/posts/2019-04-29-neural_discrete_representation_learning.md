@@ -38,7 +38,7 @@ $$
 \begin{align}
 \mathcal{L}_{\text{ELBO}}(x) &= \text{KL}(q(z | x) \| p(z)) - \mathbb{E}_{z \sim q(\cdot | x)}(\log p(x | z))\\
 &= - \log(p(z_k)) -  \log p(x | z_k)\\
-\mbox{where }& z_k = z_q(x) = \arg\min_z \| z_e(x) - z \|^2 \tag{1}
+\text{where }& z_k = z_q(x) = \arg\min_z \| z_e(x) - z \|^2 \tag{1}
 \end{align}
 $$
 
@@ -72,8 +72,6 @@ A second contribution of this work consists in _learning the prior distribution_
 
 **Note:** It is not clear to me if the autoregressive model is trained on latent codes sampled from the prior $$z \sim p(z)$$ or from the encoder distribution $$x \sim \mathcal{D};\ z \sim q(z\ \vert\ x)$$
 
-
-
 ## <i class="fas fa-microscope"></i> Experiments
 
 The proposed model is mostly compared to the standard continuous `VAE` framework. It seems to achieve similar log-likelihood and sample quality, while taking advantage of the discrete latent space. In particular
@@ -81,8 +79,7 @@ For ImageNet for instance, they consider $$K = 512$$ latent codes with dimension
 
 A second set of experiments tackles the problem of audio modeling. The performance of the model are once again satisfying. Furthermore, it does seem like the discrete latent space actually captures relevant characteristics of the input data structure, although this is a purely qualitative observation.
 
-
-
 ## <i class="fas fa-book"></i> References
-* <span class="citations">[1]</span> Autoencoding Variational Bayes, <i>Kingma and Welling, ICLR 2014</i>
-* <span class="citations">[2]</span> Pixel Recurrent Neural Networks, <i>van den Oord et al, arXiv 2016</i>
+
+- <span class="citations">[1]</span> Autoencoding Variational Bayes, <i>Kingma and Welling, ICLR 2014</i>
+- <span class="citations">[2]</span> Pixel Recurrent Neural Networks, <i>van den Oord et al, arXiv 2016</i>

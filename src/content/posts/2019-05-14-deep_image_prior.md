@@ -31,7 +31,7 @@ $$
 \end{align}
 $$
 
-where $$E$$ is a cost function and $$R$$ is a _prior on the output space_ acting as a regularizer. $$R$$ is often a hand-crafted prior, for instance a smoothness constraint like Total Variation <span class="citations">[1]</span>, or, for more recent techniques, it can be implemented with adversarial training (e.g.,` GAN`s).
+where $$E$$ is a cost function and $$R$$ is a _prior on the output space_ acting as a regularizer. $$R$$ is often a hand-crafted prior, for instance a smoothness constraint like Total Variation <span class="citations">[1]</span>, or, for more recent techniques, it can be implemented with adversarial training (e.g.,`GANs`).
 
 ## <i class="fas fa-lightbulb"></i> Deep Image Prior
 
@@ -39,8 +39,8 @@ In this paper, the goal is to replace $$R$$ by an _implicit prior captured by th
 
 $$
 \begin{align}
-R(x) &= 0\ \text{if}\ \exists \theta\ \mbox{s.t.}\ x = f_{\theta}(z)\\
-R(x) &= + \infty,\ \mbox{otherwise}
+R(x) &= 0\ \text{if}\ \exists \theta\ \text{s.t.}\ x = f_{\theta}(z)\\
+R(x) &= + \infty,\ \text{otherwise}
 \end{align}
 $$
 
@@ -48,7 +48,7 @@ Which results in the following workflow:
 
 $$
 \begin{align}
-\theta^{\ast} = \arg\min E(f(z; x_0), x_0) \mbox{ and } x^{\ast} = f_{\theta^{\ast}}(z; x_0)
+\theta^{\ast} = \arg\min E(f(z; x_0), x_0) \text{ and } x^{\ast} = f_{\theta^{\ast}}(z; x_0)
 \end{align}
 $$
 
@@ -67,7 +67,7 @@ To quantify this effect, the authors perform a reconstruction experiment (i.e., 
 The experiments focus on three _image analysis tasks_:
 
 - **Image denoising** ($$E(x, x_0) = \|x - x_0\|$$), based on the previous observation that the model converges more easily to natural-looking images than noisy ones.
-- **Super Resolution** ($$E(x, x_0) = \| \mbox{downscale}(x) - x_0 \|$$), to upscale the resolution of input image $$x_0$$
+- **Super Resolution** ($$E(x, x_0) = \| \text{downscale}(x) - x_0 \|$$), to upscale the resolution of input image $$x_0$$
 - **Image inpainting** ($$E(x, x_0) = \|(x - x_0) \odot m\|$$) where the input image $$x_0$$ is masked by a mask $$m$$ and the goal is to recover the missing pixels.
 
 The method seems to _outperform most non-trained methods_, when available, (e.g. Bicubic upsampling for Super-Resolution) but is still often outperformed y learning-based ones. The _inpainting results_ are particularly interesting, and I do not know of any other non-trained baselines for this task. Obviously performs poorly when the obscured region requires highly semantic knowledge, but it seems to perform well on more reasonable benchmarks.
