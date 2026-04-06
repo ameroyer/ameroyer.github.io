@@ -1,0 +1,186 @@
+[meta title:"Stack Scroll" description:"Tutorial on Stacked Scrolling" /]
+
+
+
+[var name:"pageStepSN" value:0 /]
+[data name:"schnitzelnames" source:"schnitzel-names.csv" /]
+[data name:"schnitzeltypes" source:"schnitzel-types.csv" /]
+[data name:"schnitzelmeats" source:"schnitzel-meats.csv" /]
+
+[Scroller currentStep:pageStepSN]
+[Graphic className:"step-graphic"]
+[WeightedWordList data:schnitzelnames load:`pageStepSN > 0` bg:"static/images/valentin-b-kremer-MzVxrOWYmQQ-unsplash.jpg" /]
+[/Graphic]
+
+[Step]
+# The many names of Schnitzel
+Wednesday is commonly known as "Schnitzel day", but did you ever pay attention at the variety of Schnitzel we are offered ?
+[SVG src:"http://www.w3.org/2000/svg" /]
+
+
+[/Step]
+
+[Step]
+Here is the list of the different Schnitzel options, ordered by decreasing frequencies. There are [Display value: `schnitzelnames.length` format:"d" /]  unique options in total, which one is your favorite ?
+
+[div className:"charts"]
+[Float width:"49%" position:"left"][PieChart type:"pie" data:schnitzeltypes colorScale:"cool" padding:20  padAngle:5 innerRadius:100 /][/Float]
+[Float width:"49%" position:"right"][PieChart type:"pie" data:schnitzelmeats  colorScale:"cool" padding:40  padAngle:5 innerRadius:100 /][/Float]
+[/div]
+[/Step]
+[/Scroller]
+
+
+// SECOND SCROLLER
+[var name:"circleStep" value:0/]
+[Scroller currentStep:circleStep]
+[Graphic]
+[img src:"static/images/circle.svg"
+className:`circleStep === 0 ? "circle" : "circle enlarge" + circleStep `/]
+[/Graphic]
+
+[Step]
+[p]Welcome to the second Scroller! Like the first Scroller, we have kept
+track of the step we're on by passing a different variable to the ```currentStep``` prop: [/p]
+
+```
+// Second Scroller
+[var name:"circleStep" value:0/]
+[Scroller currentStep:circleStep]
+...
+[/Scroller]
+
+```
+
+Now watch for a different animation as you enter 
+the next step.
+[/Step]
+[Step]
+[p]
+As mentioned previously, each Scroller has a unique [span className:"emphasize"]id[/span].[/p] The id format is ```#idyll-scroll-[num] ``` starting at 0.  
+
+Since this is the second Scroller, its id is ```#idyll-scroll-1 ```.
+[/Step]
+
+[Step]
+[p]This comes in handy when you want to change the style for a particular Scroller only.[/p]
+Here, we've changed this graphic's background color in the [span className:"emphasize"]style.css[/span]
+file: 
+
+```css
+#idyll-scroll-1 .idyll-scroll-graphic {
+background: #5BAFC1;
+}
+```
+[/Step]
+
+[Step]
+[p]And that's pretty much it![/p] Go ahead and scroll down for the summary code snippets.
+[/Step]
+[/Scroller]
+
+[br/]
+
+// Code snippet portion
+[div className:"code"]
+### Snippets
+If you want to use the code snippets directly, you can use the default [a href:"https://github.com/megan-vo/stacked-scrolling-tutorial/tree/master/static/images" target:"_blank"]bar and circle images[/a] as well.
+
+```
+
+// First Scroller
+[var name:"barStep" value:0 /]
+[Scroller currentStep:barStep]
+[Graphic]
+[img src:"static/images/bar.svg" 
+className:`barStep === 0 ? "bar" : 
+"bar rotate" + barStep `/]
+[/Graphic]
+
+[Step]
+... // Step content here
+[/Step]
+
+[Step]
+...
+[/Step]
+[/Scroller]
+
+// Second Scroller
+[var name:"circleStep" value:0 /]
+[Scroller currentStep:circleStep]
+[Graphic]
+[img src:"static/images/circle.svg" 
+className:`circleStep === 0 ? "circle" : 
+"circle enlarge" + circleStep `/]
+[/Graphic]
+
+[Step]
+...
+[/Step]
+[Step]
+..
+[/Step]
+[/Scroller]
+```
+
+```css
+
+/* CSS for scroller portion */
+.bar, .circle {
+margin-left: 42vw;
+background: transparent;
+transition: 400ms linear all;
+}
+
+/* Format the graphics */
+.circle {
+height: 35vh;
+}
+
+.bar {
+width: 25vw;
+height: 10vh;
+}
+
+/* Animations */
+.rotate1 {
+transform: rotate(90deg);
+}
+
+.rotate2 {
+transform: rotate(210deg);
+}
+
+.enlarge1 {
+transform: scale(2);
+}
+
+.enlarge2 {
+transform: scale(2.2);
+}
+
+/* Change graphic background based on Scroller id */
+#idyll-scroll-0 .idyll-scroll-graphic {
+background:  #F0F0F0;
+}
+
+#idyll-scroll-1 .idyll-scroll-graphic {
+background: #5BAFC1;
+}
+```
+[/div]
+
+[br/]
+### Final Notes
+// Link to docs
+[p]Interested in exploring more? [span className:"emphasize"]Idyll's Docs[/span] has information on all the 
+[a href:"https://idyll-lang.org/docs/components" target:"_blank"]built-in components[/a]
+including the Scroller. If you're looking to get started somewhere, 
+[a href:"https://idyll-lang.org/docs/getting-started" target:"_blank"]this page[/a] in the Docs will 
+help you get set up.[/p]
+
+// Custom components
+Note that you can apply the same Scroller concepts from the CSS example above to control custom JavaScript 
+components as well in Idyll. Check out the [a href:"https://idyll-lang.org/docs/components/custom" target:"_blank"]custom 
+components[/a] page on how to incorporate those into your Idyll document.
