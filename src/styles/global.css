@@ -430,8 +430,12 @@ main {
   transition: color 0.2s, text-decoration-color 0.2s;
 }
 .post-content a:hover { color: #aadcf8; text-decoration-color: #aadcf8; }
-.post-content ul, .post-content ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
-.post-content li { margin-bottom: 0.4rem; }
+.post-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.post-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.post-content ul ul { list-style-type: circle; margin-bottom: 0.25rem; }
+.post-content ul ul ul { list-style-type: square; }
+.post-content li { margin-bottom: 0.6rem; padding-left: 0.25rem; }
+.post-content li > ul, .post-content li > ol { margin-top: 0.4rem; }
 .post-content blockquote {
   border-left: 3px solid rgba(255,255,255,0.15);
   padding-left: 1.25rem;
@@ -442,8 +446,24 @@ main {
 .post-content img {
   max-width: 100%;
   border-radius: 8px;
-  margin: 1.5rem auto;
   display: block;
+  margin: 1.5rem auto;
+}
+/* Flex row for side-by-side images */
+.post-content .img-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  flex-wrap: wrap;
+}
+.post-content .img-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0;
 }
 /* Figure block with caption */
 .post-content .figure {
@@ -489,6 +509,206 @@ main {
   border: 1px solid rgba(255,255,255,0.08);
 }
 .post-content td { padding: 0.6rem 1rem; border: 1px solid rgba(255,255,255,0.08); }
+
+/* ─── Checkbox accordion (.long_result) ─────────── */
+.post-content input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.post-content label.long_result {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  background: rgba(180, 127, 255, 0.1);
+  border: 1px solid rgba(180, 127, 255, 0.25);
+  color: #cfa8ff;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  margin: 0.75rem 0 0.25rem;
+  user-select: none;
+}
+.post-content label.long_result:hover {
+  background: rgba(180, 127, 255, 0.18);
+  border-color: rgba(180, 127, 255, 0.4);
+}
+.post-content label.long_result::before {
+  content: '▶';
+  font-size: 0.6rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.post-content input[type="checkbox"]:checked + label.long_result {
+  background: rgba(180, 127, 255, 0.18);
+  border-color: rgba(180, 127, 255, 0.4);
+}
+.post-content input[type="checkbox"]:checked + label.long_result::before {
+  transform: rotate(90deg);
+}
+
+/* Content hidden by default, revealed on check */
+.post-content input[type="checkbox"] + label.long_result + .long_result {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+  margin: 0;
+}
+.post-content input[type="checkbox"]:checked + label.long_result + .long_result {
+  max-height: 1400px;
+  opacity: 1;
+}
+
+/* ─── Idyll interactive components ──────────────── */
+
+/* Orange / blue population colors */
+.post-content .popa { color: #FF8A00; font-weight: 600; }
+.post-content .popb { color: #4FA8E0; font-weight: 600; }
+
+/* Legend */
+.post-content .legend_lines   { color: #4FA8E0; font-weight: 700; }
+.post-content .legend_circles { color: #FF8A00; font-weight: 700; }
+
+/* Draggable dynamic values — make them look interactive */
+.post-content .idyll-dynamic {
+  display: inline-block;
+  color: #B47FFF;
+  font-weight: 700;
+  border-bottom: 2px dashed rgba(180, 127, 255, 0.7);
+  padding: 0 2px;
+  cursor: ew-resize;
+  transition: color 0.15s, border-color 0.15s;
+}
+.post-content .idyll-dynamic:hover {
+  color: #cfa8ff;
+  border-bottom-color: #cfa8ff;
+}
+
+/* Displayed computed values */
+.post-content .idyll-display {
+  display: inline-block;
+  color: #cfa8ff;
+  font-weight: 600;
+}
+
+/* Simulate button */
+.post-content .simulate {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(180, 127, 255, 0.5);
+  background: rgba(180, 127, 255, 0.12);
+  color: #cfa8ff;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  user-select: none;
+}
+.post-content .simulate:hover {
+  background: rgba(180, 127, 255, 0.25);
+  border-color: rgba(180, 127, 255, 0.8);
+  transform: translateY(-1px);
+}
+.post-content .simulate:active {
+  transform: translateY(0);
+  background: rgba(180, 127, 255, 0.35);
+}
+
+/* Definition callout */
+.post-content .definition {
+  text-align: center;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--theme-border);
+  border-left: 3px solid #B47FFF;
+  padding: 1rem 1.25rem;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Equation box */
+.post-content .equation {
+  width: 80%;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--theme-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+/* Figure container */
+.post-content .figure {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Detail callout (tooltip-like) */
+.post-content .detail {
+  position: relative;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border: 1px solid rgba(255, 138, 0, 0.4);
+  border-radius: 6px;
+  background: rgba(255, 138, 0, 0.05);
+  margin: 1rem 0;
+}
+
+/* Inline dashed text hint */
+.post-content .text_detail {
+  color: #FF8A00;
+  border-bottom: 1px dashed rgba(255, 138, 0, 0.7);
+  cursor: help;
+}
+
+/* D3 visualization canvas */
+.post-content .d3-component {
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem auto;
+}
+.post-content .d3-component svg {
+  max-height: 300px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--theme-border);
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+/* Aside / annotation panels */
+.post-content .aside {
+  font-size: 0.82rem;
+  color: var(--theme-text-muted);
+  border-left: 2px solid rgba(180, 127, 255, 0.3);
+  padding-left: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+/* Accent body text */
+.post-content .accent-body { color: #B47FFF; }
+
+/* ── Light mode overrides ── */
+html.light .post-content .idyll-dynamic { color: #6d28d9; border-bottom-color: rgba(109,40,217,0.6); }
+html.light .post-content .idyll-dynamic:hover { color: #7c3aed; }
+html.light .post-content .idyll-display { color: #7c3aed; }
+html.light .post-content .simulate { background: rgba(109,40,217,0.08); border-color: rgba(109,40,217,0.4); color: #6d28d9; }
+html.light .post-content .simulate:hover { background: rgba(109,40,217,0.16); border-color: rgba(109,40,217,0.7); }
+html.light .post-content .definition { background: rgba(0,0,0,0.03); }
+html.light .post-content .equation { background: rgba(0,0,0,0.02); }
+html.light .post-content .detail { border-color: rgba(255,138,0,0.5); background: rgba(255,138,0,0.04); }
+html.light .post-content .d3-component svg { background: #f5f5f5; }
+html.light .post-content .aside { color: var(--theme-text-muted); }
+html.light .post-content .accent-body { color: #6d28d9; }
 
 /* KaTeX */
 .katex-display { overflow-x: auto; padding: 1rem 0; }
@@ -635,6 +855,9 @@ html.light .cv-desc { color: var(--theme-text-muted); }
 html.light .cv-date { color: var(--theme-text-muted); }
 html.light .skill-badge { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.12); color: var(--theme-text); }
 html.light .tag-default { background: rgba(0,0,0,0.07); color: var(--theme-text-muted); }
+html.light .post-content label.long_result { background: rgba(109,40,217,0.08); border-color: rgba(109,40,217,0.25); color: #6d28d9; }
+html.light .post-content label.long_result:hover,
+html.light .post-content input[type="checkbox"]:checked + label.long_result { background: rgba(109,40,217,0.14); border-color: rgba(109,40,217,0.4); }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
