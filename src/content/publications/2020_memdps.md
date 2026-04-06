@@ -1,13 +1,14 @@
 ---
 title: "Multiple-Environment Markov Decision Processes: Efficient Analysis and Applications"
-paperurl: '/files/icaps_memdps_2020.pdf'
-slides: 'https://www.youtube.com/watch?v=cpx67Zy8k2g'
-poster: '/files/posters/paper_104_poster.pdf'
+paperurl: "/files/icaps_memdps_2020.pdf"
+slides: "https://www.youtube.com/watch?v=cpx67Zy8k2g"
+poster: "/files/posters/paper_104_poster.pdf"
 year: 2020
 selected: false
 authors: 'Krishnendu Chatterjee, Martin Chmelík, <span class="first_author">Deep Karkhanis</span>, Petr Novotný and <span class="first_author">Amélie Royer</span>'
-venue: 'International Conference on Automated Planning and Scheduling (ICAPS)'
-teaser: 'thumbs/pub/memdp_thumb.png'
+venue: "International Conference on Automated Planning and Scheduling (ICAPS)"
+code: "https://github.com/ameroyer/ReCA"
+teaser: "thumbs/pub/memdp_thumb.png"
 bibtex: |
   @InProceedings{Chatterjee_2020_ICAPS,
     author = {Chatterjee, Krishnendu and Chmelík, Martin and Karkhanis, Deep and Novotný, Petr and Royer, Amélie},

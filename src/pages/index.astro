@@ -96,13 +96,12 @@ const selectedPubs = allPublications
             I'm a Research Scientist at
             <a href="https://kyutai.org/" target="_blank" rel="noopener"
                class="font-medium hover:underline" style="color: #7ec8f0;">Kyutai Labs</a>,
-            a new AI lab committed to Open Science, based in Paris, France.
+            a new AI lab committed to Open Science, based in Paris, France. 
+            My research interests are multimodal learning, computer vision, and neural network efficiency
           </p>
-          <p class="mb-3" style="color: #9e99b0;">
+          <p class="mb-3">
             Prior to this, I was a Deep Learning Research Engineer at Qualcomm AI Research (2021–2024),
             working on neural network efficiency via conditional compute and dynamic sparsity.
-          </p>
-          <p style="color: #9e99b0;">
             I graduated with a PhD from IST Austria in 2020, working on Machine Learning and Computer Vision,
             and hold a Masters in CS from École normale supérieure de Rennes (2015).
           </p>
@@ -138,6 +137,8 @@ const selectedPubs = allPublications
               paperurl={pub.data.paperurl}
               slides={pub.data.slides}
               poster={pub.data.poster}
+              code={pub.data.code}
+              demo={pub.data.demo}
               teaser={pub.data.teaser}
               slug={pub.slug}
             />

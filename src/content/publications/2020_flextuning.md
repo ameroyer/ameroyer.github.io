@@ -1,13 +1,14 @@
 ---
 title: "A Flexible Selection Scheme for Minimum-Effort Transfer Learning"
-paperurl: 'http://openaccess.thecvf.com/content_WACV_2020/papers/Royer_A_Flexible_Selection_Scheme_for_Minimum-Effort_Transfer_Learning_WACV_2020_paper.pdf'
-slides: '/files/slides/[2020]WACV-Flextuning.pdf'
-poster: '/files/posters/poster_flextuning.pdf'
+paperurl: "http://openaccess.thecvf.com/content_WACV_2020/papers/Royer_A_Flexible_Selection_Scheme_for_Minimum-Effort_Transfer_Learning_WACV_2020_paper.pdf"
+slides: "/files/slides/[2020]WACV-Flextuning.pdf"
+poster: "/files/posters/poster_flextuning.pdf"
 year: 2020
 selected: false
 authors: '<span class="first_author">Amélie Royer</span> and Christoph Lampert'
-venue: 'Winter Conference on Applications of Computer Vision (WACV)'
-teaser: 'thumbs/pub/flextuning_thumb.png'
+venue: "Winter Conference on Applications of Computer Vision (WACV)"
+code: "https://github.com/ameroyer/Flextuning"
+teaser: "thumbs/pub/flextuning_thumb.png"
 bibtex: |
   @InProceedings{Royer_2020_Flextuning,
     author = {Royer, Amélie and Lampert, Christoph H.},

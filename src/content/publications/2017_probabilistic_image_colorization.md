@@ -7,6 +7,7 @@ selected: false
 authors: '<span class="first_author">Amélie Royer</span>, <span class="first_author">Alexander Kolesnikov</span> and Christoph Lampert'
 venue: "British Machine Vision Conference (BMVC)"
 teaser: "thumbs/pub/pic_thumb.png"
+code: "https://github.com/ameroyer/PIC"
 bibtex: |
   @InProceedings{Royer_2017_BMVC,
     author = {Royer, Amélie, Kolesnikov, Alexander and Lampert, Christoph H.},

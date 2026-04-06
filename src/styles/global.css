@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,7 +7,7 @@
   --color-pub: #FF8A00;
   --color-port: #B47FFF;
   --color-notes: #FF4D6B;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --color-bg: #322d45;
   --color-card: #3d3754;
@@ -52,7 +52,7 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--theme-bg);
   color: var(--theme-text);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -399,22 +399,22 @@ main {
   font-size: 2rem;
   color: #ede9f8;
 }
-/* H2 — section header: pink accent bar + tinted background */
+/* H2 — section header: purple accent bar + tinted background */
 .post-content h2 {
   font-size: 1.3rem;
-  color: #FF4D6B;
+  color: #B47FFF;
   padding: 0.4rem 0.85rem;
-  border-left: 3px solid #FF4D6B;
-  background: rgba(255, 77, 107, 0.07);
+  border-left: 3px solid #B47FFF;
+  background: rgba(180, 127, 255, 0.07);
   border-radius: 0 6px 6px 0;
   letter-spacing: 0.01em;
 }
 /* H3 — subsection: subtle left rule */
 .post-content h3 {
   font-size: 1.1rem;
-  color: #ff8099;
+  color: #cfa8ff;
   padding-left: 0.75rem;
-  border-left: 2px solid rgba(255, 77, 107, 0.35);
+  border-left: 2px solid rgba(180, 127, 255, 0.35);
 }
 /* H4 — lighter label */
 .post-content h4 {
@@ -618,10 +618,10 @@ main {
 
 /* ─── Light mode overrides ───────────────────────── */
 html.light .post-content h1 { color: var(--theme-text); }
-html.light .post-content h2 { color: #c7003a; background: rgba(199,0,58,0.06); }
-html.light .post-content h3 { color: #a0002e; border-left-color: rgba(199,0,58,0.35); }
+html.light .post-content h2 { color: #6d28d9; background: rgba(109,40,217,0.06); border-left-color: #6d28d9; }
+html.light .post-content h3 { color: #7c3aed; border-left-color: rgba(109,40,217,0.35); }
 html.light .post-content h4 { color: #3d3754; }
-html.light .post-content em { color: #c7003a; }
+html.light .post-content em { color: #7c3aed; }
 html.light .post-content a { color: #1a7ab5; text-decoration-color: rgba(26,122,181,0.35); }
 html.light .post-content a:hover { color: #0f5a8c; }
 html.light .post-content code { color: #7c4dff; }

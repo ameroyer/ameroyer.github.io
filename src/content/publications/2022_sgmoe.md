@@ -1,13 +1,13 @@
 ---
 title: "Revisiting single-gated Mixtures of Experts"
-paperurl: 'https://arxiv.org/abs/2106.05237'
-slides: 'https://bmvc2022.mpi-inf.mpg.de/736/'
-poster: '/files/posters/sgmoe_poster.pdf'
+paperurl: "https://arxiv.org/abs/2304.05497"
+slides: "https://bmvc2022.mpi-inf.mpg.de/736/"
+poster: "/files/posters/sgmoe_poster.pdf"
 year: 2022
 selected: false
 authors: '<span class="first_author">Amélie Royer</span>, Ilia Karmanov, Andrii Skliar, Babak Ehteshami Bejnordi, Tijmen Blankevoort'
-venue: 'British Machine Vision Conference (BMVC)'
-teaser: 'thumbs/pub/sgmoe_thumb.png'
+venue: "British Machine Vision Conference (BMVC)"
+teaser: "thumbs/pub/sgmoe_thumb.png"
 bibtex: |
   @InProceedings{Royer_2022_BMVC,
     author    = {Royer, Amélie and Karmanov, Ilia and Skliar, Andrii and Ehteshami Bejnordi, Babak and Blankevoort, Tijmen},

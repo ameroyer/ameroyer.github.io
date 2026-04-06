@@ -4,7 +4,7 @@ const pathname = Astro.url.pathname;
 const navItems = [
   {
     href: '/',
-    label: 'About',
+    label: 'about',
     bmClass: 'bm-home',
     colorHex: '#4FA8E0',
     // fa-home equivalent
@@ -12,7 +12,7 @@ const navItems = [
   },
   {
     href: '/cv',
-    label: 'CV',
+    label: 'cv',
     bmClass: 'bm-cv',
     colorHex: '#7EC832',
     // fa-user equivalent
@@ -20,7 +20,7 @@ const navItems = [
   },
   {
     href: '/publications',
-    label: 'Papers',
+    label: 'papers',
     bmClass: 'bm-pub',
     colorHex: '#FF8A00',
     // fa-graduation-cap equivalent
@@ -28,7 +28,7 @@ const navItems = [
   },
   {
     href: '/portfolio',
-    label: 'Portfolio',
+    label: 'portfolio',
     bmClass: 'bm-port',
     colorHex: '#B47FFF',
     // Laptop / code screen
@@ -36,7 +36,7 @@ const navItems = [
   },
   {
     href: '/notes',
-    label: 'Notes',
+    label: 'reading notes',
     bmClass: 'bm-notes',
     colorHex: '#FF4D6B',
     // Sheet of paper with lines
@@ -88,7 +88,7 @@ function isActive(href: string): boolean {
     </div>
 
     <!-- Right side: bookmark tabs + theme toggle (desktop) -->
-    <div class="hidden md:flex items-stretch gap-0" style="align-items: stretch;">
+    <div class="hidden md:flex items-stretch gap-10" style="align-items: stretch;">
       <!-- Desktop bookmark tabs — equal width, icon only, extend above header to prevent gap -->
       <nav class="flex items-stretch gap-0.5" style="align-items: stretch;">
         {navItems.map((item) => (

@@ -48,7 +48,7 @@ const selectedPubs = allPublications
       <div class="cv-content">
         <div class="cv-title">Research Scientist</div>
         <div class="cv-org">Kyutai Labs <span class="cv-loc">· Paris, France 🇫🇷</span></div>
-        <p class="cv-desc">Open Science AI lab — working on speech and multimodal foundation models.</p>
+        <p class="cv-desc">Open Science AI lab — working on multimodal foundation models (vision, speech and text).</p>
       </div>
     </div>
 
@@ -57,7 +57,7 @@ const selectedPubs = allPublications
       <div class="cv-content">
         <div class="cv-title">Deep Learning Research Engineer</div>
         <div class="cv-org">Qualcomm AI Research <span class="cv-loc">· Amsterdam, Netherlands 🇳🇱</span></div>
-        <p class="cv-desc">Neural network efficiency — conditional compute, dynamic sparsity, mixture-of-experts. Publications at NeurIPS, CVPR, ICCV.</p>
+        <p class="cv-desc">Neural network efficiency — conditional compute, dynamic sparsity, mixture-of-experts.</p>
       </div>
     </div>
   </section>
@@ -74,7 +74,7 @@ const selectedPubs = allPublications
       <div class="cv-content">
         <div class="cv-title">PhD — Machine Learning &amp; Computer Vision</div>
         <div class="cv-org">IST Austria <span class="cv-loc">· Klosterneuburg, Austria 🇦🇹</span></div>
-        <p class="cv-desc">Supervised by Prof. Christoph Lampert. Domain adaptation, object detection, transfer learning.</p>
+        <p class="cv-desc">Supervised by Prof. Christoph Lampert — Domain adaptation, object detection, transfer learning.</p>
       </div>
     </div>
 
@@ -127,7 +127,8 @@ const selectedPubs = allPublications
       <div class="cv-date">2015</div>
       <div class="cv-content">
         <div class="cv-title">Inria Rennes <span class="cv-loc">· Rennes, France 🇫🇷</span></div>
-        <p class="cv-desc">Unsupervised clustering for text and audio.</p>
+        <p class="cv-desc">Unsupervised clustering for text and audio.
+        </p>
       </div>
     </div>
 
@@ -135,7 +136,8 @@ const selectedPubs = allPublications
       <div class="cv-date">2014</div>
       <div class="cv-content">
         <div class="cv-title">IST Austria <span class="cv-loc">· Klosterneuburg, Austria 🇦🇹</span></div>
-        <p class="cv-desc">Adapting pre-trained classifiers to unknown test distributions.</p>
+        <p class="cv-desc">Adapting pre-trained classifiers to unknown test distributions.
+        </p>
       </div>
     </div>
 
@@ -165,6 +167,8 @@ const selectedPubs = allPublications
           paperurl={pub.data.paperurl}
           slides={pub.data.slides}
           poster={pub.data.poster}
+          code={pub.data.code}
+          demo={pub.data.demo}
           teaser={pub.data.teaser}
           slug={pub.slug}
         />
@@ -194,13 +198,13 @@ const selectedPubs = allPublications
       <div class="cv-skill-row">
         <span class="cv-skill-label">Deep Learning</span>
         <div class="flex flex-wrap gap-2">
-          {['PyTorch', 'TensorFlow', 'JAX', 'Keras'].map((s) => <span class="skill-badge">{s}</span>)}
+          {['PyTorch', 'JAX', 'TensorFlow', 'Keras'].map((s) => <span class="skill-badge">{s}</span>)}
         </div>
       </div>
       <div class="cv-skill-row">
         <span class="cv-skill-label">Tools</span>
         <div class="flex flex-wrap gap-2">
-          {['matplotlib', 'streamlit', 'LaTeX', 'git'].map((s) => <span class="skill-badge">{s}</span>)}
+          {['git', 'SLURM', 'matplotlib', 'streamlit', 'LaTeX'].map((s) => <span class="skill-badge">{s}</span>)}
         </div>
       </div>
       <div class="cv-skill-row">

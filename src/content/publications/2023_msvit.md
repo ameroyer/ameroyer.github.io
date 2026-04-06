@@ -1,13 +1,14 @@
 ---
 title: "MSViT: Dynamic Mixed-Scale Tokenization for Vision Transformers"
-paperurl: 'https://arxiv.org/abs/2307.02321'
-slides: 'https://www.youtube.com/watch?v=1H7LJ7-v58w'
-poster: '/files/posters/msvit_poster.pdf'
+paperurl: "https://arxiv.org/abs/2307.02321"
+slides: "https://www.youtube.com/watch?v=1H7LJ7-v58w"
+poster: "/files/posters/msvit_poster.pdf"
 year: 2023
 selected: true
 authors: 'Jakob Drachmann Havtorn*, <span class="first_author">Amélie Royer</span>*, Tijmen Blankevoort, Babak Ehteshami Bejnordi'
-venue: 'ICCV Workshop on New Ideas in Vision Transformers (NViT)'
-teaser: 'thumbs/pub/msvit_thumb.png'
+venue: "ICCV Workshop on New Ideas in Vision Transformers (NViT)"
+code: "https://github.com/Qualcomm-AI-research/batchshaping"
+teaser: "thumbs/pub/msvit_thumb.png"
 bibtex: |
   @InProceedings{Havtorn_2023_ICCVW,
     author    = {Havtorn, Jakob and Royer, Amélie and Blankevoort, Tijmen and Ehteshami Bejnordi, Babak},

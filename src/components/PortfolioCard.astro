@@ -15,11 +15,11 @@ const { title, date, languages = [], thumb, twitter_summary, github, kaggle, col
 
 const langColors: Record<string, string> = {
   python: '#4FA8E0',
-  tensorflow: '#FF8A00',
-  keras: '#FF4D6B',
+  tensorflow: '#7EC832',
+  keras: '#7EC832',
   jax: '#7EC832',
-  streamlit: '#FF4D6B',
-  javascript: '#FFD700',
+  streamlit: '#FF8A00',
+  javascript: '#FF8A00',
   html5: '#FF8A00',
   css3: '#4FA8E0',
   maths: '#B47FFF',
@@ -52,7 +52,7 @@ function getLangColor(lang: string): string {
 
   <div class="p-4">
     <a href={`/portfolio/${slug}`} class="block">
-      <h3 class="font-semibold text-white text-sm mb-1 group-hover:text-purple-300 transition-colors">{title}</h3>
+      <h3 class="font-semibold text-sm mb-1 group-hover:text-purple-300 transition-colors" style="color: var(--theme-text);">{title}</h3>
     </a>
 
     <p class="text-xs mb-3" style="color: #9090a0;">

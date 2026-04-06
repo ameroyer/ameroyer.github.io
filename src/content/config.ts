@@ -11,6 +11,8 @@ const publications = defineCollection({
     paperurl: z.string().optional(),
     slides: z.string().optional(),
     poster: z.string().optional(),
+    code: z.string().optional(),
+    demo: z.string().optional(),
     teaser: z.string().optional(),
     bibtex: z.string().optional(),
   }),
