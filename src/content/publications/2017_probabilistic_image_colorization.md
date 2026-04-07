@@ -4,7 +4,7 @@ paperurl: "https://arxiv.org/abs/1705.04258"
 poster: "/files/posters/poster_pic.pdf"
 year: 2017
 selected: false
-authors: '<span class="first_author">Amélie Royer</span>, <span class="first_author">Alexander Kolesnikov</span> and Christoph Lampert'
+authors: '<span class="first_author">Amélie Royer</span>*, Alexander Kolesnikov*, Christoph Lampert'
 venue: "British Machine Vision Conference (BMVC)"
 teaser: "thumbs/pub/pic_thumb.png"
 code: "https://github.com/ameroyer/PIC"

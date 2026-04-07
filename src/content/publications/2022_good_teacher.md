@@ -3,7 +3,7 @@ title: "Knowledge Distillation: A good teacher is patient and consistent"
 paperurl: "https://arxiv.org/abs/2106.05237"
 year: 2022
 selected: false
-authors: 'Lucas Beyer, Xiaohua Zhai, <span class="first_author">Amélie Royer</span>, Larisa Markeeva, Rohan Anil, Alexander Kolesnikov'
+authors: 'Lucas Beyer*, Xiaohua Zhai*, <span class="first_author">Amélie Royer</span>*, Larisa Markeeva*, Rohan Anil, Alexander Kolesnikov'
 venue: "Conference on Computer Vision and Pattern Recognition (CVPR) (oral)"
 teaser: "thumbs/pub/distill_thumb.png"
 bibtex: |

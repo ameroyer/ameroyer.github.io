@@ -6,7 +6,7 @@ categories: [Generative Models]
 author: "Karras et al."
 venue: CVPR
 paperurl: "https://arxiv.org/abs/1812.04948"
-thumb: /images/thumbs/notes/todo.png
+thumb: /images/thumbs/notes/stylegan.png
 year: 2019
 ---
 

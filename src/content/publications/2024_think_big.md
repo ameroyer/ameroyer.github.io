@@ -1,6 +1,6 @@
 ---
 title: "Think Big, Generate Quick: LLM-to-SLM for Fast Autoregressive Decoding"
-paperurl: "Think Big, Generate Quick: LLM-to-SLM for Fast Autoregressive Decoding"
+paperurl: "https://arxiv.org/abs/2402.16844"
 year: 2024
 selected: false
 teaser: "thumbs/pub/thinkbig.png"

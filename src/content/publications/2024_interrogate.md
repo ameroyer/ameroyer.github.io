@@ -6,7 +6,7 @@ poster: "https://bmva-archive.org.uk/bmvc/2024/papers/Paper_54/poster.pdf"
 year: 2024
 selected: false
 teaser: "thumbs/pub/interrogate.png"
-authors: 'Babak Ehteshami Bejnordi, Gaurav Kumar, <span class="first_author">Amélie Royer</span>, Cristos Louizos, Tijmen Blankevoort, Mohsen Ghafoorian'
+authors: 'Babak Ehteshami Bejnordi, Gaurav Kumar, <span class="first_author">Amélie Royer</span>, Christos Louizos, Tijmen Blankevoort, Mohsen Ghafoorian'
 venue: "British Machine Vision Conference (BMVC)"
 ---
 

@@ -6,7 +6,7 @@ demo: "https://moshi.chat"
 slides: "https://www.youtube.com/live/hm2IJSKcYvo"
 year: 2024
 selected: false
-teaser: "thumbs/pub/moshi.png"
+teaser: "thumbs/pub/moshi.gif"
 authors: 'Alexandre Défossez, Laurent Mazaré, Manu Orsini, <span class="first_author">Amélie Royer</span>, Patrick Pérez, Hervé Jégou, Edouard Grave, Neil Zeghidour'
 venue: "Technical Report"
 ---
