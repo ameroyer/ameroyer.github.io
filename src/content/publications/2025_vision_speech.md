@@ -6,7 +6,7 @@ demo: "https://vis.moshi.chat"
 teaser: "thumbs/pub/moshivis.png"
 year: 2026
 selected: true
-authors: '<span class="first_author">Amélie Royer</span>*, Moritz Böhle*, Gabriel de Marmiesse, Laurent Mazaré, Neil Zeghidour, Alexandre Défossez, Patrix Pérez'
+authors: '<span class="first_author">Amélie Royer</span>*, Moritz Böhle*, Gabriel de Marmiesse, Laurent Mazaré, Neil Zeghidour, Alexandre Défossez, Patrick Pérez'
 venue: "Conference on Computer Vision and Pattern Recognition (CVPR)"
 ---
 
